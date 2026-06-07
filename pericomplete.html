@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+<title>Periscope | Enterprise Analytics Marketplace — UX Case Study</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --blue: #084FAA;
+    --blue-light: #F0F5FF;
+    --blue-mid: #E3ECFF;
+    --text: #1a1a1a;
+    --text-muted: #555;
+    --text-subtle: #888;
+    --border: #e8e8e8;
+    --surface: #fafafa;
+    --surface-2: #f3f3f3;
+    --white: #ffffff;
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    --shadow-sm: 0 1px 4px rgba(0,0,0,.06);
+    --shadow-md: 0 3px 12px rgba(0,0,0,.09);
+    --shadow-lg: 0 8px 30px rgba(0,0,0,.11);
+    --tag-bg: #E8F0FF;
+    --tag-color: #0B4FBE;
+    --tag-border: rgba(8,79,170,.2);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 18px;
+    color: var(--text);
+    background: var(--white);
+    -webkit-font-smoothing: antialiased;
+    animation: fadeIn .6s ease both;
+  }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+  /* NAV */
+  .nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    background: rgba(255,255,255,.92);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    height: 64px;
+    display: flex; align-items: center;
+  }
+  .nav-inner {
+    max-width: 1100px; margin: 0 auto; padding: 0 24px;
+    display: flex; align-items: center; justify-content: space-between;
+    width: 100%;
+  }
+  .nav-logo img { height: 36px; display: block; }
+  .nav-links { display: flex; gap: 8px; }
+  .nav-links a {
+    font-size: 13px; font-weight: 500; letter-spacing: .5px;
+    text-transform: uppercase; text-decoration: none;
+    color: var(--text-muted); padding: 6px 14px; border-radius: 50px;
+    transition: color .2s, background .2s;
+  }
+  .nav-links a:hover { color: var(--blue); background: var(--blue-light); }
+
+  /* LAYOUT */
+  .page { padding-top: 64px; }
+  .container { max-width: 1060px; margin: 0 auto; padding: 0 24px; }
+  .section { padding: 80px 0; }
+  .section-sm { padding: 56px 0; }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(160deg, #f7faff 0%, #ffffff 60%);
+    border-bottom: 1px solid var(--border);
+    padding: 72px 0 60px;
+  }
+  .hero-inner { max-width: 1060px; margin: 0 auto; padding: 0 24px; }
+  .hero-meta {
+    display: flex; align-items: center; gap: 10px;
+    margin-bottom: 24px;
+  }
+  .hero-eyebrow {
+    font-size: 12px; font-weight: 600; letter-spacing: 1.2px;
+    text-transform: uppercase; color: var(--blue);
+  }
+  .hero-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--text-subtle); }
+  .hero-year { font-size: 12px; color: var(--text-subtle); font-weight: 500; }
+  .hero-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(36px, 5vw, 58px);
+    line-height: 1.12;
+    color: var(--text);
+    margin-bottom: 20px;
+    max-width: 720px;
+  }
+  .hero-title em { font-style: italic; color: var(--blue); }
+  .hero-desc {
+    font-size: 18px; color: var(--text-muted); line-height: 1.65;
+    max-width: 580px; margin-bottom: 36px; font-weight: 400;
+  }
+  .hero-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 48px; }
+  .tag {
+    display: inline-flex; align-items: center;
+    background: var(--tag-bg); color: var(--tag-color);
+    border: 1px solid var(--tag-border);
+    border-radius: 50px; padding: 5px 14px;
+    font-size: 13px; font-weight: 600; line-height: 1;
+  }
+  .tag-dark {
+    background: var(--text); color: #fff;
+    border-color: var(--text);
+  }
+  .hero-image {
+    width: 100%; border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg);
+    display: block;
+    border: 1px solid var(--border);
+  }
+  .hero-stats {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1px; background: var(--border);
+    border: 1px solid var(--border); border-radius: var(--radius-lg);
+    overflow: hidden; margin-top: 48px;
+  }
+  .hero-stat {
+    background: var(--white); padding: 24px 28px;
+  }
+  .hero-stat-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 32px; color: var(--blue); margin-bottom: 4px;
+  }
+  .hero-stat-label {
+    font-size: 13px; color: var(--text-muted); font-weight: 500; line-height: 1.4;
+  }
+
+  /* SECTION LABELS */
+  .eyebrow {
+    font-size: 11px; font-weight: 700; letter-spacing: 1.6px;
+    text-transform: uppercase; color: var(--blue);
+    margin-bottom: 12px;
+  }
+  .section-heading {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(26px, 3.5vw, 36px);
+    line-height: 1.2; color: var(--text);
+    margin-bottom: 16px;
+  }
+  .section-body {
+    font-size: 17px; line-height: 1.7; color: var(--text-muted);
+    max-width: 680px; font-weight: 400;
+  }
+  .section-body + .section-body { margin-top: 14px; }
+
+  /* DIVIDER */
+  .divider { border: none; border-top: 1px solid var(--border); margin: 0; }
+
+  /* FULL BLEED BANDS */
+  .band { width: 100vw; position: relative; left: 50%; transform: translateX(-50%); }
+  .band-light { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .band-mid   { background: var(--surface-2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .band-blue  { background: var(--blue-light); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+
+  /* PROBLEM / SOLUTION SPLIT */
+  .split-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px;
+    background: var(--border); border: 1px solid var(--border);
+    border-radius: var(--radius-lg); overflow: hidden;
+    margin-top: 40px;
+  }
+  .split-panel { background: var(--white); padding: 36px 32px; }
+  .split-panel-label {
+    font-size: 11px; font-weight: 700; letter-spacing: 1.4px;
+    text-transform: uppercase; color: var(--text-subtle); margin-bottom: 16px;
+  }
+  .split-panel h3 {
+    font-size: 20px; font-weight: 600; color: var(--text); margin-bottom: 14px;
+  }
+  .split-panel p {
+    font-size: 16px; line-height: 1.7; color: var(--text-muted);
+  }
+
+  /* ROLE CARD */
+  .role-card {
+    background: var(--blue); border-radius: var(--radius-lg);
+    padding: 40px 36px; color: #fff; margin-top: 40px;
+  }
+  .role-card h3 { font-size: 14px; font-weight: 600; opacity: .65; letter-spacing: .8px; text-transform: uppercase; margin-bottom: 10px; }
+  .role-card p { font-size: 17px; font-weight: 400; opacity: .9; line-height: 1.65; }
+  .role-list {
+    margin-top: 20px; padding-left: 0; list-style: none;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+  }
+  .role-list li {
+    font-size: 15px; font-weight: 400; opacity: .85; line-height: 1.5;
+    display: flex; gap: 10px; align-items: flex-start;
+  }
+  .role-list li::before {
+    content: '→'; color: rgba(255,255,255,.5); flex-shrink: 0; margin-top: 1px;
+  }
+
+  /* PERSONA CARDS */
+  .persona-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px; margin-top: 36px;
+  }
+  .persona-card {
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: var(--radius-lg); padding: 24px;
+    transition: box-shadow .2s, transform .2s;
+  }
+  .persona-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+  .persona-icon {
+    width: 44px; height: 44px; border-radius: 12px;
+    background: var(--blue-light); display: flex; align-items: center;
+    justify-content: center; margin-bottom: 16px;
+    font-size: 20px;
+  }
+  .persona-card h3 { font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 10px; }
+  .persona-card p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+  .persona-card strong { color: var(--text); font-weight: 600; }
+
+  /* INFO CARDS (3-up) */
+  .info-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px; margin-top: 36px;
+  }
+  .info-card {
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: var(--radius-lg); padding: 28px 24px;
+  }
+  .info-card h3 { font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 10px; }
+  .info-card p, .info-card li { font-size: 15px; color: var(--text-muted); line-height: 1.65; }
+  .info-card ul { padding-left: 18px; margin-top: 8px; }
+  .info-card li { margin-bottom: 4px; }
+
+  /* INSIGHT CARDS */
+  .insight-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px; margin-top: 36px;
+  }
+  .insight-card {
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: var(--radius-lg); padding: 26px 24px;
+    border-left: 4px solid var(--blue);
+  }
+  .insight-card h3 { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 8px; }
+  .insight-card p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+
+  /* PHASE FEATURE TABLE */
+  .phase-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 36px;
+  }
+  .phase-card {
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: var(--radius-lg); padding: 28px 24px;
+  }
+  .phase-card h3 { font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 12px; }
+  .phase-card p { font-size: 15px; color: var(--text-muted); line-height: 1.65; }
+
+  /* SPRINT ROW */
+  .sprint-row {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 2px; background: var(--border);
+    border: 1px solid var(--border); border-radius: var(--radius-lg);
+    overflow: hidden; margin-top: 36px;
+  }
+  .sprint-cell { background: var(--white); padding: 24px 20px; }
+  .sprint-num {
+    font-size: 11px; font-weight: 700; letter-spacing: 1.4px;
+    text-transform: uppercase; color: var(--blue); margin-bottom: 8px;
+  }
+  .sprint-cell h3 { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 6px; }
+  .sprint-cell p { font-size: 14px; color: var(--text-muted); line-height: 1.55; }
+
+  /* IMAGE BLOCKS */
+  .img-full {
+    width: 100%; border-radius: var(--radius-lg); display: block;
+    border: 1px solid var(--border); box-shadow: var(--shadow-sm);
+    margin-top: 32px;
+  }
+  .gallery-2 {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 32px;
+  }
+  .gallery-3 {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 32px;
+  }
+  .gallery-4 {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 32px;
+  }
+  .thumb {
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: var(--radius-md); overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow .2s, transform .2s;
+    cursor: pointer;
+  }
+  .thumb:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+  .thumb img {
+    width: 100%; display: block;
+    object-fit: cover; object-position: top center;
+    height: 200px;
+  }
+  .thumb.tall img { height: 260px; }
+  .thumb-info { padding: 14px 16px; }
+  .thumb-info h3 { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+  .thumb-info p { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
+  .thumb-label {
+    display: inline-block; font-size: 11px; font-weight: 600;
+    letter-spacing: .8px; text-transform: uppercase;
+    color: var(--blue); margin-bottom: 6px;
+  }
+
+  /* SITEMAP */
+  .sitemap-wrap {
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: var(--radius-lg); padding: 16px;
+    box-shadow: var(--shadow-sm); margin-top: 32px; cursor: pointer;
+    transition: box-shadow .2s;
+  }
+  .sitemap-wrap:hover { box-shadow: var(--shadow-md); }
+  .sitemap-wrap img { width: 100%; border-radius: var(--radius-md); display: block; }
+  .sitemap-caption { font-size: 13px; color: var(--text-subtle); margin-top: 12px; }
+
+  /* STATUS FRAMEWORK */
+  .status-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px; margin-top: 32px;
+  }
+  .status-card {
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: var(--radius-md); padding: 20px;
+    display: flex; gap: 14px; align-items: flex-start;
+  }
+  .status-dot {
+    width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; margin-top: 5px;
+  }
+  .status-card h3 { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+  .status-card p { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
+
+  /* OUTCOME METRICS */
+  .metrics-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2px; background: var(--border);
+    border: 1px solid var(--border); border-radius: var(--radius-lg);
+    overflow: hidden; margin-top: 36px;
+  }
+  .metric-cell { background: var(--white); padding: 32px 28px; }
+  .metric-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 44px; color: var(--blue); line-height: 1; margin-bottom: 8px;
+  }
+  .metric-label { font-size: 15px; color: var(--text-muted); line-height: 1.5; font-weight: 400; }
+
+  /* QUOTE / CALLOUT */
+  .callout {
+    background: var(--blue-light); border: 1px solid var(--blue-mid);
+    border-left: 4px solid var(--blue);
+    border-radius: var(--radius-lg); padding: 32px 36px; margin-top: 40px;
+  }
+  .callout p { font-size: 17px; color: var(--text); line-height: 1.7; font-weight: 400; }
+  .callout strong { font-weight: 600; }
+
+  /* TIMELINE */
+  .timeline-img {
+    width: 100%; display: block; border-radius: var(--radius-lg);
+    border: 1px solid var(--border); box-shadow: var(--shadow-sm); margin-top: 32px;
+  }
+
+  /* NEXT STEPS & REFLECTION */
+  .closing-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 36px;
+  }
+  .closing-card {
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: var(--radius-lg); padding: 28px 24px;
+  }
+  .closing-card h3 { font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 12px; }
+  .closing-card p { font-size: 15px; color: var(--text-muted); line-height: 1.7; }
+
+  /* BACK TO TOP */
+  .back-top {
+    display: flex; justify-content: center; padding: 60px 0;
+  }
+  .back-top a {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--text); color: #fff;
+    font-size: 14px; font-weight: 600; text-decoration: none;
+    padding: 14px 28px; border-radius: 50px;
+    letter-spacing: .4px; transition: background .2s, transform .2s;
+  }
+  .back-top a:hover { background: var(--blue); transform: translateY(-2px); }
+
+  /* MODAL */
+  .modal-overlay {
+    display: none; position: fixed; inset: 0; z-index: 99999;
+    background: rgba(0,0,0,.88); backdrop-filter: blur(8px);
+    align-items: center; justify-content: center; padding: 24px;
+  }
+  .modal-overlay.active { display: flex; }
+  .modal-box {
+    position: relative; background: var(--white); border-radius: var(--radius-xl);
+    padding: 12px; max-width: 92vw; max-height: 90vh; overflow: auto;
+  }
+  .modal-box img {
+    display: block; max-width: 88vw; max-height: 76vh;
+    border-radius: var(--radius-lg);
+  }
+  .modal-caption { font-size: 14px; font-weight: 500; color: var(--text-muted); margin-top: 10px; padding: 0 4px; }
+  .modal-close {
+    position: absolute; top: -52px; right: 0;
+    color: #fff; font-size: 40px; font-weight: 300;
+    cursor: pointer; line-height: 1; background: none; border: none;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .split-grid, .phase-grid, .gallery-2, .gallery-3, .gallery-4,
+    .sprint-row, .closing-grid { grid-template-columns: 1fr; }
+    .role-list { grid-template-columns: 1fr; }
+    .thumb img, .thumb.tall img { height: 180px; }
+    .section { padding: 56px 0; }
+  }
+
+  /* Clean list inside section-body */
+  .clean-ul { padding-left: 20px; margin-top: 14px; }
+  .clean-ul li { font-size: 16px; color: var(--text-muted); line-height: 1.7; margin-bottom: 6px; }
+
+  /* Section separator line */
+  .section-rule { border: none; border-top: 1px solid var(--border); margin: 0 24px; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html"><img src="images/logo.png" alt="Logo"></a>
+    <div class="nav-links">
+      <a href="index.html">Work</a>
+      <a href="About.html">About</a>
+      <a href="play.html">Play</a>
+    </div>
+  </div>
+</nav>
+
+<div class="page">
+
+  <!-- ═══════════════ HERO ═══════════════ -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-meta">
+        <span class="hero-eyebrow">UX Case Study</span>
+        <span class="hero-dot"></span>
+        <span class="hero-year">Inova Health System · 2024</span>
+      </div>
+      <h1 class="hero-title">Periscope — <em>Enterprise Analytics</em> Marketplace</h1>
+      <p class="hero-desc">A centralized discovery platform for dashboards, reports, AI models, and data assets across a large health system.</p>
+      <div class="hero-tags">
+        <span class="tag">UX Strategy</span>
+        <span class="tag">Information Architecture</span>
+        <span class="tag">Design System</span>
+        <span class="tag">Governance UX</span>
+        <span class="tag">Enterprise Product</span>
+        <span class="tag">Healthcare Analytics</span>
+      </div>
+      <img src="images/periscope-hero.svg" class="hero-image" alt="Periscope marketplace hero overview">
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-num">1</div>
+          <div class="hero-stat-label">Centralized platform replacing 5+ fragmented tools</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">20+</div>
+          <div class="hero-stat-label">Asset types and data sources surfaced for discovery</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">4</div>
+          <div class="hero-stat-label">Sprints delivering search, browse, AI inventory, governance</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">AI</div>
+          <div class="hero-stat-label">Dedicated model inventory with oversight and governance</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ OVERVIEW ═══════════════ -->
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow">Project Overview</p>
+      <h2 class="section-heading">One place to find everything analytics</h2>
+      <p class="section-body">Before Periscope, clinical leaders, operations managers, and analytics developers navigated a maze of disconnected platforms — Power BI, Tableau, Epic, SharePoint, internal apps — just to find a single report. Assets were buried in personal folders, ownership was unclear, and trust in the data was low.</p>
+      <p class="section-body" style="margin-top:14px;">Periscope was designed as an <strong>Amazon-like discovery experience</strong> for analytics: a governed, searchable, metadata-rich marketplace where any user could find, preview, trust, and launch the right asset in minutes.</p>
+
+      <div class="split-grid">
+        <div class="split-panel">
+          <div class="split-panel-label">The Problem</div>
+          <h3>Discovery was broken</h3>
+          <p>Reports were hidden across teams, personal folders, and platforms. Search didn't span systems. Ownership was invisible. Duplicate assets multiplied. Users either gave up or spent hours hunting down the right dashboard.</p>
+        </div>
+        <div class="split-panel" style="background: var(--blue-light);">
+          <div class="split-panel-label">The Solution</div>
+          <h3>A governed marketplace</h3>
+          <p>A single, searchable platform combining powerful search, advanced filters, metadata-driven asset cards, certification status, favorites, campaign groupings, clinical care pathways, AI model inventory, and governance workflows — all in one cohesive experience.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ═══════════════ MY ROLE ═══════════════ -->
+  <div class="band band-light">
+    <div class="container section-sm">
+      <p class="eyebrow">My Role</p>
+      <h2 class="section-heading">Senior UX/UI Designer — end to end</h2>
+      <p class="section-body">I led UX from intake through high-fidelity delivery, working closely with analytics, governance, architecture, and clinical stakeholders across four design sprints.</p>
+      <div class="role-card">
+        <h3>Contributions</h3>
+        <p>UX intake, discovery workshops, information architecture, wireframing, design system alignment, high-fidelity UI, governance workflow design, and stakeholder review facilitation.</p>
+        <ul class="role-list">
+          <li>Captured business goals and user needs through structured UX intake</li>
+          <li>Mapped platform structure and navigation hierarchy</li>
+          <li>Facilitated low-fidelity design sessions with stakeholders</li>
+          <li>Designed high-fidelity screens for all six primary experiences</li>
+          <li>Built governance certification workflows for assets, AI, and metrics</li>
+          <li>Aligned every design decision to Inova's enterprise design system</li>
+        </ul>
+      </div>
+      <img src="images/timelines.png" alt="Project timeline" class="timeline-img">
+    </div>
+  </div>
+
+  <!-- ═══════════════ USERS ═══════════════ -->
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow">Users & Opportunities</p>
+      <h2 class="section-heading">Who we designed for</h2>
+      <p class="section-body">I defined four lightweight personas to focus the team on real frustrations and opportunities — keeping discovery grounded in user context rather than assumptions.</p>
+      <div class="persona-grid">
+        <div class="persona-card">
+          <div class="persona-icon">🏥</div>
+          <h3>Clinical Leader</h3>
+          <p><strong>Needs:</strong> Certified dashboards for quality metrics and care initiatives.<br><br><strong>Opportunity:</strong> Surface trusted assets faster with clear governance signals.</p>
+        </div>
+        <div class="persona-card">
+          <div class="persona-icon">📊</div>
+          <h3>Analytics Developer</h3>
+          <p><strong>Needs:</strong> Publish reports, reduce duplicate builds, increase adoption.<br><br><strong>Opportunity:</strong> Visibility into asset ownership and reuse patterns.</p>
+        </div>
+        <div class="persona-card">
+          <div class="persona-icon">⚙️</div>
+          <h3>Operational Manager</h3>
+          <p><strong>Needs:</strong> Monitor performance KPIs without navigating multiple tools.<br><br><strong>Opportunity:</strong> Organize assets by role, goal, and initiative.</p>
+        </div>
+        <div class="persona-card">
+          <div class="persona-icon">✅</div>
+          <h3>Governance Admin</h3>
+          <p><strong>Needs:</strong> Certify assets, govern metrics, review AI products at scale.<br><br><strong>Opportunity:</strong> Centralize all governance workflows in one place.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ═══════════════ DISCOVERY ═══════════════ -->
+  <div class="band band-mid">
+    <div class="container section">
+      <p class="eyebrow">Discovery & Research</p>
+      <h2 class="section-heading">Before screens, we learned the landscape</h2>
+      <p class="section-body">We ran UX workshops, stakeholder interviews, competitive analysis, existing catalog audits, and user flow mapping before sketching a single screen. The goal was to understand what users needed most — and what governance actually required.</p>
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>Research Activities</h3>
+          <p>UX intake sessions, stakeholder interviews, analytics workshops, current-state inventory reviews, competitive analysis, and end-to-end user flow mapping.</p>
+        </div>
+        <div class="info-card">
+          <h3>Systems Reviewed</h3>
+          <p>Epic analytics catalog, Tableau Server, Power BI workspaces, SharePoint sites, shared network folders, existing AI model inventory, and internal documentation sources.</p>
+        </div>
+        <div class="info-card">
+          <h3>Phase 1 Prioritization Criteria</h3>
+          <p>User demand frequency, business impact, governance value, technical feasibility, and potential to reduce duplicate asset creation.</p>
+        </div>
+      </div>
+      <img src="images/uxapproach.png" alt="UX approach diagram" class="img-full">
+    </div>
+  </div>
+
+  <!-- ═══════════════ INSIGHTS ═══════════════ -->
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow">Key Insights</p>
+      <h2 class="section-heading">What we learned from research</h2>
+      <p class="section-body">Six recurring themes shaped every major design decision in Phase 1.</p>
+      <div class="insight-grid">
+        <div class="insight-card">
+          <h3>Search was the primary need</h3>
+          <p>Users typically knew what they wanted — they just didn't know where it lived. Cross-system search was the single most requested capability.</p>
+        </div>
+        <div class="insight-card">
+          <h3>Trust signals mattered before launch</h3>
+          <p>Users wanted to see ownership, certification status, and metadata before opening a report. Discovery without trust caused hesitation.</p>
+        </div>
+        <div class="insight-card">
+          <h3>Preview before commit</h3>
+          <p>Screenshots, descriptions, and context reduced tool-switching and gave users confidence before navigating to source platforms.</p>
+        </div>
+        <div class="insight-card">
+          <h3>Initiative-based thinking</h3>
+          <p>Teams think in terms of organizational goals — Leapfrog, Cost Reduction, Quality Improvement — not tool names or folder structures.</p>
+        </div>
+        <div class="insight-card">
+          <h3>Governance can't add friction</h3>
+          <p>Governance needed to build trust for end users without slowing them down. Admin workflows had to stay separate from the discovery experience.</p>
+        </div>
+        <div class="insight-card">
+          <h3>Role-based discovery was an opportunity</h3>
+          <p>Users wanted personalized signals — "popular with my role," favorites, and recommendations — not a generic list of everything.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ═══════════════ FEATURE PRIORITIZATION ═══════════════ -->
+  <div class="band band-blue">
+    <div class="container section-sm">
+      <p class="eyebrow">Feature Prioritization</p>
+      <h2 class="section-heading">What made it into Phase 1 — and why</h2>
+      <p class="section-body">We prioritized based on user demand, governance value, and feasibility. Personalization and AI recommendations were deliberately deferred to avoid scope creep on core discovery.</p>
+      <div class="phase-grid">
+        <div class="phase-card">
+          <h3>Phase 1 Scope</h3>
+          <p>Global search, browse all assets, advanced filters, asset detail pages, favorites, campaign groupings, Inova Care pathways, AI inventory, KPI dashboard, and certification governance workflows.</p>
+        </div>
+        <div class="phase-card">
+          <h3>Future Opportunities</h3>
+          <p>AI-powered recommendations, personalized homepage, smart search ranking, usage analytics dashboards, role-based popularity signals, and user wishlists.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════ WORKING SESSIONS ═══════════════ -->
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow">Process</p>
+      <h2 class="section-heading">Iterative design through recurring working sessions</h2>
+      <p class="section-body">Work was structured like sprint planning: recurring sessions with analytics, governance, architecture, and clinical stakeholders. Each session included design review, prioritization, and iteration — balancing business goals with user needs, governance requirements, and technical constraints.</p>
+      <div class="sprint-row">
+        <div class="sprint-cell">
+          <div class="sprint-num">Sprint 1</div>
+          <h3>Search & Discovery</h3>
+          <p>Global search, autocomplete, query execution, and result layout.</p>
+        </div>
+        <div class="sprint-cell">
+          <div class="sprint-num">Sprint 2</div>
+          <h3>Browse & Filters</h3>
+          <p>Asset grid, card design, category filters, and tag-based refinement.</p>
+        </div>
+        <div class="sprint-cell">
+          <div class="sprint-num">Sprint 3</div>
+          <h3>Campaigns & Favorites</h3>
+          <p>Initiative groupings, Inova Care pathways, and saved asset collections.</p>
+        </div>
+        <div class="sprint-cell">
+          <div class="sprint-num">Sprint 4</div>
+          <h3>AI & Governance</h3>
+          <p>AI model inventory, certification workflows, and admin tooling.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ═══════════════ INFORMATION ARCHITECTURE ═══════════════ -->
+  <div class="band band-light">
+    <div class="container section-sm">
+      <p class="eyebrow">Information Architecture</p>
+      <h2 class="section-heading">Mapping the platform before designing screens</h2>
+      <p class="section-body">A site map aligned stakeholders on how users would move from login to dashboard, search results, AI inventory, favorites, campaigns, and asset detail pages — establishing a shared mental model before any visual design began.</p>
+      <div class="sitemap-wrap" onclick="openModal('images/site-map.png', 'Site map showing navigation model across the marketplace: dashboard, inventory, search, favorites, campaigns, and asset previews.')">
+        <img src="images/site-map.png" alt="Periscope site map">
+        <div class="sitemap-caption">↗ Click to expand — navigation model across the marketplace</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════ WIREFRAMES ═══════════════ -->
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow">Early Exploration</p>
+      <h2 class="section-heading">Low-fidelity wireframes</h2>
+      <p class="section-body">Wireframes let us validate navigation structure, search layout, asset organization, detail pages, and favorites flows quickly — before any visual design investment. Click to expand.</p>
+      <div class="gallery-2">
+        <div class="thumb" onclick="openModal('images/lofi-home.png','Early homepage concept with most-viewed, favorites, and campaign sections.')">
+          <img src="images/lofi-home.png" alt="Homepage wireframe">
+          <div class="thumb-info">
+            <span class="thumb-label">Wireframe</span>
+            <h3>Homepage Concept</h3>
+            <p>Marketplace home structure with featured, popular, and role-based sections.</p>
+          </div>
+        </div>
+        <div class="thumb" onclick="openModal('images/lofi-inventory.png','Initial inventory and filter exploration — grid-based discovery.')">
+          <img src="images/lofi-inventory.png" alt="Inventory wireframe">
+          <div class="thumb-info">
+            <span class="thumb-label">Wireframe</span>
+            <h3>Inventory Exploration</h3>
+            <p>Grid-based asset discovery with sidebar filter exploration.</p>
+          </div>
+        </div>
+        <div class="thumb" onclick="openModal('images/lofi-results.png','Search result exploration with filter refinement and result ranking.')">
+          <img src="images/lofi-results.png" alt="Search results wireframe">
+          <div class="thumb-info">
+            <span class="thumb-label">Wireframe</span>
+            <h3>Search Results</h3>
+            <p>Result layout with filter refinement and query context.</p>
+          </div>
+        </div>
+        <div class="thumb" onclick="openModal('images/lofi-detail.png','Asset detail concept with ownership, certification, metadata, and launch actions.')">
+          <img src="images/lofi-detail.png" alt="Asset detail wireframe">
+          <div class="thumb-info">
+            <span class="thumb-label">Wireframe</span>
+            <h3>Asset Detail Page</h3>
+            <p>Preview-before-launch with ownership, certification, and actions.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ═══════════════ DESIGN SYSTEM ═══════════════ -->
+  <div class="band band-mid">
+    <div class="container section-sm">
+      <p class="eyebrow">Design System</p>
+      <h2 class="section-heading">Built on Inova's enterprise foundation</h2>
+      <p class="section-body">I extended Inova's enterprise design system — typography, color, buttons, cards, dropdowns, and iconography — ensuring Periscope felt native to the broader product ecosystem while introducing marketplace-specific patterns.</p>
+      <div class="gallery-4">
+        <div class="thumb" onclick="openModal('images/design-system-overview.png','Design system foundations: logo, color, iconography, and typography.')">
+          <img src="images/design-system-overview.png" alt="Design system overview">
+          <div class="thumb-info"><h3>Foundations</h3><p>Color, type, iconography.</p></div>
+        </div>
+        <div class="thumb" onclick="openModal('images/design-buttons-main.png','Button states and usage patterns.')">
+          <img src="images/design-buttons-main.png" alt="Buttons">
+          <div class="thumb-info"><h3>Buttons</h3><p>Primary action patterns.</p></div>
+        </div>
+        <div class="thumb" onclick="openModal('images/design-dropdowns.png','Dropdown and menu states.')">
+          <img src="images/design-dropdowns.png" alt="Dropdowns">
+          <div class="thumb-info"><h3>Dropdowns</h3><p>Selection patterns.</p></div>
+        </div>
+        <div class="thumb" onclick="openModal('images/design-cards.png','Card patterns used for marketplace asset tiles.')">
+          <img src="images/design-cards.png" alt="Cards">
+          <div class="thumb-info"><h3>Cards</h3><p>Asset tile patterns.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════ FINAL DESIGNS ═══════════════ -->
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow">Final Designs</p>
+      <h2 class="section-heading">High-fidelity marketplace experience</h2>
+      <p class="section-body">The final product combined search, browse, filters, asset cards, favorites, campaign groupings, clinical care pathways, AI inventory, and detail pages into a cohesive, governed discovery experience. Click any screen to expand.</p>
+
+      <!-- Core navigation & browse -->
+      <div class="gallery-2" style="margin-top:32px;">
+        <div class="thumb tall" onclick="openModal('images/home-collapsed.png','Homepage with hero campaign banner, popular reports, and role-based content sections.')">
+          <img src="images/home-collapsed.png" alt="Home dashboard">
+          <div class="thumb-info">
+            <span class="thumb-label">Core Experience</span>
+            <h3>Home Dashboard</h3>
+            <p>Featured content, popular assets, and initiative-based discovery.</p>
+          </div>
+        </div>
+        <div class="thumb tall" onclick="openModal('images/home-expanded.png','Expanded navigation with filters, category links, and guided discovery.')">
+          <img src="images/home-expanded.png" alt="Expanded navigation">
+          <div class="thumb-info">
+            <span class="thumb-label">Core Experience</span>
+            <h3>Expanded Navigation</h3>
+            <p>Category links, quick filters, and guided discovery pathways.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Browse & Search -->
+      <div class="gallery-2">
+        <div class="thumb tall" onclick="openModal('images/browse-all-assets.png','Marketplace grid with asset cards, tags, certification badges, and action buttons.')">
+          <img src="images/browse-all-assets.png" alt="Browse all assets">
+          <div class="thumb-info">
+            <span class="thumb-label">Discovery</span>
+            <h3>Browse All Assets</h3>
+            <p>Marketplace grid with certification, tags, and quick actions.</p>
+          </div>
+        </div>
+        <div class="thumb tall" onclick="openModal('images/browse-filtered.png','Filtered browse experience showing refined results by type, certification, and owner.')">
+          <img src="images/browse-filtered.png" alt="Filtered results">
+          <div class="thumb-info">
+            <span class="thumb-label">Discovery</span>
+            <h3>Filtered Results</h3>
+            <p>Refined discovery by type, owner, certification, and tag.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Search -->
+      <div class="gallery-2">
+        <div class="thumb tall" onclick="openModal('images/search.png','Search entry with autocomplete and suggested queries.')">
+          <img src="images/search.png" alt="Search entry">
+          <div class="thumb-info">
+            <span class="thumb-label">Search</span>
+            <h3>Search Entry</h3>
+            <p>Search-first discovery with autocomplete suggestions.</p>
+          </div>
+        </div>
+        <div class="thumb tall" onclick="openModal('images/search-executed.png','Search results after query execution — relevant asset cards surfaced with context.')">
+          <img src="images/search-executed.png" alt="Search results">
+          <div class="thumb-info">
+            <span class="thumb-label">Search</span>
+            <h3>Search Results</h3>
+            <p>Relevant results surfaced with certification and metadata context.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Organization & Detail -->
+      <div class="gallery-2">
+        <div class="thumb tall" onclick="openModal('images/my-favorites.png','Favorites page for saved assets, metrics, and recent items.')">
+          <img src="images/my-favorites.png" alt="Favorites">
+          <div class="thumb-info">
+            <span class="thumb-label">Personalization</span>
+            <h3>Favorites</h3>
+            <p>Saved assets, recent items, and personal collections.</p>
+          </div>
+        </div>
+        <div class="thumb tall" onclick="openModal('images/campaigns.png','Campaigns group related analytics assets around strategic organizational initiatives.')">
+          <img src="images/campaigns.png" alt="Campaigns">
+          <div class="thumb-info">
+            <span class="thumb-label">Organization</span>
+            <h3>Campaigns</h3>
+            <p>Strategic initiative groupings for goal-aligned discovery.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Clinical + AI + Detail -->
+      <div class="gallery-3">
+        <div class="thumb tall" onclick="openModal('images/inova-care.png','Inova Care groups assets around predefined clinical care pathways.')">
+          <img src="images/inova-care.png" alt="Inova Care">
+          <div class="thumb-info">
+            <span class="thumb-label">Clinical</span>
+            <h3>Inova Care</h3>
+            <p>Predefined clinical care pathway groupings.</p>
+          </div>
+        </div>
+        <div class="thumb tall" onclick="openModal('images/view-details.png','Asset detail page with preview, metadata, certification status, governance links, and launch actions.')">
+          <img src="images/view-details.png" alt="Asset detail">
+          <div class="thumb-info">
+            <span class="thumb-label">Detail View</span>
+            <h3>Asset Details</h3>
+            <p>Full metadata, preview, certification status, and launch actions.</p>
+          </div>
+        </div>
+        <div class="thumb tall" onclick="openModal('images/view-details-discussion.png','Discussion tab with ratings, comments, and peer feedback on assets.')">
+          <img src="images/view-details-discussion.png" alt="Discussion tab">
+          <div class="thumb-info">
+            <span class="thumb-label">Detail View</span>
+            <h3>Discussion Tab</h3>
+            <p>Peer ratings, reviews, and comments within asset details.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- AI Inventory -->
+      <div class="gallery-2" style="margin-top:16px;">
+        <div class="thumb tall" onclick="openModal('images/ai-inventory.png','AI Inventory page for browsing AI products and model cards across the organization.')">
+          <img src="images/ai-inventory.png" alt="AI Inventory">
+          <div class="thumb-info">
+            <span class="thumb-label">AI Inventory</span>
+            <h3>AI Model Browser</h3>
+            <p>Discover AI products, model cards, vendors, and deployment status.</p>
+          </div>
+        </div>
+        <div class="thumb tall" onclick="openModal('images/view-details-discussion-ai.png','AI product detail discussion tab with stakeholder comments and ratings.')">
+          <img src="images/view-details-discussion-ai.png" alt="AI discussion">
+          <div class="thumb-info">
+            <span class="thumb-label">AI Inventory</span>
+            <h3>AI Discussion</h3>
+            <p>Stakeholder comments and feedback on AI model performance.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ═══════════════ CAMPAIGNS & INOVA CARE ═══════════════ -->
+  <div class="band band-blue">
+    <div class="container section-sm">
+      <p class="eyebrow">Organizing Assets</p>
+      <h2 class="section-heading">Campaigns and Inova Care pathways</h2>
+      <p class="section-body">Two distinct organizing systems serve different discovery needs — strategic initiative groupings for operational use cases and predefined clinical pathways for care-aligned decisions.</p>
+      <div class="phase-grid">
+        <div class="phase-card">
+          <h3>Campaigns</h3>
+          <p>Represent high-level organizational initiatives used to group related analytics assets across the enterprise. Examples include <strong>Leapfrog</strong>, <strong>Cost Reduction</strong>, <strong>Quality Improvement</strong>, and <strong>Patient Experience</strong> — allowing users to discover assets through the lens of business goals.</p>
+        </div>
+        <div class="phase-card">
+          <h3>Inova Care</h3>
+          <p>Clinical care pathways aligned with established programs. Unlike Campaigns, these are predefined and governed clinically. Examples include <strong>Sepsis Management</strong>, <strong>Stroke Care</strong>, <strong>Heart Failure</strong>, and <strong>Cancer Care</strong> — supporting evidence-based care delivery.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════ AI INVENTORY ═══════════════ -->
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow">AI Inventory</p>
+      <h2 class="section-heading">Making AI visible, trusted, and governed</h2>
+      <p class="section-body">The AI Inventory experience surfaced model cards with deployment status, vendor, intended audience, known limitations, monitoring links, performance oversight, and certification state — giving the organization a single pane of glass for AI governance.</p>
+      <div class="gallery-3" style="margin-top:32px;">
+        <div class="thumb" onclick="openModal('images/product-performance-meets.png','Performance oversight: model meets minimum requirements or better.')">
+          <img src="images/product-performance-meets.png" alt="Performance meets">
+          <div class="thumb-info">
+            <span class="thumb-label" style="color: #1a7a3a;">✓ Meets Requirements</span>
+            <h3>Performance: On Track</h3>
+            <p>Model meets minimum performance thresholds for continued use.</p>
+          </div>
+        </div>
+        <div class="thumb" onclick="openModal('images/product-performance-partial.png','Performance oversight: partially meets requirements, needs improvement.')">
+          <img src="images/product-performance-partial.png" alt="Performance partial">
+          <div class="thumb-info">
+            <span class="thumb-label" style="color: #b06000;">⚠ Needs Improvement</span>
+            <h3>Performance: Partial</h3>
+            <p>Model partially meets requirements and has an active remediation plan.</p>
+          </div>
+        </div>
+        <div class="thumb" onclick="openModal('images/product-performance-underperforming.png','Performance oversight: underperforming, significant issues flagged.')">
+          <img src="images/product-performance-underperforming.png" alt="Performance underperforming">
+          <div class="thumb-info">
+            <span class="thumb-label" style="color: #b02020;">✕ Underperforming</span>
+            <h3>Performance: Critical</h3>
+            <p>Significant performance issues flagged for immediate governance review.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ═══════════════ GOVERNANCE ═══════════════ -->
+  <div class="band band-light">
+    <div class="container section-sm">
+      <p class="eyebrow">Governance & Certification</p>
+      <h2 class="section-heading">Turning discovery into an enterprise-trusted platform</h2>
+      <p class="section-body">As Periscope expanded beyond search, I designed governance workflows enabling admins to certify assets, manage remediation, govern tags, review campaigns, and oversee AI product approval — without exposing those workflows to end users browsing the marketplace.</p>
+      <div class="gallery-3">
+        <div class="thumb" onclick="openModal('images/gov-asset-certification.png','Asset certification workflow for dashboards, reports, and documents.')">
+          <img src="images/gov-asset-certification.png" alt="Asset certification">
+          <div class="thumb-info"><span class="thumb-label">Governance</span><h3>Asset Certification</h3><p>Review and certify dashboards and reports.</p></div>
+        </div>
+        <div class="thumb" onclick="openModal('images/gov-ai-certification.png','AI product certification — review and approve AI models for enterprise use.')">
+          <img src="images/gov-ai-certification.png" alt="AI certification">
+          <div class="thumb-info"><span class="thumb-label">Governance</span><h3>AI Certification</h3><p>Structured review and approval of AI models.</p></div>
+        </div>
+        <div class="thumb" onclick="openModal('images/gov-metrics-certification.png','Metrics certification process for enterprise KPI definitions.')">
+          <img src="images/gov-metrics-certification.png" alt="Metrics certification">
+          <div class="thumb-info"><span class="thumb-label">Governance</span><h3>Metrics Certification</h3><p>Govern enterprise KPI definitions and trust standards.</p></div>
+        </div>
+        <div class="thumb" onclick="openModal('images/gov-campaign-management.png','Campaign governance — review, approve, and manage strategic initiative groupings.')">
+          <img src="images/gov-campaign-management.png" alt="Campaign management">
+          <div class="thumb-info"><span class="thumb-label">Governance</span><h3>Campaign Management</h3><p>Review and manage strategic initiative groupings.</p></div>
+        </div>
+        <div class="thumb" onclick="openModal('images/gov-campaign-creation.png','Campaign creation form — link analytics assets to organizational initiatives.')">
+          <img src="images/gov-campaign-creation.png" alt="Campaign creation">
+          <div class="thumb-info"><span class="thumb-label">Governance</span><h3>Campaign Creation</h3><p>Link assets to organizational initiatives.</p></div>
+        </div>
+        <div class="thumb" onclick="openModal('images/gov-tag-management.png','Tag governance — standardize and manage marketplace metadata at scale.')">
+          <img src="images/gov-tag-management.png" alt="Tag governance">
+          <div class="thumb-info"><span class="thumb-label">Governance</span><h3>Tag Governance</h3><p>Standardize metadata across the marketplace.</p></div>
+        </div>
+      </div>
+
+      <!-- Certification Status Framework -->
+      <p class="eyebrow" style="margin-top:56px;">Certification Status Framework</p>
+      <h3 style="font-size:20px; font-weight:600; color:var(--text); margin-bottom:8px;">Six states, one source of truth</h3>
+      <p class="section-body">Each asset in the marketplace carries one of six governance states — visible to users before they open anything.</p>
+      <div class="status-grid">
+        <div class="status-card">
+          <div class="status-dot" style="background:#1a7a3a;"></div>
+          <div><h3>Certified</h3><p>Trusted and approved for enterprise use.</p></div>
+        </div>
+        <div class="status-card">
+          <div class="status-dot" style="background:#084FAA;"></div>
+          <div><h3>In Review</h3><p>Currently undergoing governance review.</p></div>
+        </div>
+        <div class="status-card">
+          <div class="status-dot" style="background:#b06000;"></div>
+          <div><h3>Remediation Required</h3><p>Updates needed before approval.</p></div>
+        </div>
+        <div class="status-card">
+          <div class="status-dot" style="background:#888;"></div>
+          <div><h3>Not Eligible</h3><p>Does not meet governance criteria.</p></div>
+        </div>
+        <div class="status-card">
+          <div class="status-dot" style="background:#555;"></div>
+          <div><h3>Deprecated</h3><p>No longer recommended for use.</p></div>
+        </div>
+        <div class="status-card">
+          <div class="status-dot" style="background:#b02020;"></div>
+          <div><h3>Flagged</h3><p>Requires review or justification.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════ OUTCOMES ═══════════════ -->
+  <div class="band band-blue">
+    <div class="container section">
+      <p class="eyebrow">Outcomes</p>
+      <h2 class="section-heading">A scalable foundation for analytics discovery and AI governance</h2>
+      <p class="section-body">Periscope moved the organization from fragmented, folder-based report hunting to a governed, searchable, trust-aware marketplace — with a foundation designed to grow with AI adoption.</p>
+      <div class="metrics-grid">
+        <div class="metric-cell">
+          <div class="metric-num">1</div>
+          <div class="metric-label">Centralized marketplace replacing 5+ disconnected platforms</div>
+        </div>
+        <div class="metric-cell">
+          <div class="metric-num">20+</div>
+          <div class="metric-label">Asset types and data sources made discoverable in Phase 1</div>
+        </div>
+        <div class="metric-cell">
+          <div class="metric-num">6</div>
+          <div class="metric-label">Governance certification states surfaced for every asset</div>
+        </div>
+        <div class="metric-cell">
+          <div class="metric-num">AI</div>
+          <div class="metric-label">Dedicated model inventory with performance oversight</div>
+        </div>
+      </div>
+      <div class="callout">
+        <p>Periscope demonstrated how UX can transform data governance from a back-office administrative function into a <strong>discoverable, transparent, and user-centered enterprise product</strong>. Users could find governed, certified assets quickly — increasing confidence in analytics resources and supporting more informed decision-making across the health system.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════ CLOSING ═══════════════ -->
+  <section class="section">
+    <div class="container">
+      <div class="closing-grid">
+        <div class="closing-card">
+          <p class="eyebrow">Next Steps</p>
+          <h3>What comes after Phase 1</h3>
+          <p>Upcoming work includes development handoff documentation, sprint support with engineering, moderated usability testing, A/B testing for search placement and card layout, UAT validation, and iterative feedback collection to refine the marketplace based on real usage.</p>
+        </div>
+        <div class="closing-card" style="background: var(--blue-light); border-color: var(--blue-mid);">
+          <p class="eyebrow">Reflection</p>
+          <h3>The hardest UX problem</h3>
+          <p>This project combined enterprise UX, healthcare analytics, information architecture, AI governance, design systems, and data governance into one platform. The deepest challenge was not making assets easier to find — it was making users feel <strong>confident that what they found was trusted, governed, and appropriate for decision-making</strong>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="back-top">
+    <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">↑ Back to top</a>
+  </div>
+
+</div><!-- /page -->
+
+<!-- IMAGE MODAL -->
+<div class="modal-overlay" id="modal" onclick="modalClose(event)">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()" aria-label="Close">&times;</button>
+    <img id="modal-img" src="" alt="Preview">
+    <div id="modal-cap" class="modal-caption"></div>
+  </div>
+</div>
+
+<script>
+function openModal(src, cap) {
+  var m = document.getElementById('modal');
+  document.getElementById('modal-img').src = src;
+  document.getElementById('modal-cap').innerText = cap || '';
+  m.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('modal').classList.remove('active');
+  document.getElementById('modal-img').src = '';
+  document.body.style.overflow = '';
+}
+function modalClose(e) { if (e.target.id === 'modal') closeModal(); }
+document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
+</script>
+</body>
+</html>
