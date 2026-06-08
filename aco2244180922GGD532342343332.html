@@ -7,50 +7,110 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="portfolio.css">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-0ZPWXXEFP8"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-0ZPWXXEFP8');</script>
 <style>
-/* ── PAGE TOKENS ─────────────────────────────────── */
+/* ── TOKENS ──────────────────────────────────── */
 .tag-pill{display:inline-flex;align-items:center;background:var(--tag-bg);color:var(--tag-color);border:1px solid var(--tag-border);border-radius:50px;padding:4px 14px;font-size:13px;font-weight:600;margin:2px;}
 
-/* Stats rail */
-.stats-rail{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;margin-top:32px;}
-.stat-c{background:var(--white);padding:24px 18px;}
-.stat-n{font-family:'DM Serif Display',serif;font-size:30px;color:var(--blue);line-height:1;margin-bottom:5px;}
-.stat-l{font-size:15px;color:var(--text-muted);line-height:1.45;}
+/* SECTION HELPERS */
+.eyebrow-s{font-size:11px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#084FAA;margin-bottom:12px;display:block;}
+.h-xl{font-family:'DM Serif Display',serif;font-size:clamp(32px,4.5vw,52px);line-height:1.1;color:#1a1a1a;margin-bottom:16px;}
+.h-lg{font-family:'DM Serif Display',serif;font-size:clamp(22px,3.5vw,36px);line-height:1.2;color:#1a1a1a;margin-bottom:14px;}
+.h-md{font-family:'DM Serif Display',serif;font-size:clamp(18px,2.5vw,26px);line-height:1.25;color:#1a1a1a;margin-bottom:10px;}
+.body{font-size:17px;color:#555;line-height:1.75;}
+.body-sm{font-size:16px;color:#555;line-height:1.75;}
+.body-list{padding-left:22px;margin:12px 0;}
+.body-list li{font-size:16px;color:#555;line-height:1.75;margin-bottom:6px;}
+.sec{padding:68px 0;}
+.sec-sm{padding:48px 0;}
+.band-l{background:#fafafa;border-top:1px solid #e8e8e8;border-bottom:1px solid #e8e8e8;}
+.band-m{background:#f3f3f3;border-top:1px solid #e8e8e8;border-bottom:1px solid #e8e8e8;}
+.band-b{background:#F0F5FF;border-top:1px solid #e8e8e8;border-bottom:1px solid #e8e8e8;}
+.hdiv{border:none;border-top:1px solid #e8e8e8;margin:0;}
 
-/* Background / growth split */
-.ps-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;margin-top:28px;}
-.ps-panel{background:var(--white);padding:30px 26px;}
-.ps-panel-alt{background:var(--blue-light);}
-.ps-label{font-size:11px;font-weight:700;letter-spacing:1.3px;text-transform:uppercase;color:var(--text-subtle);margin-bottom:12px;display:block;}
-.ps-panel h3{font-size:18px;font-weight:600;color:var(--text);margin-bottom:10px;}
-.ps-panel p{font-size:16px;color:var(--text-muted);line-height:1.75;}
-.ps-panel img{width:100%;display:block;border-radius:var(--radius-md);}
+/* PROBLEM/SOLUTION GRID */
+.ps-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:#e8e8e8;border:1px solid #e8e8e8;border-radius:14px;overflow:hidden;margin-top:24px;}
+.ps-panel{background:#fff;padding:28px 24px;}
+.ps-panel-b{background:#F0F5FF;}
+.ps-panel-label{font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#888;margin-bottom:12px;display:block;}
+.ps-panel h3{font-size:18px;font-weight:600;color:#1a1a1a;margin-bottom:10px;}
+.ps-panel p{font-size:16px;color:#555;line-height:1.75;}
+.ps-panel img{width:100%;border-radius:8px;border:1px solid #e8e8e8;display:block;margin-top:14px;}
 
-/* Gallery thumbs */
-.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px;}
-.gt{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm);cursor:pointer;transition:box-shadow .2s,transform .2s;}
-.gt:hover{box-shadow:var(--shadow-md);transform:translateY(-2px);}
-.gt img{width:100%;display:block;object-fit:cover;object-position:top;height:200px;}
-.gt-info{padding:13px 14px;}
-.gt-info h3{font-size:15px;font-weight:600;color:var(--text);margin-bottom:4px;}
-.gt-info p{font-size:14px;color:var(--text-muted);line-height:1.55;margin:0;}
-.gt-label{font-size:10px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:var(--blue);display:block;margin-bottom:5px;}
+/* STATS RAIL */
+.stats-rail{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:#e8e8e8;border:1px solid #e8e8e8;border-radius:14px;overflow:hidden;margin-top:24px;}
+.sc{background:#fff;padding:24px 18px;}
+.sn{font-family:'DM Serif Display',serif;font-size:30px;color:#084FAA;line-height:1;margin-bottom:5px;}
+.sl{font-size:15px;color:#555;line-height:1.45;}
 
-/* Live product tile */
-.live-tile{background:var(--blue-light);border:1px solid var(--blue-mid);border-radius:var(--radius-md);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px 20px;height:200px;box-shadow:var(--shadow-sm);}
-.live-tile h3{font-size:15px;font-weight:600;color:var(--text);margin-bottom:8px;text-align:center;}
-.live-tile p{font-size:14px;color:var(--text-muted);margin-bottom:16px;text-align:center;}
-.live-tile a{font-size:15px;font-weight:600;color:var(--blue);text-decoration:none;}
-.live-tile a:hover{text-decoration:underline;}
+/* ROLE CARD */
+.role-card{background:#084FAA;border-radius:14px;padding:32px 28px;color:#fff;margin-top:24px;}
+.role-card h3{font-size:12px;font-weight:600;opacity:.6;letter-spacing:.8px;text-transform:uppercase;margin-bottom:10px;}
+.role-card p{font-size:16px;opacity:.9;line-height:1.7;}
 
-/* Blue callout */
-.blue-callout{background:var(--blue-light);border:1px solid var(--blue-mid);border-left:4px solid var(--blue);border-radius:var(--radius-lg);padding:26px 28px;margin-top:28px;}
-.blue-callout p{font-size:17px;color:var(--text);line-height:1.75;}
+/* IMAGE CARD */
+.img-card{background:#fff;border:1px solid #e8e8e8;border-radius:14px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.06);margin-top:20px;cursor:pointer;transition:box-shadow .2s,transform .2s;}
+.img-card:hover{box-shadow:0 3px 12px rgba(0,0,0,.1);transform:translateY(-2px);}
+.img-card img{width:100%;display:block;}
+.img-card-cap{padding:12px 16px;font-size:14px;color:#555;}
 
-@media(max-width:768px){.ps-grid,.g3,.stats-rail{grid-template-columns:1fr;}.gt img{height:auto;}.live-tile{height:auto;padding:24px;}}
+/* PROCESS STEPS */
+.process-row{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;background:#e8e8e8;border:1px solid #e8e8e8;border-radius:14px;overflow:hidden;margin-top:20px;}
+.pc{background:#fff;padding:20px 16px;}
+.pn{font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#084FAA;margin-bottom:7px;}
+.pc h3{font-size:15px;font-weight:600;color:#1a1a1a;margin-bottom:4px;}
+.pc p{font-size:14px;color:#555;line-height:1.5;}
+
+/* BEFORE/AFTER USER FLOW */
+.flow-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px;}
+.flow-card{background:#fff;border:1px solid #e8e8e8;border-radius:12px;overflow:hidden;}
+.flow-label{font-size:12px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;padding:10px 16px;border-bottom:1px solid #e8e8e8;}
+.flow-label.old{color:#b02020;background:#fff5f5;}
+.flow-label.new-{color:#1a7a3a;background:#f0fff4;}
+.flow-card img{width:100%;display:block;padding:12px;}
+
+/* INSIGHT CARDS */
+.insight-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px;}
+.insight-card{background:#fff;border:1px solid #e8e8e8;border-left:4px solid #084FAA;border-radius:12px;padding:20px 18px;}
+.insight-card h3{font-size:15px;font-weight:600;color:#1a1a1a;margin-bottom:7px;}
+.insight-card p{font-size:15px;color:#555;line-height:1.65;margin:0;}
+
+/* PERSONA GRID */
+.persona-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px;}
+.persona-card{background:#fff;border:1px solid #e8e8e8;border-radius:14px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.06);}
+.persona-card img{width:100%;display:block;cursor:pointer;}
+.persona-card-info{padding:14px 16px;}
+.persona-card-info h3{font-size:15px;font-weight:600;color:#1a1a1a;margin-bottom:3px;}
+.persona-card-info p{font-size:14px;color:#555;margin:0;}
+
+/* 2-UP GALLERY */
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px;}
+
+/* CAROUSEL OVERRIDE */
+.carousel{border-radius:14px;overflow:hidden;border:1px solid #e8e8e8;box-shadow:0 3px 12px rgba(0,0,0,.09);margin-top:20px;}
+.carousel-control-prev-icon,.carousel-control-next-icon{background-color:#084FAA;border-radius:50%;background-size:50%;width:36px;height:36px;}
+
+/* FIGMA EMBED */
+.figma-wrap{border:1px solid #e8e8e8;border-radius:14px;overflow:hidden;margin-top:20px;box-shadow:0 3px 12px rgba(0,0,0,.09);}
+.figma-wrap iframe{display:block;border:none;width:100%;}
+
+/* CALLOUT */
+.callout-box{background:#F0F5FF;border:1px solid #E3ECFF;border-left:4px solid #084FAA;border-radius:14px;padding:26px 28px;margin-top:24px;}
+.callout-box p{font-size:17px;color:#1a1a1a;line-height:1.75;}
+
+/* FOOTER */
+.footer-s{background:#fafafa;border-top:1px solid #e8e8e8;padding:60px 0;}
+.footer-inner-s{max-width:1060px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;}
+
+@media(max-width:768px){
+  .ps-grid,.stats-rail,.flow-grid,.insight-grid,.g2,.persona-grid,.process-row{grid-template-columns:1fr;}
+  .h-xl{font-size:30px;}.h-lg{font-size:24px;}.h-md{font-size:20px;}
+  .sec{padding:48px 0;}.sec-sm{padding:36px 0;}
+  .footer-inner-s{grid-template-columns:1fr;}
+}
 </style>
 </head>
 <body>
@@ -67,104 +127,325 @@
   </div>
 </nav>
 
-<!-- HERO -->
+<!-- ═══ HERO ═══ -->
 <section style="background:linear-gradient(160deg,#f7faff 0%,#fff 60%);border-bottom:1px solid #e8e8e8;padding:68px 0 56px;">
   <div class="container">
     <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px;">
-      <span style="font-size:11px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#084FAA;">UX Case Study</span>
+      <span class="eyebrow-s" style="margin:0;">UX Case Study</span>
       <span style="color:#888;font-size:11px;">· Softrams · CMS / HHS · Oct 2019 – May 2022</span>
     </div>
-    <h1 style="font-family:'DM Serif Display',serif;font-size:clamp(32px,4.5vw,52px);line-height:1.1;color:#1a1a1a;margin-bottom:16px;">ACO-MS -<em style="font-style:italic;color:#084FAA;">Federal Healthcare</em> Platform</h1>
-    <p style="font-size:18px;color:#555;line-height:1.7;max-width:600px;margin-bottom:28px;">Lead UX designer for the Medicare Shared Savings Program -a federal CMS platform supporting 500+ ACO organizations, enabling $1.2B in Medicare savings through better design and usability.</p>
+    <h1 class="h-xl">ACO-MS -<em style="font-style:italic;color:#084FAA;">Federal Healthcare</em> Platform</h1>
+    <p class="body" style="max-width:620px;margin-bottom:28px;">Lead UX designer for the Medicare Shared Savings Program -a federal CMS platform supporting 500+ ACO organizations, enabling $1.2B in Medicare savings through better design, user flows, and usability.</p>
     <div style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:32px;">
       <span class="tag-pill">Federal · CMS / HHS</span>
       <span class="tag-pill">Healthcare SaaS</span>
-      <span class="tag-pill">Enterprise UX</span>
-      <span class="tag-pill">Lead Designer</span>
-      <span class="tag-pill">Oct 2019 – May 2022</span>
+      <span class="tag-pill">Lead UX Designer</span>
+      <span class="tag-pill">3+ Years</span>
+      <span class="tag-pill">Figma · Balsamiq</span>
+      <span class="tag-pill">508 Compliance</span>
     </div>
-    <img src="acoms/aco1.jpg" alt="ACO-MS hero" style="width:100%;display:block;border-radius:20px;box-shadow:0 8px 30px rgba(0,0,0,.11);border:1px solid #e8e8e8;margin-top:0;">
+    <img src="acoms/aco1.jpg" alt="ACO-MS hero" style="width:100%;display:block;border-radius:20px;box-shadow:0 8px 30px rgba(0,0,0,.11);border:1px solid #e8e8e8;">
+    <div style="margin-top:20px;">
+      <img src="acoms/acologo.svg" alt="ACO-MS logo" style="height:48px;display:block;">
+    </div>
   </div>
 </section>
 
-<!-- STATS RAIL -->
-<section style="padding:64px 0 0;">
+<!-- ═══ STATS RAIL ═══ -->
+<section style="padding:48px 0 0;">
   <div class="container">
     <div class="stats-rail">
-      <div class="stat-c"><div class="stat-n">$1.2B</div><div class="stat-l">Medicare savings generated by ACO-MS users in 2019</div></div>
-      <div class="stat-c"><div class="stat-n">500+</div><div class="stat-l">ACO organizations supported on the platform</div></div>
-      <div class="stat-c"><div class="stat-n">11M+</div><div class="stat-l">Beneficiaries receiving care through the program</div></div>
-      <div class="stat-c"><div class="stat-n">66</div><div class="stat-l">New enrollments in 2022, plus 140 renewals</div></div>
+      <div class="sc"><div class="sn">$1.2B</div><div class="sl">Medicare savings generated by ACO-MS users in 2019</div></div>
+      <div class="sc"><div class="sn">500+</div><div class="sl">ACO organizations supported on the platform</div></div>
+      <div class="sc"><div class="sn">11M+</div><div class="sl">Beneficiaries receiving care through the program</div></div>
+      <div class="sc"><div class="sn">3 yrs</div><div class="sl">Lead UX designer across Oct 2019 – May 2022</div></div>
     </div>
   </div>
 </section>
 
-<!-- BACKGROUND + GROWTH -->
-<section style="padding:64px 0;">
+<!-- ═══ BACKGROUND ═══ -->
+<section class="sec">
   <div class="container">
-    <span style="font-size:11px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#084FAA;margin-bottom:12px;display:block;">Background</span>
-    <h2 style="font-family:'DM Serif Display',serif;font-size:clamp(22px,3.5vw,36px);line-height:1.2;color:#1a1a1a;margin-bottom:14px;">A voluntary federal healthcare coordination program</h2>
-    <p style="font-size:17px;color:#555;line-height:1.75;max-width:680px;">The Shared Savings Program encourages groups of doctors, hospitals, and providers to come together as ACOs -giving coordinated, high-quality care to Medicare beneficiaries. Administered by CMS, under the US Department of Health and Human Services.</p>
+    <span class="eyebrow-s">Background</span>
+    <h2 class="h-lg">A voluntary federal healthcare coordination program</h2>
+    <p class="body" style="margin-bottom:20px;">The Shared Savings Program encourages groups of doctors, hospitals, and other healthcare providers to come together as ACOs to give coordinated, high-quality care to their Medicare beneficiaries. It's administered by CMS, a federal agency within the US Department of Health and Human Services (HHS).</p>
 
     <div class="ps-grid">
       <div class="ps-panel">
-        <span class="ps-label">Background</span>
-        <h3>A voluntary federal healthcare coordination program</h3>
-        <p>The Shared Savings Program had grown significantly, supporting nearly 513 ACO organizations. Existing workflows were outdated, creating friction for users trying to meet compliance and reporting requirements that changed annually.</p>
+        <span class="ps-panel-label">Background</span>
+        <h3>A voluntary federal program with growing scale</h3>
+        <p>The Shared Savings Program had grown dramatically, demanding a system that could support annual program requirement changes for nearly 513 ACO organizations. The existing workflows were outdated and creating friction at every compliance and reporting touchpoint.</p>
       </div>
-      <div class="ps-panel ps-panel-alt">
-        <span class="ps-label">Program Growth</span>
+      <div class="ps-panel ps-panel-b">
+        <span class="ps-panel-label">Program Growth</span>
         <img src="acoms/acogrowth.svg" alt="ACO program growth chart">
+      </div>
+    </div>
+
+    <div class="ps-grid" style="margin-top:16px;">
+      <div class="ps-panel">
+        <span class="ps-panel-label">The Problem</span>
+        <h3>A growing program outpacing its system</h3>
+        <p>The scope of the Shared Savings Program grew significantly. The existing system needed to support annual changes to program requirements for nearly 513 ACO organizations. The Registration and NOIA application processes were tedious, time-consuming, and complex -users struggled to get verified and access the system.</p>
+        <img src="images/scope.webp" alt="ACO program scope">
+      </div>
+      <div class="ps-panel ps-panel-b">
+        <span class="ps-panel-label">The Solution</span>
+        <h3>A redesigned, seamless user flow</h3>
+        <p>A full experience redesign to create an intuitive and improved flow meeting the growing needs of program administrators, ACO leaders, and healthcare providers -with a specific focus on the Landing Page, NOIA Application, and Registration redesign.</p>
+        <img src="images/flowuser.webp" alt="User flow redesign">
       </div>
     </div>
   </div>
 </section>
 
-<hr style="border:none;border-top:1px solid #e8e8e8;margin:0;">
+<hr class="hdiv">
 
-<!-- PROBLEM / SOLUTION -->
-<div style="background:#f3f3f3;border-bottom:1px solid #e8e8e8;">
-  <div class="container" style="padding:56px 24px;">
-    <div class="ps-grid" style="margin-top:0;">
-      <div class="ps-panel">
-        <span class="ps-label">The Problem</span>
-        <h3>A growing program outpacing its system</h3>
-        <p>The Shared Savings Program's scope grew dramatically, demanding a system that could support annual requirement changes for nearly 513 ACO organizations. Outdated workflows created friction for administrators and healthcare providers trying to meet compliance and reporting needs.</p>
+<!-- ═══ MY ROLE ═══ -->
+<div class="band-l">
+  <div class="container sec-sm">
+    <span class="eyebrow-s">My Role</span>
+    <h2 class="h-lg">Primary UX designer -leading the team for 3+ years</h2>
+    <p class="body">I served as the primary UX designer for the project, leading the team for a duration exceeding 3 years. I worked with a UX designer and researcher to gain insights into the challenges users face when searching, browsing, and managing visual complexity across the platform.</p>
+    <div class="role-card">
+      <h3>Contributions</h3>
+      <p>End-to-end UX ownership: stakeholder research, user interviews, personas, user flows, wireframes, branding, UI style guide, hi-fidelity prototypes, usability testing, 508 compliance, and developer handoff across multiple product iterations.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ MY APPROACH ═══ -->
+<section class="sec">
+  <div class="container">
+    <span class="eyebrow-s">My Approach</span>
+    <h2 class="h-lg">A human-centered, agile design process</h2>
+    <p class="body" style="margin-bottom:20px;">Before defining the challenge, we mapped our approach to ensure every design decision was grounded in user research, iterative testing, and measurable outcomes.</p>
+    <div class="img-card" onclick="openModal('acoms/approach.svg','UX design approach -research, define, ideate, prototype, test, deliver.')">
+      <img src="acoms/approach.svg" alt="UX approach diagram">
+      <div class="img-card-cap">UX approach -click to expand</div>
+    </div>
+    <div class="process-row" style="margin-top:24px;">
+      <div class="pc"><div class="pn">Phase 1</div><h3>Research</h3><p>User interviews, surveys, stakeholder workshops.</p></div>
+      <div class="pc"><div class="pn">Phase 2</div><h3>Define</h3><p>Personas, key insights, user flow mapping.</p></div>
+      <div class="pc"><div class="pn">Phase 3</div><h3>Ideate</h3><p>Wireframes in Balsamiq, flow discussion with PM.</p></div>
+      <div class="pc"><div class="pn">Phase 4</div><h3>Prototype</h3><p>Hi-fidelity prototypes in Figma with style guide.</p></div>
+      <div class="pc"><div class="pn">Phase 5</div><h3>Test & Deliver</h3><p>Usability testing, 508 compliance, dev handoff.</p></div>
+    </div>
+  </div>
+</section>
+
+<hr class="hdiv">
+
+<!-- ═══ DEFINING THE CHALLENGE ═══ -->
+<div class="band-m">
+  <div class="container sec-sm">
+    <span class="eyebrow-s">Defining the Challenge</span>
+    <h2 class="h-lg">Landing Page, NOIA Application & Registration Redesign</h2>
+    <p class="body">The Registration and NOIA application are two different processes for users to get verified and access the system. Users found the process <strong>very tedious, time-consuming, and complex</strong>. The goal was to make the process simple to navigate and get access to the system without waiting.</p>
+  </div>
+</div>
+
+<!-- ═══ TARGET AUDIENCE / PERSONAS ═══ -->
+<section class="sec">
+  <div class="container">
+    <span class="eyebrow-s">Picturing the Target Audience</span>
+    <h2 class="h-lg">User personas from real interviews</h2>
+    <p class="body" style="margin-bottom:8px;">We interviewed end users and created two personas to help us better understand our target audiences -representing the two distinct user types within the ACO-MS ecosystem.</p>
+    <div class="img-card" onclick="openModal('acoms/users.png','ACO-MS user personas -ACO administrator and healthcare provider personas based on user interviews.')">
+      <img src="acoms/users.png" alt="User personas">
+      <div class="img-card-cap">User personas -click to expand</div>
+    </div>
+  </div>
+</section>
+
+<hr class="hdiv">
+
+<!-- ═══ KEY INSIGHTS ═══ -->
+<div class="band-l">
+  <div class="container sec-sm">
+    <span class="eyebrow-s">Key Insights</span>
+    <h2 class="h-lg">What we learned by asking why</h2>
+    <p class="body" style="margin-bottom:8px;">We interviewed end users to understand their frustration from the existing flow. With their feedback, we developed a new user flow to reduce complexity. A few of the core insights:</p>
+    <div class="insight-grid">
+      <div class="insight-card"><h3>Process was too long</h3><p>Registration and NOIA verification required users to navigate too many disconnected steps with unclear progress signals.</p></div>
+      <div class="insight-card"><h3>Waiting without feedback</h3><p>Users had no visibility into where their application stood -no status indicators, no estimated timelines.</p></div>
+      <div class="insight-card"><h3>Visual complexity overload</h3><p>The existing system lacked padding, spacing, and hierarchy -making it hard to focus or scan key information.</p></div>
+    </div>
+    <div class="img-card" onclick="openModal('acoms/insig.svg','Key insights from user interviews -the four main pain points and opportunity areas.')">
+      <img src="acoms/insig.svg" alt="Key insights diagram">
+      <div class="img-card-cap">Full insight map -click to expand</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ USER FLOW ═══ -->
+<div class="band-m">
+  <div class="container sec-sm">
+    <span class="eyebrow-s">User Flow</span>
+    <h2 class="h-lg">Old flow vs new flow -reducing complexity dramatically</h2>
+    <p class="body">We ideated multiple flows based on initial feedback. After reiterating and discussing with stakeholders, we streamlined the flow into a simple yet time-saving process for the user.</p>
+    <div class="flow-grid">
+      <div class="flow-card">
+        <div class="flow-label old">Old User Flow</div>
+        <img src="acoms/oldfl.svg" alt="Old user flow" onclick="openModal('acoms/oldfl.svg','Old ACO-MS user flow -complex, multi-step process that confused users.')">
       </div>
-      <div class="ps-panel ps-panel-alt">
-        <span class="ps-label">The Solution</span>
-        <h3>A redesigned, intuitive user flow</h3>
-        <p>A full experience redesign to create a seamless, intuitive user flow meeting the growing needs of program administrators, ACO leaders, and healthcare providers -reducing friction at every compliance and reporting touchpoint.</p>
+      <div class="flow-card">
+        <div class="flow-label new-">New User Flow</div>
+        <img src="acoms/newfl.svg" alt="New user flow" onclick="openModal('acoms/newfl.svg','New ACO-MS user flow -streamlined, simplified process reducing friction at every step.')">
       </div>
     </div>
   </div>
 </div>
 
-<!-- DESIGN WORK -->
-<section style="padding:72px 0;">
+<!-- ═══ WIREFRAMES & USER RESEARCH ═══ -->
+<section class="sec">
   <div class="container">
-    <span style="font-size:11px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#084FAA;margin-bottom:12px;display:block;">Design Work</span>
-    <h2 style="font-family:'DM Serif Display',serif;font-size:clamp(22px,3.5vw,36px);line-height:1.2;color:#1a1a1a;margin-bottom:14px;">UX design from research through delivery</h2>
-    <p style="font-size:17px;color:#555;line-height:1.75;max-width:680px;margin-bottom:28px;">Working as lead UX at Softrams, I owned the end-to-end design process -stakeholder research, user flows, wireframes, prototypes, and development handoff -across multiple product iterations over nearly three years.</p>
+    <span class="eyebrow-s">Wireframes & User Research</span>
+    <h2 class="h-lg">Low-fidelity first, then validated</h2>
+    <p class="body" style="margin-bottom:14px;">For the design process, I started with wireframes to build the initial structure and discussed flows with the product manager and lead business analyst. They were excited about the direction, so we scheduled daily standups and brainstormed using Balsamiq. This produced a low-fidelity flow used to conduct usability testing and validate assumptions.</p>
+    <div class="img-card" onclick="openModal('acoms/wireframes.png','ACO-MS low-fidelity wireframes -initial structure, flows, and layout for usability testing.')">
+      <img src="acoms/wireframes.png" alt="Wireframes">
+      <div class="img-card-cap">Low-fidelity wireframes -click to expand</div>
+    </div>
+    <p class="body" style="margin-top:16px;">We conducted a usability test session using the wireframes and asked users to think aloud while completing tasks. Users were positive about the direction and gave valuable feedback:</p>
+    <div class="img-card" onclick="openModal('acoms/test1.png','Wireframe usability testing results -user feedback and observations.')">
+      <img src="acoms/test1.png" alt="Usability test results">
+      <div class="img-card-cap">Wireframe usability testing results -click to expand</div>
+    </div>
+  </div>
+</section>
 
-    <div class="g3">
-      <div class="gt" onclick="openModal('images/scope.webp','ACO program scope and problem space -understanding the scale and complexity of 500+ organizations.')">
-        <img src="images/scope.webp" alt="ACO program scope">
-        <div class="gt-info"><span class="gt-label">Research</span><h3>Program Scope</h3><p>Understanding the scale and problem space across 500+ organizations.</p></div>
-      </div>
-      <div class="gt" onclick="openModal('images/flowuser.webp','User flow redesign -mapping improved task flows across the entire platform.')">
-        <img src="images/flowuser.webp" alt="User flow redesign">
-        <div class="gt-info"><span class="gt-label">Design</span><h3>User Flow Redesign</h3><p>Mapping improved task flows across the platform.</p></div>
-      </div>
-      <div class="live-tile">
-        <h3>Live in Production</h3>
-        <p>The product is actively used by 500+ ACO organizations and 11M+ beneficiaries.</p>
-        <a href="https://acoms.cms.gov/" target="_blank">Visit acoms.cms.gov ↗</a>
+<hr class="hdiv">
+
+<!-- ═══ BRANDING ═══ -->
+<div class="band-b">
+  <div class="container sec-sm">
+    <span class="eyebrow-s">Branding</span>
+    <h2 class="h-lg">Visual design aligned with CMS culture</h2>
+    <p class="body" style="margin-bottom:14px;">Once wireframes were validated, I focused on branding with two goals:</p>
+    <p class="body" style="margin-bottom:10px;"><strong>1. Match CMS's culture.</strong> I wanted ACO-MS to feel approachable and associated with CMS. I incorporated colors matching the CMS color palette while giving it a new look and feel -created using Adobe Color.</p>
+    <div class="img-card" onclick="openModal('acoms/adobee.png','ACO-MS color palette created using Adobe Color -aligned with CMS brand standards.')">
+      <img src="acoms/adobee.png" alt="Adobe color palette">
+      <div class="img-card-cap">Color palette -click to expand</div>
+    </div>
+    <p class="body" style="margin-top:16px;"><strong>2. Fix visual clarity.</strong> The system lacked proper padding and text spacing, making it difficult for users to focus on content. A total visual overhaul was needed to make the experience useful, meaningful, and enjoyable.</p>
+
+    <div style="margin-top:32px;">
+      <span class="eyebrow-s">UI Style Guide</span>
+      <h3 class="h-md">Establishing consistent visual patterns</h3>
+      <div class="img-card" onclick="openModal('acoms/style.svg','ACO-MS UI style guide -typography, color, spacing, components, and pattern documentation.')">
+        <img src="acoms/style.svg" alt="UI style guide">
+        <div class="img-card-cap">UI style guide -click to expand</div>
       </div>
     </div>
+  </div>
+</div>
 
-    <div class="blue-callout">
-      <p>According to <a href="https://www.cms.gov/newsroom/press-releases/medicare-shared-savings-program-continues-grow-and-deliver-high-quality-person-centered-care-through" target="_blank" style="color:var(--blue);font-weight:600;">CMS 2022 performance results</a>, there was significant growth: <strong>66 new enrollments</strong>, 140 renewals, and over <strong>11 million beneficiaries</strong> receiving care -a 3% growth of 324K compared to the prior year. In 2019, users saved <strong>$1.2 billion in Medicare</strong>, up from $739M the year prior.</p>
+<!-- ═══ HI-FI PROTOTYPES & USABILITY TESTING ═══ -->
+<section class="sec">
+  <div class="container">
+    <span class="eyebrow-s">Hi-Fidelity Prototypes & Usability Testing</span>
+    <h2 class="h-lg">From validated wireframes to pixel-perfect prototypes</h2>
+    <p class="body" style="margin-bottom:14px;">High-fidelity mockups were developed in Figma, incorporating user feedback from wireframes and adhering to the UI patterns in the style guide -ensuring a consistent experience across the product. Usability tests gathered further feedback, and <strong>508 compliance tests</strong> were performed to ensure accessibility standards were met throughout.</p>
+    <div class="figma-wrap">
+      <iframe height="740" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2F9smr8MThWrzocSchilnNN2%2FCase-Studies%3Fpage-id%3D0%253A1%26node-id%3D3281%253A6948%26viewport%3D241%252C48%252C0.02%26scaling%3Dscale-down-width%26starting-point-node-id%3D3281%253A6948" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<hr class="hdiv">
+
+<!-- ═══ USABILITY TESTING (ROUND 2) ═══ -->
+<div class="band-m">
+  <div class="container sec-sm">
+    <span class="eyebrow-s">Research -Usability Testing</span>
+    <h2 class="h-lg">Surveys, questionnaires, and guerrilla testing</h2>
+    <p class="body" style="margin-bottom:14px;">We prepared and sent user surveys and questionnaires to 12 users -a mix of doctors and individuals working in ACO organizations -prior to the usability test. We ran a mixture of guerrilla tests with these users.</p>
+    <div class="img-card" onclick="openModal('acoms/plan.png','Usability testing plan -participants, tasks, and methodology overview.')">
+      <img src="acoms/plan.png" alt="Usability testing plan">
+      <div class="img-card-cap">Testing plan overview -click to expand</div>
+    </div>
+    <p class="body" style="margin-top:16px;">We made several incremental changes maintaining visual clarity and user-friendly flows over the course of 2 weeks of rapid iterative and evaluation testing.</p>
+  </div>
+</div>
+
+<!-- ═══ RESEARCH FINDINGS ═══ -->
+<section class="sec">
+  <div class="container">
+    <span class="eyebrow-s">Research Findings</span>
+    <h2 class="h-lg">Valuable feedback, scoped and prioritized</h2>
+    <p class="body" style="margin-bottom:14px;">We received a lot of valuable feedback from usability sessions. We discussed the changes with product managers and scoped down to what we could implement. Below are the usability testing results.</p>
+    <div class="img-card" onclick="openModal('acoms/find.png','Usability testing findings -key issues identified and prioritized for implementation.')">
+      <img src="acoms/find.png" alt="Research findings">
+      <div class="img-card-cap">Usability findings -click to expand</div>
+    </div>
+    <div class="img-card" onclick="openModal('acoms/rec1.png','Recommendations from usability testing -prioritized changes for implementation.')">
+      <img src="acoms/rec1.png" alt="Research recommendations">
+      <div class="img-card-cap">Recommendations -click to expand</div>
+    </div>
+  </div>
+</section>
+
+<hr class="hdiv">
+
+<!-- ═══ FINAL DELIVERABLES ═══ -->
+<div class="band-b">
+  <div class="container sec-sm">
+    <span class="eyebrow-s">Final Deliverables</span>
+    <h2 class="h-lg">Hi-fidelity designs handed off to development</h2>
+    <p class="body" style="margin-bottom:14px;">After collecting and analyzing feedback, we finalized the features, functionality, and visuals. I designed the final hi-fidelity prototypes and started handing them off to the developers. Browse the final screens below.</p>
+
+    <!-- Bootstrap Carousel for slide images -->
+    <div id="acoCarousel" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#acoCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#acoCarousel" data-slide-to="1"></li>
+        <li data-target="#acoCarousel" data-slide-to="2"></li>
+        <li data-target="#acoCarousel" data-slide-to="3"></li>
+        <li data-target="#acoCarousel" data-slide-to="4"></li>
+        <li data-target="#acoCarousel" data-slide-to="5"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active"><img class="d-block w-100" src="acoms/slide1.png" alt="Final design slide 1"></div>
+        <div class="carousel-item"><img class="d-block w-100" src="acoms/slide2.png" alt="Final design slide 2"></div>
+        <div class="carousel-item"><img class="d-block w-100" src="acoms/slide3.png" alt="Final design slide 3"></div>
+        <div class="carousel-item"><img class="d-block w-100" src="acoms/slide4.png" alt="Final design slide 4"></div>
+        <div class="carousel-item"><img class="d-block w-100" src="acoms/slide5.png" alt="Final design slide 5"></div>
+        <div class="carousel-item"><img class="d-block w-100" src="acoms/slide6.png" alt="Final design slide 6"></div>
+      </div>
+      <a class="carousel-control-prev" href="#acoCarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      </a>
+      <a class="carousel-control-next" href="#acoCarousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ PROGRAM PERFORMANCE RESULTS ═══ -->
+<section class="sec">
+  <div class="container">
+    <span class="eyebrow-s">Program Performance Results</span>
+    <h2 class="h-lg">Measurable impact on Medicare beneficiaries</h2>
+    <p class="body" style="margin-bottom:14px;">The platform redesign contributed to significant program growth. According to CMS 2022 performance results, there were 66 new enrollments, 140 renewals, and over 11 million beneficiaries receiving care -a 3% growth of 324K compared to the prior year. In 2019, ACO-MS users saved <strong>$1.2 billion in Medicare</strong>, up from $739M the prior year.</p>
+    <div class="img-card" onclick="openModal('acoms/final.png','Program performance results -Medicare savings, ACO growth, and beneficiary numbers.')">
+      <img src="acoms/final.png" alt="Program performance results">
+      <div class="img-card-cap">Performance results -click to expand</div>
+    </div>
+    <div class="callout-box">
+      <p>According to <a href="https://www.cms.gov/newsroom/press-releases/medicare-shared-savings-program-continues-grow-and-deliver-high-quality-person-centered-care-through" target="_blank" style="color:#084FAA;font-weight:600;">CMS 2022 performance results</a>, the platform supported <strong>66 new enrollments</strong>, 140 renewals, and over <strong>11 million beneficiaries</strong> receiving care -a 3% growth of 324K compared to the prior year. The redesign contributed to <strong>$1.2B in Medicare savings</strong> -up from $739M the year prior.</p>
+    </div>
+
+    <div style="margin-top:32px;">
+      <span class="eyebrow-s">Live Product</span>
+      <div style="background:#F0F5FF;border:1px solid #E3ECFF;border-radius:14px;padding:28px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;">
+        <div>
+          <h3 style="font-size:18px;font-weight:600;color:#1a1a1a;margin-bottom:6px;">ACO-MS is live in production</h3>
+          <p style="font-size:16px;color:#555;margin:0;">Actively used by 500+ ACO organizations and 11M+ beneficiaries.</p>
+        </div>
+        <a href="https://acoms.cms.gov/" target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:#084FAA;color:#fff;font-size:15px;font-weight:600;padding:12px 22px;border-radius:50px;text-decoration:none;">Visit acoms.cms.gov ↗</a>
+      </div>
     </div>
   </div>
 </section>
@@ -175,8 +456,8 @@
 </div>
 
 <!-- FOOTER -->
-<footer style="background:#fafafa;border-top:1px solid #e8e8e8;padding:60px 0;">
-  <div style="max-width:1060px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;">
+<footer class="footer-s">
+  <div class="footer-inner-s">
     <div>
       <h3 style="font-family:'DM Serif Display',serif;font-size:26px;color:#1a1a1a;margin-bottom:6px;">Let's connect</h3>
       <p style="font-size:15px;color:#555;line-height:1.6;margin-bottom:14px;">Open to Senior UX, Product Design, and AI/Analytics Design opportunities.</p>
@@ -212,38 +493,26 @@ function openModal(src, cap) {
   var card = document.createElement('div');
   card.onclick = function(e){ e.stopPropagation(); };
   Object.assign(card.style, {
-    position:'relative', background:'#fff',
-    borderRadius:'14px', padding:'12px',
+    position:'relative', background:'#fff', borderRadius:'14px', padding:'12px',
     maxWidth:Math.min(vw-48,1100)+'px',
-    boxShadow:'0 24px 80px rgba(0,0,0,0.5)', cursor:'default'
+    boxShadow:'0 24px 80px rgba(0,0,0,.5)', cursor:'default'
   });
   var btn = document.createElement('button');
-  btn.innerHTML = '&times;';
-  btn.onclick = closeLB;
-  Object.assign(btn.style, {
-    position:'absolute', top:'-48px', right:'0',
-    background:'none', border:'none', color:'#fff',
-    fontSize:'44px', lineHeight:'1', cursor:'pointer', padding:'0'
-  });
+  btn.innerHTML='&times;'; btn.onclick=closeLB;
+  Object.assign(btn.style,{position:'absolute',top:'-48px',right:'0',background:'none',border:'none',color:'#fff',fontSize:'44px',lineHeight:'1',cursor:'pointer',padding:'0'});
   var img = document.createElement('img');
-  img.src = src; img.alt = cap || '';
-  Object.assign(img.style, {
-    display:'block',
-    maxWidth:Math.min(vw-72,1060)+'px',
-    maxHeight:(vh-120)+'px',
-    borderRadius:'8px', objectFit:'contain'
-  });
+  img.src=src; img.alt=cap||'';
+  Object.assign(img.style,{display:'block',maxWidth:Math.min(vw-72,1060)+'px',maxHeight:(vh-120)+'px',borderRadius:'8px',objectFit:'contain'});
   var caption = document.createElement('div');
-  caption.innerText = cap || '';
-  Object.assign(caption.style, {
-    fontSize:'14px', color:'#555', marginTop:'10px',
-    fontFamily:"'DM Sans',sans-serif", lineHeight:'1.5'
-  });
+  caption.innerText=cap||'';
+  Object.assign(caption.style,{fontSize:'14px',color:'#555',marginTop:'10px',fontFamily:"'DM Sans',sans-serif",lineHeight:'1.5'});
   card.appendChild(btn); card.appendChild(img); card.appendChild(caption);
   backdrop.appendChild(card); document.body.appendChild(backdrop);
 }
 function closeLB(){ var el=document.getElementById('lb-backdrop'); if(el) el.parentNode.removeChild(el); }
-document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeLB(); });
+document.addEventListener('keydown',function(e){ if(e.key==='Escape') closeLB(); });
 </script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
 </html>
