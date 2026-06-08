@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
-<title>Prateek Chatterjee — Senior UX Designer</title>
+<title>Prateek Chatterjee -Senior UX/UI Designer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
@@ -13,9 +13,9 @@
 <style>
 .hero{background:linear-gradient(160deg,#f7faff 0%,#fff 60%);border-bottom:1px solid var(--border);padding:80px 0 72px;}
 .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;}
-.hero-title{font-family:'DM Serif Display',serif;font-size:48px;line-height:1.15;color:var(--text);margin-bottom:20px;}
+.hero-title{font-family:'DM Serif Display',serif;font-size:clamp(34px,4.5vw,54px);line-height:1.12;color:var(--text);margin-bottom:20px;}
 .hero-title em{font-style:italic;color:var(--blue);}
-.hero-desc{font-size:18px;color:var(--text-muted);line-height:1.75;margin-bottom:28px;max-width:520px;}
+.hero-desc{font-size:17px;color:var(--text-muted);line-height:1.7;margin-bottom:28px;max-width:520px;}
 .hero-img img{width:100%;max-width:460px;filter:drop-shadow(0 20px 40px rgba(8,79,170,.12));animation:floatImg 5s ease-in-out infinite;}
 @keyframes floatImg{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
 .social-row{display:flex;align-items:center;gap:14px;margin-top:22px;padding-top:22px;border-top:1px solid var(--border);}
@@ -28,30 +28,20 @@
 .pc-img img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:transform .4s;}
 .project-card:hover .pc-img img{transform:scale(1.03);}
 .pc-body{padding:32px 28px;display:flex;flex-direction:column;justify-content:center;border-left:1px solid var(--border);}
-.pc-body h3{font-family:'DM Serif Display',serif;font-size:24px;line-height:1.25;color:var(--text);margin-bottom:10px;}
-.pc-body p{font-size:14px;color:var(--text-muted);line-height:1.8;margin-bottom:20px;}
-.pc-link{font-size:14px;font-weight:600;color:var(--blue);display:inline-flex;align-items:center;gap:6px;}
+.pc-body h3{font-family:'DM Serif Display',serif;font-size:24px;color:var(--text);margin-bottom:10px;}
+.pc-body p{font-size:14px;color:var(--text-muted);line-height:1.65;margin-bottom:20px;}
+.pc-link{font-size:13px;font-weight:600;color:var(--blue);display:inline-flex;align-items:center;gap:6px;}
 .project-card:hover .pc-link::after{transform:translateX(4px);}
 .pc-link::after{content:'→';transition:transform .2s;}
 .project-list{display:flex;flex-direction:column;gap:20px;}
-.callout-box{background:var(--blue-light);border:1px solid var(--blue-mid);border-left:4px solid var(--blue);border-radius:var(--radius-lg);padding:18px 22px;font-size:16px;line-height:1.8;color:var(--text);margin-bottom:36px;}
-
-/* Homepage/work page typography system */
-.tags-row .tag{font-size:14px;}
-.eyebrow{font-size:14px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;}
-.section-heading{font-family:'DM Serif Display',serif;font-size:48px;line-height:1.15;}
-.section-body{font-size:20px;line-height:1.75;}
-.pc-body .tag{font-size:14px;}
-.footer h3{font-size:24px;}
-.footer p,.footer-email{font-size:16px;line-height:1.75;}
-
+.callout-box{background:var(--blue-light);border:1px solid var(--blue-mid);border-left:4px solid var(--blue);border-radius:var(--radius-lg);padding:18px 22px;font-size:15px;line-height:1.7;color:var(--text);margin-bottom:36px;}
 @media(max-width:860px){.hero-grid{grid-template-columns:1fr;}.hero-img{display:flex;justify-content:flex-start;}.hero-img img{max-width:300px;}.project-card,.project-card.featured{grid-template-columns:1fr;}.pc-img{min-height:220px;}.pc-body{border-left:none;border-top:1px solid var(--border);}}
 </style>
 </head>
 <body>
 
 
-<nav class="nav">
+<nav style="position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.95);backdrop-filter:blur(16px);border-bottom:1px solid #e8e8e8;height:64px;display:flex;align-items:center;"class="nav">
   <div class="nav-inner">
     <a class="nav-logo" href="index.html"><img src="images/logo.png" alt="Prateek Chatterjee"></a>
     <div class="nav-links"><a href="index.html" class="active">Work</a><a href="About.html">About</a><a href="play.html">Play</a></div></div></nav>
@@ -63,11 +53,11 @@
       <div>
         <!-- <span class="eyebrow">Healthcare · AI · Analytics · Enterprise UX</span> -->
       <h1 class="hero-title" style="margin-bottom:30px;">  Hi, I'm Prateek,
-        a <em>Senior UX Designer</em> at <em>Inova Health</em></h1>
+      <br>  a <em>Sr. UX/UI Designer</em> at <em>Inova Health</em></h1>
       <!--  <h1 class="hero-title" style="margin-bottom:30px;">Designing <em>complex systems</em><br>people actually use</h1> -->
         <div class="tags-row" style="margin-bottom:20px;">
-          <span class="tag">Healthcare</span>  <span class="tag">Federal Gov</span><span class="tag">AI Products</span>
-          <span class="tag">Analytics</span><span class="tag">Data Governance</span><span class="tag"> IT Consulting</span>
+          <span class="tag">Healthcare</span>  <span class="tag">Federal Gov</span><span class="tag">AI Products</span>       <span class="tag">Analytics</span><span class="tag">Data Governance</span><span class="tag"> IT Consulting</span>  <span class="tag">Automotive</span>    <span class="tag">Telecom</span>
+
         </div>
         <p class="hero-desc">
           I'm a developer turned designer with <span style="color:#084FAA;font-weight:600;">8+ years of experience </span> creating enterprise products and digital experiences. <br> <br>
@@ -148,7 +138,7 @@
           <span class="pc-link">View case study</span>
         </div>
       </a>
-      
+
       <a href="passwordVR.html" class="project-card">
         <div class="pc-img" style="min-height:280px;"><img src="images/4.png" alt="VR Experience Design"></div>
         <div class="pc-body">

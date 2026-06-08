@@ -18,6 +18,30 @@ padding: 0px;
 
 
 
+
+
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .iconabout:hover{
   opacity: 0.3;
 }

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
-<title>Play -Prateek Chatterjee</title>
+<title>Play — Prateek Chatterjee</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
@@ -47,12 +47,12 @@
 }
 .play-hero h1{
   font-family:'DM Serif Display',serif;
-  font-size:48px;
+  font-size:clamp(32px,5vw,56px);
   line-height:1.08;color:#1a1a1a;
   margin-bottom:14px;
 }
 .play-hero h1 em{font-style:italic;color:#084FAA;}
-.play-hero p{font-size:20px;color:#555;line-height:1.75;max-width:560px;}
+.play-hero p{font-size:18px;color:#555;line-height:1.7;max-width:560px;}
 
 /* ── PROJECT ENTRIES ───────────── */
 .project-section{padding:72px 0;border-bottom:1px solid #f0f0f0;}
@@ -96,7 +96,7 @@
 
 /* ── PROJECT META ──────────────── */
 .project-label{
-  font-size:14px;font-weight:700;letter-spacing:1.4px;
+  font-size:11px;font-weight:700;letter-spacing:1.6px;
   text-transform:uppercase;color:#084FAA;
   margin-bottom:8px;display:flex;align-items:center;gap:8px;
 }
@@ -110,7 +110,7 @@
 
 .project-title{
   font-family:'DM Serif Display',serif;
-  font-size:24px;
+  font-size:clamp(26px,3vw,34px);
   line-height:1.15;color:#1a1a1a;
   margin-bottom:14px;
 }
@@ -121,7 +121,7 @@
 .chip{
   background:#fafafa;border:1px solid #e8e8e8;
   border-radius:50px;padding:5px 13px;
-  font-size:15px;font-weight:500;color:#555;
+  font-size:13px;font-weight:500;color:#555;
   transition:background .2s,border-color .2s,color .2s;
 }
 .project-section:hover .chip{
@@ -151,15 +151,15 @@
   padding:0 0 0;
   opacity:.35;
 }
-.section-divider span{font-size:14px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:#084FAA;white-space:nowrap;}
+.section-divider span{font-size:11px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#084FAA;white-space:nowrap;}
 .section-divider::before,.section-divider::after{content:'';flex:1;height:1px;background:#084FAA;}
 
 /* ── FOOTER ────────────────────── */
 .footer-s{background:#fafafa;border-top:1px solid #e8e8e8;padding:56px 0;}
 .footer-in{max-width:1060px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;}
-.footer-in h3{font-family:'DM Serif Display',serif;font-size:24px;color:#1a1a1a;margin-bottom:6px;}
-.footer-in p{font-size:16px;color:#555;line-height:1.75;margin-bottom:12px;}
-.footer-email{font-size:16px;font-weight:600;color:#084FAA;text-decoration:none;}
+.footer-in h3{font-family:'DM Serif Display',serif;font-size:26px;color:#1a1a1a;margin-bottom:6px;}
+.footer-in p{font-size:15px;color:#555;line-height:1.6;margin-bottom:12px;}
+.footer-email{font-size:15px;font-weight:600;color:#084FAA;text-decoration:none;}
 .footer-email:hover{text-decoration:underline;}
 .footer-soc{display:flex;gap:9px;margin-top:12px;}
 .footer-soc img{width:26px;height:26px;opacity:.5;transition:opacity .2s;}
@@ -205,9 +205,9 @@
   <div class="play-hero-bg"></div>
   <div class="container">
     <div class="reveal">
-      <span style="font-size:14px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:#084FAA;margin-bottom:16px;display:block;">Side Projects</span>
+      <span style="font-size:11px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#084FAA;margin-bottom:16px;display:block;">Side Projects</span>
       <h1>Games, experiments,<br><em>and creative rabbit holes.</em></h1>
-      <p style="margin-top:16px;">Projects I built for the love of it -game design, VR, 3D modeling, and motion graphics. Games are downloadable and playable on Windows.</p>
+      <p style="margin-top:16px;">Projects I built for the love of it — game design, VR, 3D modeling, and motion graphics. Games are downloadable and playable on Windows.</p>
     </div>
   </div>
 </section>
@@ -266,7 +266,7 @@
       </div>
       <div class="reveal-left">
         <span class="project-num">02</span>
-        <div class="project-label">VR Game -Master's Thesis</div>
+        <div class="project-label">VR Game — Master's Thesis</div>
         <h2 class="project-title">Classic Driver VR</h2>
         <p class="project-desc">A VR driving simulator designed to teach road rules and DMV regulations through immersive experience. Built for Oculus VR and Google Cardboard, validated via A/B testing with 22 users and usability testing with 70+ participants.</p>
         <div class="chips stagger">
@@ -300,9 +300,9 @@
       </div>
       <div class="reveal-right">
         <span class="project-num">03</span>
-        <div class="project-label">PC Game -Global Game Jam</div>
+        <div class="project-label">PC Game — Global Game Jam</div>
         <h2 class="project-title">Crab Dab</h2>
-        <p class="project-desc">A physics game where players attack a tower across a mighty sea. Designed and developed during the Global Game Jam contest by a small team -from concept to release in 48 hours.</p>
+        <p class="project-desc">A physics game where players attack a tower across a mighty sea. Designed and developed during the Global Game Jam contest by a small team — from concept to release in 48 hours.</p>
         <div class="chips stagger">
           <span class="chip">3D Modeling</span>
           <span class="chip">Game Design</span>
@@ -335,7 +335,7 @@
         <span class="project-num">04</span>
         <div class="project-label">Motion Graphics</div>
         <h2 class="project-title">HUD and UI Motion</h2>
-        <p class="project-desc">Motion graphics and game UI designed and implemented across various game projects -combining animation, data visualization, and real-time UI feedback into immersive in-game experiences.</p>
+        <p class="project-desc">Motion graphics and game UI designed and implemented across various game projects — combining animation, data visualization, and real-time UI feedback into immersive in-game experiences.</p>
         <div class="chips stagger">
           <span class="chip">Motion Graphics</span>
           <span class="chip">UI Design</span>
@@ -365,9 +365,9 @@
       </div>
       <div class="reveal-right">
         <span class="project-num">05</span>
-        <div class="project-label">Game Design -Pre-production</div>
+        <div class="project-label">Game Design — Pre-production</div>
         <h2 class="project-title">2D Game Concept</h2>
-        <p class="project-desc">Paper prototypes and iterated design concepts exploring a 2D game in pre-production. Competitive research was conducted before any screen was drawn -validating core mechanics and player loops through rapid low-fidelity exploration.</p>
+        <p class="project-desc">Paper prototypes and iterated design concepts exploring a 2D game in pre-production. Competitive research was conducted before any screen was drawn — validating core mechanics and player loops through rapid low-fidelity exploration.</p>
         <div class="chips stagger">
           <span class="chip">Paper Prototyping</span>
           <span class="chip">Game Design</span>
@@ -399,7 +399,7 @@
         <span class="project-num">06</span>
         <div class="project-label">3D Modeling & Lighting</div>
         <h2 class="project-title">3D Models</h2>
-        <p class="project-desc">High-polygon 3D models created in Maya for game and simulation environments -including character rigs, environmental props, and detailed vehicle geometry with full lighting setups.</p>
+        <p class="project-desc">High-polygon 3D models created in Maya for game and simulation environments — including character rigs, environmental props, and detailed vehicle geometry with full lighting setups.</p>
         <div class="chips stagger">
           <span class="chip">Maya 3D</span>
           <span class="chip">Adobe Photoshop</span>
@@ -440,7 +440,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 <script>
-/* Intersection Observer -scroll-triggered reveal */
+/* Intersection Observer — scroll-triggered reveal */
 const io = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if(e.isIntersecting){
