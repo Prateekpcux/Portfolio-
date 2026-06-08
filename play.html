@@ -1,698 +1,217 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title> Prateek Chatterjee </title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+<title>Play — Prateek Chatterjee</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="portfolio.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0ZPWXXEFP8"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-0ZPWXXEFP8');</script>
+<style>
+.play-hero{background:linear-gradient(160deg,#f7faff 0%,#fff 60%);border-bottom:1px solid var(--border);padding:64px 0 56px;}
+.play-entry{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;padding:64px 0;}
+.play-entry+.play-entry{border-top:1px solid var(--border);}
+.play-entry.flip{direction:rtl;}.play-entry.flip>*{direction:ltr;}
+.play-label{font-size:18px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--blue);margin-bottom:12px;display:block;}
+.play-title{font-family:'DM Serif Display',serif;font-size:18px;line-height:1.3;color:var(--text);margin-bottom:10px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;}
+.play-desc{font-size:16px;color:var(--text-muted);line-height:1.85;margin-bottom:14px;}
+.play-meta{font-size:16px;color:var(--text-muted);margin-top:12px;display:flex;flex-direction:column;gap:5px;line-height:1.85;}
+.play-meta strong{color:var(--text);font-weight:600;}
+.play-links{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px;}
+.play-links a{font-size:14px;font-weight:600;color:var(--blue);text-decoration:none;}
+.play-links a:hover{text-decoration:underline;}
+.carousel{border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-md);}
+@media(max-width:768px){.play-entry,.play-entry.flip{grid-template-columns:1fr;direction:ltr;}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="nav-inner"><a class="nav-logo" href="index.html"><img src="images/logo.png" alt="Logo"></a><div class="nav-links"><a href="index.html">Work</a><a href="About.html">About</a><a href="play.html" class="active">Play</a></div></div></nav>
+<div class="page">
 
-  </head>
-
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0ZPWXXEFP8"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-  
-    gtag('config', 'G-0ZPWXXEFP8');
-  </script>
-  
-
-
-  <span id="siteseal"><script async type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=LMJjGwjcivOG5Va06K2MaCaKhKIfrZbQvzceYBnZ8uFYdlXRojVeTE9Ma7bD"></script></span>
-
-
-
-
-
-<body style="animation: fadeInAnimation ease 0.7s;
-animation-iteration-count: 1;
-animation-fill-mode: forwards;  transition-property: font-size;
-  transition-duration: 4s;
-  transition-delay: 2s;">
-
-
- <div class="container-fluid fixed-top shadow-sm p-3 mb-5 bg-white rounded" style="background: white; padding-top:20px; height: 75px;" >
+<section class="play-hero">
   <div class="container">
-
-  <nav id="newnav" class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand d-none d-sm-block ms-auto" href="index.html"  style="color:blue;font-size: 16px !important">  <img style="width:80%; height:80%;" src="images/logo.png"></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav ml-auto" >
-      <a class="nav-item nav-link " href="index.html" style=" font-size: 16px !important;padding:10px 10px 10px 10px">MY WORK <span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link " href="About.html" style="   font-size: 16px !important;padding:10px 10px 10px 10px"> ABOUT </a>
-      <a class="nav-item nav-link active" href="play.html" style=" font-weight: 600;font-size: 16px !important;padding:10px 10px 10px 10px  "> PLAY </a>
-    </div>
+    <span class="eyebrow">Play</span>
+    <h1 style="font-family:'DM Serif Display',serif;font-size:48px;line-height:1.15;margin-bottom:12px;color:var(--text);">Side projects, games & experiments</h1>
+    <p class="section-body" style="font-size:20px;line-height:1.75;">Projects I enjoyed building in my spare time — game design, VR, 3D modeling, and motion graphics. Games are downloadable and playable on Windows.</p>
   </div>
-</nav>
-</div>
-</div>
-
-
-
-
-
-<div class="container-fluid" style="background-image: url('images/bg.jpg');
-background-repeat: no-repeat;
-background-attachment: fixed;
-background-position: center;">
-
-<div class="container" style="padding:20px  ">
-</div>
-
- <div class="container">
-
-  <div class="row pl-0 pr-0" >  
-  <div class="col-md-12 pl-0 pr-0"> <img src="bgnew1.png" style="width:100%">
-  </div>
-
-</div>
-</div>
-</div>
-
-
-
-
-
-
-  <div class="container" style="z-index:34;">
- <div class="row">
-
- <div  style=" color: #333333; font-size: 42px; font-weight:700;">Play
-
- </br>
-   <div style="padding:7px 7px 7px 7px">
-  </div>
-
-  <div style="color: #333333; font-size: 20px; font-weight:100; ">
-    These are few of the projects that I enjoyed working in my spare time. Game projects are available to download and play on Windows.  </div>
-  </br>
-
- </div>
-
-
-<img class="d-none d-lg-block" src="ocu.svg" style="
-position: relative;
-    left: 0;
-    margin: -400px 0px 0px 850px;
-  width: 40%;
-  height: 40%; ">
-
-
- </div>
-</div>
-
-
-
-
-
-<div class="container-fluid" style="background:#f8f8f8; padding:0px 0px 0px 0px">
- <div class="container" style="padding:0px 0px 0px 0px;z-index:34; ">
-
- <div class="container" style="padding:100px 10px 10px 10px;">
-</div>
-
-
-
-
-<div class="row" style="margin-top:20px; z-index:90">
-
-
-
- <div class="col-6" style="z-index:90; ">
-    <div id="carouselExampleIndicators3" class="carousel slide" data-ride="carousel" style="height:100%; width:100%;z-index:90;">
-      <ol class="carousel-indicators">
-        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-      
-      </ol>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img class="d-block w-100" src="images/pal1.jpg" alt="First slide">
-        </div>
-        <div class="carousel-item">
-          <img class="d-block w-100" src="images/pal2.jpg" alt="Second slide">
-        </div>
-      </div>
-      <a class="carousel-control-prev" href="#carouselExampleIndicators3" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselExampleIndicators3" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
-  </div>
-    <div class="col-md-6" style="font-size:20px; z-index:90; font-weight:600; color: #084FAA; "> GAME DESIGN & PRODUCTION
-    <div style=" color: #333333; font-size: 36px; font-weight:600;padding:12px 0px 12px 0px">
-    The Forbidden Palace </div>
-
-<span style="font-size:20px; z-index:400; color: #333333;  font-weight:100;z-index:90;">   "The Forbidden Palace" is a horror game that draws inspiration from Beijing's historic "Forbidden City." 
- 
-<div class="container-fluid" style="padding:10px 0px 10px 0px">
-
- 
-  Our team included five game designers and developers who worked together from the initial stages to 
-  the final production. The central idea behind the game was to immerse players by incorporating an 
-  oximeter that measures their heart rate, which in turn affects the behavior and movement patterns 
-  of the ghosts within the game. 
-  
-      
-<div class="container-fluid" style="padding:10px 0px 10px 0px">
-
-I had the privilege of leading the team and spearheading the brainstorming 
-  sessions for the game's concept, gameplay mechanics, and unique features. Additionally, I conducted 
-  qualitative user experience research, including SWOT analysis and competitive analysis, while also 
-  utilizing Unity to design the game environment.
-
-
-</br>   </br>    <span style="font-weight:600"> Skills </br> </span> Game design, UX Research,  
-Game development, Unity  </br>   </br>    <span style="font-weight:700"> Tools </br> </span> Maya 3D, Unity, C#, UX Research, Excel   </br>   </br>    <span style="font-weight:700"> Platform </br> </span> Windows
-
-</br>    </br>  <a href="https://drive.google.com/drive/folders/0B4CHkiUFPf1bNjktb1hHaDJuUVk?resourcekey=0-zt-R7CEwBIsQRSFmcvCX6Q&usp=sharing" id="slide" style="text-decoration: underline 2px #333333;  text-underline-offset: 4px; color: #333333;"> 
-View Game Design Doc. & Production Plan <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
- <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
-</svg> </span> <a>
-
-  </div>
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-</div>
-
-
-
-
-
-
-
-
-
- </div>
-</div>
-
-
-
-
-
-<div class="container" style="padding:100px 10px 10px 10px;">
-</div>
-
-
-
-
- <div style="font-size:20px; z-index:400; color: #333333;  background-color: white; width: 100vw;
- position: relative;
- margin-left: -50vw;
- left: 50%;"> 
- <div class="container-fluid" style="padding:00px 0px 110px 0px; background: white !important;">
-
-  <div class="container" style="padding:120px 10px 10px 10px;">
-  </div>
-
-  <div class="container" style="padding:0px 0px 0px 0px;z-index:34; background: white !important;">
-
- <div class="row" style="margin-top:00px;z-index:90">
-
-
-
-
-
-
-
-<div class="col-md-6" style="z-index:90;  " >
-
-  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="height:100%; width:100% !important;z-index:90; ">
-    <ol class="carousel-indicators" >
-      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-       <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-             <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
-    </ol>
-    <div class="carousel-inner" >
-      <div class="carousel-item active">
-        <img class="d-block w-100" src="simulator\1.png" alt="First slide">
-      </div>
-      <div class="carousel-item">
-        <img class="d-block w-100" src="simulator\2.png" alt="Second slide">
-      </div>
-      <div class="carousel-item">
-        <img class="d-block w-100" src="simulator\3.png" alt="Third slide">
-      </div>
-      <div class="carousel-item">
-        <img class="d-block w-100" src="simulator\4.png" alt="Fourth slide">
-      </div>
-      <div class="carousel-item">
-        <img class="d-block w-100" src="simulator\5.png" alt="Fifth slide">
-      </div>
-    </div>
-    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
-</div>
-
-
-
-<div class="col-md-6" style="font-size:20px; z-index:90; font-weight:600; color: #084FAA;">
-  VR GAME <div style=" color: #333333; font-size: 36px; font-weight:600;padding:12px 0px 12px 0px">
-   Classic Driver VR  </div>
-<span style="font-size:20px; z-index:400; color: #333333;  font-weight:100;z-index:90; ">
-  Classic Driver VR is a virtual reality game designed and implemented as part of my Master's thesis.
-  The goal was to create a user-friendly enironment for the users to learn 
-  driving rules and regulations of the DMV learner's permit test. Built for Oculus VR & Cardboard VR
-
-</br>   </br> <span style="font-weight:600"> Skills </br> </span>
-Game design, A/B Testing,  
-Game development, Programming, User Surveys/Interviews, Usability Testing   </br> </br>    <span style="font-weight:600"> Tools </br> </span> Unity 3D, C#, Javascript, Google Surveys/Metrics, Maya, Adobe Photoshop   
-</br>    </br> <span ><a href="https://digital.wpi.edu/concern/etds/6h440s662?locale=en"  id="slide" style="font-weight:100; text-decoration: underline 2px #333333;  text-underline-offset: 4px; color: #333333;"> View Research Paper <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">   
-<path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
-</svg>  </a></span> 
-</br>     <a href="https://drive.google.com/file/d/15YTaUJwKHdR-sFShFdGFN5kiPibI8FGu/view?usp=sharing" id="slide" style="font-weight:100; text-decoration: underline 2px #333333;  text-underline-offset: 4px; color: #333333;"> Download Game <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-<path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
-</svg> </span> </a>
-
-</div>
-</div>
-
-
-
-
-
-  </div>
-</div>
-</div>
-
-
-
-
-
-
-
-
-
-
-<div style="font-size:20px; z-index:400; color: #333333;  background-color:#f8f8f8; width: 100vw;
- position: relative;
- margin-left: -50vw;
- left: 50%;"> 
- 
-<div class="container-fluid" style="background-color:#f8f8f8 !important; ">
-
-  <div class="container" style="padding:70px 10px 10px 10px;">
-  </div>
-
-
-  <div class="container" style="padding:0px 0px 0px 0px;z-index:34">
-
-
-  <div class="row" style="z-index:90">
-   
-
-
-
-
-    <div class="col-md-6" style="z-index:90">
-
-      <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel" style="height:100%; width:100%;z-index:90">
-        <ol class="carousel-indicators">
-          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        </ol>
+</section>
+
+<div class="band band-light">
+<div class="container">
+
+  <!-- Forbidden Palace -->
+  <div class="play-entry">
+    <div>
+      <div id="c3" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img class="d-block w-100" src="crab\crab1.png" alt="First slide">
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src="crab/crab2.png" alt="Second slide">
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src="crab\crab3.png" alt="Third slide">
-          </div>
+          <div class="carousel-item active"><img class="d-block w-100" src="images/pal1.jpg" alt="The Forbidden Palace screenshot 1"></div>
+          <div class="carousel-item"><img class="d-block w-100" src="images/pal2.jpg" alt="The Forbidden Palace screenshot 2"></div>
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators2" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators2" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
+        <a class="carousel-control-prev" href="#c3" data-slide="prev"><span class="carousel-control-prev-icon"></span></a>
+        <a class="carousel-control-next" href="#c3" data-slide="next"><span class="carousel-control-next-icon"></span></a>
       </div>
     </div>
-  
-    <div class="col-md-6" style="font-size:20px; z-index:90; font-weight:600; color: #084FAA"> PC GAME
-      <div style=" color: #333333; font-size: 36px; font-weight:600;padding:12px 0px 12px 0px">
-      Crab Dab </div>
-
-
-  <span style="font-size:20px; z-index:400; color: #333333;  font-weight:100;z-index:90"> Crab-Dab is a physics game where players attack a tower across a mighty sea. We designed and developed the game as we particiated in the Global Game Jam Contest.
-
-  </br>   </br>    <span style="font-weight:600"> Skills </br> </span>3D Modeling, Research, Game design, Game development  </br>   </br>    <span style="font-weight:600"> Tools </br> </span> Maya, Unity 3D. C#   </br>   </br>    <span style="font-weight:600"> Platform </br> </span> Windows
-
- </br>    </br>  <a href="https://drive.google.com/file/d/1NJg90MXP5APHverCQBIZN0b_BZt7AK3S/view?usp=sharing" id="slide" style="font-weight: 100;text-decoration: underline 2px #333333;  text-underline-offset: 4px; color: #333333;"> Download Game <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-   <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
- </svg> </span> <a>
-
-    </div>
-
-
-
-  </div>
-
-  </div>
-  
-  <div class="container" style="padding:140px 10px 10px 10px;">
-  </div>
-
-
-</div>
-
-
-
-
-
-<div style="font-size:20px; z-index:400; color: #333333;  background-color:white; width: 100vw;
- position: relative;
- margin-left: -50vw;
- left: 50%;">
-
-<div class="container-fluid" style=" padding:80px 0px 110px 0px">
-      <div class="container" style="padding:40px 0px 0px 0px;z-index:34">
-
-
-
-      <div class="row" style="margin-top:20px;z-index:90">
-
-
-
-        <div class="col-md-6" style="z-index:90">
-          <div id="carouselExampleIndicators1" class="carousel slide" data-ride="carousel" style="height:100%; width:100%;z-index:90">
-            <ol class="carousel-indicators">
-              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img class="d-block w-100" src="hud/3.svg" alt="First slide">
-              </div>
-              <div class="carousel-item">
-                <img class="d-block w-100" src="hud/2.svg" alt="Second slide">
-              </div>
-              <div class="carousel-item">
-                <img class="d-block w-100" src="hud/1.svg" alt="Third slide">
-              </div>
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators1" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators1" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
-          </div>
+    <div>
+      <span class="play-label">Game Design & Production</span>
+      <h2 class="play-title">The Forbidden Palace</h2>
+      <p class="play-desc">A horror game inspired by Beijing's Forbidden City. Central concept: an oximeter measuring the player's heart rate affects ghost behavior in real time. I led the team of five, spearheaded concept development, gameplay mechanics, UX research, and Unity environment design.</p>
+      <div class="play-meta">
+        <div><strong>Skills</strong> Game design, UX Research, Unity, Game development</div>
+        <div><strong>Tools</strong> Maya 3D, Unity, C#, Excel</div>
+        <div><strong>Platform</strong> Windows</div>
       </div>
+      <div class="play-links">
+        <a href="https://drive.google.com/drive/folders/0B4CHkiUFPf1bNjktb1hHaDJuUVk?resourcekey=0-zt-R7CEwBIsQRSFmcvCX6Q&usp=sharing" target="_blank">View Game Design Doc & Production Plan →</a>
+      </div>
+    </div>
+  </div>
 
-
-        
-
-
-      <div class="col-md-6" style="font-size:20px; z-index:90; font-weight:600; color: #084FAA">
-
-        MOTION GRAPHICS  <div style=" color: #333333; font-size: 36px; font-weight:600;padding:12px 0px 12px 0px">
-             HUD and UI </div>
-  
-  
-      <span style="font-size:20px; z-index:400; color: #333333;  font-weight:100;z-index:90"> Created motion graphics and game UI to implement in varius projects.
-  
-      </br>   </br>    <span style="font-weight:600"> Skills </br> </span> Motion Graphics, UI Design    </br>   </br>    <span style="font-weight:600"> Tools </br> </span> Adobe Illustrator, After Effects
-  
-    </br>    </br>  <a href="https://www.youtube.com/watch?v=U_uo3NSqcls&list=PLfz57GuyEi4SDLlbN_xs5e-_f0XF7m3uv&index=1" id="slide" style="font-weight: 100; text-decoration: underline 2px #333333;  text-underline-offset: 4px; color: #333333;"> View Playlist <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-       <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
-      </svg> </span> <a>
-  
+  <!-- Classic Driver VR -->
+  <div class="play-entry flip">
+    <div>
+      <div id="c1" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active"><img class="d-block w-100" src="simulator/1.png" alt="Classic Driver VR 1"></div>
+          <div class="carousel-item"><img class="d-block w-100" src="simulator/2.png" alt="Classic Driver VR 2"></div>
+          <div class="carousel-item"><img class="d-block w-100" src="simulator/3.png" alt="Classic Driver VR 3"></div>
+          <div class="carousel-item"><img class="d-block w-100" src="simulator/4.png" alt="Classic Driver VR 4"></div>
+          <div class="carousel-item"><img class="d-block w-100" src="simulator/5.png" alt="Classic Driver VR 5"></div>
         </div>
-
-
-
-      </div>
-
-      </div>
-  
-      <div class="container" style="padding:20px 10px 10px 10px;">
-      </div>
-</div>
-</div>
-
-
-
-
-
-
-    <div style="font-size:20px; z-index:400; color: #333333;  background-color:#f8f8f8; width: 100vw;
-    position: relative;
-    margin-left: -50vw;
-    left: 50%;"> 
-    
-    <div class="container-fluid" style="background:#f8f8f8; ">
-
-      <div class="container" style="padding: 0px 0px 0px 0px;z-index:34">
-    
-      
-  <div class="container" style="padding:60px 10px 10px 10px;">
-  </div>
-    
-      <div class="row" style="z-index:90">
-       
-    
-    
-    
-    
-    
-        <div class="col-md-6" style="z-index:90">
-          <div id="carouselExampleIndicators4" class="carousel slide" data-ride="carousel" style="height:100%; width:100%;z-index:90">
-            <ol class="carousel-indicators">
-              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img class="d-block w-100" src="paper\1.png" alt="First slide">
-              </div>
-              <div class="carousel-item">
-                <img class="d-block w-100" src="paper\2.png" alt="Second slide">
-              </div>
-              <div class="carousel-item">
-                <img class="d-block w-100" src="paper\3.png" alt="Third slide">
-              </div>
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators4" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators4" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
-          </div>
-  </div>
-      
-    
-    
-  <div class="col-md-6" style="font-size:20px; z-index:90; font-weight:600; color: #084FAA"> GAME DESIGN
-    <div style=" color: #333333; font-size: 36px; font-weight:600;padding:12px 0px 12px 0px">
-      2D Game Concept </div>
-
-
-<span style="font-size:20px; z-index:400; color: #333333;  font-weight:100;z-index:90"> Created paper prototypes and reiterated the designs to hash out the concept for a 2D game in pre-production. Prior to entering the pre-production phase of a 2D game, the concept was thoroughly explored by creating paper prototypes and continuously refining the designs. Competitive research was conducted to gather insights,
-
-</br>   </br>    <span style="font-weight:600"> Skills </br> </span> Paper prototyping, Game Design, UX Research </br>   </br> 
-
-</br>    </br>  <a href="https://drive.google.com/file/d/1NJg90MXP5APHverCQBIZN0b_BZt7AK3S/view?usp=sharing" style="color:#084FAA">  </span> <a>
-
-  </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-      </div>
-    
-      </div>
-      
-      <div class="container" style="padding:120px 10px 10px 10px; ">
+        <a class="carousel-control-prev" href="#c1" data-slide="prev"><span class="carousel-control-prev-icon"></span></a>
+        <a class="carousel-control-next" href="#c1" data-slide="next"><span class="carousel-control-next-icon"></span></a>
       </div>
     </div>
+    <div>
+      <span class="play-label">VR Game — Master's Thesis</span>
+      <h2 class="play-title">Classic Driver VR</h2>
+      <p class="play-desc">A VR driving simulator designed to teach road rules and DMV regulations through immersive experience. Built for Oculus VR and Google Cardboard, validated via A/B testing with 22 users and usability testing with 70+ participants.</p>
+      <div class="play-meta">
+        <div><strong>Skills</strong> Game design, A/B Testing, User Surveys, Usability Testing, Unity</div>
+        <div><strong>Tools</strong> Unity 3D, C#, JavaScript, Google Surveys, Maya, Photoshop</div>
+      </div>
+      <div class="play-links">
+        <a href="https://digital.wpi.edu/concern/etds/6h440s662?locale=en" target="_blank">View Research Paper →</a>
+        <a href="https://drive.google.com/file/d/15YTaUJwKHdR-sFShFdGFN5kiPibI8FGu/view?usp=sharing" target="_blank">Download Game →</a>
+      </div>
     </div>
-
-
-
-
-
-
-
-    <div style="font-size:20px; z-index:400; color: #333333;  background-color:white; width: 100vw;
-    position: relative;
-    margin-left: -50vw;
-    left: 50%;">
-
-    
-<div class="container" style="padding:100px 10px 10px 10px; ">
-</div>
-
-
-<div class="container-fluid" >
-
-            <div class="container" style="padding:0px 0px 0px 0px;z-index:34">
-
-
-            <div class="row" style="margin-top:20px;z-index:90">
-
-
-
-
-
-
-  
-
-
-  
-  
-
-
-
-
-
-
-
-
-
-              <div class="col-md-6" style="z-index:90">
-                <div id="carouselExampleIndicators6" class="carousel slide" data-ride="carousel" style="height:100%; width:100%;z-index:90">
-                  <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-                          <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
-                              <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
-                  </ol>
-                  <div class="carousel-inner">
-                    <div class="carousel-item active">
-                      <img class="d-block w-100" src="maya/1.jpg" alt="First slide">
-                    </div>
-                    <div class="carousel-item">
-                      <img class="d-block w-100" src="maya/2.jpg" alt="Second slide">
-                    </div>
-                    <div class="carousel-item">
-                      <img class="d-block w-100" src="maya\3.jpg" alt="Third slide">
-                    </div>
-                    <div class="carousel-item">
-                      <img class="d-block w-100" src="maya/4.jpg" alt="Fourth slide">
-                    </div>
-                    <div class="carousel-item">
-                      <img class="d-block w-100" src="maya/5.jpg" alt="Fifth slide">
-                    </div>
-                    <div class="carousel-item">
-                      <img class="d-block w-100" src="maya/6.jpg" alt="Sixth slide">
-                    </div>
-                  </div>
-                  <a class="carousel-control-prev" href="#carouselExampleIndicators6" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                  </a>
-                  <a class="carousel-control-next" href="#carouselExampleIndicators6" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                  </a>
-                </div>
-            </div>
-
-
-
-    
-<div class="col-md-6" style="font-size:20px; z-index:90; font-weight:600; color: #084FAA">3D MODELING & LIGHTING
-  <div style=" color: #333333; font-size: 36px; font-weight:600;padding:12px 0px 12px 0px">
-    3D Models  </div>
-
-
-<span style="font-size:20px; z-index:400; color: #333333;  font-weight:100;z-index:90"> 
-  Created high-polygonal 3D models using Maya.
-
-</br>   </br>    <span style="font-weight:600"> Tools </br> </span> Maya 3D, Adobe Photoshop</br>   </br> 
-
-</br>    </br>  <a href="https://drive.google.com/file/d/1NJg90MXP5APHverCQBIZN0b_BZt7AK3S/view?usp=sharing" style="color:#084FAA">  </span> <a>
-
-</div>
-
-            </div>
-            </div>
-            </div>
-
-
-
-
-            <div style="padding:100px 100px 100px 100px; ">
-            </div>
-
-     
-<div  class="d-flex justify-content-center">
-  <a href="#" class="o-scroll-up static" title="back to top">
-    <div href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" style="border:none; color: white !important; background-color: #0e0e0e !important; "> <span class="o-scroll-up-text" style="font-weight: 400 !important;">Back to top</span> </div> 
-     <span class="o-scroll-up-icon" aria-hidden="true"></span>
-   </a>
   </div>
 
-  <div class="container-fluid" style=" padding:60px 0px 0px 10px; background-color:white; ">
+  <!-- Crab Dab -->
+  <div class="play-entry">
+    <div>
+      <div id="c2" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active"><img class="d-block w-100" src="crab/crab1.png" alt="Crab Dab 1"></div>
+          <div class="carousel-item"><img class="d-block w-100" src="crab/crab2.png" alt="Crab Dab 2"></div>
+          <div class="carousel-item"><img class="d-block w-100" src="crab/crab3.png" alt="Crab Dab 3"></div>
+        </div>
+        <a class="carousel-control-prev" href="#c2" data-slide="prev"><span class="carousel-control-prev-icon"></span></a>
+        <a class="carousel-control-next" href="#c2" data-slide="next"><span class="carousel-control-next-icon"></span></a>
+      </div>
+    </div>
+    <div>
+      <span class="play-label">PC Game — Global Game Jam</span>
+      <h2 class="play-title">Crab Dab</h2>
+      <p class="play-desc">A physics game where players attack a tower across a mighty sea. Designed and developed during the Global Game Jam contest by a small team — from concept to release in 48 hours.</p>
+      <div class="play-meta">
+        <div><strong>Skills</strong> 3D Modeling, Game Design, Research, Unity</div>
+        <div><strong>Tools</strong> Maya, Unity 3D, C#</div>
+        <div><strong>Platform</strong> Windows</div>
+      </div>
+      <div class="play-links">
+        <a href="https://drive.google.com/file/d/1NJg90MXP5APHverCQBIZN0b_BZt7AK3S/view?usp=sharing" target="_blank">Download Game →</a>
+      </div>
+    </div>
   </div>
 
+  <!-- HUD & Motion -->
+  <div class="play-entry flip">
+    <div>
+      <div id="c4" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active"><img class="d-block w-100" src="hud/3.svg" alt="HUD 1"></div>
+          <div class="carousel-item"><img class="d-block w-100" src="hud/2.svg" alt="HUD 2"></div>
+          <div class="carousel-item"><img class="d-block w-100" src="hud/1.svg" alt="HUD 3"></div>
+        </div>
+        <a class="carousel-control-prev" href="#c4" data-slide="prev"><span class="carousel-control-prev-icon"></span></a>
+        <a class="carousel-control-next" href="#c4" data-slide="next"><span class="carousel-control-next-icon"></span></a>
+      </div>
+    </div>
+    <div>
+      <span class="play-label">Motion Graphics</span>
+      <h2 class="play-title">HUD and UI Motion</h2>
+      <p class="play-desc">Motion graphics and game UI designed and implemented across various game projects — combining animation, data visualization, and real-time UI feedback into immersive in-game experiences.</p>
+      <div class="play-meta">
+        <div><strong>Skills</strong> Motion Graphics, UI Design</div>
+        <div><strong>Tools</strong> Adobe Illustrator, After Effects</div>
+      </div>
+      <div class="play-links">
+        <a href="https://www.youtube.com/watch?v=U_uo3NSqcls&list=PLfz57GuyEi4SDLlbN_xs5e-_f0XF7m3uv&index=1" target="_blank">View Playlist →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2D Game Concept -->
+  <div class="play-entry">
+    <div>
+      <div id="c5" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active"><img class="d-block w-100" src="paper/1.png" alt="2D Game Concept 1"></div>
+          <div class="carousel-item"><img class="d-block w-100" src="paper/2.png" alt="2D Game Concept 2"></div>
+          <div class="carousel-item"><img class="d-block w-100" src="paper/3.png" alt="2D Game Concept 3"></div>
+        </div>
+        <a class="carousel-control-prev" href="#c5" data-slide="prev"><span class="carousel-control-prev-icon"></span></a>
+        <a class="carousel-control-next" href="#c5" data-slide="next"><span class="carousel-control-next-icon"></span></a>
+      </div>
+    </div>
+    <div>
+      <span class="play-label">Game Design — Pre-production</span>
+      <h2 class="play-title">2D Game Concept</h2>
+      <p class="play-desc">Paper prototypes and iterated design concepts exploring a 2D game in pre-production. Competitive research was conducted before any screen was drawn — validating core mechanics and player loops through rapid low-fidelity exploration.</p>
+      <div class="play-meta">
+        <div><strong>Skills</strong> Paper Prototyping, Game Design, UX Research</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3D Models -->
+  <div class="play-entry flip">
+    <div>
+      <div id="c6" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active"><img class="d-block w-100" src="maya/1.jpg" alt="3D Model 1"></div>
+          <div class="carousel-item"><img class="d-block w-100" src="maya/2.jpg" alt="3D Model 2"></div>
+          <div class="carousel-item"><img class="d-block w-100" src="maya/3.jpg" alt="3D Model 3"></div>
+          <div class="carousel-item"><img class="d-block w-100" src="maya/4.jpg" alt="3D Model 4"></div>
+          <div class="carousel-item"><img class="d-block w-100" src="maya/5.jpg" alt="3D Model 5"></div>
+          <div class="carousel-item"><img class="d-block w-100" src="maya/6.jpg" alt="3D Model 6"></div>
+        </div>
+        <a class="carousel-control-prev" href="#c6" data-slide="prev"><span class="carousel-control-prev-icon"></span></a>
+        <a class="carousel-control-next" href="#c6" data-slide="next"><span class="carousel-control-next-icon"></span></a>
+      </div>
+    </div>
+    <div>
+      <span class="play-label">3D Modeling & Lighting</span>
+      <h2 class="play-title">3D Models</h2>
+      <p class="play-desc">High-polygon 3D models created in Maya for game and simulation environments — including character rigs, environmental props, and detailed vehicle geometry with full lighting setups.</p>
+      <div class="play-meta">
+        <div><strong>Tools</strong> Maya 3D, Adobe Photoshop</div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /container -->
+</div><!-- /band -->
+
+<div class="back-top"><a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">↑ Back to top</a></div>
+
+<footer class="footer"><div class="footer-inner"><div class="footer-left"><h3>Let's connect</h3><p>Open to Senior UX, Product Design, and AI/Analytics Design opportunities.</p><a href="mailto:prateekpc.ux@gmail.com" class="footer-email">prateekpc.ux@gmail.com</a><div class="footer-social"><a href="https://www.linkedin.com/in/prateek-chatterjee-25a0a2140/" target="_blank"><img src="images/Linked.png" alt="LinkedIn"></a><a href="https://dribbble.com/ppchatterjee" target="_blank"><img src="images/dribble.png" alt="Dribbble"></a><a href="https://medium.com/@prateekrise92" target="_blank"><img src="images/Medium.webp" alt="Medium"></a><a href="https://github.com/ppchatterjee123" target="_blank"><img src="images/git.png" alt="GitHub"></a></div></div><div class="footer-right"><p>Designed & built<br>by Prateek Chatterjee<br><br>© 2024</p></div></div></footer>
 </div>
-
-
-
-
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
-
-
-
 </html>

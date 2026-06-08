@@ -1,652 +1,206 @@
 <!DOCTYPE html>
-<html>
- 
+<html lang="en">
 <head>
-  <title> Prateek Chatterjee </title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+<title>Visual Design — Prateek Chatterjee</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="portfolio.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0ZPWXXEFP8"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-0ZPWXXEFP8');</script>
+<style>
+.vp{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;margin-bottom:28px;}
+.vp-header{padding:24px 28px;border-bottom:1px solid var(--border);}
+.vp-header h3{font-family:'DM Serif Display',serif;font-size:24px;line-height:1.25;color:var(--text);margin-bottom:6px;}
+.vp-header p{font-size:16px;line-height:1.8;color:var(--text-muted);margin:0;}
+.vp-body{padding:24px 28px;display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start;}
+.vp-body.single{grid-template-columns:1fr;}
+.vp-body.three{grid-template-columns:repeat(3,1fr);}
+.vp-body.four{grid-template-columns:repeat(4,1fr);gap:12px;}
+.vp-img{border-radius:var(--radius-md);overflow:hidden;cursor:pointer;border:1px solid var(--border);transition:box-shadow .2s,transform .2s;}
+.vp-img:hover{box-shadow:var(--shadow-md);transform:translateY(-2px);}
+.vp-img img{width:100%;display:block;}
+.figma-embed{border:1px solid var(--border);border-radius:var(--radius-md);overflow:hidden;}
+.figma-embed iframe{display:block;width:100%;border:none;}
+.photo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:24px 28px;}
+.photo-grid .vp-img img{height:160px;object-fit:cover;}
 
+/* Visual Design typography system */
+.eyebrow{font-size:14px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;}
+.section-body{font-size:20px;line-height:1.75;}
+.footer h3{font-size:24px;}
+.footer p,.footer-email{font-size:16px;line-height:1.75;}
 
-
-
+@media(max-width:768px){.vp-body,.vp-body.single,.vp-body.three,.vp-body.four,.photo-grid{grid-template-columns:1fr;}}
+</style>
 </head>
+<body>
+<nav class="nav"><div class="nav-inner"><a class="nav-logo" href="index.html"><img src="images/logo.png" alt="Logo"></a><div class="nav-links"><a href="index.html">Work</a><a href="About.html">About</a><a href="play.html">Play</a></div></div></nav>
+<div class="page">
 
-
-
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0ZPWXXEFP8"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-    
-      gtag('config', 'G-0ZPWXXEFP8');
-    </script>
-    
-
-    <span id="siteseal"><script async type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=LMJjGwjcivOG5Va06K2MaCaKhKIfrZbQvzceYBnZ8uFYdlXRojVeTE9Ma7bD"></script></span>
-
-
-
-
-
-
-
-   
-<body style="animation: fadeInAnimation ease 0.7s;
-animation-iteration-count: 1;
-animation-fill-mode: forwards;  transition-property: font-size;
-  transition-duration: 4s;
-  transition-delay: 2s;">
-
-
-
- <div class="container-fluid fixed-top shadow-sm p-3 mb-5 bg-white rounded" style="background: white; padding-top:20px; height: 75px;" >
-  <div class="container" >
-    
-  <nav id="newnav" class="navbar sticky-top navbar-expand-lg navbar-light bg-light" >
-  <a class="navbar-brand d-none d-sm-block ms-auto" href="index.html" style="color:blue;font-size: 16px !important">  <img style="width:80%; height:80%; "  src="images/logo.png"></a>
- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav ml-auto" >
-      <a class="nav-item nav-link" href="index.html" style=" font-size: 16px !important; padding:10px 10px 10px 10px"> MY WORK <span class="sr-only">(current)</span></a>
-      
-      <a class="nav-item nav-link" href="About.html" style=" font-size: 16px !important; padding:10px 10px 10px 10px"> ABOUT </a>
-      <a class="nav-item nav-link" href="play.html" style=" font-size: 16px !important; padding:10px 10px 10px 10px"> PLAY </a>
-    <!--  <a class="nav-item nav-link active" href="visualnew.html" style=" font-size: 16px !important; font-weight: 600; padding:10px 10px 10px 10px"> VISUAL DESIGN </a> --> 
-
-    </div> 
+<section style="background:linear-gradient(160deg,#f7faff 0%,#fff 60%);border-bottom:1px solid var(--border);padding:64px 0 56px;">
+  <div class="container">
+    <span class="eyebrow">Visual Design</span>
+    <h1 style="font-family:'DM Serif Display',serif;font-size:48px;line-height:1.15;margin-bottom:12px;color:var(--text);">UI design challenges & explorations</h1>
+    <p class="section-body" style="font-size:20px;line-height:1.75;">Personal design challenges in Figma — landing pages, mobile apps, dashboards, chatbots, and game UI. Click any image to expand.</p>
+    <div style="margin-top:16px;"><img src="Webdesign/top.png" alt="Visual Design Header" style="width:100%;border-radius:var(--radius-xl);border:1px solid var(--border);box-shadow:var(--shadow-md);display:block;"></div>
   </div>
-</nav>
-</div>
-</div>
-
-
-
-
-
-
-
-
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
-
-
-<div 
-style="background-image: url('images/bg.jpg');
-background-repeat: no-repeat;
-background-attachment: fixed;
-background-position: center;">
-
-
-<!---->
-<div class="container">
-
-  <div class="container" style="padding:20px 30px 30px 30px; ">
-  </div>  
-  <div class="row pl-0 pr-0" >  
-  <div class="col-md-12 pl-0 pr-0"> <img src="Webdesign/top.png" style="width:100%; border-radius: 16px;">
-  </div>
-
-</div>
-</div>
-
-
-
-
-
- <div class="container"> </div>
-
-
-
-
-
-
-
-<!-- 
-<div class="slides-container" >
-    <img  src="Webdesign/top.png"  style="height:100%; width:100%; background:cover; background-size: cover;
-     background-repeat: no-repeat;"  >
-
-</div>
-
-
--->
-
-    
-
-    <!-- style="background:#ffffff; padding:20px 0px 70px 0px; background-image: url('Small/bg.svg'); height:100%; width:100%; background:cover; background-size: cover;
-    -->
-
-<div class="container-fluid" >
-  
-  <div class="container" >
-<!--
-    <div  id="top22"  class="btn btn-outline-primary float-right" >
-      <div  style="position: fixed !important"><a   href="#list-item-1"class="text-right" >Item 1</a></div> 
-       </div>
-    -->
-  
-  
-
-
-  <div class="lightbox-gallery">
-
-
-<div class="container" style="padding:40px; ">
-</div>
-
-
-
-    <div  style="font-size:20px; z-index:90; font-weight:600; color: #084FAA">
-
-      VISUAL DESIGN 
-             <div style=" color: #333333; font-size: 36px; font-weight:600;padding:12px 0px 12px 0px">
-              User Interface designs </div>
-
-
-       <span style="font-size:20px; z-index:400; color: #333333;  font-weight:100;z-index:90"> Designed user interfaces as a part of my design challenges. 
-
-       </br>     
-         </div>
-         
-
-         <div class="container" style="padding:20px 20px 20px 20px; ">
-        </div>
-
-<div class="row no-gutters"  style=" font-size:20px; z-index:90; font-weight:100; color: #333333">
-  <div class="col-sm-12 col-md-12 col-lg-12" style="font-size:20px; z-index:90; font-weight:600; color: #333333" > INTERACTIVE CRUISER LANDING PAGE </div>
-     
-<div class="container" style="padding:10px 10px 10px 10px; ">
-</div>
-  <div class="col-sm-6 col-md-6 col-lg-6" >  Wireframes (Click to view) </div>
-  <div class="col-sm-6 col-md-6 col-lg-6" style="padding-left: 20px;" > Embedded Figma Prototype (Click to view)</div>
-
-  
-  <div class="col-sm-3 col-md-3 col-lg-3 item" style="padding-right: 10px;"> <div class="container" style="padding:10px 10px 10px 10px; "> </div><a href="Small/1.jpg" data-lightbox="photos"><img class="img-fluid" src="Small/1.jpg"></a></div>
-  <div class="col-sm-3 col-md-3 col-lg-3 item" style="padding-left: 10px;"><div class="container" style="padding:10px 10px 10px 10px; "> </div><a href="Small/2.jpg" data-lightbox="photos"><img class="img-fluid" src="Small/2.jpg"></a></div>
-
-  <div class="col-sm-6 col-md-6 col-lg-6" style="padding-left: 20px;">    
-    <div class="container" style="padding:10px 10px 10px 10px; "> </div>
-     <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2F9smr8MThWrzocSchilnNN2%2FCase-Studies%3Fpage-id%3D27%253A95%26node-id%3D704%253A1722%26viewport%3D241%252C48%252C0.22%26scaling%3Dscale-down-width%26starting-point-node-id%3D704%253A1722" allowfullscreen></iframe></div>
-
-  
-
-</div>
-</div>
-
-
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="container" >
-
-    
-  <div class="container" style="padding:40px 40px 40px 40px; ">
-  </div>
-  
-  
-           
-  
-  <div class="row no-gutters"  style=" font-size:20px; z-index:90; font-weight:100; color: #333333">
-    <div id="list-item-1"  class="col-sm-12 col-md-12 col-lg-12" style="font-size:20px; z-index:90; font-weight:600; color: #333333" >E-COMMERCE APPLICATION DESIGN </div>
-       
-  <div class="container" style="padding:10px 10px 10px 10px; ">
-  </div>
-    <div class="col-sm-6 col-md-6 col-lg-6" >  Wireframe (Click to view) </div>
-    <div class="col-sm-6 col-md-6 col-lg-6" style="padding-left: 20px;" > Embedded Figma Prototype (Click to view)</div>
-  
-    
-    <div class="col-sm-6 col-md-6 col-lg-6 item" style="padding-right: 10px;"> <div class="container" style="padding:10px 10px 10px 10px; "> </div><a href="Small/3.jpg" data-lightbox="photos"><img class="img-fluid" src="Small/3.jpg"></a></div>
-    
-  
-    <div class="col-sm-6 col-md-6 col-lg-6" style="padding-left: 20px;">    
-      <div class="container" style="padding:10px 10px 10px 10px; "> </div>
-      <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2F9smr8MThWrzocSchilnNN2%2FCase-Studies%3Fpage-id%3D27%253A95%26node-id%3D656%253A1853%26viewport%3D241%252C48%252C0.26%26scaling%3Dscale-down%26starting-point-node-id%3D656%253A1853" allowfullscreen></iframe>
-  
-    
-  
-  </div>
-  </div>
-</div>
-
-
-
-
-
-
-
-
-<div class="container" >
-
-    
-  <div class="container" style="padding:40px 40px 40px 40px; ">
-  </div>
-  
-  
-           
-  
-  <div class="row no-gutters"  style=" font-size:20px; z-index:90; font-weight:100; color: #333333">
-    <div class="col-sm-12 col-md-12 col-lg-12" style="font-size:20px; z-index:90; font-weight:600; color: #333333" > TASK MANAGEMENT APPLICATION DESIGN </div>
-       
-  <div class="container" style="padding:10px 10px 10px 10px; ">
-  </div>
-    <div class="col-sm-6 col-md-6 col-lg-6" >  Wireframe (Click to view) </div>
-    <div class="col-sm-6 col-md-6 col-lg-6" style="padding-left: 20px;" > Embedded Figma Prototype (Click to view)</div>
-  
-    
-    <div class="col-sm-6 col-md-6 col-lg-6 item" style="padding-right: 10px;"> <div class="container" style="padding:10px 10px 10px 10px; "> </div><a href="Small/4.jpg" data-lightbox="photos"><img class="img-fluid" src="Small/4.jpg"></a></div>
-    
-  
-    <div class="col-sm-6 col-md-6 col-lg-6" style="padding-left: 20px;">    
-      <div class="container" style="padding:10px 10px 10px 10px; "> </div>
-      <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2F9smr8MThWrzocSchilnNN2%2FCase-Studies%3Fpage-id%3D27%253A95%26node-id%3D688%253A1301%26viewport%3D241%252C48%252C0.35%26scaling%3Dscale-down%26starting-point-node-id%3D688%253A1301" allowfullscreen></iframe>
-  
-    
-  
-  </div>
-  </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-<div class="container" >
-
-    
-  <div class="container" style="padding:40px 40px 40px 40px; ">
-  </div>
-  
-  
-           
-  
-  <div class="row no-gutters"  style=" font-size:20px; z-index:90; font-weight:100; color: #333333">
-    <div class="col-sm-12 col-md-12 col-lg-12" style="font-size:20px; z-index:90; font-weight:600; color: #333333" > TRAVEL APPLICATION DESIGN </div>
-       
-  <div class="container" style="padding:10px 10px 10px 10px; ">
-  </div>
-    <div class="col-sm-6 col-md-6 col-lg-6" >  Wireframe (Click to view) </div>
-    <div class="col-sm-6 col-md-6 col-lg-6" style="padding-left: 20px;" > Embedded Figma Prototype (Click to view)</div>
-  
-    
-    <div class="col-sm-6 col-md-6 col-lg-6 item" style="padding-right: 10px;"> <div class="container" style="padding:10px 10px 10px 10px; "> </div><a href="Small/5.jpg" data-lightbox="photos"><img class="img-fluid"  src="Small/5.jpg" ></a></div>
-    
-  
-    <div class="col-sm-6 col-md-6 col-lg-6" style="padding-left: 20px;">    
-      <div class="container" style="padding:10px 10px 10px 10px; "> </div>
-      <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2F9smr8MThWrzocSchilnNN2%2FCase-Studies%3Fpage-id%3D27%253A95%26node-id%3D691%253A2385%26viewport%3D241%252C48%252C0.35%26scaling%3Dscale-down%26starting-point-node-id%3D691%253A2385" allowfullscreen></iframe>
-  
-    
-  
-  </div>
-  </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="container" >
-
-    
-  <div class="container" style="padding:40px 40px 40px 40px; ">
-  </div>
-           
-  
-           <div class="container" style="padding:20px 20px 20px 20px; ">
-          </div>
-  
-  <div class="row no-gutters"  style=" font-size:20px; z-index:90; font-weight:100; color: #333333">
-    <div class="col-sm-12 col-md-12 col-lg-12" style="font-size:20px; z-index:90; font-weight:600; color: #333333" > CHATBOT </div>
-       Designed a Chatbot app for existing softrams projects
-  <div class="container" style="padding:10px 10px 10px 10px; ">
-  </div>
-    <div class="col-sm-3 col-md-3 col-lg-3" >  Wireframe (Click to view) </div>
-    <div class="col-sm-5 col-md-5 col-lg-5" style="padding-left: 20px;" > ChatBot Helpdesk Embedded Figma Prototype (Click to view)</div>
-    <div class="col-sm-4 col-md-4 col-lg-4" style="padding-left: 20px;" > ChatBot Embedded Figma Prototype (Click to view)</div>
-  
-    
-    <div class="col-sm-3 col-md-3 col-lg-3 item" style="padding-right: 10px;"> <div class="container" style="padding:10px 10px 10px 10px; "> </div><a href="Small/chat.jpg" data-lightbox="photos"><img class="img-fluid" src="Small/chat.jpg"></a></div>
-    <div class="col-sm-5 col-md-5 col-lg-5" style="padding-left: 20px;">    
-      <div class="container" style="padding:10px 10px 10px 10px; "> </div>
-      <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2Fm0f6JnlyEt1q6l1FiiFLuA%2FChat-Bot%3Fpage-id%3D0%253A1%26node-id%3D7%253A5%26viewport%3D241%252C48%252C0.12%26scaling%3Dscale-down-width%26starting-point-node-id%3D7%253A5" allowfullscreen></iframe></div>
-  
-
-    <div class="col-sm-4 col-md-4 col-lg-4" style="padding-left: 20px;">    
-      <div class="container" style="padding:10px 10px 10px 10px; "> </div>
-      <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2Fm0f6JnlyEt1q6l1FiiFLuA%2FChat-Bot%3Fpage-id%3D44%253A127%26node-id%3D44%253A128%26viewport%3D241%252C48%252C0.25%26scaling%3Dscale-down-width%26starting-point-node-id%3D44%253A128" allowfullscreen></iframe></div>
-  
-    
-  
-  </div>
-  </div>
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-<div class="container" >
-
-    
-  <div class="container" style="padding:40px 40px 40px 40px; ">
-  </div>
-  
-  
-           
-  
-  <div class="row no-gutters"  style=" font-size:20px; z-index:90; font-weight:100; color: #333333">
-    <div class="col-sm-12 col-md-12 col-lg-12" style="font-size:20px; z-index:90; font-weight:600; color: #333333" > GROCERIES APPLICATION DESIGN </div>
-       
-  <div class="container" style="padding:10px 10px 10px 10px; ">
-  </div>
-    <div class="col-sm-6 col-md-6 col-lg-6" >  Wireframe (Click to view) </div>
-    <div class="col-sm-6 col-md-6 col-lg-6" style="padding-left: 20px;" > Embedded Figma Prototype (Click to view)</div>
-  
-    
-    <div class="col-sm-6 col-md-6 col-lg-6 item" style="padding-right: 10px;"> <div class="container" style="padding:10px 10px 10px 10px; "> </div><a href="Small/6.jpg" data-lightbox="photos"><img class="img-fluid"  src="Small/6.jpg" ></a></div>
-    
-  
-    <div class="col-sm-6 col-md-6 col-lg-6" style="padding-left: 20px;">    
-      <div class="container" style="padding:10px 10px 10px 10px; "> </div>
-      <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2F9smr8MThWrzocSchilnNN2%2FCase-Studies%3Fpage-id%3D27%253A95%26node-id%3D644%253A970%26viewport%3D241%252C48%252C0.39%26scaling%3Dscale-down%26starting-point-node-id%3D644%253A970" allowfullscreen></iframe>
-  
-    
-  
-  </div>
-  </div>
-</div>
-
-
-
-
-</div>
-
-
-
-
-
-
-
-
-
-
-<div class="container" style="padding:40px 40px 40px 40px; ">
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="container-fluid" >
-  <div class="container" >
-
-    
-
-
-    <div  style="font-size:20px; z-index:90; font-weight:600; color: #084FAA">
-
-      VISUAL DESIGN 
-             <div style=" color: #333333; font-size: 36px; font-weight:600;padding:12px 0px 12px 0px">
-              High-Fidelity Wireframes </div>
-
-
-       <span style="font-size:20px; z-index:400; color: #333333;  font-weight:100;z-index:90"> Designed High-Fidelity wireframes as a part of my design challenges. Focused on Minimalistic design approach using Material 
-        Design principles. 
-
-       </br>     
-         </div>
-
-
-          <div class="row photos no-gutters" >
-
-
-
-
-
-
-
-              <div class="col-sm-4 col-md-4 col-lg-4 item" style="padding-right:10px" ><a href="Small/rest/8.jpg" data-lightbox="photos"><img class="img-fluid" src="Small/rest/8.jpg"></a></div>
-              <div class="col-sm-4 col-md-4 col-lg-4 item" style="padding-left: 10px;"><a href="Small/rest/9.jpg" data-lightbox="photos"><img class="img-fluid" src="Small/rest/9.jpg"></a></div>
-              <div class="col-sm-4 col-md-4 col-lg-4 item" style="padding-left:20px;"><a href="Small/rest/10.jpg" data-lightbox="photos"><img class="img-fluid" src="Small/rest/10.jpg"></a></div>
-              <div class="col-sm-6 col-md-6 col-lg-6 item" style="padding-right: 10px; margin-top: 20px;"><a href="Small/rest/11.jpg" data-lightbox="photos"><img class="img-fluid" src="Small/rest/11.jpg"></a></div>
-              <div class="col-sm-6 col-md-6 col-lg-6 item" style="padding-left: 10px;margin-top: 20px; "><a href="Small/rest/12.jpg" data-lightbox="photos"><img class="img-fluid" src="Small/rest/12.jpg"></a></div>
-              
-              
-              <div class="col-sm-4 col-md-4 col-lg-4 item" style="padding-right:10px; margin-top: 20px;" ><a href="Small/rest/13.jpg" data-lightbox="photos"><img class="img-fluid" src="Small/rest/13.jpg"></a></div>
-              <div class="col-sm-4 col-md-4 col-lg-4 item" style="padding-left: 10px; margin-top: 20px;"><a href="Small/rest/15.jpg" data-lightbox="photos"><img class="img-fluid" src="Small/rest/15.jpg"></a></div>
-              <div class="col-sm-4 col-md-4 col-lg-4 item" style="padding-left:20px;margin-top: 20px;"><a href="Small/rest/16.jpg" data-lightbox="photos"><img class="img-fluid" src="Small/rest/16.jpg"></a></div>
-              <div class="col-sm-6 col-md-6 col-lg-6 item" style="padding-right: 10px; margin-top: 20px;"><a href="Small/rest/17.jpg" data-lightbox="photos"><img class="img-fluid" src="Small/rest/17.jpg"></a></div>
-              <div class="col-sm-6 col-md-6 col-lg-6 item" style="padding-left: 10px;margin-top: 20px; "><a href="Small/rest/18.jpg" data-lightbox="photos"><img class="img-fluid" src="Small/rest/18.jpg"></a></div>
-              
-              
-              <div class="col-sm-4 col-md-4 col-lg-4 item" style="padding-right:10px; margin-top: 20px;" ><a href="Small/rest/19.jpg" data-lightbox="photos"><img class="img-fluid" src="Small/rest/19.jpg"></a></div>
-              <div class="col-sm-4 col-md-4 col-lg-4 item" style="padding-left: 10px;margin-top: 20px;"><a href="Small/rest/20.jpg" data-lightbox="photos"><img class="img-fluid" src="Small/rest/20.jpg"></a></div>
-              <div class="col-sm-4 col-md-4 col-lg-4 item" style="padding-left:20px;margin-top: 20px;"><a href="Small/rest/21.jpg" data-lightbox="photos"><img class="img-fluid" src="Small/rest/21.jpg"></a></div>
-              <div class="col-sm-6 col-md-6 col-lg-6 item" style="padding-right: 10px; margin-top: 20px;"><a href="Small/rest/22.jpg" data-lightbox="photos"><img class="img-fluid" src="Small/rest/22.jpg"></a></div>
-              <div class="col-sm-6 col-md-6 col-lg-6 item" style="padding-left: 10px;margin-top: 20px; "><a href="Small/rest/23.jpg" data-lightbox="photos"><img class="img-fluid" src="Small/rest/23.jpg"></a></div>
-
-              
-              <div class="col-sm-4 col-md-4 col-lg-4 item" style="padding-right:10px; margin-top: 20px;" ><a href="Small/rest/24.jpg" data-lightbox="photos"><img class="img-fluid" src="Small/rest/24.jpg"></a></div>
-              <div class="col-sm-4 col-md-4 col-lg-4 item" style="padding-left: 10px; margin-top: 20px;"><a href="Small/rest/25.jpg" data-lightbox="photos"><img class="img-fluid" src="Small/rest/25.jpg"></a></div>
-              <div class="col-sm-4 col-md-4 col-lg-4 item" style="padding-left:20px; margin-top: 20px;"><a href="Small/rest/26.jpg" data-lightbox="photos"><img class="img-fluid" src="Small/rest/26.jpg"></a></div>
-              
-              
-        
-              
-
-            
-          </div>
+</section>
+
+<section class="section">
+  <div class="container">
+
+    <!-- Interactive Cruiser Landing Page -->
+    <div class="vp">
+      <div class="vp-header">
+        <span class="eyebrow" style="margin-bottom:4px;">UI Design Challenge</span>
+        <h3>Interactive Cruiser Landing Page</h3>
+        <p>Wireframes and embedded Figma prototype for an automotive landing experience.</p>
       </div>
- 
-
-
-  <div class="container" style="padding:70px 70px 70px 70px; ">
-  </div>
-  
-
-
-  
-
-
-  
-
-  <div class="lightbox-gallery">
-    <div class="container">
-       
-
-
-        <div  style="font-size:20px; z-index:90; font-weight:600; color: #084FAA">
-
-            VISUAL DESIGN 
-                   <div style=" color: #333333; font-size: 36px; font-weight:600;padding:12px 0px 12px 0px">
-                 Web Application UI</div>
-
-                 <span style="font-size:20px; z-index:400; color: #333333;  font-weight:100;z-index:90"> Designed High-fidelity wireframes as a part of a design challenge. Used Material Design principles to design the Data lake applcation. The app was developed on Angular Material components. 
-               </div>
-
-
-
-        <div class="row photos no-gutters">
-          <div class="col-sm-6 col-md-6 col-lg-6 item" style="padding-right: 10px;"><a href="Small/rest/30.png" data-lightbox="photos"><img class="img-fluid" src="Small/rest/30.png"></a></div>
-          <div class="col-sm-6 col-md-6 col-lg-6 item" style="padding-left: 10px; "><a href="Small/rest/31.png" data-lightbox="photos"><img class="img-fluid" src="Small/rest/31.png"></a></div>
-          <div class="col-sm-6 col-md-6 col-lg-6 item" style="padding-right: 10px; margin-top: 20px;"><a href="Small/rest/32.png" data-lightbox="photos"><img class="img-fluid" src="Small/rest/32.png"></a></div>
-          <div class="col-sm-6 col-md-6 col-lg-6 item" style="padding-left: 10px;margin-top: 20px; "><a href="Small/rest/33.png" data-lightbox="photos"><img class="img-fluid" src="Small/rest/33.png"></a></div>
-           
-           
+      <div class="vp-body">
+        <div>
+          <p style="font-size:14px;font-weight:700;color:var(--text-subtle);margin-bottom:10px;text-transform:uppercase;letter-spacing:1.4px;">Wireframes (click to expand)</p>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+            <a href="Small/1.jpg" data-lightbox="cruiser" class="vp-img"><img src="Small/1.jpg" alt="Cruiser wireframe 1"></a>
+            <a href="Small/2.jpg" data-lightbox="cruiser" class="vp-img"><img src="Small/2.jpg" alt="Cruiser wireframe 2"></a>
+          </div>
         </div>
-    </div>
-</div>
-
-
-
-
-</div>
-
-
-<div class="container" style="padding:40px 40px 40px 40px; ">
-</div>
-
-
-
-
-
-
-
-
-
-
-  
-
-  <div class="lightbox-gallery">
-    <div class="container">
-       
-
-
-        <div  style="font-size:20px; z-index:90; font-weight:600; color: #084FAA">
-
-            VISUAL DESIGN 
-                   <div style=" color: #333333; font-size: 36px; font-weight:600;padding:12px 0px 12px 0px">
-                 Game UI, Logo </div>
-
-                 <span style="font-size:20px; z-index:400; color: #333333;  font-weight:100;z-index:90"> Created High-fidelity game menu wireframe for World of Tanks as part of design challenge. 
-               </div>
-
-
-
-        <div class="row photos no-gutters">
-            <div class="col-sm-6 col-md-6 col-lg-6 item" style="padding-right: 20px;"><a href="Small/rest/28.jpg" data-lightbox="photos"><img class="img-fluid" src="Small/rest/28.jpg"></a></div>
-            <div class="col-sm-6 col-md-6 col-lg-6 item" 
-            ><a href="Small/rest/29.jpg" data-lightbox="photos"><img class="img-fluid" src="Small/rest/29.jpg"></a></div>
-
-           
-           
+        <div>
+          <p style="font-size:14px;font-weight:700;color:var(--text-subtle);margin-bottom:10px;text-transform:uppercase;letter-spacing:1.4px;">Figma Prototype</p>
+          <div class="figma-embed"><iframe height="380" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2F9smr8MThWrzocSchilnNN2%2FCase-Studies%3Fpage-id%3D27%253A95%26node-id%3D704%253A1722%26viewport%3D241%252C48%252C0.22%26scaling%3Dscale-down-width%26starting-point-node-id%3D704%253A1722" allowfullscreen></iframe></div>
         </div>
-
-
-        
-<div class="container" style="padding:40px 40px 40px 40px; ">
-</div>
-
-
-
- 
-<div  class="d-flex justify-content-center">
-  <a href="#" class="o-scroll-up static" title="back to top">
-    <div href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" style="border:none; color: white !important; background-color: #0e0e0e !important; "> <span class="o-scroll-up-text" style="font-weight: 400 !important;">Back to top</span> </div> 
-     <span class="o-scroll-up-icon" aria-hidden="true"></span>
-   </a>
-  </div>
-        
+      </div>
     </div>
+
+    <!-- E-Commerce -->
+    <div class="vp">
+      <div class="vp-header">
+        <span class="eyebrow" style="margin-bottom:4px;">UI Design Challenge</span>
+        <h3>E-Commerce Application Design</h3>
+        <p>Shopping experience with product discovery, cart, and checkout flows.</p>
+      </div>
+      <div class="vp-body">
+        <a href="Small/3.jpg" data-lightbox="ecom" class="vp-img"><img src="Small/3.jpg" alt="E-commerce wireframe"></a>
+        <div class="figma-embed"><iframe height="380" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2F9smr8MThWrzocSchilnNN2%2FCase-Studies%3Fpage-id%3D27%253A95%26node-id%3D656%253A1853%26viewport%3D241%252C48%252C0.26%26scaling%3Dscale-down%26starting-point-node-id%3D656%253A1853" allowfullscreen></iframe></div>
+      </div>
+    </div>
+
+    <!-- Task Management -->
+    <div class="vp">
+      <div class="vp-header">
+        <span class="eyebrow" style="margin-bottom:4px;">UI Design Challenge</span>
+        <h3>Task Management Application</h3>
+        <p>Productivity app with task creation, priority, and tracking flows.</p>
+      </div>
+      <div class="vp-body">
+        <a href="Small/4.jpg" data-lightbox="task" class="vp-img"><img src="Small/4.jpg" alt="Task management wireframe"></a>
+        <div class="figma-embed"><iframe height="380" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2F9smr8MThWrzocSchilnNN2%2FCase-Studies%3Fpage-id%3D27%253A95%26node-id%3D688%253A1301%26viewport%3D241%252C48%252C0.35%26scaling%3Dscale-down%26starting-point-node-id%3D688%253A1301" allowfullscreen></iframe></div>
+      </div>
+    </div>
+
+    <!-- Travel -->
+    <div class="vp">
+      <div class="vp-header">
+        <span class="eyebrow" style="margin-bottom:4px;">UI Design Challenge</span>
+        <h3>Travel Application Design</h3>
+        <p>Explore, plan, and book travel experiences with minimal friction.</p>
+      </div>
+      <div class="vp-body">
+        <a href="Small/5.jpg" data-lightbox="travel" class="vp-img"><img src="Small/5.jpg" alt="Travel wireframe"></a>
+        <div class="figma-embed"><iframe height="380" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2F9smr8MThWrzocSchilnNN2%2FCase-Studies%3Fpage-id%3D27%253A95%26node-id%3D691%253A2385%26viewport%3D241%252C48%252C0.35%26scaling%3Dscale-down%26starting-point-node-id%3D691%253A2385" allowfullscreen></iframe></div>
+      </div>
+    </div>
+
+    <!-- Chatbot -->
+    <div class="vp">
+      <div class="vp-header">
+        <span class="eyebrow" style="margin-bottom:4px;">UI Design Challenge</span>
+        <h3>Chatbot — Helpdesk & Assistant</h3>
+        <p>Conversational UI designed for Softrams projects — helpdesk and general assistant flows.</p>
+      </div>
+      <div class="vp-body" style="grid-template-columns:1fr 1fr 1fr;">
+        <a href="Small/chat.jpg" data-lightbox="chat" class="vp-img"><img src="Small/chat.jpg" alt="Chatbot wireframe"></a>
+        <div class="figma-embed"><iframe height="340" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2Fm0f6JnlyEt1q6l1FiiFLuA%2FChat-Bot%3Fpage-id%3D0%253A1%26node-id%3D7%253A5%26viewport%3D241%252C48%252C0.12%26scaling%3Dscale-down-width%26starting-point-node-id%3D7%253A5" allowfullscreen></iframe></div>
+        <div class="figma-embed"><iframe height="340" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2Fm0f6JnlyEt1q6l1FiiFLuA%2FChat-Bot%3Fpage-id%3D44%253A127%26node-id%3D44%253A128%26viewport%3D241%252C48%252C0.25%26scaling%3Dscale-down-width%26starting-point-node-id%3D44%253A128" allowfullscreen></iframe></div>
+      </div>
+    </div>
+
+    <!-- Groceries -->
+    <div class="vp">
+      <div class="vp-header">
+        <span class="eyebrow" style="margin-bottom:4px;">UI Design Challenge</span>
+        <h3>Groceries Application Design</h3>
+        <p>Mobile-first grocery shopping with smart list and order flows.</p>
+      </div>
+      <div class="vp-body">
+        <a href="Small/6.jpg" data-lightbox="grocery" class="vp-img"><img src="Small/6.jpg" alt="Groceries wireframe"></a>
+        <div class="figma-embed"><iframe height="380" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2F9smr8MThWrzocSchilnNN2%2FCase-Studies%3Fpage-id%3D27%253A95%26node-id%3D644%253A970%26viewport%3D241%252C48%252C0.39%26scaling%3Dscale-down%26starting-point-node-id%3D644%253A970" allowfullscreen></iframe></div>
+      </div>
+    </div>
+
+    <!-- High-fidelity wireframes -->
+    <div class="vp">
+      <div class="vp-header">
+        <span class="eyebrow" style="margin-bottom:4px;">High-Fidelity Wireframes</span>
+        <h3>Mobile UI — Minimalist Design System</h3>
+        <p>High-fidelity designs applying Material Design principles for restaurant, retail, and service applications.</p>
+      </div>
+      <div class="photo-grid">
+        <a href="Small/rest/8.jpg" data-lightbox="hifi" class="vp-img"><img src="Small/rest/8.jpg" alt=""></a>
+        <a href="Small/rest/9.jpg" data-lightbox="hifi" class="vp-img"><img src="Small/rest/9.jpg" alt=""></a>
+        <a href="Small/rest/10.jpg" data-lightbox="hifi" class="vp-img"><img src="Small/rest/10.jpg" alt=""></a>
+        <a href="Small/rest/11.jpg" data-lightbox="hifi" class="vp-img"><img src="Small/rest/11.jpg" alt=""></a>
+        <a href="Small/rest/12.jpg" data-lightbox="hifi" class="vp-img"><img src="Small/rest/12.jpg" alt=""></a>
+        <a href="Small/rest/13.jpg" data-lightbox="hifi" class="vp-img"><img src="Small/rest/13.jpg" alt=""></a>
+        <a href="Small/rest/15.jpg" data-lightbox="hifi" class="vp-img"><img src="Small/rest/15.jpg" alt=""></a>
+        <a href="Small/rest/16.jpg" data-lightbox="hifi" class="vp-img"><img src="Small/rest/16.jpg" alt=""></a>
+        <a href="Small/rest/17.jpg" data-lightbox="hifi" class="vp-img"><img src="Small/rest/17.jpg" alt=""></a>
+        <a href="Small/rest/18.jpg" data-lightbox="hifi" class="vp-img"><img src="Small/rest/18.jpg" alt=""></a>
+        <a href="Small/rest/19.jpg" data-lightbox="hifi" class="vp-img"><img src="Small/rest/19.jpg" alt=""></a>
+        <a href="Small/rest/20.jpg" data-lightbox="hifi" class="vp-img"><img src="Small/rest/20.jpg" alt=""></a>
+      </div>
+    </div>
+
+    <!-- Web App UI -->
+    <div class="vp">
+      <div class="vp-header">
+        <span class="eyebrow" style="margin-bottom:4px;">Web Application UI</span>
+        <h3>Data Lake Web Application</h3>
+        <p>High-fidelity UI for a data lake platform built on Angular Material components.</p>
+      </div>
+      <div class="photo-grid" style="grid-template-columns:1fr 1fr;">
+        <a href="Small/rest/30.png" data-lightbox="webapp" class="vp-img"><img src="Small/rest/30.png" alt="" style="height:180px;object-fit:cover;"></a>
+        <a href="Small/rest/31.png" data-lightbox="webapp" class="vp-img"><img src="Small/rest/31.png" alt="" style="height:180px;object-fit:cover;"></a>
+        <a href="Small/rest/32.png" data-lightbox="webapp" class="vp-img"><img src="Small/rest/32.png" alt="" style="height:180px;object-fit:cover;"></a>
+        <a href="Small/rest/33.png" data-lightbox="webapp" class="vp-img"><img src="Small/rest/33.png" alt="" style="height:180px;object-fit:cover;"></a>
+      </div>
+    </div>
+
+    <!-- Game UI & Logo -->
+    <div class="vp">
+      <div class="vp-header">
+        <span class="eyebrow" style="margin-bottom:4px;">Game UI & Logo Design</span>
+        <h3>World of Tanks — Game Menu UI</h3>
+        <p>High-fidelity game menu UI design created as part of a World of Tanks design challenge.</p>
+      </div>
+      <div class="photo-grid" style="grid-template-columns:1fr 1fr;">
+        <a href="Small/rest/28.jpg" data-lightbox="game" class="vp-img"><img src="Small/rest/28.jpg" alt="Game UI 1" style="height:200px;object-fit:cover;"></a>
+        <a href="Small/rest/29.jpg" data-lightbox="game" class="vp-img"><img src="Small/rest/29.jpg" alt="Game UI 2" style="height:200px;object-fit:cover;"></a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="back-top"><a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">↑ Back to top</a></div>
+
+<footer class="footer"><div class="footer-inner"><div class="footer-left"><h3>Let's connect</h3><p>Open to Senior UX, Product Design, and AI/Analytics Design opportunities.</p><a href="mailto:prateekpc.ux@gmail.com" class="footer-email">prateekpc.ux@gmail.com</a><div class="footer-social"><a href="https://www.linkedin.com/in/prateek-chatterjee-25a0a2140/" target="_blank"><img src="images/Linked.png" alt="LinkedIn"></a><a href="https://dribbble.com/ppchatterjee" target="_blank"><img src="images/dribble.png" alt="Dribbble"></a><a href="https://medium.com/@prateekrise92" target="_blank"><img src="images/Medium.webp" alt="Medium"></a><a href="https://github.com/ppchatterjee123" target="_blank"><img src="images/git.png" alt="GitHub"></a></div></div><div class="footer-right"><p>Designed & built<br>by Prateek Chatterjee<br><br>© 2024</p></div></div></footer>
 </div>
-
-
-
-
-
-
-
-
-
-<div class="container" style="padding:100px 100px 100px 100px; ">
-</div>
-
-
-
-</div>
-
-</div>
-
-
-
-
-
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
 </body>
-
-
-
 </html>
