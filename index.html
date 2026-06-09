@@ -3,169 +3,389 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
-<title>Prateek Chatterjee -Senior UX/UI Designer</title>
+<title>Prateek Chatterjee — Senior UX/UI Designer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="portfolio.css">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-0ZPWXXEFP8"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-0ZPWXXEFP8');</script>
-<style>
 
-.hero{background:linear-gradient(160deg,#f7faff 0%,#fff 60%);border-bottom:1px solid var(--border);padding:84px 0 72px;}
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+
+/* ── SCROLL ANIMATIONS ─────────────────── */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease;}
+.reveal.visible{opacity:1;transform:none;}
+.reveal-left{opacity:0;transform:translateX(-28px);transition:opacity .65s ease,transform .65s ease;}
+.reveal-left.visible{opacity:1;transform:none;}
+.reveal-right{opacity:0;transform:translateX(28px);transition:opacity .65s ease,transform .65s ease;}
+.reveal-right.visible{opacity:1;transform:none;}
+.stagger>*{opacity:0;transform:translateY(16px);transition:opacity .45s ease,transform .45s ease;}
+.stagger.visible>*:nth-child(1){opacity:1;transform:none;transition-delay:.04s;}
+.stagger.visible>*:nth-child(2){opacity:1;transform:none;transition-delay:.1s;}
+.stagger.visible>*:nth-child(3){opacity:1;transform:none;transition-delay:.16s;}
+.stagger.visible>*:nth-child(4){opacity:1;transform:none;transition-delay:.22s;}
+.stagger.visible>*:nth-child(5){opacity:1;transform:none;transition-delay:.28s;}
+.stagger.visible>*:nth-child(6){opacity:1;transform:none;transition-delay:.34s;}
+.stagger.visible>*:nth-child(7){opacity:1;transform:none;transition-delay:.40s;}
+.stagger.visible>*:nth-child(8){opacity:1;transform:none;transition-delay:.46s;}
+
+/* ── HERO ──────────────────────────────── */
+.hero{
+  background:linear-gradient(160deg,#f7faff 0%,#fff 58%);
+  border-bottom:1px solid #e8e8e8;
+  padding:72px 0 64px;
+  position:relative;overflow:hidden;
+}
+.hero-bg-circle{
+  position:absolute;right:-120px;top:-80px;
+  width:560px;height:560px;
+  background:radial-gradient(circle,rgba(8,79,170,.04) 0%,transparent 70%);
+  pointer-events:none;
+}
 .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;}
-.hero-title{font-family:'DM Serif Display',serif;font-size:clamp(34px,4.5vw,54px);line-height:1.12;color:var(--text);margin-bottom:20px;}
-.hero-title em{font-style:italic;color:var(--blue);}
-.hero-desc{font-size:17px;color:var(--text-muted);line-height:1.7;margin-bottom:28px;max-width:520px;}
-.hero-img img{width:100%;max-width:460px;filter:drop-shadow(0 20px 40px rgba(8,79,170,.12));animation:floatImg 5s ease-in-out infinite;}
+.hero-title{
+  font-family:'DM Serif Display',serif;
+  font-size:48px;
+  line-height:1.1;color:#1a1a1a;
+  margin-bottom:18px;
+}
+.hero-title em{font-style:italic;color:#084FAA;}
+.hero-desc{font-size:18px;color:#555;line-height:1.75;margin-bottom:24px;max-width:520px;}
+.hero-desc strong{color:#084FAA;font-weight:600;}
+.hero-img img{
+  width:100%;max-width:460px;
+  filter:drop-shadow(0 20px 40px rgba(8,79,170,.11));
+  animation:floatImg 5s ease-in-out infinite;
+  display:block;
+}
 @keyframes floatImg{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-.social-row{display:flex;align-items:center;gap:14px;margin-top:22px;padding-top:22px;border-top:1px solid var(--border);}
-.social-row img{width:30px;height:30px;opacity:.55;transition:opacity .2s;}
-.social-row a:hover img{opacity:1;}
-.project-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-xl);overflow:hidden;display:grid;grid-template-columns:1.4fr 1fr;text-decoration:none;box-shadow:var(--shadow-sm);transition:box-shadow .25s,transform .25s;}
-.project-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-3px);}
-.project-card.featured{grid-template-columns:1.5fr 1fr;}
-.pc-img{overflow:hidden;background:var(--surface-2);}
-.pc-img img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:transform .4s;}
-.project-card:hover .pc-img img{transform:scale(1.03);}
-.pc-body{padding:32px 28px;display:flex;flex-direction:column;justify-content:center;border-left:1px solid var(--border);}
-.pc-body h3{font-family:'DM Serif Display',serif;font-size:24px;color:var(--text);margin-bottom:10px;}
-.pc-body p{font-size:14px;color:var(--text-muted);line-height:1.65;margin-bottom:20px;}
-.pc-link{font-size:13px;font-weight:600;color:var(--blue);display:inline-flex;align-items:center;gap:6px;}
-.project-card:hover .pc-link::after{transform:translateX(4px);}
-.pc-link::after{content:'→';transition:transform .2s;}
-.project-list{display:flex;flex-direction:column;gap:20px;}
-.callout-box{background:var(--blue-light);border:1px solid var(--blue-mid);border-left:4px solid var(--blue);border-radius:var(--radius-lg);padding:18px 22px;font-size:15px;line-height:1.7;color:var(--text);margin-bottom:36px;}
-@media(max-width:860px){.hero-grid{grid-template-columns:1fr;}.hero-img{display:flex;justify-content:flex-start;}.hero-img img{max-width:300px;}.project-card,.project-card.featured{grid-template-columns:1fr;}.pc-img{min-height:220px;}.pc-body{border-left:none;border-top:1px solid var(--border);}}
+
+/* tags */
+.tag-pill{
+  display:inline-flex;align-items:center;
+  background:#E8F0FF;color:#0B4FBE;
+  border:1px solid rgba(8,79,170,.2);
+  border-radius:50px;padding:5px 13px;
+  font-size:14px;font-weight:600;line-height:1;
+  transition:background .2s,color .2s,transform .2s;
+  cursor:default;
+}
+.tag-pill:hover{background:#084FAA;color:#fff;transform:translateY(-2px);}
+
+/* cta */
+.btn-primary{
+  display:inline-flex;align-items:center;gap:8px;
+  background:#1a1a1a;color:#fff;
+  font-size:14px;font-weight:600;padding:12px 22px;
+  border-radius:50px;text-decoration:none;border:none;cursor:pointer;
+  transition:background .2s,transform .2s,box-shadow .2s;
+  box-shadow:0 4px 14px rgba(0,0,0,.14);
+}
+.btn-primary:hover{background:#084FAA;transform:translateY(-2px);box-shadow:0 8px 20px rgba(8,79,170,.22);color:#fff;}
+.btn-ghost-link{
+  display:inline-flex;align-items:center;gap:6px;
+  color:#555;font-size:14px;font-weight:500;
+  text-decoration:none;transition:color .2s;
+}
+.btn-ghost-link:hover{color:#084FAA;}
+
+/* social */
+.social-row{display:flex;align-items:center;gap:12px;margin-top:20px;padding-top:20px;border-top:1px solid #e8e8e8;}
+.social-row img{width:28px;height:28px;opacity:.5;transition:opacity .2s,transform .2s;}
+.social-row a:hover img{opacity:1;transform:translateY(-2px);}
+
+/* ── WORK SECTION ──────────────────────── */
+.work-section{padding:72px 0;}
+.callout-strip{
+  background:#F0F5FF;border:1px solid #E3ECFF;
+  border-left:4px solid #084FAA;
+  border-radius:14px;padding:18px 22px;
+  font-size:16px;line-height:1.8;color:#1a1a1a;
+  margin-bottom:36px;
+}
+
+/* project cards */
+.project-list{display:flex;flex-direction:column;gap:18px;}
+.pcard{
+  background:#fff;border:1px solid #e8e8e8;
+  border-radius:20px;overflow:hidden;
+  display:grid;grid-template-columns:1.4fr 1fr;
+  text-decoration:none;
+  box-shadow:0 1px 4px rgba(0,0,0,.06);
+  transition:box-shadow .28s,transform .28s;
+  position:relative;
+}
+.pcard::after{
+  content:'';position:absolute;inset:0;
+  border-radius:20px;
+  box-shadow:0 0 0 0 rgba(8,79,170,.0);
+  transition:box-shadow .28s;
+  pointer-events:none;
+}
+.pcard:hover{box-shadow:0 12px 40px rgba(8,79,170,.12);transform:translateY(-3px);}
+.pcard:hover::after{box-shadow:0 0 0 1.5px rgba(8,79,170,.15);}
+.pcard.featured{grid-template-columns:1.55fr 1fr;}
+.pc-img{overflow:hidden;background:#f3f3f3;position:relative;}
+.pc-img::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(to right,transparent 80%,rgba(8,79,170,.03));
+  pointer-events:none;
+}
+.pc-img img{
+  width:100%;height:100%;
+  object-fit:cover;object-position:top;
+  display:block;
+  transition:transform .45s ease;
+}
+.pcard:hover .pc-img img{transform:scale(1.04);}
+.pc-body{
+  padding:28px 24px;
+  display:flex;flex-direction:column;justify-content:center;
+  border-left:1px solid #e8e8e8;
+}
+.pc-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;}
+.pc-tag{
+  background:#F0F5FF;color:#0B4FBE;
+  border:1px solid rgba(8,79,170,.2);
+  border-radius:50px;padding:3px 10px;
+  font-size:14px;font-weight:600;
+}
+.pc-body h3{
+  font-family:'DM Serif Display',serif;
+  font-size:clamp(18px,2vw,22px);
+  color:#1a1a1a;margin-bottom:8px;line-height:1.25;
+}
+.pc-body p{font-size:14px;color:#555;line-height:1.8;margin-bottom:16px;}
+.pc-link{
+  font-size:14px;font-weight:600;color:#084FAA;
+  display:inline-flex;align-items:center;gap:5px;
+  margin-top:auto;position:relative;width:fit-content;
+}
+.pc-link::after{
+  content:'';position:absolute;bottom:-2px;left:0;right:0;
+  height:1px;background:#084FAA;
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .22s ease;
+}
+.pcard:hover .pc-link::after{transform:scaleX(1);}
+.pc-arrow{transition:transform .22s ease;}
+.pcard:hover .pc-arrow{transform:translateX(4px);}
+
+/* ── FOOTER ────────────────────────────── */
+.footer-s{background:#fafafa;border-top:1px solid #e8e8e8;padding:56px 0;}
+.footer-in{max-width:1060px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;}
+.footer-in h3{font-family:'DM Serif Display',serif;font-size:24px;color:#1a1a1a;margin-bottom:6px;}
+.footer-in p{font-size:16px;color:#555;line-height:1.6;margin-bottom:12px;}
+.footer-email{font-size:16px;font-weight:600;color:#084FAA;text-decoration:none;}
+.footer-email:hover{text-decoration:underline;}
+.footer-soc{display:flex;gap:9px;margin-top:12px;}
+.footer-soc img{width:26px;height:26px;opacity:.5;transition:opacity .2s;}
+.footer-soc a:hover img{opacity:1;}
+.footer-copy p{font-size:12px;color:#aaa;line-height:1.6;text-align:right;}
+
+/* ── RESPONSIVE ────────────────────────── */
+@media(max-width:860px){
+  .hero-grid{grid-template-columns:1fr;}
+  .hero-img{display:flex;justify-content:center;margin-top:32px;}
+  .hero-img img{max-width:280px;}
+  .pcard,.pcard.featured{grid-template-columns:1fr;}
+  .pc-img{min-height:200px;}
+  .pc-body{border-left:none;border-top:1px solid #e8e8e8;}
+  .footer-in{grid-template-columns:1fr;}
+  .footer-copy p{text-align:left;}
+}
 </style>
 </head>
 <body>
 
+<!-- NAV -->
+<nav style="position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.95);backdrop-filter:blur(16px);border-bottom:1px solid #e8e8e8;height:64px;display:flex;align-items:center;">
+  <div style="max-width:1100px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;width:100%;">
+    <a href="index.html"><img src="images/logo.png" alt="Prateek Chatterjee" style="height:34px;display:block;"></a>
+    <div style="display:flex;gap:8px;">
+      <a href="index.html" style="font-size:13px;font-weight:500;letter-spacing:.5px;text-transform:uppercase;text-decoration:none;color:#084FAA;background:#F0F5FF;padding:6px 14px;border-radius:50px;">Work</a>
+      <a href="About.html" style="font-size:13px;font-weight:500;letter-spacing:.5px;text-transform:uppercase;text-decoration:none;color:#555;padding:6px 14px;border-radius:50px;">About</a>
+      <a href="play.html" style="font-size:13px;font-weight:500;letter-spacing:.5px;text-transform:uppercase;text-decoration:none;color:#555;padding:6px 14px;border-radius:50px;">Play</a>
+    </div>
+  </div>
+</nav>
 
-<nav style="position:fixed;top:0;z-index:1000;background:rgba(255,255,255,.95);backdrop-filter:blur(16px);border-bottom:1px solid #e8e8e8;height:64px;display:flex;align-items:center;" class="nav">
-  <div class="nav-inner">
-    <a class="nav-logo" href="index.html"><img src="images/logo.png" alt="Prateek Chatterjee"></a>
-    <div class="nav-links"><a href="index.html" class="active">Work</a><a href="About.html">About</a><a href="play.html">Play</a></div></div></nav>
-<div class="page">
-
+<!-- ═══ HERO ═══ -->
 <section class="hero">
+  <div class="hero-bg-circle"></div>
   <div class="container">
     <div class="hero-grid">
+
+      <!-- Left -->
       <div>
-        <!-- <span class="eyebrow">Healthcare · AI · Analytics · Enterprise UX</span> -->
-      <h1 class="hero-title" style="margin-bottom:30px;">  Hi, I'm Prateek,
-      <br>  a <em>Sr. UX/UI Designer</em> at <em>Inova Health</em></h1>
-      <!--  <h1 class="hero-title" style="margin-bottom:30px;">Designing <em>complex systems</em><br>people actually use</h1> -->
-        <div class="tags-row" style="margin-bottom:20px;">
-          <span class="tag">Healthcare</span>  <span class="tag">Federal Gov</span><span class="tag">AI Products</span>       <span class="tag">Analytics</span><span class="tag">Data Governance</span><span class="tag"> IT Consulting</span>  <span class="tag">Automotive</span>    <span class="tag">Telecom</span>
+        <h1 class="hero-title reveal">
+          Hi, I'm Prateek,<br>
+          a <em>Sr. UX/UI Designer</em><br>at <em>Inova Health</em>
+        </h1>
 
-        </div>
-        <p class="hero-desc">
-          I'm a developer turned designer with <span style="color:#084FAA;font-weight:600;">8+ years of experience </span> creating enterprise products and digital experiences. <br> <br>
-
-                I'm passionate about transforming complex systems into trusted, intuitive, and accessible solutions that people genuinely enjoy using.
-
-
-        <div class="cta-row">
-          <a href="images/res.pdf" target="_blank" download class="btn-dark">↓ Resume</a>
-          <a href="https://www.linkedin.com/in/prateek-chatterjee-25a0a2140/" target="_blank" class="btn-ghost">LinkedIn ↗</a>
+        <!-- Tags animate in staggered -->
+        <div class="stagger" style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:22px;">
+          <span class="tag-pill">Healthcare</span>
+          <span class="tag-pill">Federal Gov</span>
+          <span class="tag-pill">AI Products</span>
+          <span class="tag-pill">Analytics</span>
+          <span class="tag-pill">Data Governance</span>
+          <span class="tag-pill">IT Consulting</span>
+          <span class="tag-pill">Automotive</span>
+          <span class="tag-pill">Telecom</span>
         </div>
 
+        <p class="hero-desc reveal">
+          I'm a developer turned designer with <strong>8+ years of experience</strong> creating enterprise products and digital experiences.<br><br>
+          I'm passionate about transforming complex systems into trusted, intuitive, and accessible solutions that people genuinely enjoy using.
+        </p>
+
+        <div class="reveal" style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+          <a href="images/res.pdf" target="_blank" download class="btn-primary">↓ Resume</a>
+          <a href="https://www.linkedin.com/in/prateek-chatterjee-25a0a2140/" target="_blank" class="btn-ghost-link">LinkedIn ↗</a>
+        </div>
+<!--
+        <div class="social-row reveal">
+          <a href="https://www.linkedin.com/in/prateek-chatterjee-25a0a2140/" target="_blank"><img src="images/Linked.png" alt="LinkedIn"></a>
+          <a href="https://dribbble.com/ppchatterjee" target="_blank"><img src="images/dribble.png" alt="Dribbble"></a>
+          <a href="https://medium.com/@prateekrise92" target="_blank"><img src="images/Medium.webp" alt="Medium"></a>
+          <a href="https://github.com/ppchatterjee123" target="_blank"><img src="images/git.png" alt="GitHub"></a>
+        </div> -->
       </div>
-      <div class="hero-img" style="display:flex;align-items:center;justify-content:flex-end;">
+
+      <!-- Right — floating image -->
+      <div class="hero-img reveal-right" style="display:flex;align-items:center;justify-content:flex-end;">
         <img src="images/landing.png" alt="Prateek Chatterjee">
       </div>
-    </div>
 
-<!--
-    <div class="stats-row">
-      <div class="stat-cell"><div class="stat-num">8+</div><div class="stat-label">Years of enterprise UX design</div></div>
-      <div class="stat-cell"><div class="stat-num">20+</div><div class="stat-label">Products shipped across healthcare, AI, Federal, Telecom & Federal</div></div>
-      <div class="stat-cell"><div class="stat-num">AI</div><div class="stat-label">Model inventory, Governance & Transparency UX</div></div>
-      <div class="stat-cell"><div class="stat-num">Enterprise Products</div><div class="stat-label">Research • Strategy • Design</div></div>
-    </div>
-  </div> -->
-</section>
-
-<section class="section">
-  <div class="container">
-    <span class="eyebrow">Selected Work</span>
-    <h2 class="section-heading">Cases that show the thinking</h2>
-    <p class="section-body" style="margin-bottom:32px;">Enterprise, healthcare, analytics, federal, telecom, VR, and AI products </p>
-    <div class="callout-box">Most of my recent work focuses on transforming complex healthcare and analytics workflows into intuitive experiences that support better decision-making, governance, and adoption across large organizations.</div>
-
-    <div class="project-list">
-      <a href="passwordperi.html" class="project-card featured">
-        <div class="pc-img" style="min-height:360px;"><img src="images/peri.png" alt="Periscope Analytics Marketplace"></div>
-        <div class="pc-body">
-          <div class="tags-row"><span class="tag">Featured </span><span class="tag">Healthcare · Enterprise</span><span class="tag"> AI </span></div>
-          <h3>Periscope - Analytics Marketplace</h3>
-          <p>A centralized discovery platform for dashboards, reports, AI models, and data assets across Inova Health System. Replaced 5+ fragmented tools with one governed, searchable marketplace.</p>
-          <span class="pc-link">View case study</span>
-        </div>
-      </a>
-
-
-
-
-
-
-      <a href="passwordbspd.html" class="project-card">
-        <div class="pc-img" style="min-height:280px;"><img src="images/bspd.png" alt="BSPD Brightspeed"></div>
-        <div class="pc-body">
-          <div class="tags-row"><span class="tag">Telecom</span><span class="tag">Enterprise B2B</span></div>
-          <h3>Brightspeed Business Solutions</h3>
-          <p>Redesigning the B2B experience for the nation's 5th largest telecom, improving navigation, conversion, and post-acquisition brand cohesion.</p>
-          <span class="pc-link">View case study</span>
-        </div>
-      </a>
-
-      <a href="passwordacoms.html" class="project-card">
-        <div class="pc-img" style="min-height:280px;"><img src="images/2.png" alt="ACO-MS Federal Healthcare"></div>
-        <div class="pc-body">
-          <div class="tags-row"><span class="tag">Federal · CMS</span><span class="tag">Healthcare SaaS</span></div>
-          <h3>ACO-MS: Federal Healthcare Platform</h3>
-          <p>Lead UX for a federal CMS product supporting 500+ ACO organizations, enabling $1.2B in Medicare savings through better usability and workflow design.</p>
-          <span class="pc-link">View case study</span>
-        </div>
-      </a>
-
-      <a href="passworddash.html" class="project-card">
-        <div class="pc-img" style="min-height:280px;"><img src="images/clinical_analytics_hero.png" alt="BSPD Brightspeed"></div>
-        <div class="pc-body">
-          <div class="tags-row"><span class="tag">Healthcare </span><span class="tag"> Tableau · PowerBI Dashboards</span></div>
-          <h3>Clinical Analytics Dashboard Standardization</h3>
-          <p>A scalable UX design system and process for Tableau dashboards, bridging clinical, BI, and governance teams to create consistent, trusted data experiences.</p>
-          <span class="pc-link">View case study</span>
-        </div>
-      </a>
-
-      <a href="passwordVR.html" class="project-card">
-        <div class="pc-img" style="min-height:280px;"><img src="images/4.png" alt="VR Experience Design"></div>
-        <div class="pc-body">
-          <div class="tags-row"><span class="tag">VR</span><span class="tag">Immersive UX</span><span class="tag">Research</span></div>
-          <h3>Classic Driver VR - Thesis</h3>
-          <p>Designed and developed an immersive VR driving simulator for Oculus as a Master's thesis, validated through A/B testing with 70+ users.</p>
-          <span class="pc-link">View case study</span>
-        </div>
-      </a>
-
-      <a href="passwordhdrive.html" class="project-card">
-        <div class="pc-img" style="min-height:280px;"><img src="images/1.png" alt="HDrive Healthcare SaaS"></div>
-        <div class="pc-body">
-          <div class="tags-row"><span class="tag">Healthcare SaaS</span><span class="tag">Data Platform</span></div>
-          <h3>HDrive - Healthcare Data Platform</h3>
-          <p>Sole designer for a healthcare SaaS startup from Alpha through Beta, building a secure, role-based platform that unifies patient records, wearables, and clinical data.</p>
-          <span class="pc-link">View case study</span>
-        </div>
-      </a>
     </div>
   </div>
 </section>
 
-<footer class="footer"><div class="footer-inner"><div class="footer-left"><h3>Let's connect</h3><p>Open to Senior UX/UI Designer/Researcher, Product Designer, and UX Strategist, UX/Design Manager opportunities.</p><a href="mailto:prateekpc.ux@gmail.com" class="footer-email">prateekpc.ux@gmail.com</a><div class="footer-social"><a href="https://www.linkedin.com/in/prateek-chatterjee-25a0a2140/" target="_blank"><img src="images/Linked.png" alt="LinkedIn"></a><a href="https://dribbble.com/ppchatterjee" target="_blank"><img src="images/dribble.png" alt="Dribbble"></a><a href="https://medium.com/@prateekrise92" target="_blank"><img src="images/Medium.webp" alt="Medium"></a><a href="https://github.com/ppchatterjee123" target="_blank"><img src="images/git.png" alt="GitHub"></a></div></div><div class="footer-right"><p>Designed & built<br>by Prateek Chatterjee<br><br>© 2026</p></div></div></footer>
-</div>
+<!-- ═══ WORK ═══ -->
+<section class="work-section">
+  <div class="container">
+
+    <div class="reveal">
+      <span style="font-size:14px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:#084FAA;margin-bottom:10px;display:block;">Selected Work</span>
+      <h2 style="font-family:'DM Serif Display',serif;font-size:48px;line-height:1.2;color:#1a1a1a;margin-bottom:10px;">Cases that show the thinking</h2>
+      <p style="font-size:20px;color:#555;line-height:1.75;margin-bottom:28px;">Enterprise, healthcare, analytics, federal, telecom, VR, and AI products.</p>
+    </div>
+
+    <div class="callout-strip reveal">
+      Most of my recent work focuses on transforming complex healthcare and analytics workflows into intuitive experiences that support better decision-making, governance, and adoption across large organizations.
+    </div>
+
+    <div class="project-list">
+
+      <!-- Periscope — featured -->
+      <a href="passwordperi.html" class="pcard featured reveal">
+        <div class="pc-img" style="min-height:340px;"><img src="images/peri.png" alt="Periscope Analytics Marketplace"></div>
+        <div class="pc-body">
+          <div class="pc-tags"><span class="pc-tag">Featured</span><span class="pc-tag">Healthcare · Enterprise</span><span class="pc-tag">AI</span></div>
+          <h3>Periscope — Analytics Marketplace</h3>
+          <p>A centralized discovery platform for dashboards, reports, AI models, and data assets across Inova Health System. Replaced 5+ fragmented tools with one governed, searchable marketplace.</p>
+          <span class="pc-link">View case study <span class="pc-arrow">→</span></span>
+        </div>
+      </a>
+
+      <!-- BSPD -->
+      <a href="passwordbspd.html" class="pcard reveal">
+        <div class="pc-img" style="min-height:260px;"><img src="images/bspd.png" alt="Brightspeed"></div>
+        <div class="pc-body">
+          <div class="pc-tags"><span class="pc-tag">Telecom</span><span class="pc-tag">Enterprise B2B</span></div>
+          <h3>Brightspeed Business Solutions</h3>
+          <p>Redesigning the B2B experience for the nation's 5th largest telecom, improving navigation, conversion, and post-acquisition brand cohesion.</p>
+          <span class="pc-link">View case study <span class="pc-arrow">→</span></span>
+        </div>
+      </a>
+
+      <!-- ACO-MS -->
+      <a href="passwordacoms.html" class="pcard reveal">
+        <div class="pc-img" style="min-height:260px;"><img src="images/2.png" alt="ACO-MS"></div>
+        <div class="pc-body">
+          <div class="pc-tags"><span class="pc-tag">Federal · CMS</span><span class="pc-tag">Healthcare SaaS</span></div>
+          <h3>ACO-MS — Federal Healthcare Platform</h3>
+          <p>Lead UX for a federal CMS product supporting 500+ ACO organizations, enabling $1.2B in Medicare savings through better usability and workflow design.</p>
+          <span class="pc-link">View case study <span class="pc-arrow">→</span></span>
+        </div>
+      </a>
+
+      <!-- Clinical -->
+      <a href="passworddash.html" class="pcard reveal">
+        <div class="pc-img" style="min-height:260px;"><img src="images/clinical_analytics_hero.png" alt="Clinical Analytics"></div>
+        <div class="pc-body">
+          <div class="pc-tags"><span class="pc-tag">Healthcare</span><span class="pc-tag">Tableau · Power BI</span></div>
+          <h3>Clinical Analytics Dashboard Standardization</h3>
+          <p>A scalable UX design system and process for Tableau dashboards, bridging clinical, BI, and governance teams to create consistent, trusted data experiences.</p>
+          <span class="pc-link">View case study <span class="pc-arrow">→</span></span>
+        </div>
+      </a>
+
+      <!-- VR -->
+      <a href="passwordVR.html" class="pcard reveal">
+        <div class="pc-img" style="min-height:260px;"><img src="images/4.png" alt="VR Thesis"></div>
+        <div class="pc-body">
+          <div class="pc-tags"><span class="pc-tag">VR</span><span class="pc-tag">Immersive UX</span><span class="pc-tag">Research</span></div>
+          <h3>Classic Driver VR — Thesis</h3>
+          <p>Designed and developed an immersive VR driving simulator for Oculus as a Master's thesis, validated through A/B testing with 70+ users.</p>
+          <span class="pc-link">View case study <span class="pc-arrow">→</span></span>
+        </div>
+      </a>
+
+      <!-- HDrive -->
+      <a href="passwordhdrive.html" class="pcard reveal">
+        <div class="pc-img" style="min-height:260px;"><img src="images/1.png" alt="HDrive"></div>
+        <div class="pc-body">
+          <div class="pc-tags"><span class="pc-tag">Healthcare SaaS</span><span class="pc-tag">Data Platform</span></div>
+          <h3>HDrive — Healthcare Data Platform</h3>
+          <p>Sole designer for a healthcare SaaS startup from Alpha through Beta, building a secure, role-based platform that unifies patient records, wearables, and clinical data.</p>
+          <span class="pc-link">View case study <span class="pc-arrow">→</span></span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer-s">
+  <div class="footer-in">
+    <div>
+      <h3>Let's connect</h3>
+      <p>Open to Senior UX/UI Designer, Product Designer, UX Strategist, and Design Manager opportunities.</p>
+      <a href="mailto:prateekpc.ux@gmail.com" class="footer-email">prateekpc.ux@gmail.com</a>
+      <div class="footer-soc">
+        <a href="https://www.linkedin.com/in/prateek-chatterjee-25a0a2140/" target="_blank"><img src="images/Linked.png" alt="LinkedIn"></a>
+        <a href="https://dribbble.com/ppchatterjee" target="_blank"><img src="images/dribble.png" alt="Dribbble"></a>
+        <a href="https://medium.com/@prateekrise92" target="_blank"><img src="images/Medium.webp" alt="Medium"></a>
+        <a href="https://github.com/ppchatterjee123" target="_blank"><img src="images/git.png" alt="GitHub"></a>
+      </div>
+    </div>
+    <div class="footer-copy">
+      <p>Designed & built<br>by Prateek Chatterjee<br><br>© 2026</p>
+    </div>
+  </div>
+</footer>
+
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<script>
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(e.isIntersecting){
+      e.target.classList.add('visible');
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -32px 0px' });
+
+document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .stagger').forEach(el => {
+  io.observe(el);
+});
+</script>
 </body>
 </html>
