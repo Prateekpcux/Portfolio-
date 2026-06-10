@@ -33,41 +33,26 @@
 
 /* ── HERO ──────────────────────── */
 .play-hero{
-  background:#fff;
+  background:linear-gradient(160deg,#f7faff 0%,#fff 60%);
   border-bottom:1px solid #e8e8e8;
   padding:64px 0 56px;
   overflow:hidden;
   position:relative;
 }
-/* Grid texture */
-.play-hero::before{
-  content:'';position:absolute;inset:0;
-  background-image:
-    linear-gradient(rgba(8,79,170,.025) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(8,79,170,.025) 1px,transparent 1px);
-  background-size:48px 48px;pointer-events:none;
-}
-/* Bottom fade */
-.play-hero::after{
-  content:'';position:absolute;bottom:0;left:0;right:0;
-  height:60px;background:linear-gradient(to bottom,transparent,#fff);
-  pointer-events:none;
-}
 .play-hero-bg{
   position:absolute;right:-80px;top:-40px;
   width:480px;height:480px;
-  background:radial-gradient(circle at 70% 30%,rgba(8,79,170,.05) 0%,transparent 65%);
+  background:radial-gradient(circle,rgba(8,79,170,.05) 0%,transparent 70%);
   pointer-events:none;
 }
 .play-hero h1{
   font-family:'DM Serif Display',serif;
-  font-size:clamp(32px,4.5vw,52px);
+  font-size:48px;
   line-height:1.08;color:#1a1a1a;
   margin-bottom:14px;
-  letter-spacing:-.2px;
 }
 .play-hero h1 em{font-style:italic;color:#084FAA;}
-.play-hero p{font-size:17px;color:#666;line-height:1.75;max-width:560px;}
+.play-hero p{font-size:20px;color:#555;line-height:1.75;max-width:560px;}
 
 /* ── PROJECT ENTRIES ───────────── */
 .project-section{padding:72px 0;border-bottom:1px solid #f0f0f0;}
@@ -134,13 +119,13 @@
 /* ── CHIPS ─────────────────────── */
 .chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px;}
 .chip{
-  background:rgba(8,79,170,.06);border:1px solid rgba(8,79,170,.14);
-  border-radius:4px;padding:5px 13px;
-  font-size:13px;font-weight:500;color:#084FAA;
-  transition:background .2s,color .2s,transform .15s;
+  background:#fafafa;border:1px solid #e8e8e8;
+  border-radius:50px;padding:5px 13px;
+  font-size:15px;font-weight:500;color:#555;
+  transition:background .2s,border-color .2s,color .2s;
 }
 .project-section:hover .chip{
-  background:#084FAA;border-color:#084FAA;color:#fff;
+  background:#F0F5FF;border-color:#E3ECFF;color:#084FAA;
 }
 
 /* ── LINKS ─────────────────────── */
@@ -218,15 +203,11 @@
 <!-- ═══ HERO ═══ -->
 <section class="play-hero">
   <div class="play-hero-bg"></div>
-  <div class="container" style="position:relative;z-index:1;">
+  <div class="container">
     <div class="reveal">
-      <div style="display:inline-flex;align-items:center;gap:8px;margin-bottom:16px;">
-        <span style="width:20px;height:2px;background:linear-gradient(to right,#084FAA,rgba(8,79,170,.3));border-radius:2px;display:inline-block;"></span>
-        <span style="font-size:12px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;color:#084FAA;">Side Projects</span>
-      </div>
+      <span style="font-size:14px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:#084FAA;margin-bottom:16px;display:block;">Side Projects</span>
       <h1>Games, experiments,<br><em>and creative rabbit holes.</em></h1>
-      <div style="width:40px;height:2px;background:linear-gradient(to right,#084FAA,rgba(8,79,170,.2));border-radius:2px;margin:18px 0;"></div>
-      <p>Projects I built for the love of it — game design, VR, 3D modeling, and motion graphics. Games are downloadable and playable on Windows.</p>
+      <p style="margin-top:16px;">Projects I built for the love of it -game design, VR, 3D modeling, and motion graphics. Games are downloadable and playable on Windows.</p>
     </div>
   </div>
 </section>

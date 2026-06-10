@@ -35,88 +35,37 @@
 .page{padding-top:0!important;}
 
 /* ── HERO ─────────────── */
-.hero{
-  background:#fff;
-  border-bottom:1px solid #e8e8e8;
-  padding:56px 0 52px;
-  position:relative;overflow:hidden;
-}
-/* Same grid texture as index */
-.hero::before{
-  content:'';position:absolute;inset:0;
-  background-image:
-    linear-gradient(rgba(8,79,170,.025) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(8,79,170,.025) 1px,transparent 1px);
-  background-size:48px 48px;
-  pointer-events:none;
-}
-.hero::after{
-  content:'';position:absolute;bottom:0;left:0;right:0;
-  height:60px;background:linear-gradient(to bottom,transparent,#fff);
-  pointer-events:none;
-}
-/* Eyebrow label */
-.hero-eyebrow-label{
-  display:inline-flex;align-items:center;gap:8px;
-  font-size:12px;font-weight:600;letter-spacing:1.6px;
-  text-transform:uppercase;color:#084FAA;
-  margin-bottom:16px;
-}
-.hero-eyebrow-label::before{
-  content:'';width:20px;height:2px;
-  background:linear-gradient(to right,#084FAA,rgba(8,79,170,.3));
-  border-radius:2px;display:inline-block;
-}
-/* Full-width photo — right column */
+.hero{background:linear-gradient(160deg,#f7faff 0%,#fff 55%);border-bottom:1px solid #e8e8e8;padding:52px 0 52px;}
+/* Heading block above image */
+.hero-intro{margin-bottom:28px;}
+.hero-eyebrow-label{font-size:14px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:#084FAA;margin-bottom:10px;display:block;}
+/* Full-width photo -right column, shows full image no crop */
 .hero-photo{
-  width:100%;display:block;height:auto;
+  width:100%;display:block;
+  height:auto;
   border-radius:16px;border:1px solid #e8e8e8;
   box-shadow:0 8px 40px rgba(8,79,170,.1);
-  position:relative;z-index:1;
 }
-/* Two-column layout */
+/* Two-column layout: left text, right photo */
 .hero-cols{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start;}
-.hero-heading{
-  font-family:'DM Serif Display',serif;
-  font-size:clamp(30px,4vw,46px);
-  line-height:1.1;color:#1a1a1a;margin-bottom:14px;
-  letter-spacing:-.2px;
-}
+.hero-overline{font-size:14px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:#084FAA;margin-bottom:12px;display:block;}
+.hero-heading{font-family:'DM Serif Display',serif;font-size:48px;line-height:1.15;color:#1a1a1a;margin-bottom:14px;}
 .hero-heading em{font-style:italic;color:#084FAA;}
-.hero-body{font-size:17px;color:#666;line-height:1.75;}
-
-/* Accent rule — same as index */
-.hero-rule{
-  width:40px;height:2px;
-  background:linear-gradient(to right,#084FAA,rgba(8,79,170,.2));
-  border-radius:2px;margin:20px 0;
-}
+.hero-body{font-size:20px;color:#555;line-height:1.75;}
 
 /* ── STAT PILLS ─────────── */
-.stat-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;}
-.stat-pill{
-  background:#fff;border:1px solid #e8e8e8;
-  border-radius:6px;padding:7px 14px;
-  font-size:13px;font-weight:500;color:#333;
-  box-shadow:0 1px 4px rgba(0,0,0,.05);
-  display:flex;align-items:center;gap:5px;
-}
+.stat-pills{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:20px;}
+.stat-pill{background:#fff;border:1px solid #e8e8e8;border-radius:50px;padding:7px 16px;font-size:14px;font-weight:500;color:#333;box-shadow:0 1px 4px rgba(0,0,0,.06);display:flex;align-items:center;gap:6px;}
 .stat-pill strong{color:#084FAA;font-weight:700;}
 
 /* ── LOVE PILLS ─────────── */
-.love-pills{display:flex;flex-wrap:wrap;gap:7px;}
-.love-pill{
-  background:rgba(8,79,170,.06);color:#084FAA;
-  border:1px solid rgba(8,79,170,.14);
-  border-radius:4px;padding:6px 13px;
-  font-size:13px;font-weight:500;
-  transition:background .2s,color .2s,transform .15s;cursor:default;
-}
-.love-pill:hover{background:#084FAA;color:#fff;transform:translateY(-1px);}
+.love-pills{display:flex;flex-wrap:wrap;gap:8px;}
+.love-pill{background:#F0F5FF;color:#084FAA;border:1px solid #E3ECFF;border-radius:50px;padding:8px 16px;font-size:15px;font-weight:600;transition:background .2s,transform .2s;cursor:default;}
+.love-pill:hover{background:#084FAA;color:#fff;transform:translateY(-2px);}
 
 /* ── SOCIAL ─────────────── */
 .social-links{display:flex;gap:10px;align-items:center;}
-.social-links img{width:30px;height:30px;opacity:.45;transition:opacity .2s,transform .2s;}
+.social-links img{width:32px;height:32px;opacity:.5;transition:opacity .2s,transform .2s;}
 .social-links a:hover img{opacity:1;transform:translateY(-2px);}
 
 /* ── SECTION HELPERS ────── */
@@ -232,43 +181,21 @@
 <nav   style="position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.95);backdrop-filter:blur(16px);border-bottom:1px solid #e8e8e8;height:64px;display:flex;align-items:center;"class="nav"><div class="nav-inner"><a class="nav-logo" href="index.html"><img src="images/logo.png" alt="Logo"></a><div class="nav-links"><a href="index.html">Work</a><a href="About.html" class="active">About</a><a href="play.html">Play</a></div></div></nav>
 <div class="page">
 
-<section class="about-hero" style="background:#fff;border-bottom:1px solid #e8e8e8;padding:60px 0 56px;position:relative;overflow:hidden;">
-  <!-- Grid texture -->
-  <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(8,79,170,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(8,79,170,.025) 1px,transparent 1px);background-size:48px 48px;pointer-events:none;"></div>
-  <!-- Fade bottom -->
-  <div style="position:absolute;bottom:0;left:0;right:0;height:60px;background:linear-gradient(to bottom,transparent,#fff);pointer-events:none;"></div>
+<section class="about-hero">
+  <div class="container" >
 
-  <div class="container" style="position:relative;z-index:1;">
+    <span class="ae-label" >ABOUT ME</span>
+    <h1 style="font-family:'DM Serif Display',serif;font-size:48px;line-height:1.15;margin-bottom:16px;color:var(--text);">Technology, creativity,
+      <em style="font-style:italic;color:var(--blue);">and a little bit of adventure.</em></h1>
 
-    <!-- Eyebrow with line -->
-    <div style="display:inline-flex;align-items:center;gap:8px;margin-bottom:16px;">
-      <span style="width:20px;height:2px;background:linear-gradient(to right,#084FAA,rgba(8,79,170,.3));border-radius:2px;display:inline-block;"></span>
-      <span style="font-size:12px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;color:#084FAA;">About Me</span>
-      <span style="color:#ddd;font-size:12px;">·</span>
-      <span style="font-size:12px;font-weight:500;color:#999;">Washington DC</span>
-    </div>
-
-    <h1 style="font-family:'DM Serif Display',serif;font-size:clamp(28px,4vw,46px);line-height:1.1;margin-bottom:20px;color:#1a1a1a;letter-spacing:-.2px;">Technology, creativity,
-      <em style="font-style:italic;color:#084FAA;">and a little bit of adventure.</em></h1>
-
-    <p style="font-size:17px;color:#666;line-height:1.75;margin-bottom:0;max-width:640px;">8+ years turning complex healthcare, government, and enterprise systems into experiences that feel effortless. I care deeply about the people on the other side of every screen.</p>
-
-    <!-- Accent rule -->
-    <div style="width:40px;height:2px;background:linear-gradient(to right,#084FAA,rgba(8,79,170,.2));border-radius:2px;margin:22px 0;"></div>
+   <p class="section-body" style="margin-bottom:36px;font-size:20px;line-height:1.75;"> I believe the best ideas come from diverse experiences, continuous learning, and genuine curiosity about how people think and behave.</p>
+<!--Outside of work, you'll usually find me training martial arts, playing video games, exploring new technology, dancing, or planning my next adventure.-->
 
     <!-- Tags row: stats LEFT, loves RIGHT -->
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start;max-width:700px;">
+    <div style="display:grid;gap:24px;margin-top:28px;align-items:start;">
+
       <div>
-        <p style="font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:#bbb;margin-bottom:10px;">Experience</p>
-        <div style="display:flex;flex-wrap:wrap;gap:7px;">
-          <div class="stat-pill"><strong>8+</strong> years UX</div>
-          <div class="stat-pill"><strong>20+</strong> products</div>
-          <div class="stat-pill"><strong>$1.2B</strong> impact</div>
-          <div class="stat-pill"><strong>3.5M</strong> views</div>
-        </div>
-      </div>
-      <div>
-        <p style="font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:#bbb;margin-bottom:10px;">Things I love</p>
+        <p style="font-size:14px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:#aaa;margin-bottom:10px;">Things I love</p>
         <div class="love-pills">
           <span class="love-pill">🥋 Martial Arts</span>
           <span class="love-pill">✈️ Traveling</span>
@@ -279,11 +206,13 @@
         </div>
       </div>
     </div>
+<br><br>
 
-    <!-- Photo full width below -->
-    <img src="images/about.png" alt="About Prateek Chatterjee" style="width:100%;display:block;border-radius:16px;border:1px solid #e8e8e8;box-shadow:0 8px 40px rgba(8,79,170,.09);margin-top:36px;">
+    <img src="images/about.png" alt="About Prateek Chatterjee">
 
   </div>
+
+
 </section>
 
 

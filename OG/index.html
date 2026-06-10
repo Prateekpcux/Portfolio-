@@ -33,168 +33,63 @@
 
 /* ── HERO ──────────────────────────────── */
 .hero{
-  background:#fff;
+  background:linear-gradient(160deg,#f7faff 0%,#fff 58%);
   border-bottom:1px solid #e8e8e8;
-  padding:72px 0 68px;
+  padding:72px 0 64px;
   position:relative;overflow:hidden;
 }
-/* Subtle grid texture overlay */
-.hero::before{
-  content:'';
-  position:absolute;inset:0;
-  background-image:
-    linear-gradient(rgba(8,79,170,.028) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(8,79,170,.028) 1px,transparent 1px);
-  background-size:48px 48px;
-  pointer-events:none;
-}
-/* Blue gradient wash top-right */
 .hero-bg-circle{
-  position:absolute;right:-60px;top:-60px;
-  width:640px;height:640px;
-  background:radial-gradient(circle at 70% 30%,rgba(8,79,170,.06) 0%,transparent 65%);
+  position:absolute;right:-120px;top:-80px;
+  width:560px;height:560px;
+  background:radial-gradient(circle,rgba(8,79,170,.04) 0%,transparent 70%);
   pointer-events:none;
 }
-/* Bottom fade to white */
-.hero::after{
-  content:'';
-  position:absolute;bottom:0;left:0;right:0;
-  height:80px;
-  background:linear-gradient(to bottom,transparent,#fff);
-  pointer-events:none;
-}
-
-.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
-
-/* Eyebrow label above headline */
-.hero-eyebrow{
-  display:inline-flex;align-items:center;gap:8px;
-  font-size:12px;font-weight:600;letter-spacing:1.6px;
-  text-transform:uppercase;color:#084FAA;
-  margin-bottom:18px;
-}
-.hero-eyebrow::before{
-  content:'';width:20px;height:2px;
-  background:linear-gradient(to right,#084FAA,rgba(8,79,170,.3));
-  border-radius:2px;display:inline-block;
-}
-
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;}
 .hero-title{
   font-family:'DM Serif Display',serif;
-  font-size:clamp(36px,4.2vw,52px);
-  line-height:1.08;color:#1a1a1a;
-  margin-bottom:20px;
-  letter-spacing:-.3px;
+  font-size:48px;
+  line-height:1.1;color:#1a1a1a;
+  margin-bottom:18px;
 }
 .hero-title em{font-style:italic;color:#084FAA;}
-
-/* Typing cursor on last em */
-.hero-title em.typed::after{
-  content:'|';
-  animation:blink .8s step-end infinite;
-  color:#084FAA;margin-left:1px;
-}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
-
-.hero-desc{font-size:17px;color:#666;line-height:1.75;margin-bottom:0;max-width:500px;}
+.hero-desc{font-size:18px;color:#555;line-height:1.75;margin-bottom:24px;max-width:520px;}
 .hero-desc strong{color:#084FAA;font-weight:600;}
-
-/* Credential badge */
-.hero-badge{
-  display:inline-flex;align-items:center;gap:8px;
-  background:#F0F5FF;border:1px solid rgba(8,79,170,.2);
-  border-radius:50px;padding:6px 14px 6px 8px;
-  font-size:13px;font-weight:500;color:#1a1a1a;
-  margin-bottom:20px;
+.hero-img img{
+  width:100%;max-width:460px;
+  filter:drop-shadow(0 20px 40px rgba(8,79,170,.11));
+  animation:floatImg 5s ease-in-out infinite;
+  display:block;
 }
-.hero-badge-dot{
-  width:8px;height:8px;border-radius:50%;
-  background:#22c55e;
-  box-shadow:0 0 0 3px rgba(34,197,94,.2);
-  animation:pulse-dot 2s ease-in-out infinite;
-  flex-shrink:0;
-}
-@keyframes pulse-dot{0%,100%{box-shadow:0 0 0 3px rgba(34,197,94,.2)}50%{box-shadow:0 0 0 6px rgba(34,197,94,.1)}}
-
-/* Divider rule between desc and CTA */
-.hero-rule{
-  width:40px;height:2px;
-  background:linear-gradient(to right,#084FAA,rgba(8,79,170,.2));
-  border-radius:2px;margin:20px 0;
-}
+@keyframes floatImg{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
 
 /* tags */
 .tag-pill{
   display:inline-flex;align-items:center;
-  background:rgba(8,79,170,.06);color:#084FAA;
-  border:1px solid rgba(8,79,170,.14);
-  border-radius:4px;padding:4px 11px;
-  font-size:12px;font-weight:500;line-height:1;
-  letter-spacing:.2px;
-  transition:background .2s,color .2s,border-color .2s,transform .15s;
+  background:#E8F0FF;color:#0B4FBE;
+  border:1px solid rgba(8,79,170,.2);
+  border-radius:50px;padding:5px 13px;
+  font-size:14px;font-weight:600;line-height:1;
+  transition:background .2s,color .2s,transform .2s;
   cursor:default;
 }
-.tag-pill:hover{background:#084FAA;color:#fff;border-color:#084FAA;transform:translateY(-1px);}
+.tag-pill:hover{background:#084FAA;color:#fff;transform:translateY(-2px);}
 
 /* cta */
 .btn-primary{
   display:inline-flex;align-items:center;gap:8px;
-  background:#084FAA;color:#fff;
-  font-size:14px;font-weight:600;padding:13px 24px;
-  border-radius:8px;text-decoration:none;border:none;cursor:pointer;
+  background:#1a1a1a;color:#fff;
+  font-size:14px;font-weight:600;padding:12px 22px;
+  border-radius:50px;text-decoration:none;border:none;cursor:pointer;
   transition:background .2s,transform .2s,box-shadow .2s;
-  box-shadow:0 4px 16px rgba(8,79,170,.28);
-  letter-spacing:.2px;
+  box-shadow:0 4px 14px rgba(0,0,0,.14);
 }
-.btn-primary:hover{background:#0641a0;transform:translateY(-2px);box-shadow:0 8px 24px rgba(8,79,170,.35);color:#fff;}
+.btn-primary:hover{background:#084FAA;transform:translateY(-2px);box-shadow:0 8px 20px rgba(8,79,170,.22);color:#fff;}
 .btn-ghost-link{
   display:inline-flex;align-items:center;gap:6px;
   color:#555;font-size:14px;font-weight:500;
   text-decoration:none;transition:color .2s;
-  padding:13px 0;
 }
 .btn-ghost-link:hover{color:#084FAA;}
-
-/* mini stat row */
-.hero-stats{
-  display:flex;gap:28px;
-  margin-top:28px;padding-top:24px;
-  border-top:1px solid #f0f0f0;
-}
-.hero-stat-item{display:flex;flex-direction:column;gap:2px;}
-.hero-stat-num{
-  font-family:'DM Serif Display',serif;
-  font-size:22px;color:#1a1a1a;line-height:1;font-weight:400;
-}
-.hero-stat-num span{color:#084FAA;}
-.hero-stat-label{font-size:11px;color:#aaa;font-weight:500;letter-spacing:.3px;}
-
-/* Image side */
-.hero-img-wrap{
-  display:flex;align-items:center;justify-content:flex-end;
-  position:relative;
-}
-/* Decorative ring behind image */
-.hero-img-ring{
-  position:absolute;
-  width:420px;height:420px;
-  border-radius:50%;
-  border:1px solid rgba(8,79,170,.08);
-  right:-20px;top:50%;transform:translateY(-50%);
-  pointer-events:none;
-}
-.hero-img-ring::before{
-  content:'';position:absolute;inset:24px;
-  border-radius:50%;
-  border:1px solid rgba(8,79,170,.05);
-}
-.hero-img-wrap img{
-  width:100%;max-width:440px;
-  filter:drop-shadow(0 24px 48px rgba(8,79,170,.13));
-  animation:floatImg 5s ease-in-out infinite;
-  display:block;position:relative;z-index:1;
-}
-@keyframes floatImg{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
 
 /* social */
 .social-row{display:flex;align-items:center;gap:12px;margin-top:20px;padding-top:20px;border-top:1px solid #e8e8e8;}
@@ -320,28 +215,18 @@
 <!-- ═══ HERO ═══ -->
 <section class="hero">
   <div class="hero-bg-circle"></div>
-  <div class="container" style="position:relative;z-index:1;">
+  <div class="container">
     <div class="hero-grid">
 
-      <!-- LEFT — text -->
+      <!-- Left -->
       <div>
-        <!-- Available badge -->
-        <div class="hero-badge reveal">
-          <span class="hero-badge-dot"></span>
-          Available for new opportunities
-        </div>
-
-        <!-- Eyebrow -->
-        <div class="hero-eyebrow reveal">Research · Strategy · Design · Delivery</div>
-
-        <!-- Headline -->
         <h1 class="hero-title reveal">
           Hi, I'm Prateek,<br>
           a <em>Sr. UX/UI Designer</em><br>at <em>Inova Health</em>
         </h1>
 
-        <!-- Tags -->
-        <div class="stagger" style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:22px;">
+        <!-- Tags animate in staggered -->
+        <div class="stagger" style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:22px;">
           <span class="tag-pill">Healthcare</span>
           <span class="tag-pill">Federal Gov</span>
           <span class="tag-pill">AI Products</span>
@@ -352,44 +237,26 @@
           <span class="tag-pill">Telecom</span>
         </div>
 
-        <!-- Description -->
         <p class="hero-desc reveal">
-          I'm a developer turned designer with <strong>8+ years of experience</strong> creating enterprise products and digital experiences. Passionate about transforming complex systems into trusted, intuitive, and accessible solutions.
+          I'm a developer turned designer with <strong>8+ years of experience</strong> creating enterprise products and digital experiences.<br><br>
+          I'm passionate about transforming complex systems into trusted, intuitive, and accessible solutions that people genuinely enjoy using.
         </p>
 
-        <!-- Accent rule -->
-        <div class="hero-rule reveal"></div>
-
-        <!-- CTA -->
         <div class="reveal" style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
           <a href="images/res.pdf" target="_blank" download class="btn-primary">↓ Resume</a>
           <a href="https://www.linkedin.com/in/prateek-chatterjee-25a0a2140/" target="_blank" class="btn-ghost-link">LinkedIn ↗</a>
         </div>
-
-        <!-- Mini stats -->
-        <div class="hero-stats reveal">
-          <div class="hero-stat-item">
-            <div class="hero-stat-num">$<span>1.2</span>B</div>
-            <div class="hero-stat-label">Medicare Impact</div>
-          </div>
-          <div class="hero-stat-item">
-            <div class="hero-stat-num"><span>11</span>M+</div>
-            <div class="hero-stat-label">Beneficiaries Impacted</div>
-          </div>
-          <div class="hero-stat-item">
-            <div class="hero-stat-num"><span>20</span>+</div>
-            <div class="hero-stat-label">Products Shipped</div>
-          </div>
-          <div class="hero-stat-item">
-            <div class="hero-stat-num"><span>70</span>%</div>
-            <div class="hero-stat-label">Bounce Rate Reduction</div>
-          </div>
-        </div>
+<!--
+        <div class="social-row reveal">
+          <a href="https://www.linkedin.com/in/prateek-chatterjee-25a0a2140/" target="_blank"><img src="images/Linked.png" alt="LinkedIn"></a>
+          <a href="https://dribbble.com/ppchatterjee" target="_blank"><img src="images/dribble.png" alt="Dribbble"></a>
+          <a href="https://medium.com/@prateekrise92" target="_blank"><img src="images/Medium.webp" alt="Medium"></a>
+          <a href="https://github.com/ppchatterjee123" target="_blank"><img src="images/git.png" alt="GitHub"></a>
+        </div> -->
       </div>
 
-      <!-- RIGHT — image with decorative ring -->
-      <div class="hero-img-wrap reveal-right">
-        <div class="hero-img-ring"></div>
+      <!-- Right - floating image -->
+      <div class="hero-img reveal-right" style="display:flex;align-items:center;justify-content:flex-end;">
         <img src="images/landing.png" alt="Prateek Chatterjee">
       </div>
 
