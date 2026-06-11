@@ -3,118 +3,244 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
-<title>Classic Driver VR — Prateek Chatterjee</title>
+<title>Classic Driver VR - Prateek Chatterjee</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="portfolio.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="portfolio.css">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-0ZPWXXEFP8"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-0ZPWXXEFP8');</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;}
+.page{padding-top:0!important;}
+
+/* ── TOKENS ── */
+.tag-pill{display:inline-flex;align-items:center;background:rgba(8,79,170,.06);color:#084FAA;border:1px solid rgba(8,79,170,.14);border-radius:4px;padding:4px 11px;font-size:12px;font-weight:500;margin:2px;letter-spacing:.2px;transition:background .2s,color .2s;cursor:default;}
+.tag-pill:hover{background:#084FAA;color:#fff;}
+
+/* ── EYEBROW ── */
+.ey{font-size:11px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#084FAA;margin-bottom:12px;display:inline-flex;align-items:center;gap:8px;}
+.ey::before{content:'';width:16px;height:2px;background:linear-gradient(to right,#084FAA,rgba(8,79,170,.3));border-radius:2px;display:inline-block;flex-shrink:0;}
+
+/* ── HEADINGS ── */
+.h-xl{font-family:'DM Serif Display',serif;font-size:clamp(32px,4.5vw,52px);line-height:1.08;color:#1a1a1a;margin-bottom:16px;letter-spacing:-.3px;}
+.h-xl em{font-style:italic;color:#084FAA;}
+.h-lg{font-family:'DM Serif Display',serif;font-size:clamp(22px,3.5vw,36px);line-height:1.2;color:#1a1a1a;margin-bottom:14px;letter-spacing:-.2px;}
+.body{font-size:17px;color:#555;line-height:1.75;}
+
+/* ── SECTIONS ── */
+.sec{padding:64px 0;}.sec-sm{padding:48px 0;}
+.band-l{background:#fafafa;border-top:1px solid #e8e8e8;border-bottom:1px solid #e8e8e8;}
+.band-m{background:#f3f3f3;border-top:1px solid #e8e8e8;border-bottom:1px solid #e8e8e8;}
+.hdiv{border:none;border-top:1px solid #e8e8e8;margin:0;}
+
+/* ── PS GRID ── */
+.ps-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:#e8e8e8;border:1px solid #e8e8e8;border-radius:14px;overflow:hidden;margin-top:22px;}
+.ps-panel{background:#fff;padding:26px 22px;}
+.ps-panel-b{background:#F0F5FF;}
+.ps-label{font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#888;margin-bottom:10px;display:block;}
+.ps-panel h3{font-size:17px;font-weight:600;color:#1a1a1a;margin-bottom:8px;}
+.ps-panel p{font-size:15px;color:#555;line-height:1.75;}
+
+/* ── STATS RAIL ── */
+.stats-rail{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:#e8e8e8;border:1px solid #e8e8e8;border-radius:14px;overflow:hidden;margin-top:24px;}
+.sc{background:#fff;padding:22px 16px;}
+.sn{font-family:'DM Serif Display',serif;font-size:28px;color:#084FAA;line-height:1;margin-bottom:5px;}
+.sl{font-size:13px;color:#555;line-height:1.45;}
+
+/* ── INFO GRID ── */
+.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px;}
+.info-card{background:#fff;border:1px solid #e8e8e8;border-left:4px solid #084FAA;border-radius:12px;padding:20px 18px;}
+.info-card h3{font-size:15px;font-weight:600;color:#1a1a1a;margin-bottom:7px;}
+.info-card p{font-size:14px;color:#555;line-height:1.65;margin:0;}
+
+/* ── IMAGE CARD ── */
+.img-card{background:#fff;border:1px solid #e8e8e8;border-radius:14px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.06);margin-top:18px;}
+.img-card img{width:100%;display:block;}
+
+/* ── FULL WIDTH IMAGE ── */
+.img-full{width:100%;display:block;border-radius:16px;border:1px solid #e8e8e8;box-shadow:0 4px 20px rgba(0,0,0,.08);margin-top:24px;}
+
+/* ── VIDEO EMBED ── */
+.video-wrap{border-radius:14px;overflow:hidden;border:1px solid #e8e8e8;box-shadow:0 4px 16px rgba(0,0,0,.1);margin-top:20px;}
+
+/* ── GALLERY 2 ── */
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px;}
+.g2-img{border-radius:12px;border:1px solid #e8e8e8;box-shadow:0 2px 8px rgba(0,0,0,.07);display:block;width:80%;margin:0 auto;}
+.g2-label{font-size:12px;color:#aaa;margin-bottom:8px;text-align:center;}
+
+/* ── CALLOUT ── */
+.callout-box{background:#F0F5FF;border:1px solid #E3ECFF;border-left:4px solid #084FAA;border-radius:14px;padding:20px 24px;margin-top:20px;}
+.callout-box p{font-size:15px;color:#1a1a1a;line-height:1.7;}
+
+/* ── CTA ROW ── */
+.cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px;}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;background:#084FAA;color:#fff;font-size:14px;font-weight:600;padding:12px 22px;border-radius:8px;text-decoration:none;border:none;box-shadow:0 4px 14px rgba(8,79,170,.28);transition:background .2s,transform .2s,box-shadow .2s;}
+.btn-primary:hover{background:#0641a0;transform:translateY(-2px);box-shadow:0 8px 22px rgba(8,79,170,.35);color:#fff;}
+.btn-ghost-link{display:inline-flex;align-items:center;gap:8px;color:#555;font-size:14px;font-weight:500;text-decoration:none;padding:12px 0;transition:color .2s;}
+.btn-ghost-link:hover{color:#084FAA;}
+
+/* ── FOOTER ── */
+.footer-s{background:#fafafa;border-top:1px solid #e8e8e8;padding:56px 0;}
+.footer-in{max-width:1060px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;}
+.footer-in h3{font-family:'DM Serif Display',serif;font-size:24px;color:#1a1a1a;margin-bottom:6px;}
+.footer-in p{font-size:15px;color:#555;line-height:1.6;margin-bottom:12px;}
+.footer-email{font-size:15px;font-weight:600;color:#084FAA;text-decoration:none;}
+.footer-email:hover{text-decoration:underline;}
+.footer-soc{display:flex;gap:9px;margin-top:12px;}
+.footer-soc img{width:26px;height:26px;opacity:.5;transition:opacity .2s;}
+.footer-soc a:hover img{opacity:1;}
+.footer-copy p{font-size:12px;color:#aaa;line-height:1.6;text-align:right;}
+
+@media(max-width:768px){
+  .ps-grid,.stats-rail,.info-grid,.g2{grid-template-columns:1fr;}
+  .h-xl{font-size:30px;}.h-lg{font-size:24px;}
+  .sec{padding:44px 0;}
+  .footer-in{grid-template-columns:1fr;}
+  .footer-copy p{text-align:left;}
+}
+</style>
 </head>
 <body>
-<nav class="nav"><div class="nav-inner"><a class="nav-logo" href="index.html"><img src="images/logo.png" alt="Logo"></a><div class="nav-links"><a href="index.html">Work</a><a href="About.html">About</a><a href="play.html">Play</a></div></div></nav>
-<div class="page">
 
-<section class="page-hero">
-  <div class="container">
-    <div class="page-hero-eyebrow"><span class="eyebrow" style="margin:0;">UX Case Study</span><span style="color:var(--text-subtle);font-size:11px;">Master's Thesis · WPI · 2017–2018</span></div>
-    <h1 class="page-hero-title">Classic Driver <em>VR</em></h1>
-    <p class="page-hero-desc">An immersive VR driving simulator designed to teach road rules and DMV regulations — validated through A/B testing with 70+ users on Oculus and Google Cardboard.</p>
-    <div class="tags-row">
-      <span class="tag">VR / Immersive UX</span><span class="tag">UX Research</span><span class="tag">A/B Testing</span>
-      <span class="tag">Unity / C#</span><span class="tag">Master's Thesis</span>
+<!-- NAV -->
+<nav style="position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.95);backdrop-filter:blur(16px);border-bottom:1px solid #e8e8e8;height:64px;display:flex;align-items:center;">
+  <div style="max-width:1100px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;width:100%;">
+    <a href="index.html"><img src="images/logo.png" alt="Prateek Chatterjee" style="height:34px;display:block;"></a>
+    <div style="display:flex;gap:8px;">
+      <a href="index.html" style="font-size:13px;font-weight:500;letter-spacing:.5px;text-transform:uppercase;text-decoration:none;color:#084FAA;background:#F0F5FF;padding:6px 14px;border-radius:50px;">Work</a>
+      <a href="About.html" style="font-size:13px;font-weight:500;letter-spacing:.5px;text-transform:uppercase;text-decoration:none;color:#555;padding:6px 14px;border-radius:50px;">About</a>
+      <a href="play.html" style="font-size:13px;font-weight:500;letter-spacing:.5px;text-transform:uppercase;text-decoration:none;color:#555;padding:6px 14px;border-radius:50px;">Play</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section style="background:#fff;border-bottom:1px solid #e8e8e8;padding:64px 0 52px;position:relative;overflow:hidden;">
+  <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(8,79,170,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(8,79,170,.025) 1px,transparent 1px);background-size:48px 48px;pointer-events:none;"></div>
+  <div style="position:absolute;bottom:0;left:0;right:0;height:60px;background:linear-gradient(to bottom,transparent,#fff);pointer-events:none;"></div>
+  <div class="container" style="position:relative;z-index:1;">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+      <span class="ey" style="margin:0;">UX Case Study</span>
+      <span style="color:#aaa;font-size:11px;">· Master's Thesis · WPI · 2017–2018</span>
+    </div>
+    <h1 class="h-xl">Classic Driver <em>VR</em></h1>
+    <p class="body" style="max-width:580px;margin-bottom:22px;">An immersive VR driving simulator designed to teach road rules and DMV regulations - validated through A/B testing with 70+ users on Oculus and Google Cardboard.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:28px;">
+      <span class="tag-pill">VR / Immersive UX</span>
+      <span class="tag-pill">UX Research</span>
+      <span class="tag-pill">A/B Testing</span>
+      <span class="tag-pill">Unity / C#</span>
+      <span class="tag-pill">Master's Thesis</span>
     </div>
     <div class="cta-row">
-      <a href="https://digital.wpi.edu/concern/etds/6h440s662?locale=en" target="_blank" class="btn-dark">View Research Paper ↗</a>
-      <a href="https://drive.google.com/file/d/15YTaUJwKHdR-sFShFdGFN5kiPibI8FGu/view?usp=sharing" target="_blank" class="btn-ghost">Download Game →</a>
+      <a href="https://digital.wpi.edu/concern/etds/6h440s662?locale=en" target="_blank" class="btn-primary">View Research Paper ↗</a>
+      <a href="https://drive.google.com/file/d/15YTaUJwKHdR-sFShFdGFN5kiPibI8FGu/view?usp=sharing" target="_blank" class="btn-ghost-link">Download Game →</a>
     </div>
-    <img src="simulator/head1.png" alt="Classic Driver VR hero" class="img-full" style="margin-top:36px;">
+    <img src="simulator/head1.png" alt="Classic Driver VR hero" class="img-full">
   </div>
 </section>
 
-<section class="section">
+<!-- ═══ PROBLEM / SOLUTION ═══ -->
+<section class="sec">
   <div class="container">
-    <div class="split-grid">
-      <div class="split-panel">
-        <div class="split-label">The Problem</div>
+    <div class="ps-grid">
+      <div class="ps-panel">
+        <span class="ps-label">The Problem</span>
         <h3>The DMV manual is a poor learning tool</h3>
-        <p>Learning driving rules through a static manual is tedious and ineffective. Many first-time drivers fail their initial exams, requiring re-examination — a costly and frustrating cycle.</p>
+        <p>Learning driving rules through a static manual is tedious and ineffective. Many first-time drivers fail their initial exams, requiring re-examination - a costly and frustrating cycle.</p>
       </div>
-      <div class="split-panel" style="background:var(--blue-light);">
-        <div class="split-label">The Solution</div>
+      <div class="ps-panel ps-panel-b">
+        <span class="ps-label">The Solution</span>
         <h3>Learn by doing in an immersive simulator</h3>
-        <p>An immersive VR game with 10 tasks, real-time audio/visual alerts, a speedometer, minimap, and pass/fail scoring — making it easy to recognize mistakes and learn from them immediately.</p>
+        <p>An immersive VR game with 10 tasks, real-time audio/visual alerts, a speedometer, minimap, and pass/fail scoring - making it easy to recognize mistakes and learn from them immediately.</p>
       </div>
     </div>
 
     <div style="margin-top:40px;">
-      <span class="eyebrow">My Role</span>
-      <p class="section-body">As sole author and creator, I designed, developed, and conducted systematic UX research — including brainstorming, programming, A/B testing, user surveys, interviews, and usability testing.</p>
+      <span class="ey">My Role</span>
+      <p class="body">As sole author and creator, I designed, developed, and conducted systematic UX research - including brainstorming, programming, A/B testing, user surveys, interviews, and usability testing.</p>
     </div>
-
     <img src="simulator/mevr.png" alt="Prateek in VR" class="img-full">
   </div>
 </section>
 
-<hr class="divider">
+<hr class="hdiv">
 
-<div class="band band-light">
-  <div class="container section-sm">
-    <span class="eyebrow">UX Research Approach</span>
-    <h2 class="section-heading">A rigorous research-driven process</h2>
-    <img src="simulator/approach.png" alt="UX approach diagram" class="img-full">
-    <div class="stats-row" style="margin-top:32px;">
-      <div class="stat-cell"><div class="stat-num">70+</div><div class="stat-label">Users in usability testing sessions</div></div>
-      <div class="stat-cell"><div class="stat-num">22</div><div class="stat-label">Participants in A/B test (11 control, 11 experimental)</div></div>
-      <div class="stat-cell"><div class="stat-num">10</div><div class="stat-label">In-game driving tasks covering key DMV rules</div></div>
-      <div class="stat-cell"><div class="stat-num">2</div><div class="stat-label">VR platforms: Oculus + Google Cardboard</div></div>
+<!-- ═══ RESEARCH APPROACH ═══ -->
+<div class="band-l">
+  <div class="container sec-sm">
+    <span class="ey">UX Research Approach</span>
+    <h2 class="h-lg">A rigorous research-driven process</h2>
+    <img src="simulator/approach.png" alt="UX approach diagram" class="img-full" style="margin-top:16px;">
+    <div class="stats-rail">
+      <div class="sc"><div class="sn">70+</div><div class="sl">Users in usability testing sessions</div></div>
+      <div class="sc"><div class="sn">22</div><div class="sl">Participants in A/B test (11 control, 11 experimental)</div></div>
+      <div class="sc"><div class="sn">10</div><div class="sl">In-game driving tasks covering key DMV rules</div></div>
+      <div class="sc"><div class="sn">2</div><div class="sl">VR platforms: Oculus + Google Cardboard</div></div>
     </div>
   </div>
 </div>
 
-<section class="section">
+<!-- ═══ ALPHA PRODUCT ═══ -->
+<section class="sec">
   <div class="container">
-    <span class="eyebrow">Alpha Product</span>
-    <h2 class="section-heading">Developed, tested, refined</h2>
-    <p class="section-body">The alpha version was built based on prior usability testing sessions — featuring complete scenarios, success/fail outcomes with feedback, and served as the foundation for quantitative A/B research.</p>
-    <div style="margin-top:24px;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow-md);">
+    <span class="ey">Alpha Product</span>
+    <h2 class="h-lg">Developed, tested, refined</h2>
+    <p class="body">The alpha version was built based on prior usability testing sessions - featuring complete scenarios, success/fail outcomes with feedback, and served as the foundation for quantitative A/B research.</p>
+    <div class="video-wrap" style="margin-top:20px;">
       <div class="embed-responsive embed-responsive-16by9">
         <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/6xu6VspE454" title="Classic Driver VR demo"></iframe>
       </div>
     </div>
-    <div class="callout" style="margin-top:28px;">
-      <p>Source code available on <a href="https://github.com/ppchatterjee123/Master-s-Thesis.git" target="_blank" style="color:var(--blue);font-weight:600;">GitHub →</a></p>
+    <div class="callout-box">
+      <p>Source code available on <a href="https://github.com/ppchatterjee123/Master-s-Thesis.git" target="_blank" style="color:#084FAA;font-weight:600;">GitHub →</a></p>
     </div>
   </div>
 </section>
 
-<hr class="divider">
+<hr class="hdiv">
 
-<div class="band band-mid">
-  <div class="container section-sm">
-    <span class="eyebrow">Quantitative Research</span>
-    <h2 class="section-heading">A/B test: Simulator vs. Manual</h2>
-    <p class="section-body">22 non-drivers were split into two groups. Both took a baseline quiz, then the experimental group played the VR game while the control group read the RMV manual. Both groups retook the quiz afterward — measuring learning effectiveness of each approach.</p>
-
+<!-- ═══ A/B TEST ═══ -->
+<div class="band-m">
+  <div class="container sec-sm">
+    <span class="ey">Quantitative Research</span>
+    <h2 class="h-lg">A/B test: Simulator vs. Manual</h2>
+    <p class="body">22 non-drivers were split into two groups. Both took a baseline quiz, then the experimental group played the VR game while the control group read the RMV manual. Both groups retook the quiz afterward - measuring learning effectiveness of each approach.</p>
     <div class="info-grid">
-      <div class="info-card"><h3>Experimental Group</h3><p>11 users played the VR simulator, then retook the learner's permit quiz. Pass rates improved significantly after the simulation experience.</p></div>
-      <div class="info-card"><h3>Control Group</h3><p>11 users read a relevant section of the RMV manual, then retook the quiz. Results were comparable — validating the simulator as equally effective to traditional study.</p></div>
-      <div class="info-card"><h3>Example Task: HOV Lane</h3><p>Users were alerted in-game when entering HOV zones, reinforcing the real-world rule in an experiential context they could immediately apply to quiz questions.</p></div>
+      <div class="info-card">
+        <h3>Experimental Group</h3>
+        <p>11 users played the VR simulator, then retook the learner's permit quiz. Pass rates improved significantly after the simulation experience.</p>
+      </div>
+      <div class="info-card">
+        <h3>Control Group</h3>
+        <p>11 users read a relevant section of the RMV manual, then retook the quiz. Results were comparable - validating the simulator as equally effective to traditional study.</p>
+      </div>
+      <div class="info-card">
+        <h3>Example Task: HOV Lane</h3>
+        <p>Users were alerted in-game when entering HOV zones, reinforcing the real-world rule in an experiential context they could immediately apply to quiz questions.</p>
+      </div>
     </div>
-
-    <div class="gallery-2" style="margin-top:24px;">
-      <div style="text-align:center;"><p style="font-size:13px;color:var(--text-subtle);margin-bottom:8px;">Quiz question example</p><img src="simulator/quiz.png" alt="Quiz example" style="width:80%;border-radius:var(--radius-md);border:1px solid var(--border);box-shadow:var(--shadow-sm);display:block;margin:0 auto;"></div>
-      <div style="text-align:center;"><p style="font-size:13px;color:var(--text-subtle);margin-bottom:8px;">In-game HOV alert</p><img src="simulator/drivehov.png" alt="HOV in game" style="width:80%;border-radius:var(--radius-md);border:1px solid var(--border);box-shadow:var(--shadow-sm);display:block;margin:0 auto;"></div>
+    <div class="g2" style="margin-top:24px;">
+      <div style="text-align:center;">
+        <p class="g2-label">Quiz question example</p>
+        <img src="simulator/quiz.png" alt="Quiz example" class="g2-img" style="border-radius:10px;border:1px solid #e8e8e8;box-shadow:0 2px 8px rgba(0,0,0,.07);">
+      </div>
+      <div style="text-align:center;">
+        <p class="g2-label">In-game HOV alert</p>
+        <img src="simulator/drivehov.png" alt="HOV in game" class="g2-img" style="border-radius:10px;border:1px solid #e8e8e8;box-shadow:0 2px 8px rgba(0,0,0,.07);">
+      </div>
     </div>
   </div>
 </div>
 
-<section class="section">
+<!-- ═══ RESULTS ═══ -->
+<section class="sec">
   <div class="container">
-    <span class="eyebrow">Final Results</span>
-    <h2 class="section-heading">Improved performance for both groups</h2>
-    <p class="section-body">Both groups showed measurable improvement on the second quiz. The simulator proved as effective as the manual for learning key road rules — validating VR as a legitimate and engaging alternative learning medium.</p>
+    <span class="ey">Final Results</span>
+    <h2 class="h-lg">Improved performance for both groups</h2>
+    <p class="body">Both groups showed measurable improvement on the second quiz. The simulator proved as effective as the manual for learning key road rules - validating VR as a legitimate and engaging alternative learning medium.</p>
     <img src="simulator/resultss.png" alt="Test results" class="img-full">
     <img src="simulator/survey.png" alt="Post-survey questions" class="img-full">
     <img src="simulator/survey1.png" alt="Survey outcomes" class="img-full">
@@ -122,9 +248,31 @@
   </div>
 </section>
 
-<div class="back-top"><a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">↑ Back to top</a></div>
-<footer class="footer"><div class="footer-inner"><div class="footer-left"><h3>Let's connect</h3><p>Open to Senior UX, Product Design, and AI/Analytics Design opportunities.</p><a href="mailto:prateekpc.ux@gmail.com" class="footer-email">prateekpc.ux@gmail.com</a><div class="footer-social"><a href="https://www.linkedin.com/in/prateek-chatterjee-25a0a2140/" target="_blank"><img src="images/Linked.png" alt="LinkedIn"></a><a href="https://dribbble.com/ppchatterjee" target="_blank"><img src="images/dribble.png" alt="Dribbble"></a><a href="https://medium.com/@prateekrise92" target="_blank"><img src="images/Medium.webp" alt="Medium"></a><a href="https://github.com/ppchatterjee123" target="_blank"><img src="images/git.png" alt="GitHub"></a></div></div><div class="footer-right"><p>Designed & built<br>by Prateek Chatterjee<br><br>© 2026</p></div></div></footer>
+<!-- BACK TO TOP -->
+<div style="display:flex;justify-content:center;padding:0 0 56px;">
+  <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" style="display:inline-flex;align-items:center;gap:8px;background:#1a1a1a;color:#fff;font-size:13px;font-weight:600;padding:12px 24px;border-radius:50px;text-decoration:none;transition:background .2s;" onmouseover="this.style.background='#084FAA'" onmouseout="this.style.background='#1a1a1a'">↑ Back to top</a>
 </div>
+
+<!-- FOOTER -->
+<footer class="footer-s">
+  <div class="footer-in">
+    <div>
+      <h3>Let's connect</h3>
+      <p>Open to Senior UX, Product Design, and AI/Analytics Design opportunities.</p>
+      <a href="mailto:prateekpc.ux@gmail.com" class="footer-email">prateekpc.ux@gmail.com</a>
+      <div class="footer-soc">
+        <a href="https://www.linkedin.com/in/prateek-chatterjee-25a0a2140/" target="_blank"><img src="images/Linked.png" alt="LinkedIn"></a>
+        <a href="https://dribbble.com/ppchatterjee" target="_blank"><img src="images/dribble.png" alt="Dribbble"></a>
+        <a href="https://medium.com/@prateekrise92" target="_blank"><img src="images/Medium.webp" alt="Medium"></a>
+        <a href="https://github.com/ppchatterjee123" target="_blank"><img src="images/git.png" alt="GitHub"></a>
+      </div>
+    </div>
+    <div class="footer-copy">
+      <p>Designed & built<br>by Prateek Chatterjee<br><br>© 2026</p>
+    </div>
+  </div>
+</footer>
+
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>

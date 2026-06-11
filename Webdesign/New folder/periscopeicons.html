@@ -11,141 +11,101 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-0ZPWXXEFP8"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-0ZPWXXEFP8');</script>
 <style>
-*,*::before,*::after{box-sizing:border-box;}
-.page{padding-top:0!important;}
-
-/* ── DESIGN TOKENS ── */
-.tag-pill{display:inline-flex;align-items:center;background:rgba(8,79,170,.06);color:#084FAA;border:1px solid rgba(8,79,170,.14);border-radius:4px;padding:4px 11px;font-size:12px;font-weight:500;margin:2px;letter-spacing:.2px;transition:background .2s,color .2s;cursor:default;}
-.tag-pill:hover{background:#084FAA;color:#fff;}
-.case-hero-img{width:100%;display:block;border-radius:20px;box-shadow:0 8px 40px rgba(8,79,170,.11);border:1px solid #e8e8e8;margin-top:36px;}
-
-/* ── EYEBROW ── */
-.eyebrow{font-size:11px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#084FAA;display:inline-flex;align-items:center;gap:8px;}
-.eyebrow::before{content:'';width:16px;height:2px;background:linear-gradient(to right,#084FAA,rgba(8,79,170,.3));border-radius:2px;display:inline-block;flex-shrink:0;}
-.section-heading{font-family:'DM Serif Display',serif;font-size:clamp(26px,3.5vw,36px);line-height:1.2;color:#1a1a1a;letter-spacing:-.2px;}
-.section-body{font-size:17px;color:#555;line-height:1.75;}
-
-/* ── ACCENT RULE ── */
-.accent-rule{width:40px;height:2px;background:linear-gradient(to right,#084FAA,rgba(8,79,170,.2));border-radius:2px;margin:18px 0;}
-
-/* ── PS GRID ── */
-.ps-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:#e8e8e8;border:1px solid #e8e8e8;border-radius:14px;overflow:hidden;margin-top:28px;}
-.ps-panel{background:#fff;padding:28px 24px;}
-.ps-panel-alt{background:#F0F5FF;}
-.ps-label{font-size:11px;font-weight:700;letter-spacing:1.3px;text-transform:uppercase;color:#888;margin-bottom:12px;display:block;}
-.ps-panel h3{font-size:18px;font-weight:600;color:#1a1a1a;margin-bottom:10px;}
-.ps-panel p,.ps-panel li{font-size:16px;color:#555;line-height:1.75;}
-.ps-panel img{width:100%;border-radius:8px;display:block;margin-bottom:16px;border:1px solid #e8e8e8;}
+.tag-pill{display:inline-flex;align-items:center;background:var(--tag-bg);color:var(--tag-color);border:1px solid var(--tag-border);border-radius:50px;padding:4px 14px;font-size:14px;font-weight:600;margin:2px;}
+.case-hero-img{width:100%;display:block;border-radius:var(--radius-xl);box-shadow:var(--shadow-lg);border:1px solid var(--border);margin-top:36px;}
+.ps-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;margin-top:32px;}
+.ps-panel{background:var(--white);padding:30px 26px;}
+.ps-panel-alt{background:var(--blue-light);}
+.ps-label{font-size:14px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--text-subtle);margin-bottom:14px;display:block;}
+.ps-panel h3{font-size:18px;font-weight:600;color:var(--text);margin-bottom:10px;}
+.ps-panel p,.ps-panel li{font-size:16px;color:var(--text-muted);line-height:1.75;}
+.ps-panel img{width:100%;border-radius:var(--radius-md);display:block;margin-bottom:18px;border:1px solid var(--border);}
 .ps-panel ul{padding-left:18px;margin-top:8px;}
 .ps-panel li{margin-bottom:4px;}
-
-/* ── ROLE CARD ── */
-.role-card{background:#084FAA;border-radius:14px;padding:32px 28px;color:#fff;margin-top:24px;}
-.role-card h3{font-size:11px;font-weight:600;opacity:.55;letter-spacing:.8px;text-transform:uppercase;margin-bottom:10px;}
-.role-card p{font-size:16px;opacity:.9;line-height:1.7;margin-bottom:0;}
+.role-card{background:var(--blue);border-radius:var(--radius-lg);padding:34px 30px;color:#fff;margin-top:28px;}
+.role-card h3{font-size:12px;font-weight:600;opacity:.6;letter-spacing:.8px;text-transform:uppercase;margin-bottom:10px;}
+.role-card p{font-size:15px;opacity:.9;line-height:1.7;margin-bottom:0;}
 .role-list{margin-top:16px;padding-left:0;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:8px;}
-.role-list li{font-size:14px;opacity:.82;line-height:1.5;display:flex;gap:8px;align-items:flex-start;}
-.role-list li::before{content:'→';color:rgba(255,255,255,.35);flex-shrink:0;margin-top:1px;}
-
-/* ── PERSONA GRID ── */
-.persona-grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:20px;}
-.pcard{background:#fff;border:1px solid #e8e8e8;border-radius:12px;padding:20px 16px;transition:box-shadow .2s,transform .2s;}
-.pcard:hover{box-shadow:0 6px 20px rgba(8,79,170,.1);transform:translateY(-2px);}
-.pcard-icon{width:38px;height:38px;border-radius:9px;background:#F0F5FF;display:flex;align-items:center;justify-content:center;margin-bottom:11px;}
-.pcard-icon img{width:22px;height:22px;}
-.pcard h3{font-size:15px;font-weight:600;color:#1a1a1a;margin-bottom:7px;}
-.pcard p{font-size:14px;color:#555;line-height:1.7;}
-
-/* ── SPRINT ROW ── */
-.sprint-row{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:#e8e8e8;border:1px solid #e8e8e8;border-radius:14px;overflow:hidden;margin-top:20px;}
-.sprint-cell{background:#fff;padding:20px 16px;}
-.sprint-num{font-size:10px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:#084FAA;margin-bottom:7px;}
-.sprint-cell h3{font-size:15px;font-weight:600;color:#1a1a1a;margin-bottom:4px;}
-.sprint-cell p{font-size:14px;color:#555;line-height:1.6;}
-
-/* ── INSIGHT CARDS ── */
-.icard{background:#fff;border:1px solid #e8e8e8;border-left:4px solid #084FAA;border-radius:12px;padding:18px 16px;}
+.role-list li{font-size:15px;opacity:.85;line-height:1.5;display:flex;gap:8px;align-items:flex-start;}
+.role-list li::before{content:'->';color:rgba(255,255,255,.4);flex-shrink:0;margin-top:1px;}
+.persona-grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:24px;}
+.pcard{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);padding:20px 16px;transition:box-shadow .2s,transform .2s;}
+.pcard:hover{box-shadow:var(--shadow-md);transform:translateY(-2px);}
+.pcard-icon{width:40px;height:40px;border-radius:10px;background:var(--blue-light);display:flex;align-items:center;justify-content:center;margin-bottom:12px;}
+.pcard-icon img{width:24px;height:24px;}
+.pcard h3{font-size:18px;font-weight:600;color:var(--text);margin-bottom:7px;}
+.pcard p{font-size:16px;color:var(--text-muted);line-height:1.755;}
+.sprint-row{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;margin-top:24px;}
+.sprint-cell{background:var(--white);padding:20px 16px;}
+.sprint-num{font-size:14px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--blue);margin-bottom:7px;}
+.sprint-cell h3{font-size:18px;font-weight:600;color:var(--text);margin-bottom:4px;}
+.sprint-cell p{font-size:16px;color:var(--text-muted);line-height:1.755;}
+.icard{background:var(--white);border:1px solid var(--border);border-left:4px solid var(--blue);border-radius:var(--radius-lg);padding:18px 16px;}
 .icard-head{display:flex;align-items:center;gap:10px;margin-bottom:7px;}
-.icard-head img{width:24px;height:24px;flex-shrink:0;}
-.icard-head h3{font-size:15px;font-weight:600;color:#1a1a1a;margin:0;}
-.icard p{font-size:14px;color:#555;line-height:1.65;margin:0;}
-
-/* ── RESEARCH CARDS ── */
-.res-card{background:#fff;border:1px solid #e8e8e8;border-radius:12px;padding:20px 16px;}
+.icard-head img{width:26px;height:26px;flex-shrink:0;}
+.icard-head h3{font-size:18px;font-weight:600;color:var(--text);margin:0;}
+.icard p{font-size:16px;color:var(--text-muted);line-height:1.755;margin:0;}
+.res-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);padding:20px 16px;}
 .res-head{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
-.res-head img{width:24px;height:24px;flex-shrink:0;}
-.res-head h3{font-size:15px;font-weight:600;color:#1a1a1a;margin:0;}
-.res-card p{font-size:14px;color:#555;line-height:1.7;margin:0;}
-
-/* ── FEAT GRID ── */
-.feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px;}
-.feat-card{background:#fff;border:1px solid #e8e8e8;border-radius:12px;padding:22px 18px;}
-.feat-card h3{font-size:16px;font-weight:600;color:#1a1a1a;margin-bottom:8px;}
-.feat-card p{font-size:15px;color:#555;line-height:1.7;}
-
-/* ── SITEMAP ── */
-.sitemap-wrap{background:#fff;border:1px solid #e8e8e8;border-radius:14px;padding:12px;box-shadow:0 1px 4px rgba(0,0,0,.06);margin-top:20px;cursor:pointer;transition:box-shadow .2s,transform .2s;}
-.sitemap-wrap:hover{box-shadow:0 6px 20px rgba(8,79,170,.1);transform:translateY(-2px);}
-.sitemap-wrap img{width:100%;border-radius:8px;display:block;}
-.sitemap-cap{font-size:12px;color:#aaa;margin-top:8px;}
-
-/* ── GALLERY ── */
-.g2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px;}
-.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px;}
-.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:20px;}
-.gt{background:#fff;border:1px solid #e8e8e8;border-radius:12px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.05);cursor:pointer;transition:box-shadow .2s,transform .2s;}
-.gt:hover{box-shadow:0 6px 20px rgba(8,79,170,.1);transform:translateY(-2px);}
-.gt img{width:100%;display:block;object-fit:cover;object-position:top;height:185px;}
-.gt.tall img{height:245px;}
+.res-head img{width:26px;height:26px;flex-shrink:0;}
+.res-head h3{font-size:18px;font-weight:600;color:var(--text);margin:0;}
+.res-card p{font-size:16px;color:var(--text-muted);line-height:1.7555;margin:0;}
+.feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px;}
+.feat-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px 20px;}
+.feat-card h3{font-size:18px;font-weight:600;color:var(--text);margin-bottom:9px;}
+.feat-card p{font-size:16px;color:var(--text-muted);line-height:1.755;}
+.sitemap-wrap{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);padding:12px;box-shadow:var(--shadow-sm);margin-top:24px;cursor:pointer;transition:box-shadow .2s;}
+.sitemap-wrap:hover{box-shadow:var(--shadow-md);}
+.sitemap-wrap img{width:100%;border-radius:var(--radius-md);display:block;}
+.sitemap-cap{font-size:12px;color:var(--text-subtle);margin-top:9px;}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px;}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px;}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:22px;}
+.gt{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm);cursor:pointer;transition:box-shadow .2s,transform .2s;}
+.gt:hover{box-shadow:var(--shadow-md);transform:translateY(-2px);}
+.gt img{width:100%;display:block;object-fit:cover;object-position:top;height:190px;}
+.gt.tall img{height:250px;}
 .gt-info{padding:11px 13px;}
-.gt-info h3{font-size:15px;font-weight:600;color:#1a1a1a;margin-bottom:3px;}
-.gt-info p{font-size:13px;color:#777;line-height:1.55;margin:0;}
-.gt-label{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#084FAA;margin-bottom:4px;}
-
-/* ── PATHWAY ── */
-.pathway-2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:20px;}
-.pathway-card-new{background:#fff;border:1px solid #e8e8e8;border-radius:14px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.05);}
-.pathway-body{padding:20px 18px;}
-.pathway-icon-row{display:flex;align-items:center;gap:10px;margin-bottom:11px;}
-.pathway-icon-row img{width:28px;height:28px;}
-.pathway-icon-row h3{font-size:16px;font-weight:600;color:#1a1a1a;margin:0;}
-.pathway-card-new p{font-size:15px;color:#555;line-height:1.7;margin-bottom:8px;}
-.pathway-screen{width:100%;display:block;object-fit:cover;object-position:top;height:230px;cursor:pointer;transition:transform .3s;border-top:1px solid #e8e8e8;}
+.gt-info h3{font-size:18px;font-weight:600;color:var(--text);margin-bottom:2px;}
+.gt-info p{font-size:16px;color:var(--text-muted);line-height:1.755;margin:0;}
+.gt-label{display:inline-block;font-size:14px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--blue);margin-bottom:4px;}
+.pathway-2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px;}
+.pathway-card-new{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-sm);}
+.pathway-body{padding:22px 20px;}
+.pathway-icon-row{display:flex;align-items:center;gap:11px;margin-bottom:13px;}
+.pathway-icon-row img{width:32px;height:32px;}
+.pathway-icon-row h3{font-size:18px;font-weight:600;color:var(--text);margin:0;}
+.pathway-card-new p{font-size:16px;color:var(--text-muted);line-height:1.755;margin-bottom:9px;}
+.pathway-screen{width:100%;display:block;object-fit:cover;object-position:top;height:240px;cursor:pointer;transition:transform .3s;border-top:1px solid var(--border);}
 .pathway-screen:hover{transform:scale(1.01);}
+.status-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:20px;}
+.status-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-md);padding:16px 14px;display:flex;gap:11px;align-items:flex-start;}
+.status-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;margin-top:4px;}
+.status-card h3{font-size:18px;font-weight:600;color:var(--text);margin-bottom:2px;}
+.status-card p{font-size:16px;color:var(--text-muted);line-height:1.755;margin:0;}
+.outcome-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;margin-top:24px;}
+.outcome-cell{background:var(--white);padding:26px 20px;}
+.outcome-num{font-family:'DM Serif Display',serif;font-size:38px;color:var(--blue);line-height:1;margin-bottom:6px;}
+.outcome-label{font-size:16px;color:var(--text-muted);line-height:1.755;}
+.blue-callout{background:var(--blue-light);border:1px solid var(--blue-mid);border-left:4px solid var(--blue);border-radius:var(--radius-lg);padding:26px 30px;margin-top:28px;}
+.blue-callout p{font-size:16px;color:var(--text);line-height:1.75;}
+.closing-2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px;}
+.closing-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px 20px;}
+.closing-card h3{font-size:18px;font-weight:600;color:var(--text);margin-bottom:9px;}
+.closing-card p{font-size:16px;color:var(--text-muted);line-height:1.75;}
 
-/* ── STATUS ── */
-.status-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px;}
-.status-card{background:#fff;border:1px solid #e8e8e8;border-radius:10px;padding:16px 14px;display:flex;gap:10px;align-items:flex-start;}
-.status-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;margin-top:5px;}
-.status-card h3{font-size:15px;font-weight:600;color:#1a1a1a;margin-bottom:2px;}
-.status-card p{font-size:13px;color:#777;line-height:1.6;margin:0;}
-
-/* ── OUTCOMES ── */
-.outcome-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:#e8e8e8;border:1px solid #e8e8e8;border-radius:14px;overflow:hidden;margin-top:24px;}
-.outcome-cell{background:#fff;padding:24px 18px;}
-.outcome-num{font-family:'DM Serif Display',serif;font-size:34px;color:#084FAA;line-height:1;margin-bottom:6px;}
-.outcome-label{font-size:14px;color:#555;line-height:1.6;}
-
-/* ── CALLOUT ── */
-.blue-callout{background:#F0F5FF;border:1px solid #E3ECFF;border-left:4px solid #084FAA;border-radius:14px;padding:24px 26px;margin-top:24px;}
-.blue-callout p{font-size:17px;color:#1a1a1a;line-height:1.75;}
-
-/* ── CLOSING ── */
-.closing-2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px;}
-.closing-card{background:#fff;border:1px solid #e8e8e8;border-radius:14px;padding:24px 20px;}
-.closing-card h3{font-size:16px;font-weight:600;color:#1a1a1a;margin-bottom:8px;}
-.closing-card p{font-size:15px;color:#555;line-height:1.7;}
-
-/* ── FOOTER ── */
-.footer h3{font-size:22px;}
-.footer p,.footer-email{font-size:15px;line-height:1.7;}
+/* Case typography system */
+.eyebrow{font-size:14px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;}
+.section-heading{font-family:'DM Serif Display',serif;font-size:48px;line-height:1.15;}
+.section-body{font-size:20px;line-height:1.75;}
+.footer h3{font-size:24px;}
+.footer p,.footer-email{font-size:16px;line-height:1.75;}
 
 @media(max-width:860px){
-  .ps-grid,.pathway-2,.feat-grid,.closing-2,.persona-grid-4,
-  .g2,.g3,.g4,.sprint-row,.outcome-grid,.status-grid{grid-template-columns:1fr;}
+  .ps-grid,.pathway-2,.feat-grid,.closing-2,.persona-grid-4,.g2,.g3,.g4,.sprint-row,.outcome-grid,.status-grid{grid-template-columns:1fr;}
   .role-list{grid-template-columns:1fr;}
-  .gt img,.gt.tall img{height:160px;}
-  .pathway-screen{height:180px;}
+  .gt img,.gt.tall img{height:170px;}
+  .pathway-screen{height:190px;}
 }
 </style>
 </head>
@@ -162,19 +122,15 @@
   </div>
 </nav>
 <!-- HERO -->
-<section style="background:#fff;border-bottom:1px solid #e8e8e8;padding:64px 0 56px;position:relative;overflow:hidden;">
-<!-- Grid texture -->
-<div style="position:absolute;inset:0;background-image:linear-gradient(rgba(8,79,170,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(8,79,170,.025) 1px,transparent 1px);background-size:48px 48px;pointer-events:none;"></div>
-<!-- Bottom fade -->
-<div style="position:absolute;bottom:0;left:0;right:0;height:60px;background:linear-gradient(to bottom,transparent,#fff);pointer-events:none;"></div>
-<div class="container" style="position:relative;z-index:1;">
-  <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
-    <span class="eyebrow">UX Case Study</span>
-    <span style="color:#aaa;font-size:11px;">· Inova Health System · 2025</span>
+<section style="background:linear-gradient(160deg,#f7faff 0%,#fff 60%);border-bottom:1px solid var(--border);padding:72px 0 60px;">
+<div class="container">
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:20px;">
+    <span class="eyebrow" style="margin:0;">UX Case Study</span>
+    <span style="color:var(--text-subtle);font-size:11px;">· Inova Health System · 2025</span>
   </div>
-  <h1 style="font-family:'DM Serif Display',serif;font-size:clamp(32px,4.5vw,52px);line-height:1.08;color:#1a1a1a;margin-bottom:16px;letter-spacing:-.3px;">Periscope - <em style="font-style:italic;color:#084FAA;">Enterprise Analytics</em> Marketplace</h1>
-  <p style="font-size:17px;color:#555;line-height:1.75;max-width:600px;margin-bottom:22px;">A centralized discovery platform for dashboards, reports, AI models, and governed data assets across Inova Health System - replacing 5+ disconnected tools with one trusted marketplace.</p>
-  <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:0;">
+  <h1 style="font-family:'DM Serif Display',serif;font-size:48px;line-height:1.1;color:var(--text);margin-bottom:18px;">Periscope - <em style="font-style:italic;color:var(--blue);">Enterprise Analytics</em> Marketplace</h1>
+  <p style="font-size:18px;color:var(--text-muted);line-height:1.75;max-width:600px;margin-bottom:30px;">A centralized discovery platform for dashboards, reports, AI models, and governed data assets across Inova Health System - replacing 5+ disconnected tools with one trusted marketplace.</p>
+  <div style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:38px;">
     <span class="tag-pill">UX Strategy</span><span class="tag-pill">Information Architecture</span><span class="tag-pill">Design System</span><span class="tag-pill">Governance UX</span><span class="tag-pill">Enterprise Product</span><span class="tag-pill">Healthcare Analytics</span><span class="tag-pill">AI Inventory</span>
   </div>
   <img src="images/hero.png" class="case-hero-img" alt="Periscope enterprise analytics marketplace">
@@ -185,11 +141,10 @@
     <div class="outcome-cell"><div class="outcome-num">AI</div><div class="outcome-label">Dedicated model inventory with oversight and certification</div></div>
   </div>
 </div>
-</div>
 </section>
 
 <!-- OVERVIEW / PROBLEM / SOLUTION -->
-<section style="padding:64px 0;">
+<section class="section">
 <div class="container">
   <span class="eyebrow">Project Overview</span>
   <h2 class="section-heading">One place to find everything analytics</h2>
@@ -227,10 +182,10 @@
 </div>
 </section>
 
-<hr style="border:none;border-top:1px solid #e8e8e8;margin:0;">
+<hr class="divider">
 
 <!-- MY ROLE -->
-<div style="background:#fafafa;border-top:1px solid #e8e8e8;border-bottom:1px solid #e8e8e8;"><div class="container section-sm">
+<div class="band band-light"><div class="container section-sm">
   <span class="eyebrow">My Role</span>
   <h2 class="section-heading">Senior UX/UI Designer - end to end</h2>
   <p class="section-body">I led UX from intake through high-fidelity delivery, working with analytics, governance, architecture, and clinical stakeholders across four design sprints.</p>
@@ -252,7 +207,7 @@
 </div></div>
 
 <!-- USERS & PERSONAS -->
-<section style="padding:64px 0;"><div class="container">
+<section class="section"><div class="container">
   <span class="eyebrow">Users & Opportunities</span>
   <h2 class="section-heading">Who we designed for</h2>
   <p class="section-body">Four lightweight personas kept discovery grounded in real frustrations and opportunities.</p>
@@ -264,10 +219,10 @@
   </div>
 </div></section>
 
-<hr style="border:none;border-top:1px solid #e8e8e8;margin:0;">
+<hr class="divider">
 
 <!-- WORKING SESSIONS -->
-<div style="background:#f3f3f3;border-top:1px solid #e8e8e8;border-bottom:1px solid #e8e8e8;"><div class="container section-sm">
+<div class="band band-mid"><div class="container section-sm">
   <span class="eyebrow">Process</span>
   <h2 class="section-heading">Iterative collaboration through recurring working sessions</h2>
   <p class="section-body">Work was structured like sprint planning - each session included design review, prioritization, and iteration balancing business goals with user needs and governance requirements.</p>
@@ -280,7 +235,7 @@
 </div></div>
 
 <!-- DISCOVERY, RESEARCH & INSIGHTS -->
-<section style="padding:64px 0;"><div class="container">
+<section class="section"><div class="container">
   <span class="eyebrow">Discovery & Research</span>
   <h2 class="section-heading">What we learned from intake and working sessions</h2>
   <p class="section-body" style="margin-bottom:24px;">We ran UX workshops, stakeholder interviews, competitive analysis, catalog reviews, and workflow mapping - before sketching a single screen.</p>
@@ -300,10 +255,10 @@
   </div>
 </div></section>
 
-<hr style="border:none;border-top:1px solid #e8e8e8;margin:0;">
+<hr class="divider">
 
 <!-- FEATURE PRIORITIZATION -->
-<div style="background:#F0F5FF;border-top:1px solid #e8e8e8;border-bottom:1px solid #e8e8e8;"><div class="container section-sm">
+<div class="band band-blue"><div class="container section-sm">
   <span class="eyebrow">Feature Prioritization</span>
   <h2 class="section-heading">What made it into Phase 1 - and why</h2>
   <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);padding:12px;box-shadow:var(--shadow-sm);margin-top:20px;">
@@ -316,7 +271,7 @@
 </div></div>
 
 <!-- IA / SITE MAP -->
-<div style="background:#fafafa;border-top:1px solid #e8e8e8;border-bottom:1px solid #e8e8e8;"><div class="container section-sm">
+<div class="band band-light"><div class="container section-sm">
   <span class="eyebrow">Information Architecture</span>
   <h2 class="section-heading">Mapping the platform before designing screens</h2>
   <p class="section-body">A site map aligned stakeholders on how users would move from login to dashboard, search results, AI inventory, favorites, campaigns, and asset detail pages.</p>
@@ -327,7 +282,7 @@
 </div></div>
 
 <!-- WIREFRAMES -->
-<section style="padding:64px 0;"><div class="container">
+<section class="section"><div class="container">
   <span class="eyebrow">Early Exploration</span>
   <h2 class="section-heading">Low-fidelity wireframes</h2>
   <p class="section-body" style="margin-bottom:4px;">Wireframes validated navigation structure, search layout, asset organization, and detail pages before any visual investment. Click to expand.</p>
@@ -339,10 +294,10 @@
   </div>
 </div></section>
 
-<hr style="border:none;border-top:1px solid #e8e8e8;margin:0;">
+<hr class="divider">
 
 <!-- DESIGN SYSTEM -->
-<div style="background:#f3f3f3;border-top:1px solid #e8e8e8;border-bottom:1px solid #e8e8e8;"><div class="container section-sm">
+<div class="band band-mid"><div class="container section-sm">
   <span class="eyebrow">Design System</span>
   <h2 class="section-heading">Built on Inova's enterprise foundation</h2>
   <p class="section-body">I extended Inova's enterprise design system - typography, color, buttons, cards, and iconography - ensuring Periscope felt native to the broader ecosystem while introducing marketplace-specific patterns.</p>
@@ -355,7 +310,7 @@
 </div></div>
 
 <!-- FINAL DESIGNS -->
-<section style="padding:64px 0;"><div class="container">
+<section class="section"><div class="container">
   <span class="eyebrow">Final Designs</span>
   <h2 class="section-heading">High-fidelity marketplace experience</h2>
   <p class="section-body">Search, browse, filters, asset cards, favorites, campaigns, Inova Care, AI inventory, and detail pages - one cohesive governed experience. Click any screen to expand.</p>
@@ -378,10 +333,10 @@
   </div>
 </div></section>
 
-<hr style="border:none;border-top:1px solid #e8e8e8;margin:0;">
+<hr class="divider">
 
 <!-- CAMPAIGNS & INOVA CARE -->
-<div style="background:#F0F5FF;border-top:1px solid #e8e8e8;border-bottom:1px solid #e8e8e8;"><div class="container section-sm">
+<div class="band band-blue"><div class="container section-sm">
   <span class="eyebrow">Organizing Assets</span>
   <h2 class="section-heading">Campaigns and Inova Care pathways</h2>
   <p class="section-body">Two distinct organizing systems - strategic initiative groupings for operational use, and predefined clinical pathways for care-aligned decisions.</p>
@@ -406,7 +361,7 @@
 </div></div>
 
 <!-- AI INVENTORY PERFORMANCE -->
-<section style="padding:64px 0;"><div class="container">
+<section class="section"><div class="container">
   <span class="eyebrow">AI Inventory</span>
   <h2 class="section-heading">Making AI visible, trusted, and governed</h2>
   <p class="section-body" style="margin-bottom:4px;">Model cards with deployment status, vendor, intended audience, limitations, monitoring links, performance oversight, and certification state.</p>
@@ -417,10 +372,10 @@
   </div>
 </div></section>
 
-<hr style="border:none;border-top:1px solid #e8e8e8;margin:0;">
+<hr class="divider">
 
 <!-- GOVERNANCE -->
-<div style="background:#fafafa;border-top:1px solid #e8e8e8;border-bottom:1px solid #e8e8e8;"><div class="container section-sm">
+<div class="band band-light"><div class="container section-sm">
   <span class="eyebrow">Governance & Certification</span>
   <h2 class="section-heading">Turning discovery into a trusted enterprise platform</h2>
   <p class="section-body">Governance workflows enabling admins to certify assets, manage remediation, govern tags, review campaigns, and oversee AI approval - all separate from the end-user discovery experience.</p>
@@ -446,7 +401,7 @@
 </div></div>
 
 <!-- OUTCOMES -->
-<div style="background:#F0F5FF;border-top:1px solid #e8e8e8;border-bottom:1px solid #e8e8e8;"><div class="container section-sm">
+<div class="band band-blue"><div class="container section-sm">
   <span class="eyebrow">Outcomes</span>
   <h2 class="section-heading">A scalable foundation for analytics discovery and AI governance</h2>
   <p class="section-body">Periscope moved the organization from fragmented report hunting to a governed, searchable, trust-aware marketplace - built to grow with AI adoption.</p>
@@ -462,7 +417,7 @@
 </div></div>
 
 <!-- CLOSING -->
-<section style="padding:64px 0;"><div class="container">
+<section class="section"><div class="container">
   <div class="closing-2">
     <div class="closing-card">
       <p class="eyebrow">Next Steps</p>

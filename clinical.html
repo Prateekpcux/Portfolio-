@@ -10,92 +10,99 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="portfolio.css">
 <style>
-/* ── PAGE TOKENS ───────────────────────────── */
-.tag-pill{display:inline-flex;align-items:center;background:var(--tag-bg);color:var(--tag-color);border:1px solid var(--tag-border);border-radius:50px;padding:4px 14px;font-size:14px;font-weight:600;margin:2px;}
-.hero-img{width:100%;display:block;border-radius:var(--radius-xl);box-shadow:var(--shadow-lg);border:1px solid var(--border);margin-top:32px;}
+*,*::before,*::after{box-sizing:border-box;}
+.page{padding-top:0!important;}
 
-/* Problem/Solution split */
-.ps-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;margin-top:28px;}
-.ps-panel{background:var(--white);padding:28px 24px;}
-.ps-panel-alt{background:var(--blue-light);}
-.ps-label{font-size:14px;font-weight:700;letter-spacing:1.3px;text-transform:uppercase;color:var(--text-subtle);margin-bottom:12px;display:flex;align-items:center;gap:10px;}
-.ps-label img{width:26px;height:26px;}
-.ps-panel h3{font-size:18px;font-weight:600;color:var(--text);margin-bottom:9px;}
-.ps-panel p,.ps-panel li{font-size:16px;color:var(--text-muted);line-height:1.75;}
+/* ── TOKENS ── */
+.tag-pill{display:inline-flex;align-items:center;background:rgba(8,79,170,.06);color:#084FAA;border:1px solid rgba(8,79,170,.14);border-radius:4px;padding:4px 11px;font-size:12px;font-weight:500;margin:2px;letter-spacing:.2px;transition:background .2s,color .2s;cursor:default;}
+.tag-pill:hover{background:#084FAA;color:#fff;}
+.hero-img{width:100%;display:block;border-radius:20px;box-shadow:0 8px 40px rgba(8,79,170,.1);border:1px solid #e8e8e8;margin-top:28px;}
+
+/* ── EYEBROW ── */
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#084FAA;display:inline-flex;align-items:center;gap:8px;}
+.eyebrow::before{content:'';width:16px;height:2px;background:linear-gradient(to right,#084FAA,rgba(8,79,170,.3));border-radius:2px;display:inline-block;flex-shrink:0;}
+.section-heading{font-family:'DM Serif Display',serif;font-size:clamp(22px,3.5vw,36px);line-height:1.2;color:#1a1a1a;letter-spacing:-.2px;}
+.section-body{font-size:17px;color:#555;line-height:1.75;}
+
+/* ── PS GRID ── */
+.ps-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:#e8e8e8;border:1px solid #e8e8e8;border-radius:14px;overflow:hidden;margin-top:22px;}
+.ps-panel{background:#fff;padding:26px 22px;}
+.ps-panel-alt{background:#F0F5FF;}
+.ps-label{font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#888;margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+.ps-label img{width:22px;height:22px;}
+.ps-panel h3{font-size:17px;font-weight:600;color:#1a1a1a;margin-bottom:8px;}
+.ps-panel p,.ps-panel li{font-size:15px;color:#555;line-height:1.75;}
 .ps-panel ul{padding-left:18px;margin-top:8px;}
 .ps-panel li{margin-bottom:4px;}
 
-/* Snapshot metrics */
-.snap-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;margin-top:24px;}
-.snap-cell{background:var(--white);padding:22px 18px;}
-.snap-num{font-family:'DM Serif Display',serif;font-size:28px;color:var(--blue);line-height:1;margin-bottom:5px;}
-.snap-label{font-size:14px;color:var(--text-muted);line-height:1.4;}
+/* ── SNAP GRID ── */
+.snap-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:#e8e8e8;border:1px solid #e8e8e8;border-radius:14px;overflow:hidden;margin-top:20px;}
+.snap-cell{background:#fff;padding:20px 16px;}
+.snap-num{font-family:'DM Serif Display',serif;font-size:26px;color:#084FAA;line-height:1;margin-bottom:5px;}
+.snap-label{font-size:13px;color:#555;line-height:1.4;}
 
-/* Process workflow inline image card */
-.workflow-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-sm);margin-top:20px;cursor:pointer;transition:box-shadow .2s,transform .2s;}
-.workflow-card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px);}
+/* ── WORKFLOW CARD ── */
+.workflow-card{background:#fff;border:1px solid #e8e8e8;border-radius:14px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.06);margin-top:18px;cursor:pointer;transition:box-shadow .2s,transform .2s;}
+.workflow-card:hover{box-shadow:0 6px 20px rgba(8,79,170,.1);transform:translateY(-2px);}
 .workflow-card img{width:100%;display:block;object-fit:cover;object-position:top;}
-.workflow-card-info{padding:14px 16px;}
-.workflow-card-info h3{font-size:18px;font-weight:600;color:var(--text);margin-bottom:3px;}
-.workflow-card-info p{font-size:14px;color:var(--text-muted);margin:0;}
+.workflow-card-info{padding:12px 15px;}
+.workflow-card-info h3{font-size:15px;font-weight:600;color:#1a1a1a;margin-bottom:2px;}
+.workflow-card-info p{font-size:13px;color:#666;margin:0;}
 
-/* Insight cards with mini icon */
-.insight-icon-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);padding:20px 18px;}
-.insight-icon-card img.mini{width:36px;height:36px;display:block;margin-bottom:10px;}
-.insight-icon-card h3{font-size:18px;font-weight:600;color:var(--text);margin-bottom:7px;}
-.insight-icon-card p{font-size:16px;color:var(--text-muted);line-height:1.755;margin:0;}
+/* ── INSIGHT ICON CARDS ── */
+.insight-icon-card{background:#fff;border:1px solid #e8e8e8;border-radius:12px;padding:18px 16px;}
+.insight-icon-card img.mini{width:32px;height:32px;display:block;margin-bottom:9px;}
+.insight-icon-card h3{font-size:15px;font-weight:600;color:#1a1a1a;margin-bottom:6px;}
+.insight-icon-card p{font-size:14px;color:#555;line-height:1.65;margin:0;}
 
-/* Gallery thumbnails */
-.g2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px;}
-.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px;}
-.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:20px;}
-.gt{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm);cursor:pointer;transition:box-shadow .2s,transform .2s;}
-.gt:hover{box-shadow:var(--shadow-md);transform:translateY(-2px);}
+/* ── GALLERY ── */
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px;}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px;}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px;}
+.gt{background:#fff;border:1px solid #e8e8e8;border-radius:12px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.05);cursor:pointer;transition:box-shadow .2s,transform .2s;}
+.gt:hover{box-shadow:0 6px 20px rgba(8,79,170,.1);transform:translateY(-2px);}
 .gt img{width:100%;display:block;object-fit:cover;object-position:top center;}
 .gt img.h180{height:180px;}
 .gt img.h220{height:220px;}
 .gt img.h260{height:260px;}
-.gt-info{padding:11px 13px;}
-.gt-info h3{font-size:18px;font-weight:600;color:var(--text);margin-bottom:2px;}
-.gt-info p{font-size:16px;color:var(--text-muted);line-height:1.755;margin:0;}
-.gt-label{display:inline-block;font-size:14px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--blue);margin-bottom:4px;}
+.gt-info{padding:10px 13px;}
+.gt-info h3{font-size:14px;font-weight:600;color:#1a1a1a;margin-bottom:2px;}
+.gt-info p{font-size:13px;color:#666;line-height:1.55;margin:0;}
+.gt-label{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#084FAA;margin-bottom:4px;}
 
-/* Process steps (governance framework) */
-.process-row{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;margin-top:24px;}
-.process-cell{background:var(--white);padding:20px 16px;}
-.process-num{font-size:14px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--blue);margin-bottom:7px;}
-.process-cell h3{font-size:18px;font-weight:600;color:var(--text);margin-bottom:5px;}
-.process-cell p{font-size:16px;color:var(--text-muted);line-height:1.7555;}
+/* ── PROCESS ROW ── */
+.process-row{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;background:#e8e8e8;border:1px solid #e8e8e8;border-radius:14px;overflow:hidden;margin-top:18px;}
+.process-cell{background:#fff;padding:18px 14px;}
+.process-num{font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#084FAA;margin-bottom:6px;}
+.process-cell h3{font-size:14px;font-weight:600;color:#1a1a1a;margin-bottom:4px;}
+.process-cell p{font-size:13px;color:#555;line-height:1.55;}
 
-/* Outcome metrics */
-.outcome-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;margin-top:24px;}
-.outcome-cell{background:var(--white);padding:26px 20px;}
-.outcome-num{font-family:'DM Serif Display',serif;font-size:36px;color:var(--blue);line-height:1;margin-bottom:5px;}
-.outcome-label{font-size:16px;color:var(--text-muted);line-height:1.755;}
+/* ── OUTCOME GRID ── */
+.outcome-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:#e8e8e8;border:1px solid #e8e8e8;border-radius:14px;overflow:hidden;margin-top:20px;}
+.outcome-cell{background:#fff;padding:22px 18px;}
+.outcome-num{font-family:'DM Serif Display',serif;font-size:32px;color:#084FAA;line-height:1;margin-bottom:5px;}
+.outcome-label{font-size:13px;color:#555;line-height:1.55;}
 
-/* Blue callout quote */
-.blue-callout{background:var(--blue-light);border:1px solid var(--blue-mid);border-left:4px solid var(--blue);border-radius:var(--radius-lg);padding:24px 28px;margin-top:24px;}
-.blue-callout p{font-size:16px;color:var(--text);line-height:1.75;}
+/* ── BLUE CALLOUT ── */
+.blue-callout{background:#F0F5FF;border:1px solid #E3ECFF;border-left:4px solid #084FAA;border-radius:14px;padding:22px 26px;margin-top:20px;}
+.blue-callout p{font-size:16px;color:#1a1a1a;line-height:1.75;}
 
-/* User audience cards */
-.audience-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:20px;}
-.aud-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);padding:18px 14px;}
-.aud-card h3{font-size:18px;font-weight:600;color:var(--text);margin-bottom:6px;}
-.aud-card p{font-size:16px;color:var(--text-muted);line-height:1.755;margin:0;}
+/* ── AUDIENCE GRID ── */
+.audience-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px;}
+.aud-card{background:#fff;border:1px solid #e8e8e8;border-radius:12px;padding:16px 14px;transition:box-shadow .2s,transform .2s;}
+.aud-card:hover{box-shadow:0 4px 14px rgba(8,79,170,.08);transform:translateY(-1px);}
+.aud-card h3{font-size:14px;font-weight:600;color:#1a1a1a;margin-bottom:5px;}
+.aud-card p{font-size:13px;color:#555;line-height:1.6;margin:0;}
 
-/* Closing 2-up */
-.closing-2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px;}
-.closing-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px 20px;}
-.closing-card h3{font-size:18px;font-weight:600;color:var(--text);margin-bottom:8px;}
-.closing-card p{font-size:16px;color:var(--text-muted);line-height:1.75;}
+/* ── CLOSING 2-UP ── */
+.closing-2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px;}
+.closing-card{background:#fff;border:1px solid #e8e8e8;border-radius:14px;padding:22px 20px;}
+.closing-card h3{font-size:16px;font-weight:600;color:#1a1a1a;margin-bottom:7px;}
+.closing-card p{font-size:15px;color:#555;line-height:1.7;}
 
-
-/* Case typography system */
-.eyebrow{font-size:14px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;}
-.section-heading{font-family:'DM Serif Display',serif;font-size:48px;line-height:1.15;}
-.section-body{font-size:20px;line-height:1.75;}
-.footer h3{font-size:24px;}
-.footer p,.footer-email{font-size:16px;line-height:1.75;}
+/* ── FOOTER ── */
+.footer h3{font-size:22px;}
+.footer p,.footer-email{font-size:15px;line-height:1.7;}
 
 @media(max-width:860px){
   .ps-grid,.g2,.g3,.g4,.snap-grid,.outcome-grid,.process-row,.audience-grid,.closing-2{grid-template-columns:1fr;}
@@ -118,14 +125,16 @@
 </nav>
 
 <!-- HERO -->
-<section style="background:linear-gradient(160deg,#f7faff 0%,#fff 60%);border-bottom:1px solid #e8e8e8;padding:68px 0 56px;">
-  <div class="container">
+<section style="background:#fff;border-bottom:1px solid #e8e8e8;padding:64px 0 52px;position:relative;overflow:hidden;">
+<div style="position:absolute;inset:0;background-image:linear-gradient(rgba(8,79,170,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(8,79,170,.025) 1px,transparent 1px);background-size:48px 48px;pointer-events:none;"></div>
+<div style="position:absolute;bottom:0;left:0;right:0;height:60px;background:linear-gradient(to bottom,transparent,#fff);pointer-events:none;"></div>
+  <div class="container" style="position:relative;z-index:1;">
     <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px;">
       <span style="font-size:14px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#084FAA;">UX Case Study</span>
       <span style="color:#888;font-size:11px;">· Inova Health System · 2023 - Present</span>
     </div>
     <h1 style="font-family:'DM Serif Display',serif;font-size:48px;line-height:1.12;color:#1a1a1a;margin-bottom:16px;">Clinical Analytics - <em style="font-style:italic;color:#084FAA;">Dashboard Standardization</em></h1>
-    <p style="font-size:18px;color:#555;line-height:1.75;max-width:100%;margin-bottom:28px;">A scalable UX design system and repeatable process for Tableau dashboards - bridging clinical, BI, and governance teams to create consistent, trusted data experiences across Inova.</p>
+    <p style="font-size:17px;color:#555;line-height:1.75;max-width:100%;margin-bottom:28px;">A scalable UX design system and repeatable process for Tableau dashboards - bridging clinical, BI, and governance teams to create consistent, trusted data experiences across Inova.</p>
     <div style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:0;">
       <span class="tag-pill">Healthcare · Inova</span>
       <span class="tag-pill">Dashboard UX</span>
@@ -142,9 +151,9 @@
 <!-- OVERVIEW -->
 <section style="padding:72px 0;">
   <div class="container">
-    <span style="font-size:14px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#084FAA;margin-bottom:12px;display:block;">Project Overview</span>
+    <span style="font-size:11px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#084FAA;margin-bottom:12px;display:inline-flex;align-items:center;gap:8px;">Project Overview</span>
     <h2 style="font-family:'DM Serif Display',serif;font-size:48px;line-height:1.2;color:#1a1a1a;margin-bottom:14px;">Turning one-off dashboards into a scalable practice</h2>
-    <p style="font-size:20px;color:#555;line-height:1.75;max-width:100%;">Over several clinical analytics initiatives at Inova Health System, I partnered with clinical leaders, implementation teams, BI developers, analysts, and executives to improve the usability, consistency, and trust of dashboards used for decision-making. Instead of treating each dashboard as a one-off design, I helped create a scalable approach for <span class="tag-pill">dashboard standardization</span> <span class="tag-pill">data storytelling</span> <span class="tag-pill">design system adoption</span> and <span class="tag-pill">governance</span>.</p>
+    <p style="font-size:17px;color:#555;line-height:1.75;max-width:100%;">Over several clinical analytics initiatives at Inova Health System, I partnered with clinical leaders, implementation teams, BI developers, analysts, and executives to improve the usability, consistency, and trust of dashboards used for decision-making. Instead of treating each dashboard as a one-off design, I helped create a scalable approach for <span class="tag-pill">dashboard standardization</span> <span class="tag-pill">data storytelling</span> <span class="tag-pill">design system adoption</span> and <span class="tag-pill">governance</span>.</p>
 
     <div class="ps-grid">
       <div class="ps-panel">
@@ -180,7 +189,7 @@
 <!-- PROJECT SNAPSHOT -->
 <div style="background:#fafafa;border-top:1px solid #e8e8e8;border-bottom:1px solid #e8e8e8;">
   <div class="container" style="padding:52px 24px;">
-    <span style="font-size:14px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#084FAA;margin-bottom:12px;display:block;">Project Snapshot</span>
+    <span style="font-size:11px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#084FAA;margin-bottom:12px;display:inline-flex;align-items:center;gap:8px;">Project Snapshot</span>
     <h2 style="font-family:'DM Serif Display',serif;font-size:48px;line-height:1.2;color:#1a1a1a;margin-bottom:0;">Breadth across multiple clinical dashboards</h2>
     <div class="snap-grid">
       <div class="snap-cell"><div class="snap-num">Role</div><div class="snap-label">Senior UX/UI Designer</div></div>
@@ -194,9 +203,9 @@
 <!-- MY PROCESS -->
 <section style="padding:72px 0;">
   <div class="container">
-    <span style="font-size:14px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#084FAA;margin-bottom:12px;display:block;">My Process</span>
+    <span style="font-size:11px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#084FAA;margin-bottom:12px;display:inline-flex;align-items:center;gap:8px;">My Process</span>
     <h2 style="font-family:'DM Serif Display',serif;font-size:48px;line-height:1.2;color:#1a1a1a;margin-bottom:12px;">From discovery to repeatable dashboard standards</h2>
-    <p style="font-size:20px;color:#555;line-height:1.7;max-width:100%;">I used a structured UX workflow to move from vague dashboard requests into reusable design standards and development-ready concepts.</p>
+    <p style="font-size:17px;color:#555;line-height:1.7;max-width:100%;">I used a structured UX workflow to move from vague dashboard requests into reusable design standards and development-ready concepts.</p>
     <div class="workflow-card" onclick="openModal('images/02_ux_design_workflow.png','UX workflow: Discover → Define → Ideate → Design → Validate')">
       <img src="images/02_ux_design_workflow.png" alt="UX design workflow" style="width:100%;display:block;">
       <div class="workflow-card-info">
@@ -212,9 +221,9 @@
 <!-- DISCOVERY & INSIGHTS -->
 <div style="background:#f3f3f3;border-top:1px solid #e8e8e8;border-bottom:1px solid #e8e8e8;">
   <div class="container" style="padding:60px 24px;">
-    <span style="font-size:14px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#084FAA;margin-bottom:12px;display:block;">Discovery & Insights</span>
+    <span style="font-size:11px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#084FAA;margin-bottom:12px;display:inline-flex;align-items:center;gap:8px;">Discovery & Insights</span>
     <h2 style="font-family:'DM Serif Display',serif;font-size:48px;line-height:1.2;color:#1a1a1a;margin-bottom:12px;">What we learned from clinical and BI stakeholders</h2>
-    <p style="font-size:20px;color:#555;line-height:1.7;max-width:100%;margin-bottom:24px;">Through workshops, dashboard audits, and stakeholder reviews, we identified three major themes that shaped the design system and dashboard framework.</p>
+    <p style="font-size:17px;color:#555;line-height:1.7;max-width:100%;margin-bottom:24px;">Through workshops, dashboard audits, and stakeholder reviews, we identified three major themes that shaped the design system and dashboard framework.</p>
 
     <div class="g3">
       <div class="insight-icon-card"><img class="mini" src="icons/system.svg" alt=""><h3>Standardization</h3><p>Dashboards needed a consistent look, structure, and interaction model across teams.</p></div>
@@ -238,9 +247,9 @@
 <!-- WORKING SESSIONS -->
 <section style="padding:72px 0;">
   <div class="container">
-    <span style="font-size:14px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#084FAA;margin-bottom:12px;display:block;">Working Sessions</span>
+    <span style="font-size:11px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#084FAA;margin-bottom:12px;display:inline-flex;align-items:center;gap:8px;">Working Sessions</span>
     <h2 style="font-family:'DM Serif Display',serif;font-size:48px;line-height:1.2;color:#1a1a1a;margin-bottom:12px;">Iterative collaboration with BI analysts, developers, and clinical teams</h2>
-    <p style="font-size:20px;color:#555;line-height:1.7;max-width:100%;">Design decisions were not made in isolation. Recurring working sessions let us review requirements, validate metric definitions, compare layout options, and refine designs before development.</p>
+    <p style="font-size:17px;color:#555;line-height:1.7;max-width:100%;">Design decisions were not made in isolation. Recurring working sessions let us review requirements, validate metric definitions, compare layout options, and refine designs before development.</p>
     <div class="g2">
       <div class="gt" onclick="openModal('images/working_sessions_overview.png','Overview of iterative working sessions across clinical dashboard designs.')">
         <img src="images/working_sessions_overview.png" alt="Working sessions overview" class="h260">
@@ -259,9 +268,9 @@
 <!-- DESIGN SYSTEM -->
 <div style="background:#fafafa;border-bottom:1px solid #e8e8e8;">
   <div class="container" style="padding:60px 24px;">
-    <span style="font-size:14px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#084FAA;margin-bottom:12px;display:block;">Design System</span>
+    <span style="font-size:11px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#084FAA;margin-bottom:12px;display:inline-flex;align-items:center;gap:8px;">Design System</span>
     <h2 style="font-family:'DM Serif Display',serif;font-size:48px;line-height:1.2;color:#1a1a1a;margin-bottom:12px;">Reusable standards for Tableau dashboard experiences</h2>
-    <p style="font-size:20px;color:#555;line-height:1.7;max-width:100%;">The design system gave teams a shared language for dashboard design - defining spacing, typography, colors, KPI components, annotation patterns, filters, and dashboard structure.</p>
+    <p style="font-size:17px;color:#555;line-height:1.7;max-width:100%;">The design system gave teams a shared language for dashboard design - defining spacing, typography, colors, KPI components, annotation patterns, filters, and dashboard structure.</p>
     <div class="g4">
       <div class="gt" onclick="openModal('images/09_design_system_intro.png','Design system principles: consistency, efficiency, and accessibility.')">
         <img src="images/09_design_system_intro.png" alt="Design system principles" class="h180">
@@ -286,9 +295,9 @@
 <!-- EXAMPLE 1 - HEART FAILURE DASHBOARD (Target Modeling Tool) -->
 <section style="padding:72px 0;">
   <div class="container">
-    <span style="font-size:14px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#084FAA;margin-bottom:12px;display:block;">Example 1</span>
-    <h2 style="font-family:'DM Serif Display',serif;font-size:clamp(28px,4vw,48px);line-height:1.2;color:#1a1a1a;margin-bottom:12px;">Heart Failure -Target Modeling Tool</h2>
-    <p style="font-size:18px;color:#555;line-height:1.75;max-width:720px;margin-bottom:8px;">A clinical analytics dashboard suite tracking Heart Failure performance across Length of Stay, Mortality, and Readmission -designed from intake through five working sessions to a final development-ready Tableau experience.</p>
+    <span style="font-size:11px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#084FAA;margin-bottom:12px;display:inline-flex;align-items:center;gap:8px;">Example 1</span>
+    <h2 style="font-family:'DM Serif Display',serif;font-size:clamp(22px,3.5vw,36px);letter-spacing:-.2px;line-height:1.2;color:#1a1a1a;margin-bottom:12px;">Heart Failure -Target Modeling Tool</h2>
+    <p style="font-size:17px;color:#555;line-height:1.75;max-width:720px;margin-bottom:8px;">A clinical analytics dashboard suite tracking Heart Failure performance across Length of Stay, Mortality, and Readmission -designed from intake through five working sessions to a final development-ready Tableau experience.</p>
 
     <!-- What the dashboard covers -->
     <div style="display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 32px;">
@@ -360,9 +369,9 @@
 <!-- EXAMPLE 2 - INOVA CARE DASHBOARD -->
 <div style="background:#F0F5FF;border-bottom:1px solid #e8e8e8;">
   <div class="container" style="padding:60px 24px;">
-    <span style="font-size:14px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#084FAA;margin-bottom:12px;display:block;">Example 2</span>
+    <span style="font-size:11px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#084FAA;margin-bottom:12px;display:inline-flex;align-items:center;gap:8px;">Example 2</span>
     <h2 style="font-family:'DM Serif Display',serif;font-size:48px;line-height:1.2;color:#1a1a1a;margin-bottom:12px;">Inova Care Dashboard</h2>
-    <p style="font-size:20px;color:#555;line-height:1.7;max-width:100%;margin-bottom:6px;">Helping executives, service leaders, clinicians, and analysts understand how care pathway adherence impacts patient outcomes, operations, and cost.</p>
+    <p style="font-size:17px;color:#555;line-height:1.7;max-width:100%;margin-bottom:6px;">Helping executives, service leaders, clinicians, and analysts understand how care pathway adherence impacts patient outcomes, operations, and cost.</p>
     <p style="font-size:16px;color:#555;margin-bottom:20px;">UX north star: <span class="tag-pill">Data → Insight → Action</span></p>
 
     <div class="audience-grid">
@@ -396,9 +405,9 @@
 <!-- GOVERNANCE FRAMEWORK -->
 <section style="padding:72px 0;">
   <div class="container">
-    <span style="font-size:14px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#084FAA;margin-bottom:12px;display:block;">Governance Framework</span>
+    <span style="font-size:11px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#084FAA;margin-bottom:12px;display:inline-flex;align-items:center;gap:8px;">Governance Framework</span>
     <h2 style="font-family:'DM Serif Display',serif;font-size:48px;line-height:1.2;color:#1a1a1a;margin-bottom:12px;">Standardizing intake, design review, and delivery</h2>
-    <p style="font-size:20px;color:#555;line-height:1.7;max-width:100%;">A lightweight governance process ensures future dashboards follow a consistent path from request to implementation.</p>
+    <p style="font-size:17px;color:#555;line-height:1.7;max-width:100%;">A lightweight governance process ensures future dashboards follow a consistent path from request to implementation.</p>
     <div class="process-row">
       <div class="process-cell"><div class="process-num">Step 1</div><h3>Request</h3><p>Clarify business need and audience.</p></div>
       <div class="process-cell"><div class="process-num">Step 2</div><h3>Discovery</h3><p>Identify workflows, metrics, and decisions.</p></div>
@@ -414,7 +423,7 @@
 <!-- OUTCOMES -->
 <div style="background:#F0F5FF;border-bottom:1px solid #e8e8e8;">
   <div class="container" style="padding:60px 24px;">
-    <span style="font-size:14px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#084FAA;margin-bottom:12px;display:block;">Expected Outcomes</span>
+    <span style="font-size:11px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#084FAA;margin-bottom:12px;display:inline-flex;align-items:center;gap:8px;">Expected Outcomes</span>
     <h2 style="font-family:'DM Serif Display',serif;font-size:48px;line-height:1.2;color:#1a1a1a;margin-bottom:0;">A scalable foundation for clinical analytics</h2>
     <div class="outcome-grid">
       <div class="outcome-cell"><div class="outcome-num">1</div><div class="outcome-label">Shared design language for analytics dashboards</div></div>
