@@ -13,9 +13,6 @@
 
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-.W{max-width:1320px;margin:0 auto;padding:0 64px;}
-@media(max-width:900px){.W{padding:0 20px;}}
-
 
 /* ── SCROLL ANIMATIONS ─────────────────── */
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease;}
@@ -405,7 +402,7 @@
   border-radius:4px;padding:3px 8px;
 }
 .footer-s{background:#fafafa;border-top:1px solid #e8e8e8;padding:56px 0;}
-.footer-in{max-width:1320px;margin:0 auto;padding:0 64px;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;}
+.footer-in{max-width:1060px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;}
 .footer-in h3{font-family:'DM Serif Display',serif;font-size:24px;color:#1a1a1a;margin-bottom:6px;}
 .footer-in p{font-size:16px;color:#555;line-height:1.6;margin-bottom:12px;}
 .footer-email{font-size:16px;font-weight:600;color:#084FAA;text-decoration:none;}
@@ -429,13 +426,10 @@
 </style>
 </head>
 <body>
-<div id="pgbar" style="position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(to right,#084FAA,#4db8ff);z-index:9999;transition:width .08s linear;pointer-events:none;"></div>
-<script>window.addEventListener('scroll',function(){var d=document.documentElement;document.getElementById('pgbar').style.width=Math.min((d.scrollTop||document.body.scrollTop)/((d.scrollHeight||document.body.scrollHeight)-d.clientHeight)*100,100)+'%';});</script>
-
 
 <!-- NAV -->
 <nav style="position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.95);backdrop-filter:blur(16px);border-bottom:1px solid #e8e8e8;height:64px;display:flex;align-items:center;">
-  <div style="max-width:1320px;margin:0 auto;padding:0 64px;display:flex;align-items:center;justify-content:space-between;width:100%;">
+  <div style="max-width:1100px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;width:100%;">
     <a href="index.html"><img src="images/logo.png" alt="Prateek Chatterjee" style="height:34px;display:block;"></a>
     <div style="display:flex;gap:8px;">
       <a href="index.html" style="font-size:13px;font-weight:500;letter-spacing:.5px;text-transform:uppercase;text-decoration:none;color:#084FAA;background:#F0F5FF;padding:6px 14px;border-radius:50px;">Work</a>
@@ -448,7 +442,7 @@
 <!-- ═══ HERO ═══ -->
 <section class="hero">
   <div class="hero-bg-circle"></div>
-  <div class="W" style="position:relative;z-index:1;">
+  <div class="container" style="position:relative;z-index:1;">
     <div class="hero-grid">
 
       <!-- LEFT - text -->
@@ -527,7 +521,7 @@
 
 <!-- ═══ WORK ═══ -->
 <section class="work-section">
-  <div class="W">
+  <div class="container">
 
     <div class="reveal">
       <span style="font-size:14px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:#084FAA;margin-bottom:10px;display:block;">Selected Work</span>
@@ -745,6 +739,8 @@
   </div>
 </footer>
 
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 <script>
 const io = new IntersectionObserver((entries) => {
