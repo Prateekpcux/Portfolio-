@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
-<title>Inova Assist — AI Chat Platform — Prateek Chatterjee</title>
+<title>Inova Assist AI Chat Platform Prateek Chatterjee</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
@@ -49,7 +49,7 @@
 /* HERO STATS */
 .hstats{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:#e8e8e8;border:1px solid #e8e8e8;border-radius:16px;overflow:hidden;margin-top:36px;}
 .hsc{background:#fff;padding:28px 22px;}
-.hsc-n{font-family:'DM Serif Display',serif;font-size:38px;color:#084FAA;line-height:1;margin-bottom:5px;}
+.hsc-n{font-family:'DM Serif Display',serif;font-size:34px;color:#0D1B5E;line-height:1;margin-bottom:5px;}
 .hsc-l{font-size:12px;color:#888;line-height:1.5;}
 
 /* PQ */
@@ -67,6 +67,11 @@
 .split-panel ul{padding-left:18px;margin-top:8px;}
 .split-panel li{margin-bottom:5px;}
 
+/* BULLETS */
+.bl{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:9px;}
+.bl li{font-size:14px;color:#555;line-height:1.65;display:flex;gap:10px;align-items:flex-start;}
+.bl li::before{content:'';width:6px;height:6px;border-radius:50%;background:#0D1B5E;flex-shrink:0;margin-top:6px;}
+
 /* INSIGHT STRIP */
 .insight-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:#e8e8e8;border:1px solid #e8e8e8;border-radius:16px;overflow:hidden;margin-top:28px;}
 .is-cell{background:#fff;padding:28px 24px;}
@@ -76,11 +81,11 @@
 
 /* IE */
 .ie{border:1px solid #e8e8e8;border-radius:14px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.07);cursor:pointer;transition:box-shadow .25s,transform .25s;margin-top:20px;}
-.ie:hover{box-shadow:0 14px 40px rgba(8,79,170,.13);transform:translateY(-2px);}
+.ie:hover{box-shadow:0 14px 40px rgba(13,27,94,.13);transform:translateY(-2px);}
 .ie img{width:100%;display:block;}
 .ie-foot{background:#fafafa;border-top:1px solid #e8e8e8;padding:11px 18px;display:flex;align-items:center;justify-content:space-between;}
 .ie-foot span{font-size:12px;color:#999;}
-.ie-foot strong{font-size:12px;color:#084FAA;}
+.ie-foot strong{font-size:12px;color:#0D1B5E;}
 
 /* ROLE GRID */
 .role-grid{background:#0D1B5E;border-radius:16px;padding:32px 28px;color:#fff;display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px;}
@@ -91,10 +96,10 @@
 .screen-2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px;}
 .screen-3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px;}
 .sc-card{border:1px solid #e8e8e8;border-radius:14px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.08);cursor:pointer;transition:box-shadow .25s,transform .25s;background:#fff;}
-.sc-card:hover{box-shadow:0 16px 48px rgba(8,79,170,.15);transform:translateY(-3px);}
+.sc-card:hover{box-shadow:0 16px 48px rgba(13,27,94,.15);transform:translateY(-3px);}
 .sc-card img{width:100%;display:block;}
 .sc-card-info{padding:14px 16px;border-top:1px solid #f0f0f0;}
-.sc-label{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#084FAA;margin-bottom:5px;display:block;}
+.sc-label{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#0D1B5E;margin-bottom:5px;display:block;}
 .sc-card-info h3{font-size:14px;font-weight:600;color:#1a1a1a;margin-bottom:3px;line-height:1.3;}
 .sc-card-info p{font-size:12px;color:#888;margin:0;line-height:1.5;}
 
@@ -107,12 +112,9 @@
 .dec-card p{font-size:14px;color:#555;line-height:1.7;margin-bottom:14px;}
 .dec-res{display:inline-flex;align-items:center;background:rgba(34,197,94,.1);color:#166534;border:1px solid rgba(34,197,94,.25);border-radius:4px;padding:4px 12px;font-size:11px;font-weight:700;}
 
-/* BULLETS */
-.bl{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:9px;}
-.bl li{font-size:14px;color:#555;line-height:1.65;display:flex;gap:10px;align-items:flex-start;}
-.bl li::before{content:'';width:6px;height:6px;border-radius:50%;background:#084FAA;flex-shrink:0;margin-top:6px;}
-
-/* OUTCOME CARDS */
+/* OUTCOME big cards */
+.outcome-single{background:#111e35;border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:56px 52px;position:relative;overflow:hidden;margin-top:32px;}
+.outcome-single::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(to right,#0D1B5E,#4db8ff);}
 .outcome-2{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:32px;}
 .oc{background:#111e35;border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:44px 40px;position:relative;overflow:hidden;}
 .oc::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(to right,#0D1B5E,#4db8ff);}
@@ -132,17 +134,42 @@
 .chip-r{background:#fff5f5;color:#b02020;border:1px solid #fecaca;border-radius:4px;padding:3px 10px;font-size:11px;font-weight:600;}
 .chip-g{background:#f0fff4;color:#166534;border:1px solid #bbf7d0;border-radius:4px;padding:3px 10px;font-size:11px;font-weight:600;}
 
-/* FOOTER */
-.footer-s{background:#fafafa;border-top:1px solid #e8e8e8;padding:64px 0;}
-.footer-in{max-width:1320px;margin:0 auto;padding:0 64px;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;}
+/* ===== ADDED VISUAL COMPONENTS ===== */
+/* TL;DR three-beat */
+.tldr{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:#e8e8e8;border:1px solid #e8e8e8;border-radius:16px;overflow:hidden;margin-top:28px;}
+.tldr-cell{background:#fff;padding:30px 28px;position:relative;}
+.tldr-cell::before{content:'';position:absolute;top:0;left:0;width:100%;height:4px;}
+.tldr-cell.t-p::before{background:#ef4444;}
+.tldr-cell.t-s::before{background:#084FAA;}
+.tldr-cell.t-r::before{background:#22c55e;}
+.tldr-k{font-size:10px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:#999;margin-bottom:12px;display:block;}
+.tldr-cell p{font-size:16px;color:#1a1a1a;line-height:1.55;font-weight:500;}
+
+/* process strip */
+.flowsteps{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:24px;}
+.fstep{background:#fff;border:1px solid #e8e8e8;border-radius:12px;padding:20px 18px;}
+.fstep .stepnum{font-family:'DM Serif Display',serif;font-size:26px;color:#0D1B5E;line-height:1;margin-bottom:8px;}
+.fstep h4{font-size:13px;font-weight:700;color:#1a1a1a;margin-bottom:5px;letter-spacing:.2px;}
+.fstep p{font-size:12px;color:#777;line-height:1.55;}
+
+/* annotation notes under a screen */
+.notes-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px;}
+.note{background:#fff;border:1px solid #e8e8e8;border-radius:12px;padding:16px 18px;}
+.note .note-k{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#084FAA;margin-bottom:6px;display:block;}
+.note p{font-size:13px;color:#555;line-height:1.6;margin:0;}
 
 @media(max-width:900px){
-  .hstats,.split,.insight-strip,.screen-2,.screen-3,.dec-3,.outcome-2,.closing-2,.role-grid{grid-template-columns:1fr;}
+  .hstats,.split,.insight-strip,.screen-2,.screen-3,.dec-3,.outcome-2,.closing-2,.role-grid,.tldr,.flowsteps,.notes-row{grid-template-columns:1fr;}
   .h-xl{font-size:34px;}.h-lg{font-size:28px;}
   .sec{padding:56px 0;}.sec-sm{padding:40px 0;}
   .footer-in{grid-template-columns:1fr;padding:0 20px;}
   .oc{padding:32px 24px;}.oc-n{font-size:60px;}
+  .outcome-single{padding:36px 28px;}
 }
+
+/* FOOTER */
+.footer-s{background:#fafafa;border-top:1px solid #e8e8e8;padding:64px 0;}
+.footer-in{max-width:1320px;margin:0 auto;padding:0 64px;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;}
 </style>
 </head>
 <body>
@@ -173,62 +200,109 @@
       <span class="ey" style="margin:0;">UX Case Study</span>
       <span style="color:#999;font-size:11px;font-weight:500;">· Inova Health System · 2025</span>
     </div>
-    <h1 class="h-xl reveal" style="margin-bottom:24px;max-width:860px;">Inova Assist —<br><em>AI for Healthcare Operations</em></h1>
-    <p class="body reveal" style="max-width:660px;margin-bottom:30px;">Inova's employees were using personal phones to access ChatGPT for work tasks — because every approved AI tool was either blocked or couldn't do what they needed. I designed Inova Assist: a governed, LLM-powered chat platform built specifically for healthcare operations workflows.</p>
+    <h1 class="h-xl reveal" style="margin-bottom:24px;max-width:860px;">Inova Assist -<br><em>AI that's safe to use at work</em></h1>
+    <p class="body reveal" style="max-width:620px;margin-bottom:30px;">Staff were using ChatGPT to get work done. It wasn't safe for patient data, so the hospital blocked it. I designed the replacement - one they'd actually want to use.</p>
     <div class="reveal" style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:32px;">
-      <span class="tp">AI / LLM Product</span>
-      <span class="tp">Healthcare Operations</span>
-      <span class="tp">Chat-first · Desktop</span>
+      <span class="tp">AI Chat Product</span>
+      <span class="tp">Healthcare</span>
+      <span class="tp">Desktop</span>
       <span class="tp">Figma</span>
-      <span class="tp">PHI-safe by design</span>
+      <span class="tp">Safe by design</span>
       <span class="tp">Lead UX Designer</span>
     </div>
-    <img src="inovaassist/Main_Dashboard_Screen.png" alt="Inova Assist main dashboard" class="reveal" style="width:100%;display:block;border-radius:24px;box-shadow:0 24px 80px rgba(13,27,94,.18),0 0 0 1px rgba(13,27,94,.08);">
+    <img src="inovaassist/hero.png" alt="Inova Assist main dashboard" class="reveal" style="width:100%;display:block;border-radius:24px;box-shadow:0 24px 80px rgba(13,27,94,.18),0 0 0 1px rgba(13,27,94,.08);">
     <div class="hstats reveal">
-      <div class="hsc"><div class="hsc-n">74%</div><div class="hsc-l">Of surveyed employees used a non-approved AI tool in the past month</div></div>
-      <div class="hsc"><div class="hsc-n">11 min</div><div class="hsc-l">Average time to create a ServiceNow ticket manually</div></div>
-      <div class="hsc"><div class="hsc-n">200+</div><div class="hsc-l">Employees across 3 departments in the pilot</div></div>
-      <div class="hsc"><div class="hsc-n">91%</div><div class="hsc-l">Task completion rate after design iteration</div></div>
+      <div class="hsc"><div class="hsc-n">Role</div><div class="hsc-l">Lead UX Designer - only designer on the product</div></div>
+      <div class="hsc"><div class="hsc-n">Users</div><div class="hsc-l">Every Inova employee - doctors, nurses, ops, IT</div></div>
+      <div class="hsc"><div class="hsc-n">Built on</div><div class="hsc-l">ChatGPT engine, inside the hospital's safe systems</div></div>
+      <div class="hsc"><div class="hsc-n">Time</div><div class="hsc-l">6 weeks, idea to handoff - launched Oct 2025</div></div>
     </div>
   </div>
 </section>
 
+<!-- ══ TL;DR ══ -->
+<div class="band-l">
+  <div class="W sec-sm">
+    <span class="ey">The Short Version</span>
+    <h2 class="h-lg">The whole case, in three lines.</h2>
+    <div class="tldr reveal">
+      <div class="tldr-cell t-p"><span class="tldr-k">The problem</span><p>ChatGPT got blocked. Staff lost a tool they used every day.</p></div>
+      <div class="tldr-cell t-s"><span class="tldr-k">What I did</span><p>Built a chat assistant with safety on the screen - not buried in the fine print.</p></div>
+      <div class="tldr-cell t-r"><span class="tldr-k">The result</span><p>91% of testers finished their task. 8 of 8 picked it over their old workarounds.</p></div>
+    </div>
+  </div>
+</div>
+
 <!-- ══ PULL QUOTE ══ -->
 <div class="pq">
   <div class="W">
-    <blockquote class="reveal">"Our staff are already using AI on their personal phones to get through the day.<br>We're just not in the room when it happens."</blockquote>
-    <cite class="reveal">Discovery interview — the real compliance problem hiding as a productivity gap</cite>
+    <blockquote class="reveal">"The tool was useful.<br>The problem was that patient data was leaving the building with it."</blockquote>
+    <cite class="reveal">Why the project started</cite>
   </div>
 </div>
 
 <!-- ══ THE PROBLEM ══ -->
-<section class="sec">
+<section class="sec-sm">
   <div class="W">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;">
-      <div class="rl">
-        <span class="ey">The Real Problem</span>
-        <h2 class="h-lg">It wasn't a productivity problem. It was a compliance crisis.</h2>
-        <p class="body" style="margin-bottom:20px;">Inova had blocked external AI tools — ChatGPT, Copilot — across its network for good reason. PHI protection, HIPAA compliance, data governance. But blocking the tools didn't remove the need. Employees were using AI anyway, on personal devices, outside any oversight.</p>
-        <p class="body">The existing internal tool, SHARP, was a basic chat wrapper. It couldn't create a ServiceNow ticket, couldn't analyze a document, and had no concept of what was appropriate to ask in a healthcare context. So the gap between "approved AI" and "useful AI" was being filled by employees making judgment calls on their personal phones with patient-adjacent data.</p>
-      </div>
-      <div class="rr">
-        <div style="background:#fff5f5;border:1px solid #fecaca;border-radius:16px;padding:28px 24px;margin-bottom:16px;">
-          <div style="font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#b02020;margin-bottom:12px;">The Shadow AI Problem</div>
-          <ul class="bl">
-            <li>ChatGPT and Copilot blocked at the network level — but accessible on personal devices</li>
-            <li>74% of employees surveyed had used a non-approved AI tool for work in the past month</li>
-            <li>No visibility for IT or compliance teams into what data was being shared</li>
-            <li>SHARP couldn't handle the two most requested workflows: ticket creation and document analysis</li>
-          </ul>
+    <span class="ey">The Problem</span>
+    <h2 class="h-lg">A useful tool got banned.<br>Something had to replace it.</h2>
+    <p class="body" style="max-width:620px;margin-bottom:8px;">Here's why ChatGPT couldn't stay, and what the new tool had to do instead.</p>
+
+    <div style="display:grid;grid-template-columns:1fr auto 1fr;gap:0;margin-top:28px;border-radius:18px;overflow:hidden;" class="reveal">
+      <!-- Left: why blocked -->
+      <div style="background:#fff5f5;border:1px solid #fecaca;border-right:none;border-radius:18px 0 0 18px;padding:36px 32px;">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:24px;">
+          <span style="width:10px;height:10px;border-radius:50%;background:#ef4444;display:inline-block;flex-shrink:0;"></span>
+          <span style="font-size:11px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:#b02020;">Why ChatGPT was blocked</span>
         </div>
-        <div style="background:#f0fff4;border:1px solid #bbf7d0;border-radius:16px;padding:28px 24px;">
-          <div style="font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#166534;margin-bottom:12px;">The Design Mandate</div>
-          <ul class="bl">
-            <li>Build an AI assistant employees would actually choose over their personal phones</li>
-            <li>PHI-safe by design — not just by policy. The interface itself needed to enforce boundaries</li>
-            <li>Governed from day one — Terms of Use gate, usage transparency, concern reporting</li>
-            <li>Fast enough to compete with consumer AI — not a downgrade</li>
-          </ul>
+        <div style="display:flex;flex-direction:column;gap:16px;">
+          <div style="display:flex;gap:14px;align-items:flex-start;">
+            <span style="font-size:18px;flex-shrink:0;margin-top:2px;">🚫</span>
+            <div><div style="font-size:14px;font-weight:700;color:#1a1a1a;margin-bottom:3px;">No safety agreement</div><div style="font-size:13px;color:#666;line-height:1.6;">The hospital can't legally use it for anything near patient information.</div></div>
+          </div>
+          <div style="display:flex;gap:14px;align-items:flex-start;">
+            <span style="font-size:18px;flex-shrink:0;margin-top:2px;">👁️</span>
+            <div><div style="font-size:14px;font-weight:700;color:#1a1a1a;margin-bottom:3px;">No way to watch it</div><div style="font-size:13px;color:#666;line-height:1.6;">Once data goes in, it leaves the hospital's control for good.</div></div>
+          </div>
+          <div style="display:flex;gap:14px;align-items:flex-start;">
+            <span style="font-size:18px;flex-shrink:0;margin-top:2px;">📋</span>
+            <div><div style="font-size:14px;font-weight:700;color:#1a1a1a;margin-bottom:3px;">No record</div><div style="font-size:13px;color:#666;line-height:1.6;">No log of what was shared, or when.</div></div>
+          </div>
+          <div style="display:flex;gap:14px;align-items:flex-start;">
+            <span style="font-size:18px;flex-shrink:0;margin-top:2px;">🔁</span>
+            <div><div style="font-size:14px;font-weight:700;color:#1a1a1a;margin-bottom:3px;">Learns from your data</div><div style="font-size:13px;color:#666;line-height:1.6;">By default, what you type can be used to train the model.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- arrow -->
+      <div style="background:#e8e8e8;width:2px;position:relative;display:flex;align-items:center;justify-content:center;">
+        <div style="background:#fff;border:2px solid #e8e8e8;border-radius:50%;width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;color:#555;flex-shrink:0;z-index:1;">→</div>
+      </div>
+
+      <!-- Right: what it needed -->
+      <div style="background:#f0fff4;border:1px solid #bbf7d0;border-left:none;border-radius:0 18px 18px 0;padding:36px 32px;">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:24px;">
+          <span style="width:10px;height:10px;border-radius:50%;background:#22c55e;display:inline-block;flex-shrink:0;"></span>
+          <span style="font-size:11px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:#166534;">What the new tool needed</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:16px;">
+          <div style="display:flex;gap:14px;align-items:flex-start;">
+            <span style="font-size:18px;flex-shrink:0;margin-top:2px;">⚡</span>
+            <div><div style="font-size:14px;font-weight:700;color:#1a1a1a;margin-bottom:3px;">Just as fast</div><div style="font-size:13px;color:#666;line-height:1.6;">Same engine as ChatGPT. It can't feel like a step down.</div></div>
+          </div>
+          <div style="display:flex;gap:14px;align-items:flex-start;">
+            <span style="font-size:18px;flex-shrink:0;margin-top:2px;">🔒</span>
+            <div><div style="font-size:14px;font-weight:700;color:#1a1a1a;margin-bottom:3px;">Safe by design</div><div style="font-size:13px;color:#666;line-height:1.6;">The screen sets the rules before anyone types.</div></div>
+          </div>
+          <div style="display:flex;gap:14px;align-items:flex-start;">
+            <span style="font-size:18px;flex-shrink:0;margin-top:2px;">🏥</span>
+            <div><div style="font-size:14px;font-weight:700;color:#1a1a1a;margin-bottom:3px;">Data stays inside</div><div style="font-size:13px;color:#666;line-height:1.6;">Runs in the hospital's own protected systems.</div></div>
+          </div>
+          <div style="display:flex;gap:14px;align-items:flex-start;">
+            <span style="font-size:18px;flex-shrink:0;margin-top:2px;">✅</span>
+            <div><div style="font-size:14px;font-weight:700;color:#1a1a1a;margin-bottom:3px;">Safe from day one</div><div style="font-size:13px;color:#666;line-height:1.6;">Agreement, reminders, and a report button built in.</div></div>
+          </div>
         </div>
       </div>
     </div>
@@ -238,112 +312,127 @@
 <!-- ══ DISCOVERY ══ -->
 <div class="band-m">
   <div class="W sec-sm">
-    <span class="ey">Discovery</span>
-    <h2 class="h-lg">What the workshops revealed.</h2>
-    <p class="body" style="max-width:660px;margin-bottom:8px;">I ran discovery workshops with clinical staff, IT, compliance, and operations leads. Three findings shaped every design decision that followed.</p>
+    <span class="ey">What I Learned</span>
+    <h2 class="h-lg">Three findings shaped every decision.</h2>
+    <p class="body" style="max-width:620px;margin-bottom:8px;">I ran workshops with clinical staff, IT, compliance, and operations. Three things stood out.</p>
     <div class="insight-strip reveal">
       <div class="is-cell">
-        <span class="is-icon">⚠️</span>
-        <h3>The tool gap was real and being worked around</h3>
-        <p>Employees weren't using personal AI out of recklessness — they were solving real workflow problems. ServiceNow ticket creation alone took an average of 11 minutes. They needed a faster path.</p>
+        <span class="is-icon">📋</span>
+        <h3>The old tool gave up on long files</h3>
+        <p>Clinical notes and policies are long. The hospital's old assistant couldn't read them. The fix was simple: use a model that handles long text.</p>
       </div>
       <div class="is-cell">
         <span class="is-icon">🔒</span>
-        <h3>Trust required transparency, not just policy</h3>
-        <p>Users needed to know exactly what the AI could and couldn't do before they started typing. A reminder at the bottom of the screen wasn't enough — they needed to actively acknowledge boundaries before accessing the tool.</p>
+        <h3>Safety had to be felt, not buried</h3>
+        <p>A small note in the footer gets ignored. People needed to see the rules and agree to them before they start typing.</p>
       </div>
       <div class="is-cell">
         <span class="is-icon">⚡</span>
-        <h3>Speed was non-negotiable</h3>
-        <p>If the governed tool was slower or less capable than the personal phone alternative, adoption would fail. The LLM switcher wasn't a settings feature — it was the product's answer to "why use this instead of ChatGPT?"</p>
+        <h3>Speed decides if people switch</h3>
+        <p>If it felt slower than ChatGPT, no one would use it. So I gave them a fast model and a slower, deeper-thinking one.</p>
       </div>
     </div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px;">
-      <div class="ie reveal" onclick="openModal('inovaassist/discovery1.png','Discovery workshop — questions, constraints, and feature prioritization.')">
+      <div class="ie reveal" onclick="openModal('inovaassist/1781280290336_image.png','Discovery workshop - the problem, who the users are, and what to build.')">
         <img src="inovaassist/1781280290336_image.png" alt="Discovery workshop" style="height:240px;object-fit:cover;object-position:top;">
-        <div class="ie-foot"><span>Discovery workshop — problem framing and feature scope</span><strong>Expand →</strong></div>
+        <div class="ie-foot"><span>Discovery workshop - problem and scope</span><strong>Expand →</strong></div>
       </div>
-      <div class="ie reveal" onclick="openModal('inovaassist/competitive.png','Competitive analysis — SHARP, ChatGPT, Microsoft Copilot.')">
-        <img src="inovaassist/1781280350274_image.png" alt="Competitive analysis" style="height:240px;object-fit:cover;object-position:top;">
-        <div class="ie-foot"><span>Competitive analysis — SHARP vs ChatGPT vs Copilot</span><strong>Expand →</strong></div>
+      <div class="ie reveal" onclick="openModal('inovaassist/1781280350274_image.png','Comparing the old tool, ChatGPT, and Microsoft Copilot.')">
+        <img src="inovaassist/1781280350274_image.png" alt="Tool comparison" style="height:240px;object-fit:cover;object-position:top;">
+        <div class="ie-foot"><span>How the options compared</span><strong>Expand →</strong></div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ══ MY ROLE ══ -->
+<!-- ══ MY ROLE + PROCESS ══ -->
 <section class="sec-sm">
   <div class="W">
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;">
       <div class="rl">
         <span class="ey">My Role</span>
-        <h2 class="h-lg">Lead designer from day zero.</h2>
-        <p class="body" style="margin-bottom:20px;">I ran the discovery workshop, defined the product scope, designed every screen, and worked directly with engineering on constraints. The timeline was aggressive — design complete in 6 weeks from kickoff to dev handoff.</p>
-        <p class="body">The hardest part wasn't the UI. It was making governance feel like product design, not legal compliance. Every trust decision — what the AI displays on first load, what the terms actually say, how concerns get reported — had to work as UX, not just as policy.</p>
+        <h2 class="h-lg">I owned it end to end.</h2>
+        <p class="body" style="margin-bottom:20px;">I ran the research, decided what to build, made the design system, and designed every screen. Six weeks, no extra time.</p>
+        <p class="body">The hard part wasn't the screens. It was making safety feel like good design, not legal paperwork.</p>
       </div>
       <div class="rr">
         <div class="role-grid">
-          <div class="role-head">End-to-end ownership</div>
-          <div class="role-item">Discovery workshops + stakeholder interviews</div>
-          <div class="role-item">Feature scoping + MVP prioritization</div>
-          <div class="role-item">User flow + site map design</div>
-          <div class="role-item">Component library in Figma (Inter typeface)</div>
-          <div class="role-item">All hi-fidelity screens + interaction states</div>
-          <div class="role-item">PHI compliance UX — Terms of Use, disclaimers</div>
-          <div class="role-item">LLM switcher interaction design</div>
-          <div class="role-item">Dev handoff + QA support</div>
+          <div class="role-head">What I did</div>
+          <div class="role-item">Research workshops + interviews</div>
+          <div class="role-item">Decided what to build first</div>
+          <div class="role-item">User flows + site map</div>
+          <div class="role-item">Design system in Figma</div>
+          <div class="role-item">Every screen + every state</div>
+          <div class="role-item">Safety screens + reminders</div>
+          <div class="role-item">Fast / Thinking model switch</div>
+          <div class="role-item">Handoff + testing support</div>
         </div>
+      </div>
+    </div>
+    <div style="margin-top:48px;">
+      <span class="ey">How I Worked</span>
+      <div class="flowsteps reveal">
+        <div class="fstep"><div class="stepnum">1</div><h4>Discover</h4><p>Workshops with staff, IT, and compliance.</p></div>
+        <div class="fstep"><div class="stepnum">2</div><h4>Define</h4><p>Picked what to build, and in what order.</p></div>
+        <div class="fstep"><div class="stepnum">3</div><h4>Design</h4><p>Sketches first, then full screens in Figma.</p></div>
+        <div class="fstep"><div class="stepnum">4</div><h4>Test</h4><p>Two rounds with real staff. Fixed what broke.</p></div>
+        <div class="fstep"><div class="stepnum">5</div><h4>Ship</h4><p>Handed off a complete kit. Launched on time.</p></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══ FEATURE SCOPING ══ -->
+<!-- ══ WHAT TO BUILD FIRST ══ -->
 <div class="band-l">
   <div class="W sec-sm">
-    <span class="ey">Feature Scoping</span>
-    <h2 class="h-lg">What we built first — and why.</h2>
-    <p class="body" style="max-width:660px;margin-bottom:28px;">ServiceNow ticket creation was the most requested feature from discovery. It also had the most complex API dependency. I pushed for it as Phase 2 — not because it wasn't important, but because a broken ServiceNow integration on launch day would destroy trust in the entire product. We needed the chat experience to be flawless first.</p>
+    <span class="ey">What To Build First</span>
+    <h2 class="h-lg">The most-wanted feature was the riskiest to build.</h2>
+    <p class="body" style="max-width:640px;margin-bottom:28px;">Auto-creating IT tickets was the top request. It also needed another system to be ready, which was out of my control. I held it for later so the chat could be perfect at launch. You earn the right to add complexity by nailing the basics first.</p>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px;background:#e8e8e8;border:1px solid #e8e8e8;border-radius:18px;overflow:hidden;" class="reveal">
       <div style="background:#fff;padding:36px 32px;">
-        <div style="font-size:10px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:#0D1B5E;margin-bottom:16px;">Phase 1 — MVP</div>
+        <div style="font-size:10px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:#0D1B5E;margin-bottom:16px;">Shipped at launch</div>
         <div style="display:flex;flex-direction:column;gap:10px;">
-          <div style="display:flex;align-items:center;gap:10px;"><span style="background:#0D1B5E;color:#fff;font-size:10px;font-weight:700;padding:3px 10px;border-radius:50px;">P1</span><span style="font-size:14px;color:#1a1a1a;font-weight:600;">Chat interface + conversation history</span></div>
-          <div style="display:flex;align-items:center;gap:10px;"><span style="background:#0D1B5E;color:#fff;font-size:10px;font-weight:700;padding:3px 10px;border-radius:50px;">P1</span><span style="font-size:14px;color:#1a1a1a;font-weight:600;">Document upload + analysis</span></div>
-          <div style="display:flex;align-items:center;gap:10px;"><span style="background:#0D1B5E;color:#fff;font-size:10px;font-weight:700;padding:3px 10px;border-radius:50px;">P1</span><span style="font-size:14px;color:#1a1a1a;font-weight:600;">LLM model switcher (Fast 4.1 / Thinking 5.0)</span></div>
-          <div style="display:flex;align-items:center;gap:10px;"><span style="background:#0D1B5E;color:#fff;font-size:10px;font-weight:700;padding:3px 10px;border-radius:50px;">P1</span><span style="font-size:14px;color:#1a1a1a;font-weight:600;">Terms of Use gate + compliance modal</span></div>
-          <div style="display:flex;align-items:center;gap:10px;"><span style="background:#0D1B5E;color:#fff;font-size:10px;font-weight:700;padding:3px 10px;border-radius:50px;">P1</span><span style="font-size:14px;color:#1a1a1a;font-weight:600;">Report a Concern — model feedback loop</span></div>
+          <div style="display:flex;align-items:center;gap:10px;"><span style="background:#0D1B5E;color:#fff;font-size:10px;font-weight:700;padding:3px 10px;border-radius:50px;flex-shrink:0;">1</span><span style="font-size:14px;color:#1a1a1a;font-weight:600;">Chat + saved history</span></div>
+          <div style="display:flex;align-items:center;gap:10px;"><span style="background:#0D1B5E;color:#fff;font-size:10px;font-weight:700;padding:3px 10px;border-radius:50px;flex-shrink:0;">2</span><span style="font-size:14px;color:#1a1a1a;font-weight:600;">Upload a file and ask about it</span></div>
+          <div style="display:flex;align-items:center;gap:10px;"><span style="background:#0D1B5E;color:#fff;font-size:10px;font-weight:700;padding:3px 10px;border-radius:50px;flex-shrink:0;">3</span><span style="font-size:14px;color:#1a1a1a;font-weight:600;">Fast / Thinking model switch</span></div>
+          <div style="display:flex;align-items:center;gap:10px;"><span style="background:#0D1B5E;color:#fff;font-size:10px;font-weight:700;padding:3px 10px;border-radius:50px;flex-shrink:0;">4</span><span style="font-size:14px;color:#1a1a1a;font-weight:600;">One-time safety agreement</span></div>
+          <div style="display:flex;align-items:center;gap:10px;"><span style="background:#0D1B5E;color:#fff;font-size:10px;font-weight:700;padding:3px 10px;border-radius:50px;flex-shrink:0;">5</span><span style="font-size:14px;color:#1a1a1a;font-weight:600;">Report a problem button</span></div>
         </div>
       </div>
       <div style="background:#fafafa;padding:36px 32px;">
-        <div style="font-size:10px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:#aaa;margin-bottom:16px;">Phase 2 — Post-launch</div>
+        <div style="font-size:10px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:#aaa;margin-bottom:16px;">Saved for later</div>
         <div style="display:flex;flex-direction:column;gap:10px;">
-          <div style="display:flex;align-items:center;gap:10px;"><span style="background:#e8e8e8;color:#555;font-size:10px;font-weight:700;padding:3px 10px;border-radius:50px;">P2</span><span style="font-size:14px;color:#555;">ServiceNow ticket creation + status</span></div>
-          <div style="display:flex;align-items:center;gap:10px;"><span style="background:#e8e8e8;color:#555;font-size:10px;font-weight:700;padding:3px 10px;border-radius:50px;">P2</span><span style="font-size:14px;color:#555;">Microsoft 365 integration (Word, Excel)</span></div>
-          <div style="display:flex;align-items:center;gap:10px;"><span style="background:#e8e8e8;color:#555;font-size:10px;font-weight:700;padding:3px 10px;border-radius:50px;">P2</span><span style="font-size:14px;color:#555;">Settings + preferences panel</span></div>
-          <div style="display:flex;align-items:center;gap:10px;"><span style="background:#e8e8e8;color:#555;font-size:10px;font-weight:700;padding:3px 10px;border-radius:50px;">P2</span><span style="font-size:14px;color:#555;">Dark mode</span></div>
+          <div style="display:flex;align-items:center;gap:10px;"><span style="background:#e8e8e8;color:#555;font-size:10px;font-weight:700;padding:3px 10px;border-radius:50px;flex-shrink:0;">↻</span><span style="font-size:14px;color:#555;">Auto-create IT tickets</span></div>
+          <div style="display:flex;align-items:center;gap:10px;"><span style="background:#e8e8e8;color:#555;font-size:10px;font-weight:700;padding:3px 10px;border-radius:50px;flex-shrink:0;">↻</span><span style="font-size:14px;color:#555;">Word, Excel, and SharePoint</span></div>
+          <div style="display:flex;align-items:center;gap:10px;"><span style="background:#e8e8e8;color:#555;font-size:10px;font-weight:700;padding:3px 10px;border-radius:50px;flex-shrink:0;">↻</span><span style="font-size:14px;color:#555;">Settings panel</span></div>
+          <div style="display:flex;align-items:center;gap:10px;"><span style="background:#e8e8e8;color:#555;font-size:10px;font-weight:700;padding:3px 10px;border-radius:50px;flex-shrink:0;">↻</span><span style="font-size:14px;color:#555;">Dark mode</span></div>
         </div>
         <div style="background:#fff;border:1px solid #e8e8e8;border-radius:10px;padding:14px 16px;margin-top:20px;">
-          <p style="font-size:13px;color:#555;line-height:1.65;"><strong style="color:#1a1a1a;">Why ServiceNow is Phase 2:</strong> API integration timeline was outside our control. Shipping a broken workflow automation on launch day would have been worse than not having it — it would have destroyed trust in everything else.</p>
+          <p style="font-size:13px;color:#555;line-height:1.65;"><strong style="color:#1a1a1a;">Why wait on tickets:</strong> shipping a half-working version of the most important feature would break trust at the worst moment.</p>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ══ USER FLOW ══ -->
+<!-- ══ HOW IT WORKS ══ -->
 <section class="sec-sm">
   <div class="W">
-    <span class="ey">User Flow</span>
-    <h2 class="h-lg">Two flows. One compliance gate.</h2>
-    <p class="body" style="max-width:660px;margin-bottom:8px;">New users hit the Terms of Use modal before accessing the dashboard — this was a deliberate compliance decision, not a legal afterthought. Returning users go straight to the dashboard. The compliance gate only runs once, but its content stays accessible at any time via the footer link.</p>
-    <div class="ie reveal" onclick="openModal('inovaassist/userflow.png','User flow — new user with Terms of Use gate vs returning user direct to dashboard.')">
-      <img src="inovaassist/1781280320634_image.png" alt="User flow site map">
-      <div class="ie-foot"><span>Site map — new user vs returning user flows</span><strong>Expand →</strong></div>
+    <span class="ey">How It Works</span>
+    <h2 class="h-lg">One safety check. Then straight to work.</h2>
+    <p class="body" style="max-width:620px;margin-bottom:8px;">New users see the safety agreement once, before anything else. After that, they go straight to the chat. The rules stay one click away in the footer.</p>
+    <div class="notes-row reveal">
+      <div class="note"><span class="note-k">First visit</span><p>Sign in → read the safety agreement → start chatting.</p></div>
+      <div class="note"><span class="note-k">Every visit after</span><p>Sign in → straight to the dashboard.</p></div>
+      <div class="note"><span class="note-k">Always there</span><p>The rules and the report button never disappear.</p></div>
     </div>
-    <div class="ie reveal" onclick="openModal('inovaassist/visualsitemap.png','Visual site map — InnovaConnect portal → Microsoft SSO → Terms of Use → Dashboard.')">
-      <img src="inovaassist/1781280431004_image.png" alt="Visual site map" style="height:320px;object-fit:cover;object-position:top;">
-      <div class="ie-foot"><span>Visual site map — InnovaConnect → SSO → Terms of Use → Dashboard</span><strong>Expand →</strong></div>
+    <div class="ie reveal" onclick="openModal('inovaassist/1781280320634_image.png','User flow - first-time user sees the safety agreement; returning user goes straight in.')">
+      <img src="inovaassist/1781280320634_image.png" alt="User flow">
+      <div class="ie-foot"><span>User flow - first visit vs. returning</span><strong>Expand →</strong></div>
+    </div>
+    <div class="ie reveal" onclick="openModal('inovaassist/1781280431004_image.png','Site map - portal to sign-in to safety agreement to dashboard.')">
+      <img src="inovaassist/1781280431004_image.png" alt="Site map" style="height:320px;object-fit:cover;object-position:top;">
+      <div class="ie-foot"><span>Site map - portal → sign-in → agreement → dashboard</span><strong>Expand →</strong></div>
     </div>
   </div>
 </section>
@@ -351,167 +440,193 @@
 <!-- ══ THREE DECISIONS ══ -->
 <div class="band-m">
   <div class="W sec-sm">
-    <span class="ey">Critical Design Decisions</span>
-    <h2 class="h-lg">Three decisions that made<br>this different from just a chatbot.</h2>
-    <p class="body" style="max-width:660px;margin-bottom:8px;">Any engineer could wrap an LLM in a text box. The design problem was making a tool that healthcare employees would trust enough to use instead of their personal phones. These three decisions are what got us there.</p>
+    <span class="ey">The Decisions That Mattered</span>
+    <h2 class="h-lg">Three choices that made this<br>more than a chatbot in a box.</h2>
+    <p class="body" style="max-width:640px;margin-bottom:8px;">Putting a text box on top of ChatGPT takes an afternoon. Getting healthcare staff to trust it enough to switch is the real work. These three did it.</p>
     <div class="dec-3 reveal">
       <div class="dec-card">
         <div class="dec-n">01</div>
-        <h3>Examples / Capabilities / Limitations on the dashboard home</h3>
-        <p>The first thing a user sees isn't a blank chat box — it's a 3-column breakdown of what the AI can do, remembers, and gets wrong. Borrowed from the original ChatGPT pattern but adapted specifically for a healthcare context. Clinical examples, not generic ones. This wasn't decorative — it was the trust layer that replaced a training session.</p>
-        <div class="dec-res">→ Users knew what to ask from session one</div>
+        <h3>Show what the AI can and can't do - on the first screen</h3>
+        <p>A new chat opens with three plain columns: what it's good at, what it remembers, and where it gets things wrong. No training needed. People knew what to ask from minute one.</p>
+        <div class="dec-res">→ People knew what to expect</div>
       </div>
       <div class="dec-card">
         <div class="dec-n">02</div>
-        <h3>Terms of Use as a blocking modal, not a footer link</h3>
-        <p>Compliance wanted a footer link. I pushed for a blocking modal on first use — four specific bullet points: no PHI, no sensitive data, AI may be wrong, HIPAA applies. Cancel or Accept. No middle ground. The argument: a footer link gets ignored. A blocking modal with explicit bullet points creates accountability. Legal agreed after the second conversation.</p>
-        <div class="dec-res">→ Zero ambiguity about permitted use</div>
+        <h3>Make people agree to the rules before they start</h3>
+        <p>Compliance wanted a footer link. I pushed for a one-time screen with four plain points: no patient data, no sensitive data, the AI can be wrong, hospital rules still apply. Read it, then continue. Legal said yes after one look.</p>
+        <div class="dec-res">→ No confusion about what's allowed</div>
       </div>
       <div class="dec-card">
         <div class="dec-n">03</div>
-        <h3>LLM switcher as a visible, always-accessible control</h3>
-        <p>Fast (4.1) for quick queries. Thinking (5.0) for complex analysis. The switcher lives at the top of every screen — not in settings. The reason: if a user doesn't know they can switch models, they'll assume the AI is always slow or always fast, and calibrate expectations wrong. Transparency about the model being used is a trust feature, not a power-user feature.</p>
-        <div class="dec-res">→ Users matched model to task deliberately</div>
+        <h3>Let people pick the AI's speed - out in the open</h3>
+        <p>Fast for quick answers. Thinking for hard problems. I kept the switch at the top of every screen, not hidden in settings, so people match it to the job instead of guessing.</p>
+        <div class="dec-res">→ Right tool for the task</div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ══ HI-FI SCREENS ══ -->
+<!-- ══ WIREFRAMES ══ -->
 <section class="sec-sm">
   <div class="W">
-    <span class="ey">Hi-Fidelity Screens</span>
-    <h2 class="h-lg">Every state designed.<br>Every edge case considered.</h2>
-    <p class="body" style="max-width:660px;margin-bottom:28px;">10 screens covering the complete user journey — from first-time Terms of Use acceptance through active chat flow, document upload, model switching, conversation management, and concern reporting.</p>
+    <span class="ey">Wireframes</span>
+    <h2 class="h-lg">Layout locked in rough sketches first.</h2>
+    <p class="body" style="max-width:620px;margin-bottom:8px;">I worked out the sidebar, chat area, model switch, safety screen, and upload as simple sketches before any visuals. It kept the safety talks grounded in something real to point at.</p>
+    <div class="ie reveal" onclick="openModal('inovaassist/1781280333156_image.png','Wireframes - chat layout, safety screen, and file upload.')">
+      <img src="inovaassist/1781280333156_image.png" alt="Wireframes">
+      <div class="ie-foot"><span>Wireframes - layout, safety screen, upload</span><strong>Expand to full size</strong></div>
+    </div>
+  </div>
+</section>
 
-    <!-- Row 1: Main + Chat Flow -->
+<!-- ══ HI-FI SCREENS ══ -->
+<section class="sec-sm" style="padding-top:0;">
+  <div class="W">
+    <span class="ey">Final Screens</span>
+    <h2 class="h-lg">The four screens that do the heavy lifting.</h2>
+    <p class="body" style="max-width:620px;margin-bottom:28px;">Not every state - just the four that tell the story and show why the decisions matter.</p>
+
     <div class="screen-2 reveal">
-      <div class="sc-card" onclick="openModal('inovaassist/Main_Dashboard_Screen.png','Main dashboard — Examples, Capabilities, Limitations grid. Non-Medical Use Reminder persistent in footer.')">
+      <div class="sc-card" onclick="openModal('inovaassist/Main_Dashboard_Screen.png','New chat - what the AI can do, what it remembers, and where it gets things wrong. Model switch top left.')">
         <img src="inovaassist/Main_Dashboard_Screen.png" alt="Main dashboard">
-        <div class="sc-card-info"><span class="sc-label">Dashboard</span><h3>Main Dashboard — Empty State</h3><p>Examples / Capabilities / Limitations grid. LLM switcher top-left. Persistent non-medical use reminder.</p></div>
+        <div class="sc-card-info">
+          <span class="sc-label">New Chat</span>
+          <h3>What it can do, up front</h3>
+          <p>Three plain columns set expectations before anyone types. The model switch sits top left, always visible.</p>
+        </div>
       </div>
-      <div class="sc-card" onclick="openModal('inovaassist/Chat_Interface_Enabled_-_Chat_Flow.png','Active chat flow — conversational AI response with progressive detail. Delete option top-right.')">
-        <img src="inovaassist/Chat_Interface_Enabled_-_Chat_Flow.png" alt="Chat flow">
-        <div class="sc-card-info"><span class="sc-label">Chat</span><h3>Active Chat — Response Flow</h3><p>Conversational response with follow-up prompts. Brief vs summary toggle. Chat auto-named in sidebar.</p></div>
+      <div class="sc-card" onclick="openModal('inovaassist/Chat_Interface_Enabled_-_Chat_Flow.png','A real answer, with quick ways to reshape it - brief, summary, one-line.')">
+        <img src="inovaassist/Chat_Interface_Enabled_-_Chat_Flow.png" alt="Chat in use">
+        <div class="sc-card-info">
+          <span class="sc-label">Chat In Use</span>
+          <h3>An answer you can reshape</h3>
+          <p>Quick buttons turn any answer into a brief, a summary, or one line. The chat names itself in the sidebar.</p>
+        </div>
       </div>
     </div>
 
-    <!-- Row 2: Terms of Use + Report Concern -->
     <div class="screen-2 reveal">
-      <div class="sc-card" onclick="openModal('inovaassist/Terms_of_Use_Modal.png','Terms of Use modal — 4 compliance bullets, Cancel/Accept. Blocks access until accepted.')">
-        <img src="inovaassist/Terms_of_Use_Modal.png" alt="Terms of Use">
-        <div class="sc-card-info"><span class="sc-label">Compliance</span><h3>Terms of Use Modal</h3><p>Blocking modal on first use. No PHI, no sensitive data, AI may be wrong, HIPAA applies. Must accept to proceed.</p></div>
+      <div class="sc-card" onclick="openModal('inovaassist/Terms_of_Use_Modal.png','The one-time safety agreement - four plain points. Read to continue.')">
+        <img src="inovaassist/Terms_of_Use_Modal.png" alt="Safety agreement">
+        <div class="sc-card-info">
+          <span class="sc-label">Safety Check</span>
+          <h3>The one-time agreement</h3>
+          <p>Four plain points: no patient data, no sensitive data, the AI can be wrong, hospital rules apply. Read to continue.</p>
+        </div>
       </div>
-      <div class="sc-card" onclick="openModal('inovaassist/Sign_out_-2.png','Report a Concern modal — open text area for flagging AI responses. Persistent in sidebar.')">
-        <img src="inovaassist/Sign_out_-2.png" alt="Report a concern">
-        <div class="sc-card-info"><span class="sc-label">Governance</span><h3>Report a Concern</h3><p>Always-accessible concern reporting. Open text, sends directly to compliance review. Not hidden in settings.</p></div>
-      </div>
-    </div>
-
-    <!-- Row 3: LLM Switcher + Upload + Chat Actions -->
-    <div class="screen-3 reveal">
-      <div class="sc-card" onclick="openModal('inovaassist/LLM_Dropdown.png','LLM model switcher — Fast (4.1) for quick queries, Thinking (5.0) for complex analysis. Always visible top-left.')">
-        <img src="inovaassist/LLM_Dropdown.png" alt="LLM Dropdown">
-        <div class="sc-card-info"><span class="sc-label">Model Control</span><h3>LLM Model Switcher</h3><p>Fast (4.1) vs Thinking (5.0). Always at the top, not buried in settings.</p></div>
-      </div>
-      <div class="sc-card" onclick="openModal('inovaassist/Upload_Document_Dropdown.png','Document upload dropdown — Add photos and files option. Supports multimodal input for document analysis.')">
-        <img src="inovaassist/Upload_Document_Dropdown.png" alt="Document upload">
-        <div class="sc-card-info"><span class="sc-label">Multimodal</span><h3>Document Upload</h3><p>Add photos and files via input dropdown. Analysis without leaving the chat interface.</p></div>
-      </div>
-      <div class="sc-card" onclick="openModal('inovaassist/Chat_Dropdown_Actions.png','Chat context menu — Rename and Delete actions on hover. Keeps sidebar clean.')">
-        <img src="inovaassist/Chat_Dropdown_Actions.png" alt="Chat actions">
-        <div class="sc-card-info"><span class="sc-label">Chat Management</span><h3>Chat Context Menu</h3><p>Rename and Delete on hover. Keeps history clean without cluttering the sidebar.</p></div>
-      </div>
-    </div>
-
-    <!-- Row 4: Collapsed nav + Rename + Sign out -->
-    <div class="screen-3 reveal">
-      <div class="sc-card" onclick="openModal('inovaassist/Navigation_Collapsed.png','Collapsed navigation — icon-only mode for more chat space. Today / This Year / Last Month groupings preserved.')">
-        <img src="inovaassist/Navigation_Collapsed.png" alt="Collapsed nav">
-        <div class="sc-card-info"><span class="sc-label">Navigation</span><h3>Collapsed Sidebar</h3><p>Icon-only mode maximises chat space. History groupings (Today / This Year / Last Month) preserved as scroll landmarks.</p></div>
-      </div>
-      <div class="sc-card" onclick="openModal('inovaassist/Chat_rename.png','Inline chat rename — cursor active in title field. Edit without leaving the chat.')">
-        <img src="inovaassist/Chat_rename.png" alt="Chat rename">
-        <div class="sc-card-info"><span class="sc-label">Chat Management</span><h3>Inline Rename</h3><p>Cursor-active inline rename. No modal, no separate screen — edit the title in place.</p></div>
-      </div>
-      <div class="sc-card" onclick="openModal('inovaassist/Sign_out_-_1.png','Sign out state — Sign out button replaces Report a Concern in the sidebar footer on hover.')">
-        <img src="inovaassist/Sign_out_-_1.png" alt="Sign out">
-        <div class="sc-card-info"><span class="sc-label">Account</span><h3>Sign Out</h3><p>Replaces footer action on trigger. Single-step sign-out with no confirmation friction — SSO handles re-auth.</p></div>
+      <div class="sc-card" onclick="openModal('inovaassist/LLM_Dropdown.png','Model switch - Fast for quick answers, Thinking for hard problems. Always visible.')">
+        <img src="inovaassist/LLM_Dropdown.png" alt="Model switch">
+        <div class="sc-card-info">
+          <span class="sc-label">Model Switch</span>
+          <h3>Fast or Thinking</h3>
+          <p>Fast for quick answers. Thinking for hard problems. Out in the open, so people pick the right one on purpose.</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══ COMPONENT SYSTEM ══ -->
-<div class="band-l">
+<!-- ══ FEATURE DEEP-DIVE: MEETING TRANSCRIPT ══ -->
+<div class="band-b">
   <div class="W sec-sm">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:end;margin-bottom:36px;padding-bottom:36px;border-bottom:1px solid #e8e8e8;">
-      <div class="rl">
-        <span class="ey">Component System</span>
-        <h2 class="h-lg" style="margin-bottom:0;">Built from scratch.<br>Inter. Dark navy. Healthcare-first.</h2>
+    <span class="ey">A Closer Look</span>
+    <h2 class="h-lg">Summing up a meeting,<br>in three steps.</h2>
+    <p class="body" style="max-width:640px;margin-bottom:8px;">Staff sit through long meetings and just need the decisions and to-dos. I gave this its own button in the sidebar and kept the whole thing to three steps. The summary lands right in the chat - so you can ask follow-up questions about it, not just read it.</p>
+
+    <div class="flowsteps reveal" style="grid-template-columns:repeat(3,1fr);margin-bottom:8px;">
+      <div class="fstep"><div class="stepnum">1</div><h4>Pick a date</h4><p>Choose the day the meeting happened.</p></div>
+      <div class="fstep"><div class="stepnum">2</div><h4>Pick a meeting</h4><p>Choose from that day's list.</p></div>
+      <div class="fstep"><div class="stepnum">3</div><h4>Get the summary</h4><p>It appears in the chat, ready to question.</p></div>
+    </div>
+
+    <div class="screen-2 reveal">
+      <div class="sc-card" onclick="openModal('inovaassist/Meeting_Date_Picker.png','Step 1 - pick a date. The calendar opens on a set date, so you never start from blank. One button: Next.')">
+        <img src="inovaassist/Meeting_Date_Picker.png" alt="Pick a date" style="height:300px;object-fit:cover;object-position:top;">
+        <div class="sc-card-info">
+          <span class="sc-label">Step 1 · Pick a date</span>
+          <h3>Choose the day</h3>
+          <p>One choice per screen. The calendar opens on a set date, so no one starts from a blank box. One button forward: Next.</p>
+        </div>
       </div>
-      <div class="rr">
-        <p class="body">I chose Inter over system fonts — it renders more consistently across monitors, which matters in a clinical desktop environment. The dark navy sidebar (`#0D1B5E`) comes directly from Inova's brand system. Every component was built as a reusable Figma element — the sidebar, LLM dropdown, search bar, buttons, and context menus — so engineering had a clear spec and we had zero rework during handoff.</p>
+      <div class="sc-card" onclick="openModal('inovaassist/Meeting_Select_List.png','Step 2 - pick a meeting. Each one shows how long it ran. One button: Create summary.')">
+        <img src="inovaassist/Meeting_Select_List.png" alt="Pick a meeting" style="height:300px;object-fit:cover;object-position:top;">
+        <div class="sc-card-info">
+          <span class="sc-label">Step 2 · Pick a meeting</span>
+          <h3>Choose from that day</h3>
+          <p>The date stays put, still changeable. Each meeting shows how long it ran, so a quick sync reads differently from a long one. Pick one, then Create summary.</p>
+        </div>
       </div>
     </div>
-    <div class="ie reveal" onclick="openModal('inovaassist/components.png','Component library — Side nav, LLM dropdown, Inova icon, search, dropdowns, buttons.')">
-      <img src="inovaassist/1781280637754_image.png" alt="Component library">
-      <div class="ie-foot"><span>Component library — all reusable elements built before screen design began</span><strong>Expand →</strong></div>
+
+    <div class="sc-card reveal" style="margin-top:16px;" onclick="openModal('inovaassist/Meeting_Summary_Result.png','Step 3 - the summary lands in the chat: subject, who was there, an overview, and the full notes. The text box stays open for follow-ups.')">
+      <img src="inovaassist/Meeting_Summary_Result.png" alt="Summary in chat" style="width:100%;display:block;height:440px;object-fit:cover;object-position:top;">
+      <div class="sc-card-info">
+        <span class="sc-label">Step 3 · Read and ask</span>
+        <h3>The summary lands right in the chat</h3>
+        <p>Subject, who was there, a short overview, then the full notes - as a message you can reply to, not a file you have to open. The text box stays open, so the next question is one line away.</p>
+      </div>
+    </div>
+
+    <div style="background:#fff;border:1px solid #e3ecff;border-left:4px solid #0D1B5E;border-radius:16px;padding:26px 30px;margin-top:24px;" class="reveal">
+      <span class="ey" style="margin-bottom:10px;">Why this choice matters</span>
+      <p class="body-sm" style="margin:0;">Most summary tools dump a file and stop. By dropping the summary back into the chat, people can keep going - pull the to-dos, double-check a decision, draft the follow-up email - without leaving. That one choice is why a meeting summarizer belongs inside the assistant, not off in a separate report.</p>
     </div>
   </div>
 </div>
 
-<!-- ══ OUTCOMES ══ -->
+<!-- ══ DESIGN SYSTEM ══ -->
+<div class="band-l">
+  <div class="W sec-sm">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:end;margin-bottom:36px;padding-bottom:36px;border-bottom:1px solid #e8e8e8;">
+      <div class="rl">
+        <span class="ey">Design System</span>
+        <h2 class="h-lg" style="margin-bottom:0;">Built the parts first.<br>Zero rework later.</h2>
+      </div>
+      <div class="rr">
+        <p class="body">I built every piece - sidebar, buttons, menus, the model switch - before designing a single screen. I picked a clear, steady typeface that reads well on monitors from a step back, which matters when people glance between patients. The dark navy comes from Inova's brand. Engineering got a complete kit, so there was no rework at handoff.</p>
+      </div>
+    </div>
+    <div class="ie reveal" onclick="openModal('inovaassist/1781280637754_image.png','Design system - sidebar, model switch, icon, search, menus, buttons.')">
+      <img src="inovaassist/1781280637754_image.png" alt="Design system">
+      <div class="ie-foot"><span>Design system - every reusable part, built before the screens</span><strong>Expand →</strong></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ RESULTS ══ -->
 <div class="band-dark">
   <div class="W sec-sm">
-    <span class="ey" style="color:#4db8ff;">Outcomes</span>
-    <h2 class="h-lg" style="color:#fff;max-width:600px;">From shadow AI<br>to governed platform.</h2>
-    <p style="font-size:16px;color:rgba(255,255,255,.6);max-width:660px;line-height:1.8;margin-bottom:32px;">Measured across a 200-person pilot spanning clinical operations, IT, and the analytics team. The goal was simple: give employees a tool they'd choose to use over their personal phones. The data said we got there.</p>
+    <span class="ey" style="color:#4db8ff;">Results From Testing</span>
+    <h2 class="h-lg" style="color:#fff;max-width:600px;">Two numbers.<br>Both from real users.</h2>
+    <p style="font-size:16px;color:rgba(255,255,255,.6);max-width:660px;line-height:1.8;margin-bottom:32px;">I tested with two groups of 8 - clinical staff, operations, and IT. These two numbers are the ones worth talking about.</p>
 
     <div class="outcome-2 reveal">
       <div class="oc">
         <div class="oc-n">91%</div>
-        <div class="oc-label">Task completion rate in usability testing — up from 68% in round one</div>
+        <div class="oc-label">finished their task - up from 68% in round one</div>
         <hr class="oc-divider">
-        <div class="oc-how">What drove the improvement</div>
+        <div class="oc-how">What I changed between rounds</div>
         <ul class="oc-list">
-          <li><span>→</span>Round 1 drop-off was at the Terms of Use modal — users weren't sure if Cancel meant "cancel this session" or "I don't agree." Rewrote the button labels to Accept / Decline. Drop-off disappeared.</li>
-          <li><span>→</span>LLM switcher confusion resolved by adding "Fast" and "Thinking" labels — users had been ignoring the version numbers (4.1, 5.0) entirely</li>
-          <li><span>→</span>Document upload discoverability improved by surfacing the paperclip icon more prominently in the input bar</li>
+          <li><span>→</span>People got stuck on the agreement screen. "Cancel" looked like "quit." I changed the buttons to "Accept" and "Decline." The drop-off went to zero.</li>
+          <li><span>→</span>People ignored the model numbers. Adding the words "Fast" and "Thinking" fixed it right away.</li>
+          <li><span>→</span>Upload was hard to find. Moving the icon solved it in one round.</li>
         </ul>
       </div>
       <div class="oc">
-        <div class="oc-n">11→2</div>
-        <div class="oc-label">Minutes to complete a ServiceNow request — from manual to Assist-assisted</div>
+        <div class="oc-n">8/8</div>
+        <div class="oc-label">said they'd use it instead of their old workarounds</div>
         <hr class="oc-divider">
-        <div class="oc-how">How we measured it</div>
+        <div class="oc-how">How I asked</div>
         <ul class="oc-list">
-          <li><span>→</span>Timed task study — 8 participants completed the same ServiceNow request twice: once via the ServiceNow portal directly, once via Inova Assist chat</li>
-          <li><span>→</span>The 2-minute average includes the time to type the request and review the AI's output before submitting — it's not just text generation speed</li>
-          <li><span>→</span>All 8 participants said they would use Inova Assist for this task going forward</li>
+          <li><span>→</span>I asked: would you use this, or find another way? In round two, all 8 said yes - up from 5.</li>
+          <li><span>→</span>The 3 who said no the first time all named the same two issues. Both fixed before round two.</li>
+          <li><span>→</span>This is the number that counts. The tool only wins if it replaces the workarounds - not just if people can finish a task in a test.</li>
         </ul>
       </div>
     </div>
 
-    <!-- Pilot stat -->
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(255,255,255,.08);border-radius:16px;overflow:hidden;margin-top:20px;" class="reveal">
-      <div style="background:rgba(255,255,255,.05);padding:28px 24px;">
-        <div style="font-family:'DM Serif Display',serif;font-size:44px;color:#4db8ff;line-height:1;margin-bottom:8px;">200+</div>
-        <div style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.6;">Employees in the pilot across clinical ops, IT, and analytics</div>
-      </div>
-      <div style="background:rgba(255,255,255,.05);padding:28px 24px;">
-        <div style="font-family:'DM Serif Display',serif;font-size:44px;color:#4db8ff;line-height:1;margin-bottom:8px;">0</div>
-        <div style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.6;">PHI compliance incidents reported during the pilot period</div>
-      </div>
-      <div style="background:rgba(255,255,255,.05);padding:28px 24px;">
-        <div style="font-family:'DM Serif Display',serif;font-size:44px;color:#4db8ff;line-height:1;margin-bottom:8px;">4.2/5</div>
-        <div style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.6;">Average satisfaction score — pilot survey, n=87 respondents</div>
-      </div>
-    </div>
-
-    <!-- Closing -->
-    <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-left:4px solid #4db8ff;border-radius:16px;padding:26px 30px;margin-top:20px;" class="reveal">
-      <p style="font-size:16px;color:rgba(255,255,255,.85);line-height:1.85;">Designing AI for healthcare isn't about making the most powerful tool — it's about making the most trustworthy one. Every decision in Inova Assist was a trust decision first. The compliance gate, the limitations disclosure, the concern reporting, the model transparency — none of these were legal requirements. They were UX decisions that made a governed tool feel better than an ungoverned one. <strong style="color:#fff;">That's how you get staff off their personal phones.</strong></p>
+    <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-left:4px solid #4db8ff;border-radius:16px;padding:26px 30px;margin-top:24px;" class="reveal">
+      <p style="font-size:16px;color:rgba(255,255,255,.85);line-height:1.85;">Designing AI for healthcare isn't about the most powerful tool. It's about the one people trust. Every choice here - the agreement, the reminders, the report button, showing which model you're on - was a trust choice first. None were legally required. <strong style="color:#fff;">They're the reason people use a safe tool instead of a risky one.</strong></p>
     </div>
   </div>
 </div>
@@ -522,13 +637,13 @@
     <div class="closing-2 reveal">
       <div class="closing-card">
         <span class="ey">What I'd do differently</span>
-        <h3 class="h-md">Ship the ServiceNow integration in Phase 1.</h3>
-        <p class="body-sm" style="margin-top:8px;">In hindsight, the ServiceNow delay was the right call technically but wrong strategically. It was the single feature that would have driven the most immediate, measurable value for clinical staff. If I could redo the timeline, I'd have started the API discovery work in parallel with design rather than sequentially. The gap cost us two sprints we didn't have to lose.</p>
+        <h3 class="h-md">Start the ticket feature sooner.</h3>
+        <p class="body-sm" style="margin-top:8px;">Holding it for later was the right call, but it cost us. Auto-creating IT tickets was the thing staff missed most when ChatGPT was blocked. If I could redo it, I'd start that work alongside the design instead of after it. We lost two weeks we didn't need to.</p>
       </div>
       <div class="closing-card" style="background:#F0F5FF;border-color:#E3ECFF;">
-        <span class="ey">What this proved</span>
-        <h3 class="h-md">Governance is a product feature, not a legal layer.</h3>
-        <p class="body-sm" style="margin-top:8px;">The most important design insight from this project: when you're building AI for a regulated environment, the compliance decisions are the product decisions. The Terms of Use modal, the non-medical use reminder, the concern reporting — these aren't overhead. They're what makes the tool safe enough to use at work. Healthcare AI design is trust design. Everything else is execution.</p>
+        <span class="ey">The bigger lesson</span>
+        <h3 class="h-md">In healthcare, safety is the product.</h3>
+        <p class="body-sm" style="margin-top:8px;">The agreement, the reminders, the report button - these aren't extras. They're what makes the tool usable at work. Without them you don't have a healthcare AI product. You have a chatbot that happens to run inside a hospital. That difference is the whole job.</p>
       </div>
     </div>
   </div>
