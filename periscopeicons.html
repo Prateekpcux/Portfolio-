@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
-<title>Periscope — Analytics Marketplace | Prateek Chatterjee</title>
+<title>Periscope - Analytics Marketplace | Prateek Chatterjee</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
@@ -14,7 +14,7 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 .page{padding-top:0!important;}
 
-/* ── WIDE CONTAINER — 1280px, 56px side padding ── */
+/* ── WIDE CONTAINER - 1280px, 56px side padding ── */
 .W{max-width:1320px;margin:0 auto;padding:0 64px;}
 @media(max-width:900px){.W{padding:0 20px;}}
 
@@ -25,7 +25,7 @@
 .ey::before{content:'';width:16px;height:2px;background:linear-gradient(to right,#084FAA,rgba(8,79,170,.3));border-radius:2px;display:inline-block;flex-shrink:0;}
 
 /* ── TYPE ── */
-.h-xl{font-family:'DM Serif Display',serif;font-size:clamp(38px,5vw,68px);line-height:1.02;color:#1a1a1a;letter-spacing:-.6px;}
+.h-xl{font-family:'DM Serif Display',serif;font-size:clamp(36px,4.8vw,62px);line-height:1.04;color:#1a1a1a;letter-spacing:-.5px;}
 .h-xl em{font-style:italic;color:#084FAA;}
 .h-lg{font-family:'DM Serif Display',serif;font-size:clamp(24px,3.5vw,42px);line-height:1.16;color:#1a1a1a;letter-spacing:-.25px;margin-bottom:16px;}
 .h-md{font-family:'DM Serif Display',serif;font-size:clamp(19px,2.5vw,26px);color:#1a1a1a;margin-bottom:10px;letter-spacing:-.1px;}
@@ -33,8 +33,8 @@
 .body-sm{font-size:15px;color:#555;line-height:1.75;}
 
 /* ── SECTIONS ── */
-.sec{padding:88px 0;}
-.sec-sm{padding:64px 0;}
+.sec{padding:80px 0;}
+.sec-sm{padding:60px 0;}
 .band-l{background:#fafafa;border-top:1px solid #e8e8e8;border-bottom:1px solid #e8e8e8;}
 .band-m{background:#f4f4f4;border-top:1px solid #e8e8e8;border-bottom:1px solid #e8e8e8;}
 .band-b{background:#F0F5FF;border-top:1px solid #e8e8e8;border-bottom:1px solid #e8e8e8;}
@@ -180,16 +180,8 @@
 </style>
 </head>
 <body>
-<div id="progress-bar" style="position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(to right,#084FAA,#4db8ff);z-index:9999;transition:width .1s linear;"></div>
-<script>
-window.addEventListener('scroll',function(){
-  var d=document.documentElement;
-  var pct=(d.scrollTop||document.body.scrollTop)/((d.scrollHeight||document.body.scrollHeight)-d.clientHeight)*100;
-  document.getElementById('progress-bar').style.width=Math.min(pct,100)+'%';
-});
-</script>
 
-<!-- NAV — wider to match container -->
+<!-- NAV - wider to match container -->
 <nav style="position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.95);backdrop-filter:blur(20px);border-bottom:1px solid #e8e8e8;height:68px;display:flex;align-items:center;">
   <div style="max-width:1320px;margin:0 auto;padding:0 64px;display:flex;align-items:center;justify-content:space-between;width:100%;">
     <a href="index.html"><img src="images/logo.png" alt="Prateek Chatterjee" style="height:36px;display:block;"></a>
@@ -211,16 +203,16 @@ window.addEventListener('scroll',function(){
   <div class="W" style="position:relative;z-index:1;">
     <div class="reveal" style="display:flex;align-items:center;gap:12px;margin-bottom:22px;">
       <span class="ey" style="margin:0;">UX Case Study</span>
-      <span style="color:#999;font-size:11px;font-weight:500;">· Inova Health System · Enterprise Analytics · 2024–Present</span>
+      <span style="color:#bbb;font-size:11px;">· Inova Health System · 2024–Present</span>
     </div>
     <h1 class="h-xl reveal" style="margin-bottom:22px;max-width:780px;">20,000 clinicians.<br><em>Six platforms. One answer.</em></h1>
-    <p class="body reveal" style="max-width:600px;margin-bottom:28px;">Power BI, Tableau, Signal 1, Vizient, Epic, SharePoint — six tools, no taxonomy, no trust. Clinicians didn't know which assets were certified or current. I designed Periscope: a governed marketplace making analytics <strong>discoverable, certified, and trusted</strong>.</p>
+    <p class="body reveal" style="max-width:600px;margin-bottom:28px;">Analytics assets scattered across Power BI, Tableau, Signal 1, Vizient, Epic, and SharePoint - and clinicians couldn't trust what they found. I designed Periscope: a governed marketplace making analytics <strong>discoverable, certified, and trusted</strong>.</p>
     <div class="reveal" style="display:flex;flex-wrap:wrap;gap:7px;">
       <span class="tp">UX Strategy</span><span class="tp">Information Architecture</span><span class="tp">Design System</span>
       <span class="tp">Governance UX</span><span class="tp">Healthcare Analytics</span><span class="tp">AI Inventory</span>
     </div>
-    <img src="images/hero.png" alt="Periscope — governed analytics marketplace" class="reveal" style="width:100%;display:block;border-radius:24px;box-shadow:0 24px 80px rgba(8,79,170,.2),0 0 0 1px rgba(8,79,170,.08);margin-top:52px;">
-    <!-- STATS RAIL — one set, right here -->
+    <img src="images/hero.png" alt="Periscope - governed analytics marketplace" class="reveal" style="width:100%;display:block;border-radius:24px;box-shadow:0 20px 70px rgba(8,79,170,.18);border:1px solid #e8e8e8;margin-top:48px;">
+    <!-- STATS RAIL - one set, right here -->
     <div class="hstats reveal">
       <div class="hsc"><div class="hsc-n">6</div><div class="hsc-l">Platforms consolidated into one entry point</div></div>
       <div class="hsc"><div class="hsc-n">20K+</div><div class="hsc-l">Active users at launch</div></div>
@@ -235,8 +227,8 @@ window.addEventListener('scroll',function(){
 ══════════════════════════════════════════════ -->
 <div class="pq">
   <div class="W">
-    <blockquote class="reveal" style="position:relative;">"A clinical manager had four bookmarks to find dashboards for her department.<br>She assumed the data was current. It wasn't."</blockquote>
-    <cite class="reveal">Discovery interview — trust was the real problem, not search</cite>
+    <blockquote class="reveal">"A clinical manager had four bookmarks to find dashboards for her department.<br>She assumed the data was current. It wasn't."</blockquote>
+    <cite class="reveal">Discovery interview - trust was the real problem, not search</cite>
   </div>
 </div>
 
@@ -250,10 +242,10 @@ window.addEventListener('scroll',function(){
     <div class="prob-grid reveal">
       <div class="prob-p">
         <div class="prob-badge" style="color:#b02020;"><span style="width:7px;height:7px;border-radius:50%;background:#ef4444;display:inline-block;"></span>Before Periscope</div>
-        <h3>Six platforms. Zero shared taxonomy.</h3>
+        <h3>Six platforms. Zero coherence.</h3>
         <ul class="bl" style="margin-bottom:18px;">
-          <li>Power BI · Tableau · Signal 1 · Vizient · Epic · SharePoint — no shared taxonomy</li>
-          <li>Duplicate reports everywhere — no one knew which version was official</li>
+          <li>Power BI · Tableau · Signal 1 · Vizient · Epic · SharePoint - no shared taxonomy</li>
+          <li>Duplicate reports everywhere - no one knew which version was official</li>
           <li>Users emailed the analytics team before trusting any asset</li>
           <li>AI models with no governance, oversight, or expiry tracking</li>
           <li>New employees had no onboarding path into analytics</li>
@@ -269,10 +261,10 @@ window.addEventListener('scroll',function(){
         <h3>One governed marketplace. Every asset. Trusted.</h3>
         <ul class="bl" style="margin-bottom:18px;">
           <li>Unified search + browse across all six platforms and asset types</li>
-          <li>Certification state visible on every asset card — not buried in metadata</li>
+          <li>Certification state visible on every asset card - not buried in metadata</li>
           <li>Dedicated AI model inventory with oversight, performance, and approval chain</li>
           <li>Campaigns path for clinical users who think in outcomes, not taxonomies</li>
-          <li>Governance workflows for admins — certify, deprecate, manage lifecycle</li>
+          <li>Governance workflows for admins - certify, deprecate, manage lifecycle</li>
         </ul>
         <div style="display:flex;flex-wrap:wrap;gap:7px;">
           <span class="chip-g">Trust at browse time</span>
@@ -282,19 +274,19 @@ window.addEventListener('scroll',function(){
       </div>
     </div>
 
-    <!-- BEFORE IMAGE — full width, prominent -->
+    <!-- BEFORE IMAGE - full width, prominent -->
     <div class="reveal" style="margin-top:48px;">
       <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
         <span style="background:#ef4444;color:#fff;font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:4px 12px;border-radius:50px;">Before Periscope</span>
-        <span style="font-size:13px;color:#aaa;font-style:italic;">What clinicians were actually navigating every day</span>
+        <span style="font-size:14px;color:#888;">What clinicians were actually navigating every day</span>
       </div>
-      <img src="images/before_periscope.png" alt="Before Periscope — fragmented platforms, duplicate assets" style="width:100%;display:block;border-radius:18px;border:1px solid #e8e8e8;box-shadow:0 6px 30px rgba(0,0,0,.09);">
+      <img src="images/before_periscope.png" alt="Before Periscope - fragmented platforms, duplicate assets" style="width:100%;display:block;border-radius:18px;border:1px solid #e8e8e8;box-shadow:0 6px 30px rgba(0,0,0,.09);">
     </div>
   </div>
 </section>
 
 <!-- ══════════════════════════════════════════════
-     MY ROLE + DESIGN SYSTEM (moved here — sets
+     MY ROLE + DESIGN SYSTEM (moved here - sets
      the visual language before showing screens)
 ══════════════════════════════════════════════ -->
 <div class="band-l">
@@ -303,13 +295,13 @@ window.addEventListener('scroll',function(){
       <div class="rl">
         <span class="ey">My Role</span>
         <h2 class="h-lg">End-to-end.<br>Four teams. One vision.</h2>
-        <p class="body" style="margin-bottom:24px;">I led Periscope from the first stakeholder conversation through final hi-fi handoff — working across analytics, governance, data architecture, and clinical teams to get everyone aligned on what we were building and why.</p>
+        <p class="body" style="margin-bottom:24px;">I led Periscope from the first stakeholder conversation through final hi-fi handoff - working across analytics, governance, data architecture, and clinical teams to get everyone aligned on what we were building and why.</p>
         <div class="role-grid">
           <div class="role-head">Scope of Work</div>
           <div class="role-item">UX intake + stakeholder interviews</div>
           <div class="role-item">Information architecture + taxonomy</div>
           <div class="role-item">Governance workflow design</div>
-          <div class="role-item">AI inventory UX — first at Inova</div>
+          <div class="role-item">AI inventory UX - first at Inova</div>
           <div class="role-item">Inova enterprise design system</div>
           <div class="role-item">Hi-fi across 6 core experiences</div>
         </div>
@@ -340,21 +332,21 @@ window.addEventListener('scroll',function(){
   <div class="W sec-sm">
     <span class="ey">Critical Decisions</span>
     <h2 class="h-lg" style="max-width:560px;">Three calls that shaped the platform.</h2>
-    <p class="body" style="max-width:600px;margin-bottom:4px;">Research told us what mattered. These three decisions are how we resolved the tensions — each one a call a junior designer wouldn't have made.</p>
+    <p class="body" style="max-width:600px;margin-bottom:4px;">Research surfaced the findings. These three decisions are what we did with them.</p>
     <div class="dec-row">
       <div class="dec reveal">
         <div class="dec-n">01</div>
-        <h3>Governance visible at card level — not detail page</h3>
+        <h3>Governance visible at card level - not detail page</h3>
         <ul class="bl" style="margin-bottom:12px;">
           <li style="font-size:13px;">Early prototypes: certification buried in metadata tab</li>
           <li style="font-size:13px;">Users scrolled past it every single time</li>
-          <li style="font-size:13px;">Fix: elevated to card surface — status badge, owner, last validated visible at browse time</li>
+          <li style="font-size:13px;">Fix: elevated to card surface - status badge, owner, last validated visible at browse time</li>
         </ul>
         <div class="dec-res">→ Trust at browse time</div>
       </div>
       <div class="dec reveal">
         <div class="dec-n">02</div>
-        <h3>Campaigns — a parallel browse path for clinical users</h3>
+        <h3>Campaigns - a parallel browse path for clinical users</h3>
         <ul class="bl" style="margin-bottom:12px;">
           <li style="font-size:13px;">Clinical users think in initiatives, not data taxonomies</li>
           <li style="font-size:13px;">Taxonomy browse failed them in every session</li>
@@ -383,37 +375,48 @@ window.addEventListener('scroll',function(){
   <div class="W">
 
     <!-- Dot voting -->
-    <div class="reveal" style="margin-bottom:32px;">
+    <div class="reveal" style="margin-bottom:56px;">
       <span class="ey">Feature Prioritization</span>
-      <h2 class="h-lg">What made it into Phase 1 — and why.</h2>
-      <p class="body" style="max-width:600px;margin-bottom:20px;">8 stakeholders · 5 dots each. Search and Governance Status topped every stack — confirmed P0. AI Inventory and Campaigns followed closely. Personalisation and recommendations deferred to Phase 2.</p>
-      <div class="ie" onclick="openModal('images/dot.png','Feature prioritization dot voting — Phase 1 vs Phase 2.')">
+      <h2 class="h-lg">What made it into Phase 1 - and why.</h2>
+      <p class="body" style="max-width:600px;margin-bottom:20px;">8 stakeholders · 5 dots each. Search and Governance Status topped every stack - confirmed P0. AI Inventory and Campaigns followed closely. Personalisation and recommendations deferred to Phase 2.</p>
+      <div class="ie" onclick="openModal('images/dot.png','Feature prioritization dot voting - Phase 1 vs Phase 2.')">
         <img src="images/dot.png" alt="Dot voting" style="width:100%;display:block;">
-        <div class="ie-foot"><span>Dot voting output — Phase 1 cutoff</span><strong>Click to expand →</strong></div>
-      </div>
-<br><br><br>
-      <!-- IA + Wireframes side by side -->
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;">
-        <div class="reveal" >
-          <h3 class="h-sm">Information architecture</h3>
-          <p class="body-sm" style="margin-bottom:16px;">Two browse paths — Taxonomy for developers who think by tool and domain, Campaigns for clinical managers who think by initiative. One IA, two valid entry points, neither compromised.</p>
-          <img src="images/site-map.png" alt="IA sitemap" style="width:100%;display:block;border-radius:14px;border:1px solid #e8e8e8;box-shadow:0 4px 20px rgba(0,0,0,.08);" onclick="openModal('images/site-map.png','Navigation sitemap — dual browse path architecture.')" style="cursor:pointer;">
-        </div>
-
-        <div class="reveal">
-          <h3 class="h-sm">Low-fi → Hi-fi</h3>
-          <p class="body-sm" style="margin-bottom:16px;">Low-fi locked navigation structure and layout logic. Hi-fi resolved the trust language — certification badges, ownership, last validated dates.</p>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
-            <div class="ie" onclick="openModal('images/lofi-home.png','Low-fi homepage.')"><img src="images/lofi-home.png" alt="Wireframe home" style="height:130px;object-fit:cover;object-position:top;"><div class="ie-foot" style="padding:8px 12px;"><span>Home</span></div></div>
-            <div class="ie" onclick="openModal('images/lofi-inventory.png','Low-fi inventory.')"><img src="images/lofi-inventory.png" alt="Wireframe inventory" style="height:130px;object-fit:cover;object-position:top;"><div class="ie-foot" style="padding:8px 12px;"><span>Inventory</span></div></div>
-            <div class="ie" onclick="openModal('images/lofi-results.png','Low-fi search results.')"><img src="images/lofi-results.png" alt="Wireframe results" style="height:130px;object-fit:cover;object-position:top;"><div class="ie-foot" style="padding:8px 12px;"><span>Search Results</span></div></div>
-            <div class="ie" onclick="openModal('images/lofi-detail.png','Low-fi asset detail.')"><img src="images/lofi-detail.png" alt="Wireframe detail" style="height:130px;object-fit:cover;object-position:top;"><div class="ie-foot" style="padding:8px 12px;"><span>Asset Detail</span></div></div>
-          </div>
-        </div>
+        <div class="ie-foot"><span>Dot voting output - Phase 1 cutoff</span><strong>Click to expand →</strong></div>
       </div>
     </div>
 
+    <!-- IA sitemap - full width, always visible -->
+    <div class="reveal" style="margin-bottom:48px;">
+      <span class="ey">Information Architecture</span>
+      <h2 class="h-md" style="margin-bottom:10px;">Two browse paths. One front door.</h2>
+      <p class="body-sm" style="max-width:600px;margin-bottom:20px;">Taxonomy for developers who think by tool and data domain. Campaigns for clinical managers who think by initiative. Same IA, two valid entry points - neither compromised for the other.</p>
+      <img src="images/site-map.png" alt="Navigation sitemap" style="width:100%;display:block;border-radius:16px;border:1px solid #e8e8e8;box-shadow:0 4px 24px rgba(0,0,0,.09);">
+    </div>
 
+    <!-- Wireframes - 4-column, clickable -->
+    <div class="reveal">
+      <span class="ey">Low-Fidelity → Hi-Fidelity</span>
+      <h2 class="h-md" style="margin-bottom:10px;">Layout first. Trust language second.</h2>
+      <p class="body-sm" style="max-width:600px;margin-bottom:20px;">Low-fi locked the navigation structure and layout logic across 4 sprints. Hi-fi resolved the governance signals - certification badges, ownership, last validated dates - that make users feel confident in what they find.</p>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;">
+        <div class="ie" onclick="openModal('images/lofi-home.png','Low-fi homepage concept.')">
+          <img src="images/lofi-home.png" alt="Wireframe home" style="height:136px;object-fit:cover;object-position:top;">
+          <div class="ie-foot" style="padding:9px 14px;"><span>Home</span></div>
+        </div>
+        <div class="ie" onclick="openModal('images/lofi-inventory.png','Low-fi inventory.')">
+          <img src="images/lofi-inventory.png" alt="Wireframe inventory" style="height:136px;object-fit:cover;object-position:top;">
+          <div class="ie-foot" style="padding:9px 14px;"><span>Inventory</span></div>
+        </div>
+        <div class="ie" onclick="openModal('images/lofi-results.png','Low-fi search results.')">
+          <img src="images/lofi-results.png" alt="Wireframe results" style="height:136px;object-fit:cover;object-position:top;">
+          <div class="ie-foot" style="padding:9px 14px;"><span>Search Results</span></div>
+        </div>
+        <div class="ie" onclick="openModal('images/lofi-detail.png','Low-fi asset detail.')">
+          <img src="images/lofi-detail.png" alt="Wireframe detail" style="height:136px;object-fit:cover;object-position:top;">
+          <div class="ie-foot" style="padding:9px 14px;"><span>Asset Detail</span></div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -490,52 +493,52 @@ window.addEventListener('scroll',function(){
   <div class="W">
     <span class="ey">Six Core Experiences</span>
     <h2 class="h-lg">Visual-first. Each solving a specific failure.</h2>
-    <p class="body" style="max-width:640px;margin-bottom:8px;">Every screen designed to address a specific failure mode. Click any to expand.</p>
+    <p class="body" style="max-width:640px;margin-bottom:8px;">Every screen was designed to address a failure mode from the fragmented system that came before. Click any screen to expand.</p>
 
     <!-- 01 -->
     <div style="margin-top:44px;margin-bottom:48px;">
-      <div class="exp-hd reveal"><span class="exp-num">01</span><h3 class="h-md" style="margin:0;">Search & Discovery</h3><span style="font-size:12px;color:#888;margin-left:4px;">— replaces 6-tab bookmark hunting</span></div>
+      <div class="exp-hd reveal"><span class="exp-num">01</span><h3 class="h-md" style="margin:0;">Search & Discovery</h3></div>
       <div style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:16px;" class="reveal">
         <span class="tp" style="font-size:11px;">Global search</span><span class="tp" style="font-size:11px;">Autocomplete by type</span><span class="tp" style="font-size:11px;">Zero-state guidance</span><span class="tp" style="font-size:11px;">Result type indicators</span>
       </div>
       <div class="g2 reveal">
-        <div class="gt tall" onclick="openModal('images/home-collapsed.png','Homepage — featured content and initiative discovery.')"><img src="images/home-collapsed.png" alt="Home Dashboard"><div class="gt-info"><span class="gt-label">Core</span><h3>Home Dashboard</h3><p>Featured content + initiative discovery.</p></div></div>
+        <div class="gt tall" onclick="openModal('images/home-collapsed.png','Homepage - featured content and initiative discovery.')"><img src="images/home-collapsed.png" alt="Home Dashboard"><div class="gt-info"><span class="gt-label">Core</span><h3>Home Dashboard</h3><p>Featured content + initiative discovery.</p></div></div>
         <div class="gt tall" onclick="openModal('images/home-expanded.png','Expanded navigation with guided discovery.')"><img src="images/home-expanded.png" alt="Expanded Nav"><div class="gt-info"><span class="gt-label">Core</span><h3>Expanded Navigation</h3><p>Category links + quick filters.</p></div></div>
       </div>
     </div>
 
     <!-- 02 -->
     <div style="margin-bottom:48px;">
-      <div class="exp-hd reveal"><span class="exp-num">02</span><h3 class="h-md" style="margin:0;">Browse & Filter</h3><span style="font-size:12px;color:#888;margin-left:4px;">— trust visible before you click</span></div>
+      <div class="exp-hd reveal"><span class="exp-num">02</span><h3 class="h-md" style="margin:0;">Browse & Filter</h3></div>
       <div style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:16px;" class="reveal">
         <span class="tp" style="font-size:11px;">Asset cards with certification badge</span><span class="tp" style="font-size:11px;">Filter by tool, domain, initiative</span><span class="tp" style="font-size:11px;">Owner + last validated visible</span>
       </div>
       <div class="g2 reveal">
-        <div class="gt tall" onclick="openModal('images/browse-all-assets.png','Browse — marketplace grid with certification and tags.')"><img src="images/browse-all-assets.png" alt="Browse"><div class="gt-info"><span class="gt-label">Discovery</span><h3>Browse All Assets</h3><p>Grid with certification + governance tags.</p></div></div>
-        <div class="gt tall" onclick="openModal('images/browse-filtered.png','Browse — filtered results.')"><img src="images/browse-filtered.png" alt="Filtered"><div class="gt-info"><span class="gt-label">Discovery</span><h3>Filtered Results</h3><p>Refined by type, owner, certification.</p></div></div>
+        <div class="gt tall" onclick="openModal('images/browse-all-assets.png','Browse - marketplace grid with certification and tags.')"><img src="images/browse-all-assets.png" alt="Browse"><div class="gt-info"><span class="gt-label">Discovery</span><h3>Browse All Assets</h3><p>Grid with certification + governance tags.</p></div></div>
+        <div class="gt tall" onclick="openModal('images/browse-filtered.png','Browse - filtered results.')"><img src="images/browse-filtered.png" alt="Filtered"><div class="gt-info"><span class="gt-label">Discovery</span><h3>Filtered Results</h3><p>Refined by type, owner, certification.</p></div></div>
       </div>
     </div>
 
     <!-- 03 -->
     <div style="margin-bottom:48px;">
-      <div class="exp-hd reveal"><span class="exp-num">03</span><h3 class="h-md" style="margin:0;">Campaigns & Initiatives</h3><span style="font-size:12px;color:#888;margin-left:4px;">— for users who think in outcomes, not tools</span></div>
+      <div class="exp-hd reveal"><span class="exp-num">03</span><h3 class="h-md" style="margin:0;">Campaigns & Initiatives</h3></div>
       <div style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:16px;" class="reveal">
         <span class="tp" style="font-size:11px;">HIMSS Stage 7</span><span class="tp" style="font-size:11px;">Cost Reduction</span><span class="tp" style="font-size:11px;">Heart Failure</span><span class="tp" style="font-size:11px;">Inova Care</span>
       </div>
       <div class="g2 reveal">
-        <div class="gt tall" onclick="openModal('images/campaigns.png','Campaigns — assets grouped by strategic initiative.')"><img src="images/campaigns.png" alt="Campaigns"><div class="gt-info"><span class="gt-label">Campaigns</span><h3>Strategic Campaigns</h3><p>Assets by initiative — for users who think in outcomes.</p></div></div>
-        <div class="gt tall" onclick="openModal('images/inova-care.png','Inova Care — clinical care pathway assets.')"><img src="images/inova-care.png" alt="Inova Care"><div class="gt-info"><span class="gt-label">Inova Care</span><h3>Clinical Care Pathways</h3><p>Sepsis · Stroke · Heart Failure · Cancer Care.</p></div></div>
+        <div class="gt tall" onclick="openModal('images/campaigns.png','Campaigns - assets grouped by strategic initiative.')"><img src="images/campaigns.png" alt="Campaigns"><div class="gt-info"><span class="gt-label">Campaigns</span><h3>Strategic Campaigns</h3><p>Assets by initiative - for users who think in outcomes.</p></div></div>
+        <div class="gt tall" onclick="openModal('images/inova-care.png','Inova Care - clinical care pathway assets.')"><img src="images/inova-care.png" alt="Inova Care"><div class="gt-info"><span class="gt-label">Inova Care</span><h3>Clinical Care Pathways</h3><p>Sepsis · Stroke · Heart Failure · Cancer Care.</p></div></div>
       </div>
     </div>
 
     <!-- 04 -->
     <div style="margin-bottom:48px;">
-      <div class="exp-hd reveal"><span class="exp-num">04</span><h3 class="h-md" style="margin:0;">Asset Detail & Favorites</h3><span style="font-size:12px;color:#888;margin-left:4px;">— launch with confidence, not guesswork</span></div>
+      <div class="exp-hd reveal"><span class="exp-num">04</span><h3 class="h-md" style="margin:0;">Asset Detail & Favorites</h3></div>
       <div style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:16px;" class="reveal">
         <span class="tp" style="font-size:11px;">Preview</span><span class="tp" style="font-size:11px;">Owner</span><span class="tp" style="font-size:11px;">Governance status</span><span class="tp" style="font-size:11px;">Access path</span><span class="tp" style="font-size:11px;">Discussion</span>
       </div>
       <div class="g3 reveal">
-        <div class="gt tall" onclick="openModal('images/my-favorites.png','Favorites — saved assets.')"><img src="images/my-favorites.png" alt="Favorites"><div class="gt-info"><span class="gt-label">Personal</span><h3>Favorites</h3><p>Saved assets and collections.</p></div></div>
+        <div class="gt tall" onclick="openModal('images/my-favorites.png','Favorites - saved assets.')"><img src="images/my-favorites.png" alt="Favorites"><div class="gt-info"><span class="gt-label">Personal</span><h3>Favorites</h3><p>Saved assets and collections.</p></div></div>
         <div class="gt tall" onclick="openModal('images/view-details.png','Asset detail with certification and launch.')"><img src="images/view-details.png" alt="Detail"><div class="gt-info"><span class="gt-label">Detail</span><h3>Asset Detail</h3><p>Full metadata, certification + launch.</p></div></div>
         <div class="gt tall" onclick="openModal('images/view-details-discussion.png','Discussion tab with peer feedback.')"><img src="images/view-details-discussion.png" alt="Discussion"><div class="gt-info"><span class="gt-label">Detail</span><h3>Discussion Tab</h3><p>Peer ratings and comments.</p></div></div>
       </div>
@@ -543,35 +546,35 @@ window.addEventListener('scroll',function(){
 
     <!-- 05 -->
     <div style="margin-bottom:48px;">
-      <div class="exp-hd reveal"><span class="exp-num">05</span><h3 class="h-md" style="margin:0;">AI Model Inventory</h3><span style="font-size:12px;color:#888;margin-left:4px;">— Inova's first dedicated AI governance UX</span></div>
+      <div class="exp-hd reveal"><span class="exp-num">05</span><h3 class="h-md" style="margin:0;">AI Model Inventory</h3></div>
       <div style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:16px;" class="reveal">
         <span class="tp" style="font-size:11px;">Performance status</span><span class="tp" style="font-size:11px;">Certification expiry</span><span class="tp" style="font-size:11px;">Bias review</span><span class="tp" style="font-size:11px;">Oversight history</span>
       </div>
       <div class="g2 reveal">
         <div class="gt tall" onclick="openModal('images/ai-inventory.png','AI model browser.')"><img src="images/ai-inventory.png" alt="AI inventory"><div class="gt-info"><span class="gt-label">AI Inventory</span><h3>AI Model Browser</h3><p>Discover AI products, deployment status, certification.</p></div></div>
-        <div class="gt tall" onclick="openModal('images/view-details-discussion-ai.png','AI discussion — stakeholder feedback.')"><img src="images/view-details-discussion-ai.png" alt="AI discussion"><div class="gt-info"><span class="gt-label">AI Inventory</span><h3>AI Discussion</h3><p>Stakeholder feedback on model performance.</p></div></div>
+        <div class="gt tall" onclick="openModal('images/view-details-discussion-ai.png','AI discussion - stakeholder feedback.')"><img src="images/view-details-discussion-ai.png" alt="AI discussion"><div class="gt-info"><span class="gt-label">AI Inventory</span><h3>AI Discussion</h3><p>Stakeholder feedback on model performance.</p></div></div>
       </div>
     </div>
 
     <!-- 06 -->
     <div>
-      <div class="exp-hd reveal"><span class="exp-num">06</span><h3 class="h-md" style="margin:0;">Governance Workflows</h3><span style="font-size:12px;color:#888;margin-left:4px;">— certification as a first-class product feature</span></div>
+      <div class="exp-hd reveal"><span class="exp-num">06</span><h3 class="h-md" style="margin:0;">Governance Workflows</h3></div>
       <div style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:16px;" class="reveal">
         <span class="tp" style="font-size:11px;">Certify</span><span class="tp" style="font-size:11px;">Deprecate</span><span class="tp" style="font-size:11px;">Lifecycle review</span><span class="tp" style="font-size:11px;">AI certification</span><span class="tp" style="font-size:11px;">Tag governance</span>
       </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px;" class="reveal">
-        <div class="gt" onclick="openModal('images/gov-asset-certification.png','Asset certification — review and certify dashboards, reports, and data extracts.')"><img src="images/gov-asset-certification.png" alt="Asset cert" style="height:300px;"><div class="gt-info"><span class="gt-label">Workflow 01</span><h3>Asset Certification</h3><p>Review, certify, or flag dashboards and reports for enterprise use.</p></div></div>
-        <div class="gt" onclick="openModal('images/gov-ai-certification.png','AI certification — structured review and approval of AI models.')"><img src="images/gov-ai-certification.png" alt="AI cert" style="height:300px;"><div class="gt-info"><span class="gt-label">Workflow 02</span><h3>AI Certification</h3><p>Structured review: performance state, bias review, approval chain.</p></div></div>
-        <div class="gt" onclick="openModal('images/gov-metrics-certification.png','Metrics certification — govern enterprise KPI definitions.')"><img src="images/gov-metrics-certification.png" alt="Metrics" style="height:300px;"><div class="gt-info"><span class="gt-label">Workflow 03</span><h3>Metrics Certification</h3><p>Govern enterprise KPI definitions and standardise terminology.</p></div></div>
-        <div class="gt" onclick="openModal('images/gov-campaign-management.png','Campaign governance — manage and review initiative groupings.')"><img src="images/gov-campaign-management.png" alt="Campaigns" style="height:300px;"><div class="gt-info"><span class="gt-label">Workflow 04</span><h3>Campaign Management</h3><p>Review initiative groupings and manage campaign lifecycle.</p></div></div>
-        <div class="gt" onclick="openModal('images/gov-campaign-creation.png','Campaign creation — link assets to organisational initiatives.')"><img src="images/gov-campaign-creation.png" alt="Campaign create" style="height:300px;"><div class="gt-info"><span class="gt-label">Workflow 05</span><h3>Campaign Creation</h3><p>Link assets to strategic initiatives across the organisation.</p></div></div>
-        <div class="gt" onclick="openModal('images/gov-tag-management.png','Tag governance — standardise marketplace metadata.')"><img src="images/gov-tag-management.png" alt="Tags" style="height:300px;"><div class="gt-info"><span class="gt-label">Workflow 06</span><h3>Tag Governance</h3><p>Standardise metadata and taxonomy across the marketplace.</p></div></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px;" class="reveal">
+        <div class="gt" onclick="openModal('images/gov-asset-certification.png','Asset certification.')"><img src="images/gov-asset-certification.png" alt="Asset cert" style="height:280px;"><div class="gt-info"><span class="gt-label">Governance</span><h3>Asset Certification</h3></div></div>
+        <div class="gt" onclick="openModal('images/gov-ai-certification.png','AI certification.')"><img src="images/gov-ai-certification.png" alt="AI cert" style="height:280px;"><div class="gt-info"><span class="gt-label">Governance</span><h3>AI Certification</h3></div></div>
+        <div class="gt" onclick="openModal('images/gov-metrics-certification.png','Metrics certification.')"><img src="images/gov-metrics-certification.png" alt="Metrics" style="height:280px;"><div class="gt-info"><span class="gt-label">Governance</span><h3>Metrics Certification</h3></div></div>
+        <div class="gt" onclick="openModal('images/gov-campaign-management.png','Campaign management.')"><img src="images/gov-campaign-management.png" alt="Campaigns" style="height:280px;"><div class="gt-info"><span class="gt-label">Governance</span><h3>Campaign Management</h3></div></div>
+        <div class="gt" onclick="openModal('images/gov-campaign-creation.png','Campaign creation.')"><img src="images/gov-campaign-creation.png" alt="Campaign create" style="height:280px;"><div class="gt-info"><span class="gt-label">Governance</span><h3>Campaign Creation</h3></div></div>
+        <div class="gt" onclick="openModal('images/gov-tag-management.png','Tag governance.')"><img src="images/gov-tag-management.png" alt="Tags" style="height:280px;"><div class="gt-info"><span class="gt-label">Governance</span><h3>Tag Governance</h3></div></div>
       </div>
       </div>
 
       <!-- Six certification states -->
       <div style="margin-top:36px;" class="reveal">
-        <p style="font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#aaa;margin-bottom:14px;">Six certification states — visible on every asset before you click</p>
+        <p style="font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#aaa;margin-bottom:14px;">Six certification states - visible on every asset before you click</p>
         <div class="status-grid">
           <div class="status-card"><div class="status-dot" style="background:#1a7a3a;"></div><div><h3>Certified</h3><p>Trusted and approved for enterprise use.</p></div></div>
           <div class="status-card"><div class="status-dot" style="background:#084FAA;"></div><div><h3>In Review</h3><p>Currently undergoing governance review.</p></div></div>
@@ -588,7 +591,7 @@ window.addEventListener('scroll',function(){
 <hr class="hdiv">
 
 <!-- ══════════════════════════════════════════════
-     DESIGN SYSTEM — after six experiences
+     DESIGN SYSTEM - right after role, before screens
 ══════════════════════════════════════════════ -->
 <section class="sec">
   <div class="W">
@@ -596,15 +599,15 @@ window.addEventListener('scroll',function(){
       <div class="rl">
         <span class="ey">Design System</span>
         <h2 class="h-lg">Built on Inova's foundation.<br>Extended for governance.</h2>
-        <p class="body" style="margin-bottom:24px;">Periscope was built entirely within Inova's enterprise design system — Arial typeface, semantic color tokens, and established component patterns. My job wasn't to invent new styles; it was to extend the system with patterns a marketplace needed that didn't exist yet.</p>
+        <p class="body" style="margin-bottom:24px;">Periscope was built entirely within Inova's enterprise design system - Arial typeface, semantic color tokens, and established component patterns. My job wasn't to invent new styles; it was to extend the system with patterns a marketplace needed that didn't exist yet.</p>
         <div class="ds-ext-grid">
           <div class="ds-ext-card">
             <h4>Asset Cards</h4>
-            <p>Trust-first browse tile — certification badge, tool source icon, owner, last validated date all visible before clicking</p>
+            <p>Trust-first browse tile - certification badge, tool source icon, owner, last validated date all visible before clicking</p>
           </div>
           <div class="ds-ext-card">
             <h4>AI Model Cards</h4>
-            <p>Performance state, certification expiry countdown, bias review flag — no equivalent in the base system</p>
+            <p>Performance state, certification expiry countdown, bias review flag - no equivalent in the base system</p>
           </div>
           <div class="ds-ext-card">
             <h4>Governance Chips</h4>
@@ -621,68 +624,47 @@ window.addEventListener('scroll',function(){
         <div style="display:flex;flex-direction:column;gap:12px;">
           <div style="background:#fff;border:1px solid #e8e8e8;border-radius:10px;padding:14px 16px;display:flex;align-items:flex-start;gap:12px;">
             <span style="width:8px;height:8px;border-radius:50%;background:#22c55e;flex-shrink:0;margin-top:5px;"></span>
-            <div><div style="font-size:13px;font-weight:700;color:#1a1a1a;margin-bottom:2px;">Certified</div><div style="font-size:12px;color:#777;">Visible on card surface — green badge, owner, last validated</div></div>
+            <div><div style="font-size:13px;font-weight:700;color:#1a1a1a;margin-bottom:2px;">Certified</div><div style="font-size:12px;color:#777;">Visible on card surface - green badge, owner, last validated</div></div>
           </div>
           <div style="background:#fff;border:1px solid #e8e8e8;border-radius:10px;padding:14px 16px;display:flex;align-items:flex-start;gap:12px;">
             <span style="width:8px;height:8px;border-radius:50%;background:#084FAA;flex-shrink:0;margin-top:5px;"></span>
-            <div><div style="font-size:13px;font-weight:700;color:#1a1a1a;margin-bottom:2px;">In Review</div><div style="font-size:12px;color:#777;">Blue indicator — governance workflow in progress</div></div>
+            <div><div style="font-size:13px;font-weight:700;color:#1a1a1a;margin-bottom:2px;">In Review</div><div style="font-size:12px;color:#777;">Blue indicator - governance workflow in progress</div></div>
           </div>
           <div style="background:#fff;border:1px solid #e8e8e8;border-radius:10px;padding:14px 16px;display:flex;align-items:flex-start;gap:12px;">
             <span style="width:8px;height:8px;border-radius:50%;background:#ef4444;flex-shrink:0;margin-top:5px;"></span>
-            <div><div style="font-size:13px;font-weight:700;color:#1a1a1a;margin-bottom:2px;">Expired / Flagged</div><div style="font-size:12px;color:#777;">Red — visible before user opens asset, not after</div></div>
+            <div><div style="font-size:13px;font-weight:700;color:#1a1a1a;margin-bottom:2px;">Expired / Flagged</div><div style="font-size:12px;color:#777;">Red - visible before user opens asset, not after</div></div>
           </div>
           <div style="background:#fff;border:1px solid #e8e8e8;border-radius:10px;padding:14px 16px;display:flex;align-items:flex-start;gap:12px;">
             <span style="width:8px;height:8px;border-radius:50%;background:#94a3b8;flex-shrink:0;margin-top:5px;"></span>
-            <div><div style="font-size:13px;font-weight:700;color:#1a1a1a;margin-bottom:2px;">Deprecated</div><div style="font-size:12px;color:#777;">Grey — surfaced in search to redirect, not hide</div></div>
+            <div><div style="font-size:13px;font-weight:700;color:#1a1a1a;margin-bottom:2px;">Deprecated</div><div style="font-size:12px;color:#777;">Grey - surfaced in search to redirect, not hide</div></div>
           </div>
         </div>
       </div>
     </div>
-    <!-- Design system image — full width, embedded -->
-    <img src="images/design_system.png" alt="Inova Design System — logo, color, typography, iconography, buttons, cards, dropdowns" class="reveal" style="width:100%;display:block;border-radius:18px;border:1px solid #e8e8e8;box-shadow:0 6px 30px rgba(0,0,0,.08);">
+    <!-- Design system image - full width, embedded -->
+    <img src="images/design_system.png" alt="Inova Design System - logo, color, typography, iconography, buttons, cards, dropdowns" class="reveal" style="width:100%;display:block;border-radius:18px;border:1px solid #e8e8e8;box-shadow:0 6px 30px rgba(0,0,0,.08);">
   </div>
 </section>
 
 
 <!-- ══════════════════════════════════════════════
-     OUTCOMES — two clean metrics, then reflection
+     OUTCOMES - two clean metrics, then reflection
 ══════════════════════════════════════════════ -->
 <div style="background:#0a1628;border-top:1px solid #0a1628;">
   <div class="W sec-sm">
     <span class="ey" style="color:#4db8ff;">Outcomes</span>
-    <h2 class="h-lg" style="color:#fff;max-width:500px;">Two numbers.<br>Both earned.</h2>
+    <h2 class="h-lg" style="color:#fff;">Two numbers. Both earned.</h2>
     <div class="outcome-2 reveal">
 
       <div class="oc">
         <div class="oc-n">68%</div>
         <div class="oc-label">Faster time-to-find an asset</div>
         <hr class="oc-divider">
-        <!-- Chart: Before vs After task time -->
-        <div style="margin-bottom:18px;">
-          <div style="display:flex;align-items:flex-end;gap:16px;height:110px;padding-bottom:8px;">
-            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;flex:1;">
-              <span style="font-size:11px;font-weight:700;color:rgba(255,255,255,.45);">6.2 min</span>
-              <div style="width:100%;background:rgba(255,255,255,.18);border-radius:6px 6px 0 0;height:90px;"></div>
-              <span style="font-size:11px;color:rgba(255,255,255,.4);">Before</span>
-            </div>
-            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;flex:1;">
-              <span style="font-size:11px;font-weight:700;color:#4db8ff;">2.0 min</span>
-              <div style="width:100%;background:#4db8ff;border-radius:6px 6px 0 0;height:29px;"></div>
-              <span style="font-size:11px;color:rgba(255,255,255,.4);">Periscope</span>
-            </div>
-            <div style="flex:2;display:flex;align-items:center;">
-              <div style="background:rgba(34,197,94,.15);border:1px solid rgba(34,197,94,.3);border-radius:8px;padding:10px 14px;">
-                <div style="font-size:22px;font-weight:700;color:#4ade80;line-height:1;">68%</div>
-                <div style="font-size:11px;color:rgba(255,255,255,.5);margin-top:2px;">faster</div>
-              </div>
-            </div>
-          </div>
-          <div style="border-top:1px solid rgba(255,255,255,.08);margin-top:4px;"></div>
-        </div>
         <div class="oc-how">How we measured it</div>
         <ul class="oc-list">
-          <li><span>→</span>Timed task across 3 rounds of moderated testing — old system (Power BI + SharePoint + Teams) vs Periscope</li>
-          <li><span>→</span>Driver: governance status on the card — users stopped second-guessing which asset to trust</li>
+          <li><span>→</span>Timed task: find a specific certified dashboard in the old system (Power BI + SharePoint + Teams) vs Periscope</li>
+          <li><span>→</span>Old system avg: 6.2 min. Periscope avg: 2.0 min - across 3 rounds of moderated testing</li>
+          <li><span>→</span>The driver: governance status on the card meant users stopped second-guessing which asset to trust</li>
         </ul>
       </div>
 
@@ -693,24 +675,24 @@ window.addEventListener('scroll',function(){
         <div class="oc-how">How we got there</div>
         <ul class="oc-list">
           <li><span>→</span>Replaced Power BI, Tableau, Signal 1, Vizient, Epic, and SharePoint in a single Phase 1 deployment</li>
-          <li><span>→</span>Clinical users adopted via Campaigns — found audit assets without learning a new taxonomy</li>
-          <li><span>→</span>Zero formal training sessions required — the experience was intuitive enough to self-onboard</li>
+          <li><span>→</span>Clinical users adopted via Campaigns - found audit assets without learning a new taxonomy</li>
+          <li><span>→</span>Zero formal training sessions required - the experience was intuitive enough to self-onboard</li>
         </ul>
       </div>
 
     </div>
 
     <div class="cbl reveal">
-      <p>Periscope moved Inova from fragmented report hunting to a <strong>governed, searchable, trust-aware marketplace</strong>. The real design challenge wasn't making assets easier to find — it was making every user feel <strong>confident that what they found was certified and appropriate for clinical decision-making</strong>.</p>
+      <p>Periscope moved Inova from fragmented report hunting to a <strong>governed, searchable, trust-aware marketplace</strong>. The real design challenge wasn't making assets easier to find - it was making every user feel <strong>confident that what they found was certified and appropriate for clinical decision-making</strong>.</p>
     </div>
 
-    <!-- Next Steps THEN What I'd Do Differently — forward-looking ending -->
+    <!-- Next Steps THEN What I'd Do Differently - forward-looking ending -->
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:24px;" class="reveal">
       <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:28px 24px;">
         <span style="font-size:11px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#fff;margin-bottom:14px;display:block;">Next Steps</span>
         <ul class="oc-list">
           <li>Moderated usability testing with 5 clinical users post-launch</li>
-          <li >A/B testing — search placement + card layout variants</li>
+          <li >A/B testing - search placement + card layout variants</li>
           <li>UAT validation + dev sprint support</li>
           <li>Iterative feedback loops to refine based on real usage</li>
         </ul>
@@ -720,7 +702,7 @@ window.addEventListener('scroll',function(){
         <ul class="oc-list">
           <li >Push for moderated user research before Sprint 1, not after</li>
           <li >5 clinical users early would've validated trust-first cards 2 sprints sooner</li>
-          <li >Stakeholder input was strong — but real users would've accelerated decision confidence</li>
+          <li >Stakeholder input was strong - but real users would've accelerated decision confidence</li>
         </ul>
       </div>
     </div>
@@ -733,7 +715,7 @@ window.addEventListener('scroll',function(){
 </div>
 
 <!-- FOOTER -->
-<footer class="footer-s" style="background:linear-gradient(to bottom,#f8f8f8,#fafafa);">
+<footer class="footer-s">
   <div class="footer-in">
     <div>
       <h3 style="font-family:'DM Serif Display',serif;font-size:26px;color:#1a1a1a;margin-bottom:8px;">Let's connect</h3>
