@@ -180,7 +180,7 @@
 /* Decorative ring behind image */
 .hero-img-ring{
   position:absolute;
-  width:420px;height:420px;
+  width:560px;height:560px;
   border-radius:50%;
   border:1px solid rgba(8,79,170,.08);
   right:-20px;top:50%;transform:translateY(-50%);
@@ -192,7 +192,7 @@
   border:1px solid rgba(8,79,170,.05);
 }
 .hero-img-wrap img{
-  width:100%;max-width:440px;
+  width:100%;max-width:580px;
   filter:drop-shadow(0 24px 48px rgba(8,79,170,.13));
   animation:floatImg 5s ease-in-out infinite;
   display:block;position:relative;z-index:1;
@@ -427,54 +427,6 @@
   .footer-copy p{text-align:left;}
 }
 </style>
-
-
-<!-- Saved portfolio font system overrides -->
-<style id="saved-font-system">
-:root{
-  --fs-hero-title:48px;
-  --fs-hero-body:18px;
-  --fs-hero-tag:14px;
-  --fs-eyebrow:14px;
-  --fs-major-title:48px;
-  --fs-subtitle:20px;
-  --fs-callout:16px;
-  --fs-card-title:24px;
-  --fs-card-body:14px;
-  --fs-card-tag:14px;
-  --fs-link:14px;
-  --fs-footer-title:24px;
-  --fs-footer-body:16px;
-}
-body{font-family:'DM Sans',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;}
-.hero-title{font-size:var(--fs-hero-title)!important;line-height:1.08!important;}
-.hero-desc{font-size:var(--fs-hero-body)!important;line-height:1.75!important;}
-.tag-pill{font-size:var(--fs-hero-tag)!important;}
-.hero-eyebrow,
-.hero .hero-eyebrow,
-.work-section .reveal > span:first-child{font-size:var(--fs-eyebrow)!important;}
-.work-section h2{font-size:var(--fs-major-title)!important;line-height:1.2!important;}
-.work-section .reveal > p{font-size:var(--fs-subtitle)!important;line-height:1.75!important;}
-.callout-strip{font-size:var(--fs-callout)!important;line-height:1.8!important;}
-.pc-body h3{font-size:var(--fs-card-title)!important;line-height:1.25!important;}
-.pc-body p{font-size:var(--fs-card-body)!important;line-height:1.8!important;}
-.pc-tag{font-size:var(--fs-card-tag)!important;}
-.pc-link{font-size:var(--fs-link)!important;}
-.footer-in h3{font-size:var(--fs-footer-title)!important;}
-.footer-in p,.footer-email{font-size:var(--fs-footer-body)!important;line-height:1.6!important;}
-.footer-copy p{font-size:12px!important;line-height:1.6!important;}
-@media(max-width:860px){
-  .hero-title{font-size:40px!important;}
-  .work-section h2{font-size:38px!important;}
-}
-@media(max-width:520px){
-  .hero-title{font-size:34px!important;}
-  .hero-desc{font-size:17px!important;}
-  .work-section h2{font-size:34px!important;}
-  .work-section .reveal > p{font-size:18px!important;}
-}
-</style>
-
 </head>
 <body>
 <div id="pgbar" style="position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(to right,#084FAA,#4db8ff);z-index:9999;transition:width .08s linear;pointer-events:none;"></div>
@@ -501,12 +453,12 @@ body{font-family:'DM Sans',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI'
 
       <!-- LEFT - text -->
       <div>
-        <!-- Available badge -->
+        <!-- Available badge
         <div class="hero-badge reveal">
           <span class="hero-badge-dot"></span>
           Available for new opportunities
         </div>
-
+-->
         <!-- Eyebrow -->
         <div class="hero-eyebrow reveal">Research · Strategy · Design · Delivery</div>
 
@@ -523,14 +475,14 @@ body{font-family:'DM Sans',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI'
           <span class="tag-pill">AI Products</span>
           <span class="tag-pill">Analytics</span>
           <span class="tag-pill">Data Governance</span>
-          <span class="tag-pill">IT Consulting</span>
+        <!--  <span class="tag-pill">IT Consulting</span>
           <span class="tag-pill">Automotive</span>
-          <span class="tag-pill">Telecom</span>
+          <span class="tag-pill">Telecom</span> -->
         </div>
 
         <!-- Description -->
         <p class="hero-desc reveal">
-          I'm a developer turned designer with <strong>8+ years of experience</strong> creating enterprise products and digital experiences. Passionate about transforming complex systems into trusted, intuitive, and accessible solutions.
+          I'm a developer turned designer with <strong>8+ years of experience</strong> creating enterprise products and digital experiences. <br>  <br> Passionate about transforming complex systems into trusted, intuitive, and accessible solutions.
         </p>
 
         <!-- Accent rule -->
@@ -600,11 +552,11 @@ body{font-family:'DM Sans',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI'
               <span class="pc-drawer-label">Process</span>
               <span class="pc-drawer-step">Discovery</span>
               <span class="pc-drawer-arrow">→</span>
-              <span class="pc-drawer-step">IA & Personas</span>
+              <span class="pc-drawer-step">Information architecture & Personas</span>
               <span class="pc-drawer-arrow">→</span>
               <span class="pc-drawer-step">Wireframes</span>
               <span class="pc-drawer-arrow">→</span>
-              <span class="pc-drawer-step active">Hi-Fi + Governance</span>
+              <span class="pc-drawer-step active">Hi-fidelity + Data Governance</span>
             </div>
             <div class="pc-drawer-metrics">
               <span class="pc-drawer-metric">20K+ active users</span>
@@ -622,6 +574,8 @@ body{font-family:'DM Sans',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI'
         </div>
       </a>
 
+
+
       <!-- BSPD -->
       <a href="bspd2244180913323234627744434543.html" class="pcard reveal">
         <div class="pc-img" style="min-height:260px;">
@@ -630,7 +584,9 @@ body{font-family:'DM Sans',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI'
             <div class="pc-drawer-handle"></div>
             <div class="pc-drawer-process">
               <span class="pc-drawer-label">Process</span>
-              <span class="pc-drawer-step">RTB Workshop</span>
+                <span class="pc-drawer-step">Migration</span>
+                    <span class="pc-drawer-arrow">→</span>
+              <span class="pc-drawer-step">Design Workshop</span>
               <span class="pc-drawer-arrow">→</span>
               <span class="pc-drawer-step">Design System</span>
               <span class="pc-drawer-arrow">→</span>
@@ -652,6 +608,39 @@ body{font-family:'DM Sans',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI'
         </div>
       </a>
 
+
+      <!-- Inova Assist -->
+      <a href="passwordassist.html" class="pcard reveal">
+        <div class="pc-img" style="min-height:260px;">
+          <img src="images/assist.png" alt="Inova Assist AI Platform">
+          <div class="pc-drawer">
+            <div class="pc-drawer-handle"></div>
+            <div class="pc-drawer-process">
+              <span class="pc-drawer-label">Process</span>
+              <span class="pc-drawer-step">Discovery Workshop</span>
+              <span class="pc-drawer-arrow">→</span>
+              <span class="pc-drawer-step">Component System</span>
+              <span class="pc-drawer-arrow">→</span>
+              <span class="pc-drawer-step active">HIPAA-compliant AI</span>
+            </div>
+            <div class="pc-drawer-metrics">
+              <span class="pc-drawer-metric">91% task completion</span>
+              <span class="pc-drawer-metric">ChatGPT API · HIPAA governed</span>
+              <span class="pc-drawer-metric">ServiceNow · Microsoft SSO</span>
+              <span class="pc-drawer-metric">Inova Health · 2025</span>
+            </div>
+          </div>
+        </div>
+        <div class="pc-body">
+          <div class="pc-tags"><span class="pc-tag">AI Product</span><span class="pc-tag">Healthcare Operations</span><span class="pc-tag">LLM</span></div>
+          <h3>Inova Assist - AI for Healthcare Operations</h3>
+          <p>Inova blocked ChatGPT over PHI and HIPAA concerns. I designed the replacement a governed LLM platform built on the ChatGPT API, restricted to healthcare workflows, with compliance baked into the UX from day one.</p>
+          <span class="pc-link">View case study <span class="pc-arrow">→</span></span>
+        </div>
+      </a>
+
+
+
       <!-- ACO-MS -->
       <a href="passwordacoms.html" class="pcard reveal">
         <div class="pc-img" style="min-height:260px;">
@@ -662,9 +651,9 @@ body{font-family:'DM Sans',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI'
               <span class="pc-drawer-label">Process</span>
               <span class="pc-drawer-step">User Interviews</span>
               <span class="pc-drawer-arrow">→</span>
-              <span class="pc-drawer-step">Flow Redesign</span>
+              <span class="pc-drawer-step">Userflow Redesign</span>
               <span class="pc-drawer-arrow">→</span>
-              <span class="pc-drawer-step active">508 Hi-Fi</span>
+              <span class="pc-drawer-step active">508 Compliance</span>
             </div>
             <div class="pc-drawer-metrics">
               <span class="pc-drawer-metric">$1.2B Medicare savings</span>
@@ -690,7 +679,7 @@ body{font-family:'DM Sans',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI'
             <div class="pc-drawer-handle"></div>
             <div class="pc-drawer-process">
               <span class="pc-drawer-label">Process</span>
-              <span class="pc-drawer-step">Discovery WS</span>
+              <span class="pc-drawer-step">Discovery</span>
               <span class="pc-drawer-arrow">→</span>
               <span class="pc-drawer-step">Design System</span>
               <span class="pc-drawer-arrow">→</span>
