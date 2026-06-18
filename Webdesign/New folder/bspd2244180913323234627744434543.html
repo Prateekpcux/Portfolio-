@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+<title>Brightspeed Business Solutions -Prateek Chatterjee</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="portfolio.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0ZPWXXEFP8"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-0ZPWXXEFP8');</script>
+<style>
+/* ── PAGE TOKENS ─────────────────────────────── */
+.tag-pill{display:inline-flex;align-items:center;background:var(--tag-bg);color:var(--tag-color);border:1px solid var(--tag-border);border-radius:50px;padding:4px 14px;font-size:14px;font-weight:600;margin:2px;}
+
+/* NAV */
+.snav{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.95);backdrop-filter:blur(16px);border-bottom:1px solid #e8e8e8;height:64px;display:flex;align-items:center;}
+.snav-inner{max-width:1100px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;width:100%;}
+.snav a.logo img{height:34px;display:block;}
+.snav-links{display:flex;gap:8px;}
+.snav-links a{font-size:13px;font-weight:500;letter-spacing:.5px;text-transform:uppercase;text-decoration:none;color:#555;padding:6px 14px;border-radius:50px;}
+.snav-links a.active{color:#084FAA;background:#F0F5FF;}
+
+/* SECTION HELPERS */
+.eyebrow-s{font-size:14px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:#084FAA;margin-bottom:12px;display:block;}
+.heading-xl{font-family:'DM Serif Display',serif;font-size:48px;line-height:1.15;color:#1a1a1a;margin-bottom:16px;}
+.heading-lg{font-family:'DM Serif Display',serif;font-size:48px;line-height:1.15;color:#1a1a1a;margin-bottom:14px;}
+.heading-md{font-family:'DM Serif Display',serif;font-size:24px;line-height:1.25;color:#1a1a1a;margin-bottom:12px;}
+.body-lg{font-size:18px;color:#555;line-height:1.75;max-width:700px;}
+.body-md{font-size:20px;color:#555;line-height:1.75;}
+.body-list{padding-left:22px;margin:12px 0;}
+.body-list li{font-size:16px;color:#555;line-height:1.75;margin-bottom:6px;}
+
+/* SECTIONS */
+.sec{padding:68px 0;}
+.sec-sm{padding:48px 0;}
+.band-l{background:#fafafa;border-top:1px solid #e8e8e8;border-bottom:1px solid #e8e8e8;}
+.band-m{background:#f3f3f3;border-top:1px solid #e8e8e8;border-bottom:1px solid #e8e8e8;}
+.band-b{background:#F0F5FF;border-top:1px solid #e8e8e8;border-bottom:1px solid #e8e8e8;}
+hr.div{border:none;border-top:1px solid #e8e8e8;margin:0;}
+
+/* PROBLEM/SOLUTION */
+.ps-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:#e8e8e8;border:1px solid #e8e8e8;border-radius:14px;overflow:hidden;margin-top:28px;}
+.ps-panel{background:#fff;padding:28px 24px;}
+.ps-panel-b{background:#F0F5FF;}
+.ps-label{font-size:14px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:#888;margin-bottom:12px;display:block;}
+.ps-panel h3{font-size:24px;font-weight:600;color:#1a1a1a;margin-bottom:10px;line-height:1.25;}
+.ps-panel p{font-size:14px;color:#555;line-height:1.75;}
+.ps-panel img{width:100%;border-radius:8px;border:1px solid #e8e8e8;display:block;margin-top:14px;}
+
+/* STATS RAIL */
+.stats-rail{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:#e8e8e8;border:1px solid #e8e8e8;border-radius:14px;overflow:hidden;margin-top:28px;}
+.sc{background:#fff;padding:24px 18px;}
+.sn{font-family:'DM Serif Display',serif;font-size:34px;color:#084FAA;line-height:1;margin-bottom:5px;}
+.sl{font-size:15px;color:#555;line-height:1.45;}
+
+/* ROLE CARD */
+.role-card{background:#084FAA;border-radius:14px;padding:32px 28px;color:#fff;margin-top:24px;}
+.role-card h3{font-size:12px;font-weight:600;opacity:.6;letter-spacing:.8px;text-transform:uppercase;margin-bottom:10px;}
+.role-card p{font-size:16px;opacity:.9;line-height:1.7;margin-bottom:0;}
+.role-list{margin-top:16px;padding-left:0;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.role-list li{font-size:15px;opacity:.85;line-height:1.5;display:flex;gap:8px;align-items:flex-start;}
+.role-list li::before{content:'→';color:rgba(255,255,255,.4);flex-shrink:0;}
+
+/* IMAGE CARDS (full-width) */
+.img-card{background:#fff;border:1px solid #e8e8e8;border-radius:14px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.06);margin-top:20px;}
+.img-card img{width:100%;display:block;cursor:pointer;transition:transform .3s;}
+.img-card img:hover{transform:scale(1.01);}
+.img-card-cap{padding:12px 16px;font-size:14px;color:#555;line-height:1.75;}
+
+/* BEFORE/AFTER GRID */
+.ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px;}
+.ba-card{background:#fff;border:1px solid #e8e8e8;border-radius:12px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.06);}
+.ba-label{font-size:14px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;padding:10px 14px;border-bottom:1px solid #e8e8e8;}
+.ba-label.old{color:#b02020;background:#fff5f5;}
+.ba-label.new-{color:#1a7a3a;background:#f0fff4;}
+.ba-card img{width:100%;display:block;cursor:pointer;transition:transform .3s;}
+.ba-card img:hover{transform:scale(1.02);}
+.ba-card-note{padding:10px 14px;font-size:14px;color:#555;line-height:1.75;}
+.ba-card-note a{color:#084FAA;font-weight:600;}
+
+/* GALLERY 2-up */
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px;}
+.g2-full img{width:100%;display:block;border-radius:12px;border:1px solid #e8e8e8;cursor:pointer;}
+
+/* INSIGHT CARDS */
+.insight-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px;}
+.insight-card{background:#fff;border:1px solid #e8e8e8;border-left:4px solid #084FAA;border-radius:12px;padding:20px 18px;}
+.insight-card h3{font-size:24px;font-weight:600;color:#1a1a1a;margin-bottom:7px;line-height:1.25;}
+.insight-card p{font-size:14px;color:#555;line-height:1.75;margin:0;}
+
+/* PROCESS STEPS */
+.process-row{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;background:#e8e8e8;border:1px solid #e8e8e8;border-radius:14px;overflow:hidden;margin-top:20px;}
+.pc{background:#fff;padding:20px 16px;}
+.pn{font-size:14px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:#084FAA;margin-bottom:7px;}
+.pc h3{font-size:24px;font-weight:600;color:#1a1a1a;margin-bottom:4px;line-height:1.25;}
+.pc p{font-size:14px;color:#555;line-height:1.75;}
+
+/* IMPACT CALLOUT */
+.impact-box{background:#F0F5FF;border:1px solid #E3ECFF;border-left:4px solid #084FAA;border-radius:14px;padding:28px 28px;margin-top:24px;}
+.impact-box p{font-size:16px;color:#1a1a1a;line-height:1.8;}
+.impact-box strong{color:#084FAA;}
+
+/* COMPONENT LIST */
+.comp-row{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 4px;}
+.comp-chip{background:#F0F5FF;color:#084FAA;border:1px solid #E3ECFF;border-radius:50px;padding:6px 14px;font-size:14px;font-weight:500;}
+
+/* RESULTS METRIC ROW */
+.metrics-row{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:#e8e8e8;border:1px solid #e8e8e8;border-radius:14px;overflow:hidden;margin-top:20px;}
+.mc{background:#fff;padding:24px 18px;}
+.mn{font-family:'DM Serif Display',serif;font-size:36px;color:#084FAA;line-height:1;margin-bottom:5px;}
+.ml{font-size:15px;color:#555;line-height:1.45;}
+
+/* FOOTER */
+.footer-s{background:#fafafa;border-top:1px solid #e8e8e8;padding:60px 0;}
+.footer-inner-s{max-width:1060px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;}
+
+@media(max-width:768px){
+  .ps-grid,.ba-grid,.g2,.stats-rail,.insight-grid,.process-row,.role-list,.metrics-row{grid-template-columns:1fr;}
+  .heading-xl{font-size:40px;}.heading-lg{font-size:36px;}.heading-md{font-size:24px;}
+  .sec{padding:48px 0;}.sec-sm{padding:36px 0;}
+  .footer-inner-s{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="snav">
+  <div class="snav-inner">
+    <a class="logo" href="index.html"><img src="images/logo.png" alt="Prateek Chatterjee"></a>
+    <div class="snav-links">
+      <a href="index.html" class="active">Work</a>
+      <a href="About.html">About</a>
+      <a href="play.html">Play</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section style="background:linear-gradient(160deg,#f7faff 0%,#fff 60%);border-bottom:1px solid #e8e8e8;padding:68px 0 56px;">
+  <div class="container">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px;">
+      <span class="eyebrow-s" style="margin:0;">UX Case Study</span>
+      <span style="color:#888;font-size:11px;">· CGI Inc. · Brightspeed · Oct 2022 – Jan 2023</span>
+    </div>
+    <h1 class="heading-xl">Brightspeed -<em style="font-style:italic;color:#084FAA;">Business Solutions</em></h1>
+    <p class="body-lg" style="margin-bottom:28px;">Redesigning the B2B digital experience for the nation's 5th largest telecom -migrating 150+ pages and building a new 2.0 experience after a major post-acquisition brand transition.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:32px;">
+      <span class="tag-pill">Telecom · Enterprise B2B</span>
+      <span class="tag-pill">UX Lead</span>
+      <span class="tag-pill">150+ Pages</span>
+      <span class="tag-pill">Design System</span>
+      <span class="tag-pill">AEM · Figma</span>
+      <span class="tag-pill">CGI Inc.</span>
+    </div>
+    <button onclick="showConfirm()" style="display:inline-flex;align-items:center;gap:8px;background:#1a1a1a;color:#fff;font-size:15px;font-weight:600;padding:13px 26px;border-radius:50px;border:none;cursor:pointer;margin-bottom:36px;">View Live Site ↗</button>
+    <img src="images/bspdtop.png" alt="Brightspeed hero" style="width:100%;display:block;border-radius:20px;box-shadow:0 8px 30px rgba(0,0,0,.11);border:1px solid #e8e8e8;">
+  </div>
+</section>
+
+<!-- ═══ BACKGROUND ═══ -->
+<section class="sec">
+  <div class="container">
+    <span class="eyebrow-s">Background</span>
+    <h2 class="heading-lg">The nation's 5th largest telecom, newly independent</h2>
+    <p class="body-md">Brightspeed is valued at over <strong>$7.5 billion USD</strong> and is expanding its fiber optics network to reach 1 million new connections by 2023. As a <strong>spin-off of Lumen and CenturyLink</strong>, it serves 6.5 million locations in rural and suburban areas across the southeast, southwest, and great lakes regions, focusing on fiber-based telecom solutions for B2C and B2B markets.</p>
+
+    <div class="ps-grid">
+      <div class="ps-panel">
+        <span class="ps-label">The Problem</span>
+        <h3>Post-acquisition brand and UX fragmentation</h3>
+        <p>In November 2021, Apollo Global Management struck a deal with Lumen Technologies to acquire Brightspeed. The website experience felt disjointed due to branding associated with Lumen and CenturyLink pages, subpar navigation, and degraded support pages. Existing users dropped off, leading to significant client attrition.</p>
+        <img src="images/lumen.jpg" alt="Legacy Lumen experience">
+      </div>
+      <div class="ps-panel ps-panel-b">
+        <span class="ps-label">The Solution</span>
+        <h3>A unified 2.0 B2B experience</h3>
+        <p>CGI's HCx team was brought on to oversee the Brightspeed client relationship and assist in migrating "cloned pages" from Lumen. Beyond migration, we redesigned their landing pages and product pages in Adobe Experience Manager (AEM) to increase customer acquisition while reducing attrition through improved CX.</p>
+        <img src="images/cs.png" alt="Brightspeed redesign">
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="div">
+
+<!-- ═══ MY ROLE & ROADMAP ═══ -->
+<div class="band-l">
+  <div class="container sec-sm">
+    <span class="eyebrow-s">My Role & Roadmap</span>
+    <h2 class="heading-lg">Senior Product Designer -leading migration and redesign</h2>
+    <p class="body-md">I joined the team as <strong>Senior Product Designer</strong> and worked alongside a UX writer, UX strategist, and supervised two UX designers for the entire migration effort. We had two main goals spanning close to a year of work.</p>
+    <div class="img-card" style="cursor:default;">
+      <img src="images/Timeline.png" alt="Project timeline" style="cursor:default;">
+    </div>
+    <div class="role-card">
+      <h3>My Contributions</h3>
+      <p>Full ownership of migration, design system, working sessions, research, and 2.0 experience design.</p>
+      <ul class="role-list">
+        <li>Migrate "cloned pages" from Lumen.com to Brightspeed -launch Oct 2022</li>
+        <li>Build new 2.0 website experience -launch Jan 2023</li>
+        <li>Lead design workshops: Rose-Thorn-Bud, affinity mapping, user flow</li>
+        <li>Create and maintain 2.0 design system in Figma (migrated from Sketch)</li>
+        <li>15 design sprints, 4 working sessions each, Jira-managed stories</li>
+        <li>Support development in Adobe Experience Manager (AEM)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ OUR APPROACH ═══ -->
+<div class="band-m">
+  <div class="container sec-sm">
+    <span class="eyebrow-s">Our Approach & Direction</span>
+    <h2 class="heading-lg">Structured process before a single screen was designed</h2>
+    <p class="body-md" style="margin-bottom:20px;">Before building the 2.0 experience, we ran a thorough planning and strategy phase to ensure design decisions were grounded in real user needs and business goals.</p>
+    <div class="process-row">
+      <div class="pc"><div class="pn">Phase 1</div><h3>Discovery</h3><p>Rose-Thorn-Bud workshops, affinity mapping, stakeholder interviews.</p></div>
+      <div class="pc"><div class="pn">Phase 2</div><h3>Define</h3><p>Proto personas, user journeys, and competitive analysis.</p></div>
+      <div class="pc"><div class="pn">Phase 3</div><h3>Design System</h3><p>15+ components built across 15 sprints in Figma.</p></div>
+      <div class="pc"><div class="pn">Phase 4</div><h3>Working Sessions</h3><p>4 sessions per sprint, iterative feedback with clients.</p></div>
+      <div class="pc"><div class="pn">Phase 5</div><h3>Dev Support</h3><p>Pixel-perfect handoff and AEM development support.</p></div>
+    </div>
+    <div class="img-card" onclick="openModal('images/process.png','UX approach and process diagram for the Brightspeed 2.0 project.')">
+      <img src="images/process.png" alt="UX approach diagram">
+      <div class="img-card-cap">Process overview -click to expand</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ DESIGN WORKSHOP ═══ -->
+<section class="sec">
+  <div class="container">
+    <span class="eyebrow-s">Design Workshop</span>
+    <h2 class="heading-lg">Rose, Thorn, Bud & Affinity Clusters</h2>
+    <p class="body-md">We used Rose-Thorn-Bud and affinity mapping together to seek insight from the existing Lumen experience -discovering patterns and connections to guide positive action. The method helped <strong>clarify goals, define immediate needs, and create focus</strong> by giving stakeholders a structured way to surface thoughts, observations, and concerns.</p>
+    <div class="g2" style="margin-top:24px;">
+      <div onclick="openModal('images/rose.png','Rose-Thorn-Bud workshop output identifying what worked, what hurt, and opportunities.')" style="cursor:pointer;">
+        <div class="img-card">
+          <img src="images/rose.png" alt="Rose Thorn Bud workshop">
+          <div class="img-card-cap">Rose, Thorn, Bud -click to expand</div>
+        </div>
+      </div>
+      <div onclick="openModal('images/aff.png','Affinity mapping -clustering insights from the workshop into themes and opportunities.')" style="cursor:pointer;">
+        <div class="img-card">
+          <img src="images/aff.png" alt="Affinity mapping clusters">
+          <div class="img-card-cap">Affinity Clusters -click to expand</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="div">
+
+<!-- ═══ TARGET AUDIENCE ═══ -->
+<div class="band-m">
+  <div class="container sec-sm">
+    <span class="eyebrow-s">Picturing the Target Audience</span>
+    <h2 class="heading-lg">Proto-personas and user journeys</h2>
+    <p class="body-md">Since we didn't have access to customers and were on an incredibly tight deadline, we utilized <strong>proto-personas</strong> -assumption-based representations of likely user types -to make informed design decisions quickly.</p>
+    <div class="g2" style="margin-top:24px;">
+      <div onclick="openModal('images/def.png','Proto-personas for Brightspeed Business -defining key user types and their goals.')" style="cursor:pointer;">
+        <div class="img-card">
+          <img src="images/def2.png" alt="Proto-personas">
+          <div class="img-card-cap">Proto-personas -click to expand</div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        <div onclick="openModal('images/userr1.png','User journey 1 -mapping goals, touchpoints, and pain points for persona 1.')" style="cursor:pointer;">
+          <div class="img-card">
+            <img src="images/userr1.png" alt="User journey 1">
+            <div class="img-card-cap">User Journey 1 -click to expand</div>
+          </div>
+        </div>
+        <div onclick="openModal('images/userr2.png','User journey 2 -mapping goals, touchpoints, and pain points for persona 2.')" style="cursor:pointer;">
+          <div class="img-card">
+            <img src="images/userr2.png" alt="User journey 2">
+            <div class="img-card-cap">User Journey 2 -click to expand</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ COMPETITIVE ANALYSIS ═══ -->
+<div class="band-l">
+  <div class="container sec-sm">
+    <span class="eyebrow-s">Competitive Analysis</span>
+    <h2 class="heading-lg">How competitors solve the same problems</h2>
+    <p class="body-md" style="margin-bottom:20px;">We analyzed specific pages of key competitors to understand how they address design challenges and speak to their B2B audience. Detailed analysis of <strong>Spectrum, Verizon, AT&T, and Google Fiber</strong> business landing pages.</p>
+    <div class="img-card" onclick="openModal('images/compee.png','Competitive analysis overview -Brightspeed vs Spectrum, Verizon, AT&T, Google Fiber.')">
+      <img src="images/compee.png" alt="Competitive analysis overview">
+      <div class="img-card-cap">Competitive overview -click to expand</div>
+    </div>
+    <div class="img-card" onclick="openModal('images/Competative/all.png','Detailed competitive analysis grid across all four competitors.')">
+      <img src="images/Competative/all.png" alt="Detailed competitive analysis">
+      <div class="img-card-cap">Detailed analysis -click to expand</div>
+    </div>
+    <div class="g2" style="margin-top:16px;">
+      <div onclick="openModal('images/compet/spec1.PNG','Spectrum Business landing page analysis.')" style="cursor:pointer;">
+        <div class="img-card"><img src="images/compet/spec1.PNG" alt="Spectrum"><div class="img-card-cap">Spectrum Business</div></div>
+      </div>
+      <div onclick="openModal('images/compet/ver.PNG','Verizon Business landing page analysis.')" style="cursor:pointer;">
+        <div class="img-card"><img src="images/compet/ver.PNG" alt="Verizon"><div class="img-card-cap">Verizon Business</div></div>
+      </div>
+      <div onclick="openModal('images/compet/google.PNG','Google Fiber Business landing page analysis.')" style="cursor:pointer;">
+        <div class="img-card"><img src="images/compet/google.PNG" alt="Google Fiber"><div class="img-card-cap">Google Fiber</div></div>
+      </div>
+      <div onclick="openModal('images/compet/at.PNG','AT&T Business landing page analysis.')" style="cursor:pointer;">
+        <div class="img-card"><img src="images/compet/at.PNG" alt="AT&T"><div class="img-card-cap">AT&T Business</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ KEY INSIGHTS ═══ -->
+<section class="sec">
+  <div class="container">
+    <span class="eyebrow-s">Key Insights & Opportunities</span>
+    <h2 class="heading-lg">What we learned from workshops and stakeholder interviews</h2>
+    <p class="body-md" style="margin-bottom:8px;">Through user interviews and workshops with our stakeholders, we identified the core gaps and opportunities for the new experience.</p>
+    <div class="img-card" onclick="openModal('images/gaps.png','Key insights and opportunity areas identified through research and workshops.')">
+      <img src="images/gaps.png" alt="Key insights and gaps">
+      <div class="img-card-cap">Insight mapping -click to expand</div>
+    </div>
+    <div class="insight-grid" style="margin-top:20px;">
+      <div class="insight-card"><h3>Navigation clarity</h3><p>Users couldn't easily find the right business segment or product page -the IA needed a complete rethink.</p></div>
+      <div class="insight-card"><h3>Trust through branding</h3><p>Lingering Lumen/CenturyLink branding eroded trust. A consistent Brightspeed visual identity was critical.</p></div>
+      <div class="insight-card"><h3>Lead conversion</h3><p>Contact and sales pages were walls of text. Users needed structured, scannable paths to reach the right support.</p></div>
+    </div>
+  </div>
+</section>
+
+<hr class="div">
+
+<!-- ═══ USER FLOW ═══ -->
+<div class="band-m">
+  <div class="container sec-sm">
+    <span class="eyebrow-s">User Flow</span>
+    <h2 class="heading-lg">Mapping how individual pages connect</h2>
+    <p class="body-md">We created a site map to determine what was working, what wasn't, and what areas needed improvement -visualizing how individual webpages related to each other before designing a single new screen.</p>
+    <div class="img-card" onclick="openModal('images/flow1.png','Brightspeed site map and user flow -showing how pages connect across the B2B experience.')">
+      <img src="images/flow1.png" alt="User flow and site map">
+      <div class="img-card-cap">Site map & user flow -click to expand</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 2.0 DESIGN SYSTEM ═══ -->
+<div class="band-l">
+  <div class="container sec-sm">
+    <span class="eyebrow-s">2.0 Design System</span>
+    <h2 class="heading-lg">Full ownership of the Brightspeed design system</h2>
+    <p class="body-md">I took <strong>full ownership to research, create, and maintain the branding guidelines and new design system</strong> in Figma, migrated from Sketch. More than <strong>15 new components</strong> were built across 15 design sprints to satisfy new design needs and improve the user experience.</p>
+    <div class="img-card" onclick="openModal('images/design11.png','Brightspeed 2.0 design guidelines -typography, color, spacing, and brand standards.')">
+      <img src="images/design11.png" alt="Design guidelines">
+      <div class="img-card-cap">Design Guidelines -click to expand</div>
+    </div>
+    <div class="img-card" onclick="openModal('images/design12.png','Responsive UI elements -component library built for desktop, tablet, and mobile.')">
+      <img src="images/design12.png" alt="Responsive UI elements">
+      <div class="img-card-cap">Responsive UI Elements -click to expand</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ WORKING SESSIONS ═══ -->
+<section class="sec">
+  <div class="container">
+    <span class="eyebrow-s">Working Sessions & 15 Scrum Sprints</span>
+    <h2 class="heading-lg">Iterative delivery across 15 two-week sprints</h2>
+    <p class="body-md" style="margin-bottom:14px;">We prioritized redesigning the Business landing page first, followed by segment pages, product pages, and support pages. All tasks were broken into <strong>Jira stories</strong> delegated across designers, writers, and developers.</p>
+    <p class="body-md">Every <strong>sprint was 2 weeks long with 4 working sessions</strong> each. We delivered solutions backed with data and user research every session, receiving feedback which we incorporated iteratively. This balanced what the client wanted with business goals and user needs.</p>
+    <div class="g2" style="margin-top:24px;">
+      <div onclick="openModal('images/Competative/work1.png','Working session overview on Mural -sticky notes, voting, and prioritization.')" style="cursor:pointer;">
+        <div class="img-card">
+          <img src="images/Competative/work12.png" alt="Working sessions on Mural">
+          <div class="img-card-cap">Working sessions on Mural -click to expand</div>
+        </div>
+      </div>
+      <div onclick="openModal('images/Competative/workin.png','Detailed working session -design review and feedback with client team.')" style="cursor:pointer;">
+        <div class="img-card">
+          <img src="images/Competative/workin1.png" alt="Working session detail">
+          <div class="img-card-cap">Working session in detail -click to expand</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:40px;">
+      <span class="eyebrow-s">Hi-Fidelity Prototypes</span>
+      <h3 class="heading-md">Mid to high-fidelity across every sprint</h3>
+      <p class="body-md" style="margin-bottom:16px;">During working sessions, we designed <strong>mid to high-fidelity prototypes</strong> to receive iterative feedback. Pixel-perfect hi-fi prototypes were created based on feedback from the 4th working session of every sprint. Wireframes were designed for <strong>desktop, tablet, and mobile</strong>.</p>
+      <div class="img-card" onclick="openModal('images/gif/working.gif','High-fidelity prototype evolution across sprints -showing design progression.')">
+        <img src="images/gif/working.gif" alt="Hi-fidelity prototype evolution">
+        <div class="img-card-cap">Prototype evolution across sprints -click to expand</div>
+      </div>
+      <div class="img-card" onclick="openModal('images/Competative/hifi.png','Final high-fidelity designs -desktop, tablet, and mobile views.')">
+        <img src="images/Competative/hifi.png" alt="Hi-fidelity final designs">
+        <div class="img-card-cap">Final hi-fidelity designs -click to expand</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="div">
+
+<!-- ═══ RESULTS -LANDING PAGE ═══ -->
+<div class="band-b">
+  <div class="container sec-sm">
+    <span class="eyebrow-s">Results -Business Landing Page</span>
+    <h2 class="heading-lg">Brightspeed Business Solutions -1.0 vs 2.0</h2>
+    <p class="body-md" style="margin-bottom:8px;">We built the Business Solutions page using components based on requirements from competitive analysis, proto-personas, and client input. The page helps users navigate to their business segment -Enterprise, Wholesale, Public Sector, Small Business, or Channel Partners.</p>
+    <div class="comp-row">
+      <span class="comp-chip">Hero header / carousel</span>
+      <span class="comp-chip">Link bar</span>
+      <span class="comp-chip">Image + text component</span>
+      <span class="comp-chip">Card boxes with icons</span>
+      <span class="comp-chip">Contact bar (Sales & Support)</span>
+    </div>
+    <div class="img-card" onclick="openModal('images/Competative/landmassive.svg','Full page layout -Brightspeed Business Solutions component structure.')">
+      <img src="images/Competative/landmassive.svg" alt="Landing page structure">
+      <div class="img-card-cap">Page component structure -click to expand</div>
+    </div>
+    <div class="ba-grid">
+      <div class="ba-card">
+        <div class="ba-label old">1.0 -After migration</div>
+        <img src="images/landold1.png" alt="Landing page 1.0" onclick="openModal('images/landold1.png','Business landing page after migration -legacy Lumen experience.')">
+        <div class="ba-card-note">Legacy Lumen experience post-migration.</div>
+      </div>
+      <div class="ba-card">
+        <div class="ba-label new-">2.0 -Redesign</div>
+        <img src="images/landnew1.png" alt="Landing page 2.0" onclick="openModal('images/landnew1.png','Business landing page 2.0 redesign.')">
+        <div class="ba-card-note">Visit <a href="https://www.brightspeed.com/ew/businesssolutions/" target="_blank">/ew/businesssolutions/ ↗</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ RESULTS -PRODUCT SEGMENT ═══ -->
+<div class="band-b">
+  <div class="container sec-sm">
+    <span class="eyebrow-s">Results -Product Segment Pages</span>
+    <h2 class="heading-lg">Wholesale, Enterprise, Public Sector, Channel Partners</h2>
+    <p class="body-md" style="margin-bottom:8px;">Next on our list was a product segment page -starting with Wholesale due to client priority. Components were reused from the landing page, with a few new additions.</p>
+    <div class="comp-row">
+      <span class="comp-chip">Breadcrumbs</span>
+      <span class="comp-chip">Product selection</span>
+      <span class="comp-chip">3-segment component</span>
+    </div>
+    <p class="body-md" style="margin-top:10px;">These components were reused to build Medium & Enterprise, Public Sector, and Channel Partners pages.</p>
+    <div class="img-card" onclick="openModal('images/Competative/landmassive2.svg','Product segment page component structure.')">
+      <img src="images/Competative/landmassive2.svg" alt="Product segment structure">
+      <div class="img-card-cap">Segment page component structure -click to expand</div>
+    </div>
+    <div class="ba-grid">
+      <div class="ba-card">
+        <div class="ba-label old">1.0 -After migration</div>
+        <img src="images/landold12.png" alt="Product segment 1.0" onclick="openModal('images/landold12.png','Wholesale segment page after migration.')">
+        <div class="ba-card-note">Legacy segment page post-migration.</div>
+      </div>
+      <div class="ba-card">
+        <div class="ba-label new-">2.0 -Redesign</div>
+        <img src="images/landnew22.png" alt="Product segment 2.0" onclick="openModal('images/landnew22.png','Wholesale segment page 2.0 redesign.')">
+        <div class="ba-card-note">Visit <a href="https://www.brightspeed.com/ew/wholesale/wholesale/" target="_blank">/ew/wholesale/wholesale/ ↗</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ RESULTS -PRODUCT PAGE ═══ -->
+<div class="band-b">
+  <div class="container sec-sm">
+    <span class="eyebrow-s">Results -Product Pages</span>
+    <h2 class="heading-lg">Dedicated Internet Access and core products</h2>
+    <p class="body-md" style="margin-bottom:8px;">Product pages get into the depth of Brightspeed Business offerings. We transformed Lumen product pages with Brightspeed components and branding -expecting these to evolve as products and content expand.</p>
+    <div class="comp-row">
+      <span class="comp-chip">Breadcrumbs</span>
+      <span class="comp-chip">New Brightspeed icons</span>
+      <span class="comp-chip">New image component</span>
+      <span class="comp-chip">Comprehensible writing</span>
+    </div>
+    <div class="img-card" onclick="openModal('images/Competative/landmassive3.svg','Product page component structure.')">
+      <img src="images/Competative/landmassive3.svg" alt="Product page structure">
+      <div class="img-card-cap">Product page component structure -click to expand</div>
+    </div>
+    <div class="ba-grid">
+      <div class="ba-card">
+        <div class="ba-label old">1.0 -Lumen Design</div>
+        <img src="images/Competative/diaold.png" alt="Product page 1.0" onclick="openModal('images/Competative/diaold.png','Product page -original Lumen design.')">
+        <div class="ba-card-note">Original Lumen product page.</div>
+      </div>
+      <div class="ba-card">
+        <div class="ba-label new-">2.0 -Redesign</div>
+        <img src="images/landne123.png" alt="Product page 2.0" onclick="openModal('images/landne123.png','Product page 2.0 redesign -dedicated internet access.')">
+        <div class="ba-card-note">Visit <a href="https://www.brightspeed.com/ew/networking/dedicated-internet-access/" target="_blank">networking/dedicated-internet-access/ ↗</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ RESULTS -SUPPORT PAGES ═══ -->
+<div class="band-b">
+  <div class="container sec-sm">
+    <span class="eyebrow-s">Results -Support & Contact Pages</span>
+    <h2 class="heading-lg">From walls of text to structured user guidance</h2>
+    <p class="body-md" style="margin-bottom:8px;">Contact Support and Contact Sales were the last pages we redesigned -providing a complete new solution with new functionality, components, and content. The Day 1 experience was a large wall of text with unclear direction. The new pages grouped segments and displayed them separately using a dropdown selector, so users could specifically select the type of help needed.</p>
+    <div class="comp-row">
+      <span class="comp-chip">Breadcrumbs</span>
+      <span class="comp-chip">Heading + Dropdown</span>
+      <span class="comp-chip">3-segment component</span>
+      <span class="comp-chip">Accordions</span>
+    </div>
+    <div class="ba-grid">
+      <div class="ba-card">
+        <div class="ba-label old">1.0 -After migration</div>
+        <img src="images/gif/Sup1.png" alt="Support page 1.0" onclick="openModal('images/gif/Sup1.png','Support page after migration -wall of text with unclear user direction.')">
+        <div class="ba-card-note">Wall of text, unclear navigation.</div>
+      </div>
+      <div class="ba-card">
+        <div class="ba-label new-">2.0 -Redesign</div>
+        <img src="images/gif/Sup2.png" alt="Support page 2.0" onclick="openModal('images/gif/Sup2.png','Support page 2.0 -structured by segment with dropdown selector.')">
+        <div class="ba-card-note">Visit <a href="https://www.brightspeed.com/ew/contact-us-support/" target="_blank">/ew/contact-us-support/ ↗</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ RESEARCH FINDINGS ═══ -->
+<section class="sec">
+  <div class="container">
+    <span class="eyebrow-s">Research Findings</span>
+    <h2 class="heading-lg">Relationships matter -especially the ones you haven't formed yet</h2>
+    <p class="body-md" style="margin-bottom:14px;">While on this engagement, our team had a lot of quick wins. We hit the nail on the head early on in many sprints, saving a lot of iteration work -thanks to proper research and a great client team. Our <strong>team created a lot of noise, earning praise across Brightspeed and internally at CGI</strong>, building trust between the two companies.</p>
+    <p class="body-md" style="margin-bottom:24px;">Analytics comparing Day 1 vs Day 2 activity showed measurable results:</p>
+
+    <div class="metrics-row">
+      <div class="mc"><div class="mn">47%</div><div class="ml">Surge in page views across /ew/ pages</div></div>
+      <div class="mc"><div class="mn">45%</div><div class="ml">Increase in unique pageviews</div></div>
+      <div class="mc"><div class="mn">70%</div><div class="ml">Decrease in bounce rate</div></div>
+      <div class="mc"><div class="mn">50%</div><div class="ml">Bounce rate drop on Business Solutions page alone</div></div>
+    </div>
+
+    <div class="img-card" onclick="openModal('images/Res1.png','Research findings -Day 1 vs Day 2 analytics comparison.')">
+      <img src="images/Res1.png" alt="Research results 1">
+      <div class="img-card-cap">Day 1 vs Day 2 analytics -click to expand</div>
+    </div>
+    <p class="body-md" style="margin-top:16px;">More time was spent on the Business Solutions Day 2 page versus the Day 1 version, and the bounce rate dropped by 50% for that page alone.</p>
+    <div class="img-card" onclick="openModal('images/Res2.png','Marketo form conversion data -Day 2 months show higher converted metrics than Day 1.')">
+      <img src="images/Res2.png" alt="Research results 2">
+      <div class="img-card-cap">Marketo conversion data -click to expand</div>
+    </div>
+    <p class="body-md" style="margin-top:16px;margin-bottom:16px;"><strong>Analysis:</strong> March and April 2023 had the highest number of leads vs any other months, with February averaging higher than December 2022. Day 2 months showed a higher converted metric than Day 1.</p>
+    <p class="body-md">The challenges of this engagement didn't lie within building designs -they lay within making ourselves heard to higher parts of Brightspeed and getting clients to acknowledge the value we bring. We are nowhere near done, but certainly off to an amazing start.</p>
+
+    <div class="impact-box" style="margin-top:24px;">
+      <p>🏆 <strong>Partnership and Quality Pin</strong> -received from CGI for delivery excellence on the Brightspeed engagement. A recognition of the trust built, the quality shipped, and the pace maintained across 15 design sprints.</p>
+    </div>
+    <div class="img-card" onclick="openModal('images/appre.png','CGI appreciation and award for Brightspeed engagement.')" style="margin-top:20px;">
+      <img src="images/appre.png" alt="CGI appreciation award">
+      <div class="img-card-cap">CGI Partnership and Quality recognition -click to expand</div>
+    </div>
+  </div>
+</section>
+
+<!-- BACK TO TOP -->
+<div style="display:flex;justify-content:center;padding:0 0 72px;">
+  <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" style="display:inline-flex;align-items:center;gap:8px;background:#1a1a1a;color:#fff;font-size:13px;font-weight:600;padding:12px 24px;border-radius:50px;text-decoration:none;">↑ Back to top</a>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer-s">
+  <div class="footer-inner-s">
+    <div>
+      <h3 style="font-family:'DM Serif Display',serif;font-size:24px;color:#1a1a1a;margin-bottom:6px;">Let's connect</h3>
+      <p style="font-size:16px;color:#555;line-height:1.75;margin-bottom:14px;">Open to Senior UX/UI Designer, Product Designer, UX Strategist, and Design Manager opportunities.</p>
+      <a href="mailto:prateekpc.ux@gmail.com" style="font-size:16px;font-weight:600;color:#084FAA;text-decoration:none;">prateekpc.ux@gmail.com</a>
+      <div style="display:flex;gap:10px;margin-top:14px;">
+        <a href="https://www.linkedin.com/in/prateek-chatterjee-25a0a2140/" target="_blank"><img src="images/Linked.png" style="width:28px;height:28px;opacity:.55;" alt="LinkedIn" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.55"></a>
+        <a href="https://dribbble.com/ppchatterjee" target="_blank"><img src="images/dribble.png" style="width:28px;height:28px;opacity:.55;" alt="Dribbble" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.55"></a>
+        <a href="https://medium.com/@prateekrise92" target="_blank"><img src="images/Medium.webp" style="width:28px;height:28px;opacity:.55;" alt="Medium" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.55"></a>
+        <a href="https://github.com/ppchatterjee123" target="_blank"><img src="images/git.png" style="width:28px;height:28px;opacity:.55;" alt="GitHub" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.55"></a>
+      </div>
+    </div>
+    <div style="text-align:right;"><p style="font-size:12px;color:#888;line-height:1.6;">Designed &amp; built<br>by Prateek Chatterjee<br><br>© 2026</p></div>
+  </div>
+</footer>
+
+<!-- ═══ SCROLL-POSITION LIGHTBOX ═══ -->
+<script>
+function openModal(src, cap) {
+  closeLB();
+  var scrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || 0;
+  var vw = window.innerWidth  || document.documentElement.clientWidth  || 1200;
+  var vh = window.innerHeight || document.documentElement.clientHeight || 800;
+  var backdrop = document.createElement('div');
+  backdrop.id = 'lb-backdrop';
+  backdrop.onclick = function(e){ if(e.target===backdrop) closeLB(); };
+  Object.assign(backdrop.style, {
+    position:'absolute', top:scrollY+'px', left:'0',
+    width:vw+'px', height:vh+'px',
+    background:'rgba(0,0,0,0.88)', zIndex:'999999',
+    display:'flex', alignItems:'center', justifyContent:'center',
+    padding:'24px', boxSizing:'border-box', cursor:'zoom-out'
+  });
+  var card = document.createElement('div');
+  card.onclick = function(e){ e.stopPropagation(); };
+  Object.assign(card.style, {
+    position:'relative', background:'#fff',
+    borderRadius:'14px', padding:'12px',
+    maxWidth:Math.min(vw-48,1100)+'px',
+    boxShadow:'0 24px 80px rgba(0,0,0,.5)', cursor:'default'
+  });
+  var btn = document.createElement('button');
+  btn.innerHTML='&times;'; btn.onclick=closeLB;
+  Object.assign(btn.style,{position:'absolute',top:'-48px',right:'0',background:'none',border:'none',color:'#fff',fontSize:'44px',lineHeight:'1',cursor:'pointer',padding:'0'});
+  var img = document.createElement('img');
+  img.src=src; img.alt=cap||'';
+  Object.assign(img.style,{display:'block',maxWidth:Math.min(vw-72,1060)+'px',maxHeight:(vh-120)+'px',borderRadius:'8px',objectFit:'contain'});
+  var caption = document.createElement('div');
+  caption.innerText=cap||'';
+  Object.assign(caption.style,{fontSize:'14px',color:'#555',marginTop:'10px',fontFamily:"'DM Sans',sans-serif",lineHeight:'1.5'});
+  card.appendChild(btn); card.appendChild(img); card.appendChild(caption);
+  backdrop.appendChild(card); document.body.appendChild(backdrop);
+}
+function closeLB(){ var el=document.getElementById('lb-backdrop'); if(el) el.parentNode.removeChild(el); }
+document.addEventListener('keydown',function(e){ if(e.key==='Escape') closeLB(); });
+
+/* Redirect confirm -scroll-position aware */
+function showConfirm() {
+  closeLB();
+  var scrollY=window.scrollY||window.pageYOffset||0;
+  var vw=window.innerWidth||1200; var vh=window.innerHeight||800;
+  var wrap=document.createElement('div');
+  wrap.id='confirm-wrap';
+  Object.assign(wrap.style,{position:'absolute',top:scrollY+'px',left:'0',width:vw+'px',height:vh+'px',background:'rgba(0,0,0,.5)',backdropFilter:'blur(6px)',zIndex:'999999',display:'flex',alignItems:'center',justifyContent:'center',padding:'24px',boxSizing:'border-box'});
+  wrap.onclick=function(e){if(e.target===wrap)hideConfirm();};
+  wrap.innerHTML='<div onclick="event.stopPropagation()" style="background:#fff;border-radius:16px;padding:32px;max-width:440px;width:90%;box-shadow:0 20px 60px rgba(0,0,0,.25);">'
+    +'<h5 style="font-size:18px;font-weight:600;color:#1a1a1a;margin-bottom:8px;">Leaving portfolio</h5>'
+    +'<p style="font-size:16px;color:#555;line-height:1.6;margin-bottom:24px;">Clicking Continue will redirect you to Brightspeed Business Solutions website. Are you sure you want to exit?</p>'
+    +'<div style="display:flex;gap:12px;">'
+    +'<button onclick="hideConfirm()" style="flex:1;padding:12px;border-radius:50px;border:1px solid #e8e8e8;background:#fff;font-size:15px;font-weight:600;cursor:pointer;">Cancel</button>'
+    +'<a href="https://www.brightspeed.com/ew/businesssolutions/" target="_blank" style="flex:1;text-align:center;padding:12px;border-radius:50px;background:#084FAA;color:#fff;font-size:15px;font-weight:600;text-decoration:none;">Continue →</a>'
+    +'</div></div>';
+  document.body.appendChild(wrap);
+}
+function hideConfirm(){ var el=document.getElementById('confirm-wrap'); if(el) el.parentNode.removeChild(el); }
+</script>
+</body>
+</html>
