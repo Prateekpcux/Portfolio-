@@ -1,438 +1,316 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
-<title>Play — Prateek Chatterjee</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Play, Prateek Chatterjee</title>
+<meta name="description" content="Games, VR, 3D, and motion. Side projects Prateek Chatterjee built for the love of it.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="portfolio.css">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-0ZPWXXEFP8"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-0ZPWXXEFP8');</script>
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-
-/* CONTAINER */
-.W{max-width:1320px;margin:0 auto;padding:0 64px;}
-@media(max-width:900px){.W{padding:0 20px;}}
-
-/* REVEAL */
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
-.reveal.visible{opacity:1;transform:none;}
-.rl{opacity:0;transform:translateX(-28px);transition:opacity .7s ease,transform .7s ease;}
-.rl.visible{opacity:1;transform:none;}
-.rr{opacity:0;transform:translateX(28px);transition:opacity .7s ease,transform .7s ease;}
-.rr.visible{opacity:1;transform:none;}
-.stagger>*{opacity:0;transform:translateY(16px);transition:opacity .45s ease,transform .45s ease;}
-.stagger.visible>*:nth-child(1){opacity:1;transform:none;transition-delay:.05s;}
-.stagger.visible>*:nth-child(2){opacity:1;transform:none;transition-delay:.12s;}
-.stagger.visible>*:nth-child(3){opacity:1;transform:none;transition-delay:.19s;}
-.stagger.visible>*:nth-child(4){opacity:1;transform:none;transition-delay:.26s;}
-.stagger.visible>*:nth-child(5){opacity:1;transform:none;transition-delay:.33s;}
-
+:root{
+  --bg:#FBFBFD; --bg-soft:#F7F8FB; --bg-dark:#0C1222; --card:#FFFFFF;
+  --ink:#14161C; --body:#565C66; --muted:#6B7280; --line:#ECEDF1; --line-soft:#F2F3F6;
+  --accent:#2D5BFF; --accent-d:#1E3FCC; --accent-soft:#EBF0FF; --accent-2:#0FB5A6; --accent-light:#7C9DFF;
+  --sans:"Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --serif:"Fraunces", Georgia, serif; --maxw:1200px; --pad:48px;
+}
+*,*::before,*::after{ box-sizing:border-box; margin:0; padding:0; }
+html{ scroll-behavior:smooth; }
+body{ font-family:var(--sans); background:var(--bg); color:var(--ink); line-height:1.6; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; overflow-x:hidden; }
+a{ color:inherit; text-decoration:none; }
+:focus-visible{ outline:3px solid var(--accent); outline-offset:2px; border-radius:4px; }
+.wrap{ max-width:var(--maxw); margin:0 auto; padding:0 var(--pad); }
+@media(max-width:760px){ :root{ --pad:22px; } }
+.reveal{ opacity:0; transform:translateY(22px); transition:opacity .7s cubic-bezier(.22,.61,.36,1), transform .7s cubic-bezier(.22,.61,.36,1); }
+.reveal.in{ opacity:1; transform:none; }
+.reveal.d1{ transition-delay:.08s } .reveal.d2{ transition-delay:.16s } .reveal.d3{ transition-delay:.24s }
+/* NAV */
+.navbar{ position:fixed; top:16px; left:0; right:0; z-index:1000; display:flex; flex-direction:column; align-items:center; pointer-events:none; }
+.pill{ pointer-events:auto; display:flex; align-items:center; gap:8px; background:rgba(255,255,255,.8); backdrop-filter:saturate(180%) blur(20px); -webkit-backdrop-filter:saturate(180%) blur(20px); border:1px solid var(--line); border-radius:999px; padding:13px 14px 13px 18px; box-shadow:0 6px 28px rgba(20,22,28,.10); transition:gap .35s, padding .35s; }
+.brand{ display:flex; align-items:center; gap:11px; padding-right:4px; }
+.avatar{ position:relative; width:38px; height:38px; flex:none; }
+.avatar img{ width:38px; height:38px; border-radius:50%; object-fit:cover; display:block; }
+.avatar .ring{ position:absolute; inset:-3px; width:44px; height:44px; transform:rotate(-90deg); }
+.avatar .ring-bg{ fill:none; stroke:var(--line); stroke-width:2.5; }
+.avatar .ring-fg{ fill:none; stroke:var(--accent); stroke-width:2.5; stroke-linecap:round; stroke-dasharray:125.66; stroke-dashoffset:125.66; transition:stroke-dashoffset .1s linear; opacity:0; }
+#nav.scrolled .avatar .ring-fg{ opacity:1; }
+.brand-name{ font-weight:700; font-size:15px; letter-spacing:-.01em; color:var(--ink); white-space:nowrap; }
+.links{ display:flex; align-items:center; gap:6px; margin-left:56px; max-width:560px; overflow:hidden; transition:max-width .4s cubic-bezier(.4,0,.2,1), opacity .3s, margin .35s; }
+.links a{ font-size:14px; font-weight:600; color:var(--body); padding:8px 13px; border-radius:999px; transition:color .2s, background .2s; white-space:nowrap; }
+.links a:hover{ color:var(--ink); }
+.links a.active{ color:var(--accent-d); background:var(--accent-soft); }
+.links .connect{ color:#fff; background:var(--ink); font-weight:700; margin-left:10px; }
+.links .connect:hover{ color:#fff; background:var(--accent); }
+.toggle{ display:none; align-items:center; justify-content:center; gap:3px; width:38px; height:38px; border:none; background:var(--bg-soft); border-radius:50%; cursor:pointer; flex:none; }
+.toggle span{ width:4px; height:4px; border-radius:50%; background:var(--ink); display:block; }
+#nav.scrolled .links{ max-width:0; opacity:0; margin-left:-8px; pointer-events:none; }
+#nav.scrolled .toggle{ display:flex; }
+.menu{ pointer-events:auto; margin-top:10px; display:flex; flex-direction:column; gap:2px; min-width:200px; background:rgba(255,255,255,.94); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border:1px solid var(--line); border-radius:16px; padding:8px; box-shadow:0 12px 34px rgba(20,22,28,.14); opacity:0; transform:translateY(-8px); pointer-events:none; transition:opacity .25s, transform .25s; }
+#nav.menu-open .menu{ opacity:1; transform:none; pointer-events:auto; }
+.menu a{ font-size:15px; font-weight:600; color:var(--body); padding:10px 14px; border-radius:10px; }
+.menu a:hover{ color:var(--ink); background:var(--bg-soft); }
+.menu a.active{ color:var(--accent-d); }
+.menu .connect-m{ color:#fff; background:var(--ink); font-weight:700; margin-top:4px; text-align:center; }
+@media(max-width:640px){ .links{ display:none; } .toggle{ display:flex; } }
+/* shared bits */
+.eyebrow{ display:inline-flex; align-items:center; gap:9px; font-size:12px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--accent-d); margin-bottom:14px; }
+.eyebrow::before{ content:''; width:22px; height:2px; background:linear-gradient(to right,var(--accent),rgba(45,91,255,.25)); border-radius:2px; }
+.eyebrow .dot{ color:#CBD0DA; } .eyebrow .loc{ color:var(--muted); font-weight:600; letter-spacing:.02em; text-transform:none; }
+.chip{ font-size:12.5px; font-weight:600; color:var(--accent-d); background:var(--accent-soft); border-radius:999px; padding:5px 12px; }
 /* HERO */
-.play-hero{
-  background:#fff;border-bottom:1px solid #e8e8e8;
-  padding:88px 0 72px;overflow:hidden;position:relative;
-}
-.play-hero::before{
-  content:'';position:absolute;inset:0;
-  background-image:linear-gradient(rgba(8,79,170,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(8,79,170,.022) 1px,transparent 1px);
-  background-size:56px 56px;pointer-events:none;
-}
-.play-hero::after{
-  content:'';position:absolute;bottom:0;left:0;right:0;
-  height:70px;background:linear-gradient(to bottom,transparent,#fff);pointer-events:none;
-}
-.play-hero-bg{
-  position:absolute;right:-80px;top:-40px;
-  width:560px;height:560px;
-  background:radial-gradient(circle at 70% 30%,rgba(8,79,170,.055) 0%,transparent 65%);
-  pointer-events:none;
-}
-.play-hero h1{
-  font-family:'DM Serif Display',serif;
-  font-size:clamp(36px,4.5vw,58px);
-  line-height:1.06;color:#1a1a1a;
-  margin-bottom:16px;letter-spacing:-.4px;
-}
-.play-hero h1 em{font-style:italic;color:#084FAA;}
-.play-hero p{font-size:18px;color:#666;line-height:1.8;max-width:580px;}
-.ey{font-size:11px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#084FAA;margin-bottom:16px;display:inline-flex;align-items:center;gap:8px;}
-.ey::before{content:'';width:16px;height:2px;background:linear-gradient(to right,#084FAA,rgba(8,79,170,.3));border-radius:2px;display:inline-block;flex-shrink:0;}
-
-/* PROJECT SECTIONS */
-.projects-band{background:#fafafa;border-top:1px solid #e8e8e8;padding:8px 0 80px;}
-.project-section{padding:72px 0;border-bottom:1px solid #f0f0f0;}
-.project-section:last-of-type{border-bottom:none;}
-.project-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;}
-.project-grid.flip{direction:rtl;}
-.project-grid.flip>*{direction:ltr;}
-
-/* CUSTOM SLIDER — replaces Bootstrap carousel */
-.slider{position:relative;border-radius:20px;overflow:hidden;box-shadow:0 12px 48px rgba(8,79,170,.13);background:#f3f3f3;transition:box-shadow .3s,transform .3s;}
-.slider:hover{box-shadow:0 20px 64px rgba(8,79,170,.18);transform:translateY(-4px);}
-.slider-track{display:flex;transition:transform .4s cubic-bezier(.4,0,.2,1);}
-.slider-track img{min-width:100%;width:100%;display:block;object-fit:cover;aspect-ratio:16/10;}
-.slider-btn{
-  position:absolute;top:50%;transform:translateY(-50%);
-  width:38px;height:38px;border-radius:50%;
-  background:rgba(255,255,255,.9);border:none;cursor:pointer;
-  display:flex;align-items:center;justify-content:center;
-  font-size:14px;color:#1a1a1a;
-  box-shadow:0 2px 12px rgba(0,0,0,.15);
-  transition:background .2s,transform .2s;
-  z-index:3;
-}
-.slider-btn:hover{background:#fff;transform:translateY(-50%) scale(1.1);}
-.slider-btn.prev{left:12px;}
-.slider-btn.next{right:12px;}
-.slider-dots{
-  position:absolute;bottom:12px;left:50%;transform:translateX(-50%);
-  display:flex;gap:6px;z-index:3;
-}
-.slider-dot{
-  width:6px;height:6px;border-radius:50%;
-  background:rgba(255,255,255,.5);border:none;cursor:pointer;
-  transition:background .2s,width .2s;padding:0;
-}
-.slider-dot.active{background:#fff;width:18px;border-radius:3px;}
-
-/* PROJECT META */
-.project-num{
-  font-family:'DM Serif Display',serif;font-size:80px;
-  color:#f0f0f0;line-height:1;margin-bottom:-8px;display:block;
-  transition:color .3s;
-}
-.project-section:hover .project-num{color:#E3ECFF;}
-.project-label{
-  font-size:11px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;
-  color:#084FAA;margin-bottom:8px;display:flex;align-items:center;gap:8px;
-}
-.project-label::before{
-  content:'';width:20px;height:2px;background:#084FAA;
-  display:inline-block;border-radius:2px;transition:width .3s;
-}
-.project-section:hover .project-label::before{width:36px;}
-.project-title{
-  font-family:'DM Serif Display',serif;font-size:clamp(22px,2.5vw,30px);
-  line-height:1.15;color:#1a1a1a;margin-bottom:14px;letter-spacing:-.15px;
-}
-.project-desc{font-size:17px;color:#666;line-height:1.75;margin-bottom:0;}
-
-/* CHIPS */
-.chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px;}
-.chip{
-  background:rgba(8,79,170,.06);border:1px solid rgba(8,79,170,.14);
-  border-radius:4px;padding:5px 13px;font-size:12px;font-weight:500;color:#084FAA;
-  transition:background .2s,color .2s,transform .15s;
-}
-.project-section:hover .chip{background:#084FAA;border-color:#084FAA;color:#fff;}
-
-/* LINKS */
-.project-links{display:flex;gap:16px;flex-wrap:wrap;margin-top:22px;}
-.project-link{
-  display:inline-flex;align-items:center;gap:6px;
-  font-size:14px;font-weight:600;color:#084FAA;
-  text-decoration:none;position:relative;
-}
-.project-link::after{
-  content:'';position:absolute;bottom:-2px;left:0;right:0;
-  height:1px;background:#084FAA;
-  transform:scaleX(0);transform-origin:left;transition:transform .25s ease;
-}
-.project-link:hover::after{transform:scaleX(1);}
-
+.hero{ position:relative; padding:128px 0 64px; overflow:hidden; background:radial-gradient(44% 60% at 6% 2%, rgba(45,91,255,.10), transparent 60%), radial-gradient(46% 62% at 100% 60%, rgba(15,181,166,.08), transparent 60%); }
+.hero::before{ content:''; position:absolute; inset:0; z-index:0; pointer-events:none; background-image:linear-gradient(rgba(20,22,28,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(20,22,28,.04) 1px,transparent 1px); background-size:56px 56px; -webkit-mask-image:linear-gradient(to bottom,#000,transparent 92%); mask-image:linear-gradient(to bottom,#000,transparent 92%); }
+.hero .wrap{ position:relative; z-index:1; }
+.h1{ font-size:clamp(32px,5vw,56px); font-weight:800; letter-spacing:-.03em; line-height:1.05; max-width:760px; }
+.h1 .em{ font-family:var(--serif); font-style:italic; font-weight:400; color:var(--accent); letter-spacing:-.01em; }
+.hero-lead{ font-size:18px; color:var(--body); line-height:1.7; margin-top:20px; max-width:560px; }
+.hero-chips{ display:flex; flex-wrap:wrap; gap:8px; margin-top:22px; }
+/* FILTER */
+.works-wrap{ padding:64px 0 30px; }
+.filterbar{ display:flex; flex-wrap:wrap; gap:8px; margin-bottom:14px; }
+.fbtn{ font-size:13px; font-weight:600; color:var(--body); background:var(--card); border:1px solid var(--line); border-radius:999px; padding:8px 16px; cursor:pointer; transition:all .2s; }
+.fbtn:hover{ border-color:var(--accent-light); color:var(--accent-d); }
+.fbtn.active{ background:var(--ink); color:#fff; border-color:var(--ink); }
+/* WORK SECTIONS */
+.works{ display:flex; flex-direction:column; gap:30px; }
+.work{ padding:34px 0; border-top:1px solid var(--line); }
+.work:first-child{ border-top:none; }
+.work-grid{ display:grid; grid-template-columns:1.05fr .95fr; gap:60px; align-items:center; }
+.work.flip .work-media{ order:2; }
+.work-num{ font-family:var(--serif); font-size:62px; font-weight:400; line-height:1; color:var(--accent-soft); display:block; margin-bottom:2px; transition:color .3s; }
+.work:hover .work-num{ color:#D9E2FF; }
+.work-label{ font-size:11.5px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--accent-d); display:flex; align-items:center; gap:9px; margin-bottom:7px; }
+.work-label::before{ content:''; width:18px; height:2px; background:var(--accent); border-radius:2px; transition:width .3s; }
+.work:hover .work-label::before{ width:32px; }
+.work-title{ font-size:clamp(22px,2.6vw,30px); font-weight:800; letter-spacing:-.022em; line-height:1.16; }
+.work-desc{ font-size:16px; color:var(--body); line-height:1.75; margin-top:12px; }
+.chips{ display:flex; flex-wrap:wrap; gap:7px; margin-top:18px; }
+.work-links{ display:flex; flex-wrap:wrap; gap:18px; margin-top:22px; }
+.work-link{ display:inline-flex; align-items:center; gap:6px; font-size:14px; font-weight:700; color:var(--accent-d); position:relative; }
+.work-link::after{ content:''; position:absolute; left:0; right:0; bottom:-3px; height:2px; background:var(--accent); transform:scaleX(0); transform-origin:left; transition:transform .25s; }
+.work-link:hover::after{ transform:scaleX(1); }
+/* SLIDER */
+.slider{ position:relative; border-radius:20px; overflow:hidden; border:1px solid var(--line); box-shadow:0 18px 46px rgba(20,22,28,.11); background:var(--bg-soft); transition:box-shadow .3s, transform .3s; }
+.slider:hover{ box-shadow:0 24px 60px rgba(20,22,28,.16); transform:translateY(-4px); }
+.slider-track{ display:flex; transition:transform .45s cubic-bezier(.4,0,.2,1); }
+.slider-track img{ min-width:100%; width:100%; display:block; object-fit:cover; aspect-ratio:16/10; background:linear-gradient(140deg,var(--accent-soft),#fff); }
+.slider-track img.ph{ object-fit:contain; }
+.slider-btn{ position:absolute; top:50%; transform:translateY(-50%); width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,.92); border:1px solid var(--line); cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:15px; color:var(--ink); box-shadow:0 4px 14px rgba(20,22,28,.14); transition:background .2s, transform .2s; z-index:3; }
+.slider-btn:hover{ background:#fff; transform:translateY(-50%) scale(1.08); }
+.slider-btn.prev{ left:12px; } .slider-btn.next{ right:12px; }
+.slider-dots{ position:absolute; bottom:12px; left:50%; transform:translateX(-50%); display:flex; gap:6px; z-index:3; }
+.slider-dot{ width:6px; height:6px; border-radius:50%; background:rgba(255,255,255,.6); border:none; cursor:pointer; transition:background .2s, width .2s; padding:0; }
+.slider-dot.active{ background:#fff; width:18px; border-radius:3px; }
+@media(max-width:820px){ .work-grid{ grid-template-columns:1fr; gap:26px; } .work.flip .work-media{ order:0; } .work-num{ font-size:48px; } }
+/* CONNECT BAND */
+.connect-band{ background:var(--bg-dark); color:#fff; padding:88px 0; position:relative; overflow:hidden; }
+.connect-band::before{ content:''; position:absolute; inset:0; background:radial-gradient(40% 70% at 100% 0%, rgba(45,91,255,.22), transparent 60%); pointer-events:none; }
+.connect-band .wrap{ position:relative; }
+.connect-band .eyebrow{ color:var(--accent-light); }
+.connect-band h2{ font-size:clamp(28px,4vw,42px); font-weight:800; letter-spacing:-.025em; line-height:1.12; max-width:620px; }
+.connect-band h2 .em{ font-family:var(--serif); font-style:italic; font-weight:400; color:var(--accent-light); }
+.connect-band p{ color:rgba(255,255,255,.72); font-size:17px; margin-top:14px; max-width:520px; }
+.cta-row{ display:flex; flex-wrap:wrap; gap:12px; align-items:center; margin-top:26px; }
+.btn-primary{ display:inline-flex; align-items:center; gap:8px; background:#fff; color:var(--ink); font-weight:700; font-size:15px; padding:14px 24px; border-radius:999px; transition:transform .2s, background .2s, color .2s; }
+.btn-primary:hover{ transform:translateY(-2px); background:var(--accent); color:#fff; }
+.socials{ display:flex; gap:8px; flex-wrap:wrap; }
+.socials a{ font-size:13.5px; font-weight:600; color:rgba(255,255,255,.78); border:1px solid rgba(255,255,255,.18); border-radius:999px; padding:10px 16px; transition:all .2s; }
+.socials a:hover{ color:#fff; border-color:rgba(255,255,255,.5); transform:translateY(-2px); }
 /* FOOTER */
-.footer-s{background:#fafafa;border-top:1px solid #e8e8e8;padding:64px 0;}
-.footer-in{max-width:1320px;margin:0 auto;padding:0 64px;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;}
-
-@media(max-width:900px){
-  .project-grid,.project-grid.flip{grid-template-columns:1fr;direction:ltr;gap:36px;}
-  .project-num{font-size:52px;}
-  .footer-in{grid-template-columns:1fr;padding:0 20px;}
-  .footer-in .footer-copy p{text-align:left;}
-  .play-hero{padding:64px 0 56px;}
-}
+.footer{ padding:40px 0; border-top:1px solid rgba(255,255,255,.08); background:var(--bg-dark); }
+.footer-in{ display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; }
+.footer-in .f-logo{ font-weight:700; font-size:15px; color:#fff; }
+.footer-in .f-meta{ font-size:13px; color:rgba(255,255,255,.5); }
+@media(prefers-reduced-motion:reduce){ *{ animation:none!important; transition:none!important; } .reveal{ opacity:1; transform:none; } .slider-track{ transition:none; } }
 </style>
 </head>
 <body>
-
-<!-- PROGRESS BAR -->
-<div id="pgbar" style="position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(to right,#084FAA,#4db8ff);z-index:9999;transition:width .08s linear;pointer-events:none;"></div>
-<script>window.addEventListener('scroll',function(){var d=document.documentElement;document.getElementById('pgbar').style.width=Math.min((d.scrollTop||document.body.scrollTop)/((d.scrollHeight||document.body.scrollHeight)-d.clientHeight)*100,100)+'%';});</script>
-
-<!-- NAV -->
-<nav style="position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.95);backdrop-filter:blur(20px);border-bottom:1px solid #e8e8e8;height:68px;display:flex;align-items:center;">
-  <div style="max-width:1320px;margin:0 auto;padding:0 64px;display:flex;align-items:center;justify-content:space-between;width:100%;">
-    <a href="index.html"><img src="images/logo.png" alt="Prateek Chatterjee" style="height:36px;display:block;"></a>
-    <div style="display:flex;gap:6px;">
-      <a href="index.html" style="font-size:13px;font-weight:500;letter-spacing:.5px;text-transform:uppercase;text-decoration:none;color:#555;padding:7px 16px;border-radius:50px;">Work</a>
-      <a href="About.html" style="font-size:13px;font-weight:500;letter-spacing:.5px;text-transform:uppercase;text-decoration:none;color:#555;padding:7px 16px;border-radius:50px;">About</a>
-      <a href="play.html" style="font-size:13px;font-weight:500;letter-spacing:.5px;text-transform:uppercase;text-decoration:none;color:#084FAA;background:#F0F5FF;padding:7px 16px;border-radius:50px;">Play</a>
-    </div>
+<nav class="navbar" id="nav">
+  <div class="pill">
+    <a href="index.html" class="brand" aria-label="Prateek Chatterjee, home">
+      <span class="avatar"><img src="images/avatar.jpg" alt="Prateek Chatterjee"><svg class="ring" viewBox="0 0 44 44" aria-hidden="true"><circle class="ring-bg" cx="22" cy="22" r="20"></circle><circle class="ring-fg" id="ring" cx="22" cy="22" r="20"></circle></svg></span>
+      <span class="brand-name">Prateek Chatterjee</span>
+    </a>
+    <div class="links"><a href="index.html">Work</a><a href="About.html">About</a><a href="play.html" class="active">Play</a><a href="mailto:prateekpc.ux@gmail.com" class="connect">Connect</a></div>
+    <button class="toggle" id="navToggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
   </div>
+  <div class="menu" id="navMenu"><a href="index.html">Work</a><a href="About.html">About</a><a href="play.html" class="active">Play</a><a href="mailto:prateekpc.ux@gmail.com" class="connect-m">Connect</a></div>
 </nav>
 
-<!-- HERO -->
-<section class="play-hero">
-  <div class="play-hero-bg"></div>
-  <div class="W" style="position:relative;z-index:1;">
-    <div class="reveal">
-      <span class="ey">Side Projects</span>
-      <h1>Games, experiments,<br><em>and creative rabbit holes.</em></h1>
-      <div style="width:40px;height:3px;background:linear-gradient(to right,#084FAA,rgba(8,79,170,.2));border-radius:2px;margin:20px 0;"></div>
-      <p>Projects built for the love of it — game design, VR, 3D modeling, and motion graphics. Games are downloadable and playable on Windows.</p>
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow reveal">Play <span class="dot">&middot;</span> <span class="loc">Side projects</span></div>
+    <h1 class="h1 reveal d1">Games, experiments,<br>and a few <span class="em">creative rabbit holes</span>.</h1>
+    <p class="hero-lead reveal d2">Things I build for the love of it: game design, VR, 3D, and motion. Several are downloadable and playable on Windows. The same research-led instinct I bring to product, with the volume turned up.</p>
+    <div class="hero-chips reveal d3"><span class="chip">Game design</span><span class="chip">VR</span><span class="chip">3D modeling</span><span class="chip">Motion graphics</span><span class="chip">Unity / C#</span></div>
+  </div>
+</header>
+
+<div class="works-wrap">
+  <div class="wrap">
+    <div class="filterbar reveal" id="filterbar">
+      <button class="fbtn active" data-filter="all">All</button>
+      <button class="fbtn" data-filter="games">Games</button>
+      <button class="fbtn" data-filter="vr">VR</button>
+      <button class="fbtn" data-filter="3d">3D</button>
+      <button class="fbtn" data-filter="motion">Motion</button>
+    </div>
+
+    <div class="works" id="works">
+
+      <section class="work reveal" data-cat="games">
+        <div class="work-grid">
+          <div class="work-media"><div class="slider" data-slides='["images/pal1.jpg","images/pal2.jpg"]'><div class="slider-track"></div><button class="slider-btn prev" aria-label="Previous">&#8592;</button><button class="slider-btn next" aria-label="Next">&#8594;</button><div class="slider-dots"></div></div></div>
+          <div class="work-text">
+            <span class="work-num">01</span>
+            <div class="work-label">Game Design &amp; Production</div>
+            <h2 class="work-title">The Forbidden Palace</h2>
+            <p class="work-desc">A horror game inspired by Beijing's Forbidden City. The twist: an oximeter reads the player's real heart rate, and the ghosts respond to it in real time. I led a team of five across concept, gameplay mechanics, UX research, and the Unity environment.</p>
+            <div class="chips"><span class="chip">Game design</span><span class="chip">UX research</span><span class="chip">Unity / C#</span><span class="chip">Maya 3D</span></div>
+            <div class="work-links"><a class="work-link" href="https://drive.google.com/drive/folders/0B4CHkiUFPf1bNjktb1hHaDJuUVk?resourcekey=0-zt-R7CEwBIsQRSFmcvCX6Q&usp=sharing" target="_blank" rel="noopener">Design doc &amp; production plan &rarr;</a></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="work reveal" data-cat="vr games">
+        <div class="work-grid">
+          <div class="work-media"><div class="slider" data-slides='["simulator/1.png","simulator/2.png","simulator/3.png","simulator/4.png","simulator/5.png"]'><div class="slider-track"></div><button class="slider-btn prev" aria-label="Previous">&#8592;</button><button class="slider-btn next" aria-label="Next">&#8594;</button><div class="slider-dots"></div></div></div>
+          <div class="work-text">
+            <span class="work-num">02</span>
+            <div class="work-label">VR Game &middot; Master's Thesis</div>
+            <h2 class="work-title">Classic Driver VR</h2>
+            <p class="work-desc">A VR driving simulator that teaches road rules and DMV regulations through immersion instead of a handbook. Built for Oculus and Google Cardboard, then validated with A/B testing on 22 users and usability testing with 70+ participants.</p>
+            <div class="chips"><span class="chip">A/B testing</span><span class="chip">Usability testing</span><span class="chip">Unity 3D / C#</span><span class="chip">Oculus VR</span></div>
+            <div class="work-links"><a class="work-link" href="https://digital.wpi.edu/concern/etds/6h440s662?locale=en" target="_blank" rel="noopener">Research paper &rarr;</a><a class="work-link" href="https://drive.google.com/file/d/15YTaUJwKHdR-sFShFdGFN5kiPibI8FGu/view?usp=sharing" target="_blank" rel="noopener">Download game &rarr;</a></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="work reveal" data-cat="games 3d">
+        <div class="work-grid">
+          <div class="work-media"><div class="slider" data-slides='["crab/crab1.png","crab/crab2.png","crab/crab3.png"]'><div class="slider-track"></div><button class="slider-btn prev" aria-label="Previous">&#8592;</button><button class="slider-btn next" aria-label="Next">&#8594;</button><div class="slider-dots"></div></div></div>
+          <div class="work-text">
+            <span class="work-num">03</span>
+            <div class="work-label">PC Game &middot; Global Game Jam</div>
+            <h2 class="work-title">Crab Dab</h2>
+            <p class="work-desc">A physics game where players lob attacks at a tower across a mighty sea. Concept to playable release in 48 hours with a small team at the Global Game Jam, a reminder that hard constraints are their own kind of creative fuel.</p>
+            <div class="chips"><span class="chip">3D modeling</span><span class="chip">Game design</span><span class="chip">Unity / C#</span><span class="chip">48h sprint</span></div>
+            <div class="work-links"><a class="work-link" href="https://drive.google.com/file/d/1NJg90MXP5APHverCQBIZN0b_BZt7AK3S/view?usp=sharing" target="_blank" rel="noopener">Download game &rarr;</a></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="work reveal" data-cat="motion">
+        <div class="work-grid">
+          <div class="work-media"><div class="slider" data-slides='["hud/3.svg","hud/2.svg","hud/1.svg"]'><div class="slider-track"></div><button class="slider-btn prev" aria-label="Previous">&#8592;</button><button class="slider-btn next" aria-label="Next">&#8594;</button><div class="slider-dots"></div></div></div>
+          <div class="work-text">
+            <span class="work-num">04</span>
+            <div class="work-label">Motion Graphics</div>
+            <h2 class="work-title">HUD and UI Motion</h2>
+            <p class="work-desc">Game HUDs and UI motion that fold animation, data visualization, and real-time feedback into one readable, immersive layer, designed and implemented across several game projects.</p>
+            <div class="chips"><span class="chip">Motion graphics</span><span class="chip">UI design</span><span class="chip">After Effects</span><span class="chip">Illustrator</span></div>
+            <div class="work-links"><a class="work-link" href="https://www.youtube.com/watch?v=U_uo3NSqcls&list=PLfz57GuyEi4SDLlbN_xs5e-_f0XF7m3uv&index=1" target="_blank" rel="noopener">View playlist &rarr;</a></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="work reveal" data-cat="games">
+        <div class="work-grid">
+          <div class="work-media"><div class="slider" data-slides='["paper/1.png","paper/2.png","paper/3.png"]'><div class="slider-track"></div><button class="slider-btn prev" aria-label="Previous">&#8592;</button><button class="slider-btn next" aria-label="Next">&#8594;</button><div class="slider-dots"></div></div></div>
+          <div class="work-text">
+            <span class="work-num">05</span>
+            <div class="work-label">Game Design &middot; Pre-production</div>
+            <h2 class="work-title">2D Game Concept</h2>
+            <p class="work-desc">Paper prototypes and iterated concepts for a 2D game in pre-production. Competitive research and core-loop validation happened on paper, before a single screen was drawn, so the expensive decisions were de-risked early.</p>
+            <div class="chips"><span class="chip">Paper prototyping</span><span class="chip">Game design</span><span class="chip">UX research</span><span class="chip">Pre-production</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="work reveal" data-cat="3d">
+        <div class="work-grid">
+          <div class="work-media"><div class="slider" data-slides='["maya/1.jpg","maya/2.jpg","maya/3.jpg","maya/4.jpg","maya/5.jpg","maya/6.jpg"]'><div class="slider-track"></div><button class="slider-btn prev" aria-label="Previous">&#8592;</button><button class="slider-btn next" aria-label="Next">&#8594;</button><div class="slider-dots"></div></div></div>
+          <div class="work-text">
+            <span class="work-num">06</span>
+            <div class="work-label">3D Modeling &amp; Lighting</div>
+            <h2 class="work-title">3D Models</h2>
+            <p class="work-desc">High-poly models built in Maya for game and simulation environments: character rigs, environmental props, and detailed vehicle geometry, each with full lighting setups.</p>
+            <div class="chips"><span class="chip">Maya 3D</span><span class="chip">Photoshop</span><span class="chip">Lighting</span><span class="chip">Character rigging</span></div>
+          </div>
+        </div>
+      </section>
+
+      <p id="noresults" style="display:none; color:var(--muted); font-size:15px; padding:30px 0;">Nothing in that category yet.</p>
+    </div>
+  </div>
+</div>
+
+<section class="connect-band">
+  <div class="wrap">
+    <div class="eyebrow reveal">Let's talk</div>
+    <h2 class="reveal d1">Like the way I <span class="em">think and build</span>?</h2>
+    <p class="reveal d2">I'm open to Senior UX, Product Design, and AI / Analytics Design roles. Always happy to talk shop about games, research, or healthcare design.</p>
+    <div class="cta-row reveal d2">
+      <a class="btn-primary" href="mailto:prateekpc.ux@gmail.com">Get in touch &rarr;</a>
+      <div class="socials">
+        <a href="https://www.linkedin.com/in/prateek-chatterjee-25a0a2140/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://dribbble.com/ppchatterjee" target="_blank" rel="noopener">Dribbble</a>
+        <a href="https://medium.com/@prateekrise92" target="_blank" rel="noopener">Medium</a>
+        <a href="https://github.com/ppchatterjee123" target="_blank" rel="noopener">GitHub</a>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- PROJECTS -->
-<div class="projects-band">
-<div class="W">
-
-  <!-- 01 Forbidden Palace -->
-  <section class="project-section reveal">
-    <div class="project-grid">
-      <div class="slider rl" data-slides='["images/pal1.jpg","images/pal2.jpg"]'>
-        <div class="slider-track"></div>
-        <button class="slider-btn prev">&#8592;</button>
-        <button class="slider-btn next">&#8594;</button>
-        <div class="slider-dots"></div>
-      </div>
-      <div class="rr">
-        <span class="project-num">01</span>
-        <div class="project-label">Game Design & Production</div>
-        <h2 class="project-title">The Forbidden Palace</h2>
-        <p class="project-desc">A horror game inspired by Beijing's Forbidden City. Central concept: an oximeter measuring the player's heart rate affects ghost behavior in real time. I led a team of five — concept development, gameplay mechanics, UX research, and Unity environment design.</p>
-        <div class="chips stagger">
-          <span class="chip">Game Design</span>
-          <span class="chip">UX Research</span>
-          <span class="chip">Unity / C#</span>
-          <span class="chip">Maya 3D</span>
-          <span class="chip">Windows</span>
-        </div>
-        <div class="project-links">
-          <a href="https://drive.google.com/drive/folders/0B4CHkiUFPf1bNjktb1hHaDJuUVk?resourcekey=0-zt-R7CEwBIsQRSFmcvCX6Q&usp=sharing" target="_blank" class="project-link">View Design Doc & Production Plan →</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 02 Classic Driver VR -->
-  <section class="project-section reveal">
-    <div class="project-grid flip">
-      <div class="slider rr" data-slides='["simulator/1.png","simulator/2.png","simulator/3.png","simulator/4.png","simulator/5.png"]'>
-        <div class="slider-track"></div>
-        <button class="slider-btn prev">&#8592;</button>
-        <button class="slider-btn next">&#8594;</button>
-        <div class="slider-dots"></div>
-      </div>
-      <div class="rl">
-        <span class="project-num">02</span>
-        <div class="project-label">VR Game — Master's Thesis</div>
-        <h2 class="project-title">Classic Driver VR</h2>
-        <p class="project-desc">A VR driving simulator designed to teach road rules and DMV regulations through immersive experience. Built for Oculus VR and Google Cardboard, validated via A/B testing with 22 users and usability testing with 70+ participants.</p>
-        <div class="chips stagger">
-          <span class="chip">A/B Testing</span>
-          <span class="chip">Usability Testing</span>
-          <span class="chip">Unity 3D / C#</span>
-          <span class="chip">Oculus VR</span>
-          <span class="chip">Google Surveys</span>
-        </div>
-        <div class="project-links">
-          <a href="https://digital.wpi.edu/concern/etds/6h440s662?locale=en" target="_blank" class="project-link">View Research Paper →</a>
-          <a href="https://drive.google.com/file/d/15YTaUJwKHdR-sFShFdGFN5kiPibI8FGu/view?usp=sharing" target="_blank" class="project-link">Download Game →</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 03 Crab Dab -->
-  <section class="project-section reveal">
-    <div class="project-grid">
-      <div class="slider rl" data-slides='["crab/crab1.png","crab/crab2.png","crab/crab3.png"]'>
-        <div class="slider-track"></div>
-        <button class="slider-btn prev">&#8592;</button>
-        <button class="slider-btn next">&#8594;</button>
-        <div class="slider-dots"></div>
-      </div>
-      <div class="rr">
-        <span class="project-num">03</span>
-        <div class="project-label">PC Game — Global Game Jam</div>
-        <h2 class="project-title">Crab Dab</h2>
-        <p class="project-desc">A physics game where players attack a tower across a mighty sea. Designed and developed during the Global Game Jam — from concept to release in 48 hours with a small team.</p>
-        <div class="chips stagger">
-          <span class="chip">3D Modeling</span>
-          <span class="chip">Game Design</span>
-          <span class="chip">Unity / C#</span>
-          <span class="chip">Maya</span>
-          <span class="chip">48hr Sprint</span>
-        </div>
-        <div class="project-links">
-          <a href="https://drive.google.com/file/d/1NJg90MXP5APHverCQBIZN0b_BZt7AK3S/view?usp=sharing" target="_blank" class="project-link">Download Game →</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 04 HUD & Motion -->
-  <section class="project-section reveal">
-    <div class="project-grid flip">
-      <div class="slider rr" data-slides='["hud/3.svg","hud/2.svg","hud/1.svg"]'>
-        <div class="slider-track"></div>
-        <button class="slider-btn prev">&#8592;</button>
-        <button class="slider-btn next">&#8594;</button>
-        <div class="slider-dots"></div>
-      </div>
-      <div class="rl">
-        <span class="project-num">04</span>
-        <div class="project-label">Motion Graphics</div>
-        <h2 class="project-title">HUD and UI Motion</h2>
-        <p class="project-desc">Motion graphics and game UI combining animation, data visualization, and real-time feedback into immersive in-game experiences — designed and implemented across multiple game projects.</p>
-        <div class="chips stagger">
-          <span class="chip">Motion Graphics</span>
-          <span class="chip">UI Design</span>
-          <span class="chip">After Effects</span>
-          <span class="chip">Adobe Illustrator</span>
-        </div>
-        <div class="project-links">
-          <a href="https://www.youtube.com/watch?v=U_uo3NSqcls&list=PLfz57GuyEi4SDLlbN_xs5e-_f0XF7m3uv&index=1" target="_blank" class="project-link">View Playlist →</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 05 2D Game Concept -->
-  <section class="project-section reveal">
-    <div class="project-grid">
-      <div class="slider rl" data-slides='["paper/1.png","paper/2.png","paper/3.png"]'>
-        <div class="slider-track"></div>
-        <button class="slider-btn prev">&#8592;</button>
-        <button class="slider-btn next">&#8594;</button>
-        <div class="slider-dots"></div>
-      </div>
-      <div class="rr">
-        <span class="project-num">05</span>
-        <div class="project-label">Game Design — Pre-production</div>
-        <h2 class="project-title">2D Game Concept</h2>
-        <p class="project-desc">Paper prototypes and iterated design concepts exploring a 2D game in pre-production. Competitive research conducted before any screen was drawn — validating core mechanics and player loops through rapid low-fidelity exploration.</p>
-        <div class="chips stagger">
-          <span class="chip">Paper Prototyping</span>
-          <span class="chip">Game Design</span>
-          <span class="chip">UX Research</span>
-          <span class="chip">Pre-production</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 06 3D Models -->
-  <section class="project-section reveal">
-    <div class="project-grid flip">
-      <div class="slider rr" data-slides='["maya/1.jpg","maya/2.jpg","maya/3.jpg","maya/4.jpg","maya/5.jpg","maya/6.jpg"]'>
-        <div class="slider-track"></div>
-        <button class="slider-btn prev">&#8592;</button>
-        <button class="slider-btn next">&#8594;</button>
-        <div class="slider-dots"></div>
-      </div>
-      <div class="rl">
-        <span class="project-num">06</span>
-        <div class="project-label">3D Modeling & Lighting</div>
-        <h2 class="project-title">3D Models</h2>
-        <p class="project-desc">High-polygon 3D models created in Maya for game and simulation environments — character rigs, environmental props, and detailed vehicle geometry with full lighting setups.</p>
-        <div class="chips stagger">
-          <span class="chip">Maya 3D</span>
-          <span class="chip">Adobe Photoshop</span>
-          <span class="chip">Lighting</span>
-          <span class="chip">Character Rigging</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-</div>
-</div>
-
-<!-- BACK TO TOP -->
-<div style="display:flex;justify-content:center;padding:64px 0;background:#fff;">
-  <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" style="display:inline-flex;align-items:center;gap:8px;background:#1a1a1a;color:#fff;font-size:13px;font-weight:600;padding:13px 28px;border-radius:50px;text-decoration:none;transition:background .2s;" onmouseover="this.style.background='#084FAA'" onmouseout="this.style.background='#1a1a1a'">↑ Back to top</a>
-</div>
-
-<!-- FOOTER -->
-<footer class="footer-s">
-  <div class="footer-in">
-    <div>
-      <h3 style="font-family:'DM Serif Display',serif;font-size:26px;color:#1a1a1a;margin-bottom:8px;">Let's connect</h3>
-      <p style="font-size:17px;color:#666;line-height:1.75;margin-bottom:14px;">Open to Senior UX, Product Design, and AI/Analytics Design opportunities.</p>
-      <a href="mailto:prateekpc.ux@gmail.com" style="font-size:16px;font-weight:600;color:#084FAA;text-decoration:none;">prateekpc.ux@gmail.com</a>
-      <div style="display:flex;gap:10px;margin-top:14px;">
-        <a href="https://www.linkedin.com/in/prateek-chatterjee-25a0a2140/" target="_blank"><img src="images/Linked.png" style="width:28px;height:28px;opacity:.45;" alt="LinkedIn" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.45"></a>
-        <a href="https://dribbble.com/ppchatterjee" target="_blank"><img src="images/dribble.png" style="width:28px;height:28px;opacity:.45;" alt="Dribbble" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.45"></a>
-        <a href="https://medium.com/@prateekrise92" target="_blank"><img src="images/Medium.webp" style="width:28px;height:28px;opacity:.45;" alt="Medium" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.45"></a>
-        <a href="https://github.com/ppchatterjee123" target="_blank"><img src="images/git.png" style="width:28px;height:28px;opacity:.45;" alt="GitHub" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.45"></a>
-      </div>
-    </div>
-    <div style="text-align:right;"><p style="font-size:12px;color:#bbb;line-height:1.7;">Designed & built<br>by Prateek Chatterjee<br><br>© 2026</p></div>
-  </div>
+<footer class="footer">
+  <div class="wrap footer-in"><div class="f-logo"><span style="color:var(--accent-light)">&#9679;</span> Prateek Chatterjee</div><div class="f-meta">Designed &amp; built by Prateek Chatterjee &middot; &copy; 2026</div></div>
 </footer>
 
 <script>
-// ── CUSTOM SLIDER — no Bootstrap dependency ─────────────────────────────
-document.querySelectorAll('.slider').forEach(function(sl) {
-  var slides = JSON.parse(sl.dataset.slides || '[]');
-  if (!slides.length) return;
-  var idx = 0;
-  var track = sl.querySelector('.slider-track');
-  var dotsWrap = sl.querySelector('.slider-dots');
+const nav=document.getElementById('nav'); const ring=document.getElementById('ring'); const CIRC=125.66;
+function onScroll(){ const d=document.documentElement; const max=(d.scrollHeight)-d.clientHeight; const p=max>0?d.scrollTop/max:0; if(ring) ring.style.strokeDashoffset=CIRC*(1-Math.min(p,1)); nav.classList.toggle('scrolled', d.scrollTop>40); }
+window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+const navToggle=document.getElementById('navToggle');
+if(navToggle){ navToggle.addEventListener('click',(e)=>{ e.stopPropagation(); const open=nav.classList.toggle('menu-open'); navToggle.setAttribute('aria-expanded',open?'true':'false'); });
+  document.querySelectorAll('#navMenu a').forEach(a=>a.addEventListener('click',()=>{ nav.classList.remove('menu-open'); navToggle.setAttribute('aria-expanded','false'); }));
+  document.addEventListener('click',(e)=>{ if(!nav.contains(e.target)){ nav.classList.remove('menu-open'); navToggle.setAttribute('aria-expanded','false'); } }); }
 
-  // Build images
-  slides.forEach(function(src, i) {
-    var img = document.createElement('img');
-    img.src = src;
-    img.alt = 'Slide ' + (i + 1);
-    track.appendChild(img);
-  });
-
-  // Build dots
-  slides.forEach(function(_, i) {
-    var d = document.createElement('button');
-    d.className = 'slider-dot' + (i === 0 ? ' active' : '');
-    d.addEventListener('click', function() { go(i); });
-    dotsWrap.appendChild(d);
-  });
-
-  function go(n) {
-    idx = (n + slides.length) % slides.length;
-    track.style.transform = 'translateX(-' + idx * 100 + '%)';
-    dotsWrap.querySelectorAll('.slider-dot').forEach(function(d, i) {
-      d.classList.toggle('active', i === idx);
-    });
-  }
-
-  sl.querySelector('.prev').addEventListener('click', function() { go(idx - 1); });
-  sl.querySelector('.next').addEventListener('click', function() { go(idx + 1); });
-
-  // Auto-advance every 3.5s
-  var timer = setInterval(function() { go(idx + 1); }, 3500);
-  sl.addEventListener('mouseenter', function() { clearInterval(timer); });
-  sl.addEventListener('mouseleave', function() { timer = setInterval(function() { go(idx + 1); }, 3500); });
+/* sliders */
+document.querySelectorAll('.slider').forEach(function(sl){
+  var slides=JSON.parse(sl.dataset.slides||'[]'); if(!slides.length) return;
+  var idx=0, track=sl.querySelector('.slider-track'), dotsWrap=sl.querySelector('.slider-dots');
+  slides.forEach(function(src,i){ var img=document.createElement('img'); img.src=src; img.alt='Slide '+(i+1); img.loading='lazy';
+    img.onerror=function(){ this.classList.add('ph'); this.removeAttribute('src'); }; track.appendChild(img); });
+  slides.forEach(function(_,i){ var d=document.createElement('button'); d.className='slider-dot'+(i===0?' active':''); d.setAttribute('aria-label','Go to slide '+(i+1)); d.addEventListener('click',function(){ go(i); }); dotsWrap.appendChild(d); });
+  function go(n){ idx=(n+slides.length)%slides.length; track.style.transform='translateX(-'+idx*100+'%)'; dotsWrap.querySelectorAll('.slider-dot').forEach(function(d,i){ d.classList.toggle('active', i===idx); }); }
+  sl.querySelector('.prev').addEventListener('click',function(){ go(idx-1); });
+  sl.querySelector('.next').addEventListener('click',function(){ go(idx+1); });
+  var timer=setInterval(function(){ go(idx+1); },4200);
+  sl.addEventListener('mouseenter',function(){ clearInterval(timer); });
+  sl.addEventListener('mouseleave',function(){ timer=setInterval(function(){ go(idx+1); },4200); });
 });
 
-// ── SCROLL REVEAL ────────────────────────────────────────────────────────
-const io = new IntersectionObserver(function(entries) {
-  entries.forEach(function(e) {
-    if (e.isIntersecting) {
-      e.target.classList.add('visible');
-      io.unobserve(e.target);
-    }
+/* filter + keep alternating layout among visible items */
+const works=Array.from(document.querySelectorAll('.work'));
+function relayout(){ var vis=works.filter(w=>w.style.display!=='none'); vis.forEach((w,i)=>w.classList.toggle('flip', i%2===1)); }
+document.querySelectorAll('.fbtn').forEach(function(b){
+  b.addEventListener('click',function(){
+    document.querySelectorAll('.fbtn').forEach(x=>x.classList.remove('active')); b.classList.add('active');
+    var f=b.dataset.filter; var shown=0;
+    works.forEach(function(w){ var ok=(f==='all')||(' '+w.dataset.cat+' ').indexOf(' '+f+' ')>-1; w.style.display=ok?'':'none'; if(ok) shown++; });
+    document.getElementById('noresults').style.display=shown?'none':'block';
+    relayout();
   });
-}, { threshold: 0.1, rootMargin: '0px 0px -32px 0px' });
-
-document.querySelectorAll('.reveal,.rl,.rr,.stagger').forEach(function(el) {
-  io.observe(el);
 });
+relayout();
+
+/* reveal */
+const io=new IntersectionObserver(function(entries){ entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }); },{threshold:.12, rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 </script>
 </body>
 </html>
