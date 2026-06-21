@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+<title>Clinical Analytics Dashboard Standardization — Prateek Chatterjee</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="portfolio.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0ZPWXXEFP8"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-0ZPWXXEFP8');</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+.page{padding-top:0!important;}
+
+.W{max-width:1320px;margin:0 auto;padding:0 64px;}
+@media(max-width:900px){.W{padding:0 20px;}}
+
+/* TOKENS */
+.tp{display:inline-flex;align-items:center;background:rgba(8,79,170,.06);color:#084FAA;border:1px solid rgba(8,79,170,.14);border-radius:4px;padding:4px 11px;font-size:12px;font-weight:500;margin:2px;cursor:default;transition:background .2s,color .2s;}
+.tp:hover{background:#084FAA;color:#fff;}
+.ey{font-size:11px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#084FAA;margin-bottom:14px;display:inline-flex;align-items:center;gap:8px;}
+.ey::before{content:'';width:16px;height:2px;background:linear-gradient(to right,#084FAA,rgba(8,79,170,.3));border-radius:2px;display:inline-block;flex-shrink:0;}
+
+/* TYPE */
+.h-xl{font-family:'DM Serif Display',serif;font-size:clamp(38px,5vw,68px);line-height:1.02;color:#1a1a1a;letter-spacing:-.6px;}
+.h-xl em{font-style:italic;color:#084FAA;}
+.h-lg{font-family:'DM Serif Display',serif;font-size:clamp(26px,3.8vw,46px);line-height:1.14;color:#1a1a1a;letter-spacing:-.3px;margin-bottom:18px;}
+.h-md{font-family:'DM Serif Display',serif;font-size:clamp(20px,2.5vw,28px);color:#1a1a1a;margin-bottom:12px;letter-spacing:-.15px;}
+.h-sm{font-family:'DM Serif Display',serif;font-size:clamp(17px,2vw,22px);color:#1a1a1a;margin-bottom:8px;}
+.body{font-size:17px;color:#555;line-height:1.85;}
+.body-sm{font-size:15px;color:#666;line-height:1.75;}
+
+/* SECTIONS */
+.sec{padding:96px 0;}.sec-sm{padding:64px 0;}.sec-xs{padding:48px 0;}
+.band-l{background:#fafafa;border-top:1px solid #e8e8e8;border-bottom:1px solid #e8e8e8;}
+.band-m{background:#f4f4f4;border-top:1px solid #e8e8e8;border-bottom:1px solid #e8e8e8;}
+.band-b{background:#F0F5FF;border-top:1px solid #e8e8e8;border-bottom:1px solid #e8e8e8;}
+.band-dark{background:#0a1628;}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
+.reveal.visible{opacity:1;transform:none;}
+.rl{opacity:0;transform:translateX(-28px);transition:opacity .7s ease,transform .7s ease;}
+.rl.visible{opacity:1;transform:none;}
+.rr{opacity:0;transform:translateX(28px);transition:opacity .7s ease,transform .7s ease;}
+.rr.visible{opacity:1;transform:none;}
+
+/* HERO STATS */
+.hstats{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:#e8e8e8;border:1px solid #e8e8e8;border-radius:16px;overflow:hidden;margin-top:36px;}
+.hsc{background:#fff;padding:28px 22px;}
+.hsc-n{font-family:'DM Serif Display',serif;font-size:32px;color:#084FAA;line-height:1;margin-bottom:5px;}
+.hsc-l{font-size:12px;color:#888;line-height:1.5;}
+
+/* SPLIT */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:#e8e8e8;border:1px solid #e8e8e8;border-radius:18px;overflow:hidden;margin-top:32px;}
+.split-panel{background:#fff;padding:36px 32px;}
+.split-panel-b{background:#F0F5FF;}
+.split-label{font-size:10px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:#aaa;margin-bottom:12px;display:block;}
+.split-panel h3{font-size:19px;font-weight:700;color:#1a1a1a;margin-bottom:12px;}
+.split-panel p,.split-panel li{font-size:15px;color:#555;line-height:1.8;}
+.split-panel ul{padding-left:18px;margin-top:8px;}
+.split-panel li{margin-bottom:5px;}
+
+/* IE — image embed, clickable */
+.ie{border:1px solid #e8e8e8;border-radius:14px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.07);cursor:pointer;transition:box-shadow .25s,transform .25s;margin-top:20px;}
+.ie:hover{box-shadow:0 14px 40px rgba(8,79,170,.13);transform:translateY(-2px);}
+.ie img{width:100%;display:block;}
+.ie-foot{background:#fafafa;border-top:1px solid #e8e8e8;padding:11px 18px;display:flex;align-items:center;justify-content:space-between;}
+.ie-foot span{font-size:12px;color:#999;}
+.ie-foot strong{font-size:12px;color:#084FAA;}
+
+/* INSIGHT STRIP */
+.insight-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:#e8e8e8;border:1px solid #e8e8e8;border-radius:16px;overflow:hidden;margin-top:28px;}
+.is-cell{background:#fff;padding:28px 24px;}
+.is-icon{font-size:26px;margin-bottom:12px;display:block;}
+.is-cell h3{font-size:15px;font-weight:700;color:#1a1a1a;margin-bottom:8px;line-height:1.3;}
+.is-cell p{font-size:14px;color:#555;line-height:1.7;}
+
+/* GALLERY GRIDS */
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px;}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:24px;}
+.gt{background:#fff;border:1px solid #e8e8e8;border-radius:14px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.06);cursor:pointer;transition:box-shadow .25s,transform .25s;}
+.gt:hover{box-shadow:0 14px 40px rgba(8,79,170,.13);transform:translateY(-2px);}
+.gt img{width:100%;display:block;object-fit:cover;object-position:top;}
+.gt-info{padding:14px 16px;}
+.gt-label{display:inline-block;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#084FAA;margin-bottom:5px;}
+.gt-info h3{font-size:14px;font-weight:600;color:#1a1a1a;margin-bottom:3px;line-height:1.3;}
+.gt-info p{font-size:13px;color:#666;line-height:1.55;margin:0;}
+
+/* PROCESS ROW */
+.process-row{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;background:#e8e8e8;border:1px solid #e8e8e8;border-radius:14px;overflow:hidden;margin-top:24px;}
+.pc{background:#fff;padding:22px 18px;}
+.pn{font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#084FAA;margin-bottom:6px;}
+.pc h3{font-size:14px;font-weight:600;color:#1a1a1a;margin-bottom:5px;}
+.pc p{font-size:13px;color:#555;line-height:1.55;}
+
+/* SNAP GRID (project snapshot) */
+.snap-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:#e8e8e8;border:1px solid #e8e8e8;border-radius:14px;overflow:hidden;margin-top:24px;}
+.snap-cell{background:#fff;padding:24px 20px;}
+.snap-label-ey{font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#aaa;margin-bottom:8px;display:block;}
+.snap-val{font-size:15px;font-weight:600;color:#1a1a1a;line-height:1.5;}
+
+/* AUDIENCE GRID */
+.audience-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:#e8e8e8;border:1px solid #e8e8e8;border-radius:14px;overflow:hidden;margin-top:24px;}
+.aud-cell{background:#fff;padding:22px 20px;}
+.aud-cell h3{font-size:14px;font-weight:700;color:#1a1a1a;margin-bottom:6px;}
+.aud-cell p{font-size:13px;color:#555;line-height:1.65;margin:0;}
+
+/* STEP LABEL */
+.step-label{font-size:10px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:#aaa;display:block;margin-bottom:10px;padding-top:4px;}
+
+/* CALLOUT */
+.cbl{background:#F0F5FF;border:1px solid #E3ECFF;border-left:4px solid #084FAA;border-radius:16px;padding:24px 28px;margin-top:24px;}
+.cbl p{font-size:16px;color:#1a1a1a;line-height:1.85;}
+
+/* OUTCOME CARDS */
+.outcome-2{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:32px;}
+.oc{background:#111e35;border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:44px 40px;position:relative;overflow:hidden;}
+.oc::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(to right,#084FAA,#4db8ff);}
+.oc-n{font-family:'DM Serif Display',serif;font-size:64px;color:#4db8ff;line-height:1;margin-bottom:12px;letter-spacing:-2px;}
+.oc-label{font-size:18px;font-weight:600;color:#fff;margin-bottom:20px;line-height:1.3;}
+.oc-divider{border:none;border-top:1px solid rgba(255,255,255,.08);margin:0 0 18px;}
+.oc-how{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:10px;}
+.oc-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:9px;}
+.oc-list li{font-size:14px;color:rgba(255,255,255,.65);line-height:1.65;display:flex;gap:10px;align-items:flex-start;}
+.oc-list li span{color:#4db8ff;flex-shrink:0;font-weight:700;}
+
+/* CLOSING CARDS */
+.closing-2{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:28px;}
+.closing-card{border:1px solid #e8e8e8;border-radius:16px;padding:32px 28px;}
+.closing-card h3{font-size:20px;font-weight:700;color:#1a1a1a;margin-bottom:10px;}
+.closing-card p{font-size:15px;color:#555;line-height:1.8;}
+
+/* TL;DR three-beat */
+.tldr{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:#e8e8e8;border:1px solid #e8e8e8;border-radius:16px;overflow:hidden;margin-top:28px;}
+.tldr-cell{background:#fff;padding:30px 28px;position:relative;}
+.tldr-cell::before{content:'';position:absolute;top:0;left:0;width:100%;height:4px;}
+.tldr-cell.t-p::before{background:#ef4444;}
+.tldr-cell.t-s::before{background:#084FAA;}
+.tldr-cell.t-r::before{background:#22c55e;}
+.tldr-k{font-size:10px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:#999;margin-bottom:12px;display:block;}
+.tldr-cell p{font-size:16px;color:#1a1a1a;line-height:1.55;font-weight:500;}
+
+/* NORTH STAR pill */
+.nstar{display:inline-flex;align-items:center;gap:12px;background:#fff;border:1px solid rgba(8,79,170,.2);border-radius:50px;padding:10px 22px;margin:4px 0 8px;}
+.nstar b{font-size:15px;font-weight:700;color:#084FAA;}
+.nstar i{font-style:normal;color:#c3c3c3;font-weight:700;}
+
+/* FOOTER */
+.footer-s{background:#fafafa;border-top:1px solid #e8e8e8;padding:64px 0;}
+.footer-in{max-width:1320px;margin:0 auto;padding:0 64px;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;}
+
+@media(max-width:900px){
+  .hstats,.split,.insight-strip,.g2,.g4,.process-row,.snap-grid,.audience-grid,.outcome-2,.closing-2,.tldr{grid-template-columns:1fr;}
+  .h-xl{font-size:34px;}.h-lg{font-size:28px;}
+  .sec{padding:56px 0;}.sec-sm{padding:40px 0;}
+  .footer-in{grid-template-columns:1fr;padding:0 20px;}
+  .oc{padding:32px 24px;}.oc-n{font-size:48px;}
+}
+</style>
+</head>
+<body>
+
+<!-- PROGRESS BAR -->
+<div id="pgbar" style="position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(to right,#084FAA,#4db8ff);z-index:9999;transition:width .08s linear;pointer-events:none;"></div>
+<script>window.addEventListener('scroll',function(){var d=document.documentElement;document.getElementById('pgbar').style.width=Math.min((d.scrollTop||document.body.scrollTop)/((d.scrollHeight||document.body.scrollHeight)-d.clientHeight)*100,100)+'%';});</script>
+
+<!-- NAV -->
+<nav style="position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.95);backdrop-filter:blur(20px);border-bottom:1px solid #e8e8e8;height:68px;display:flex;align-items:center;">
+  <div style="max-width:1320px;margin:0 auto;padding:0 64px;display:flex;align-items:center;justify-content:space-between;width:100%;">
+    <a href="index.html"><img src="images/logo.png" alt="Prateek Chatterjee" style="height:36px;display:block;"></a>
+    <div style="display:flex;gap:6px;">
+      <a href="index.html" style="font-size:13px;font-weight:500;letter-spacing:.5px;text-transform:uppercase;text-decoration:none;color:#084FAA;background:#F0F5FF;padding:7px 16px;border-radius:50px;">Work</a>
+      <a href="About.html" style="font-size:13px;font-weight:500;letter-spacing:.5px;text-transform:uppercase;text-decoration:none;color:#555;padding:7px 16px;border-radius:50px;">About</a>
+      <a href="play.html" style="font-size:13px;font-weight:500;letter-spacing:.5px;text-transform:uppercase;text-decoration:none;color:#555;padding:7px 16px;border-radius:50px;">Play</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section style="background:#fff;border-bottom:1px solid #e8e8e8;padding:96px 0 80px;position:relative;overflow:hidden;">
+  <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(8,79,170,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(8,79,170,.02) 1px,transparent 1px);background-size:56px 56px;pointer-events:none;"></div>
+  <div style="position:absolute;right:-100px;top:-100px;width:600px;height:600px;background:radial-gradient(circle,rgba(8,79,170,.05) 0%,transparent 65%);pointer-events:none;"></div>
+  <div style="position:absolute;bottom:0;left:0;right:0;height:80px;background:linear-gradient(to bottom,transparent,#fff);pointer-events:none;"></div>
+  <div class="W" style="position:relative;z-index:1;">
+    <div class="reveal" style="display:flex;align-items:center;gap:12px;margin-bottom:24px;">
+      <span class="ey" style="margin:0;">UX Case Study</span>
+      <span style="color:#999;font-size:11px;font-weight:500;">· Inova Health System · 2023 – Present</span>
+    </div>
+    <h1 class="h-xl reveal" style="margin-bottom:24px;max-width:900px;">Clinical Analytics —<br><em>Dashboards teams can trust</em></h1>
+    <p class="body reveal" style="max-width:660px;margin-bottom:30px;">Every team was building dashboards their own way. I created one shared system — and a simple review process — so every dashboard looks, reads, and behaves the same. Easier to use, faster to build, easier to trust.</p>
+    <div class="reveal" style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:32px;">
+      <span class="tp">Healthcare · Inova</span><span class="tp">Dashboard Design</span><span class="tp">Design System</span>
+      <span class="tp">Clear Data Stories</span><span class="tp">Simple Review Process</span><span class="tp">Tableau · Figma</span><span class="tp">Senior UX Designer</span>
+    </div>
+    <img src="images/clinical_analytics_hero.png" alt="Clinical Analytics Dashboard Standardization" class="reveal" style="width:100%;display:block;border-radius:24px;box-shadow:0 24px 80px rgba(8,79,170,.15),0 0 0 1px rgba(8,79,170,.07);">
+    <div class="hstats reveal">
+      <div class="hsc"><div class="hsc-n">Role</div><div class="hsc-l">Senior UX/UI Designer — led the design work</div></div>
+      <div class="hsc"><div class="hsc-n">Team</div><div class="hsc-l">Clinical, BI, Analytics, Implementation</div></div>
+      <div class="hsc"><div class="hsc-n">Tools</div><div class="hsc-l">Figma · Tableau · Workshops</div></div>
+      <div class="hsc"><div class="hsc-n">Focus</div><div class="hsc-l">One system, many dashboards</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TL;DR ══ -->
+<div class="band-l">
+  <div class="W sec-sm">
+    <span class="ey">The Short Version</span>
+    <h2 class="h-lg">The whole case, in three lines.</h2>
+    <div class="tldr reveal">
+      <div class="tldr-cell t-p"><span class="tldr-k">The problem</span><p>Every team built dashboards differently. People couldn't trust what they were looking at.</p></div>
+      <div class="tldr-cell t-s"><span class="tldr-k">What I did</span><p>Made one shared design system and a simple review process any team can follow.</p></div>
+      <div class="tldr-cell t-r"><span class="tldr-k">The result</span><p>Dashboards now look and work the same way — easier to read, faster to build, trusted across teams.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ THE PROBLEM ══ -->
+<section class="sec-sm">
+  <div class="W">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;">
+      <div class="rl">
+        <span class="ey">The Problem</span>
+        <h2 class="h-lg">One-off dashboards. Trust slipping.</h2>
+        <p class="body" style="margin-bottom:20px;">Across Inova's clinical analytics work, I partnered with clinical leaders, BI developers, analysts, and executives to make dashboards easier to use and easier to trust.</p>
+        <p class="body">The fix wasn't a prettier chart. It was a shared way to build every dashboard — one any team could follow without me.</p>
+      </div>
+      <div class="rr">
+        <div class="snap-grid">
+          <div class="snap-cell"><span class="snap-label-ey">Role</span><div class="snap-val">Senior UX/UI Designer</div></div>
+          <div class="snap-cell"><span class="snap-label-ey">Team</span><div class="snap-val">Clinical, BI, Analytics, Implementation</div></div>
+          <div class="snap-cell"><span class="snap-label-ey">Tools</span><div class="snap-val">Figma, Tableau, Workshops</div></div>
+          <div class="snap-cell"><span class="snap-label-ey">Focus</span><div class="snap-val">Design system, dashboards, review process</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="split reveal">
+      <div class="split-panel">
+        <span class="split-label" style="color:#b02020;">What was breaking</span>
+        <h3>Built in isolation.</h3>
+        <ul>
+          <li>Different layouts, filters, and labels everywhere</li>
+          <li>What a number actually meant wasn't always shown</li>
+          <li>Hard to connect <strong>what we do → results → cost</strong></li>
+          <li>Developers rebuilt the same thing again and again</li>
+          <li>When dashboards looked different, people trusted them less</li>
+        </ul>
+      </div>
+      <div class="split-panel split-panel-b">
+        <span class="split-label" style="color:#166534;">What I built</span>
+        <h3>One shared way to build them.</h3>
+        <ul>
+          <li>Ran workshops to agree on what "good" looks like</li>
+          <li>Built a design system in Figma made for Tableau</li>
+          <li>Designed clear number patterns, filters, and built-in notes</li>
+          <li>Made a simple path from request to finished dashboard</li>
+          <li>Wrote it down so any team can follow it</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ MY PROCESS ══ -->
+<div class="band-m">
+  <div class="W sec-sm">
+    <span class="ey">How I Worked</span>
+    <h2 class="h-lg">Vague requests in. Clear standards out.</h2>
+    <p class="body" style="max-width:660px;margin-bottom:8px;">A clear path turned fuzzy dashboard requests into reusable standards. Every step left something behind — nothing lived only in someone's head.</p>
+    <div class="ie reveal" onclick="openModal('images/02_ux_design_workflow.png','How I worked — Discover, Define, Ideate, Design, Validate.')">
+      <img src="images/02_ux_design_workflow.png" alt="UX design workflow">
+      <div class="ie-foot"><span>Discover → Define → Ideate → Design → Validate</span><strong>Expand →</strong></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ WHAT I LEARNED ══ -->
+<section class="sec-sm">
+  <div class="W">
+    <span class="ey">What I Learned</span>
+    <h2 class="h-lg">Three things shaped everything.</h2>
+    <p class="body" style="max-width:660px;margin-bottom:8px;">Through workshops, dashboard reviews, and stakeholder sessions, the same patterns kept showing up. Each one became a pillar of the system.</p>
+    <div class="insight-strip reveal">
+      <div class="is-cell">
+        <span class="is-icon">📐</span>
+        <h3>Make them consistent</h3>
+        <p>Same layout, same way of showing key numbers, same filters — across every team. Learn one dashboard, and you know them all.</p>
+      </div>
+      <div class="is-cell">
+        <span class="is-icon">📖</span>
+        <h3>Make them explain themselves</h3>
+        <p>People needed dashboards to point out what matters, not just show more numbers. Context was missing nearly everywhere.</p>
+      </div>
+      <div class="is-cell">
+        <span class="is-icon">🔒</span>
+        <h3>Make them trustworthy</h3>
+        <p>Where the data comes from, when it updates, who owns it — all easy to find. Without that, people didn't trust what they saw.</p>
+      </div>
+    </div>
+    <div class="g2 reveal">
+      <div class="gt" onclick="openModal('images/05_rose_thorn_bud_affinity.png','Workshop synthesis — sorting stakeholder feedback into clear improvement areas.')">
+        <img src="images/05_rose_thorn_bud_affinity.png" alt="Workshop synthesis" style="height:220px;">
+        <div class="gt-info"><span class="gt-label">Workshop</span><h3>Sorting the Feedback</h3><p>Turning stacks of stakeholder notes into a few clear improvement areas.</p></div>
+      </div>
+      <div class="gt" onclick="openModal('images/06_workshop_findings.png','Workshop findings — the three biggest improvement areas.')">
+        <img src="images/06_workshop_findings.png" alt="Workshop findings" style="height:220px;">
+        <div class="gt-info"><span class="gt-label">Findings</span><h3>The Three Big Themes</h3><p>The biggest improvement areas, straight from discovery.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ WORKING SESSIONS ══ -->
+<div class="band-b">
+  <div class="W sec-sm">
+    <span class="ey">Working Sessions</span>
+    <h2 class="h-lg">12+ sessions. No decision made alone.</h2>
+    <p class="body" style="max-width:660px;margin-bottom:8px;">We met often with analysts, developers, and clinical teams to check requirements, agree on what each number means, and compare layouts — all before any code was written. Catching problems early is the cheapest time to fix them.</p>
+    <div class="ie reveal" onclick="openModal('images/working_sessions_overview.png','Working sessions overview — requirements, iterations, feedback, and alignment across 12+ sessions.')">
+      <img src="images/working_sessions_overview.png" alt="Working sessions overview">
+      <div class="ie-foot"><span>Working sessions overview — requirements, feedback, and alignment across 12+ sessions</span><strong>Expand →</strong></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ DESIGN SYSTEM ══ -->
+<section class="sec-sm">
+  <div class="W">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:end;margin-bottom:36px;padding-bottom:36px;border-bottom:1px solid #e8e8e8;">
+      <div class="rl">
+        <span class="ey">The Design System</span>
+        <h2 class="h-lg" style="margin-bottom:0;">A shared kit of parts for every dashboard.</h2>
+      </div>
+      <div class="rr">
+        <p class="body">The system gave every team the same building blocks — spacing, type, color, key-number styles, built-in notes, filters, and layout. Built in Figma, checked against what Tableau can actually render, and written down so developers can build from it without a designer next to them.</p>
+      </div>
+    </div>
+    <div class="g4 reveal">
+      <div class="gt" onclick="openModal('images/09_design_system_intro.png','Design system principles — consistent, efficient, easy to read.')">
+        <img src="images/09_design_system_intro.png" alt="Design system principles" style="height:180px;">
+        <div class="gt-info"><span class="gt-label">System</span><h3>Principles</h3><p>Consistent, efficient, easy to read.</p></div>
+      </div>
+      <div class="gt" onclick="openModal('images/10_design_system_foundations.png','Design system foundations — type, color, spacing, parts.')">
+        <img src="images/10_design_system_foundations.png" alt="Design system foundations" style="height:180px;">
+        <div class="gt-info"><span class="gt-label">System</span><h3>Foundations</h3><p>Type, color, spacing, and parts.</p></div>
+      </div>
+      <div class="gt" onclick="openModal('images/07_annotation_layer.png','Built-in notes — help text right inside the dashboard.')">
+        <img src="images/07_annotation_layer.png" alt="Built-in notes" style="height:180px;">
+        <div class="gt-info"><span class="gt-label">Pattern</span><h3>Built-in Notes</h3><p>Help text right in the dashboard — no separate doc.</p></div>
+      </div>
+      <div class="gt" onclick="openModal('images/08_dynamic_labeling.png','Smart labels — cues that make numbers easier to read.')">
+        <img src="images/08_dynamic_labeling.png" alt="Smart labels" style="height:180px;">
+        <div class="gt-info"><span class="gt-label">Pattern</span><h3>Smart Labels</h3><p>Cues that make numbers easy to read at a glance.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FEATURED: INOVA CARE ══ -->
+<div class="band-b">
+  <div class="W sec-sm">
+    <span class="ey">The Dashboard</span>
+    <h2 class="h-lg">Inova Care — one view,<br>four kinds of user.</h2>
+    <p class="body" style="max-width:680px;margin-bottom:12px;">This dashboard shows whether patients got the recommended steps of care — and how that affects health outcomes, daily operations, and cost. One design, built to answer four very different questions.</p>
+    <div class="nstar reveal"><b>Data</b><i>→</i><b>Insight</b><i>→</i><b>Action</b></div>
+
+    <div class="audience-grid reveal">
+      <div class="aud-cell"><h3>Executives</h3><p>The big picture and the biggest opportunities.</p></div>
+      <div class="aud-cell"><h3>Service Leaders</h3><p>Where their own service line has gaps.</p></div>
+      <div class="aud-cell"><h3>Clinicians</h3><p>Detail right down to a single patient.</p></div>
+      <div class="aud-cell"><h3>Analysts</h3><p>Where the numbers come from and how they're checked.</p></div>
+    </div>
+
+    <div class="g2 reveal">
+      <div class="gt" onclick="openModal('images/inova_care_lowfi.png','Low-fidelity layout — overview, pathway deep dive, patient registry, and definitions. Four views, one mental model.')">
+        <img src="images/inova_care_lowfi.png" alt="Inova Care low-fi" style="height:230px;">
+        <div class="gt-info"><span class="gt-label">Wireframe</span><h3>The Layout, First</h3><p>Four views, one simple way to move between them — agreed before any visuals.</p></div>
+      </div>
+      <div class="gt" onclick="openModal('images/inova_care_overview.png','Executive overview — pathway performance across the whole portfolio.')">
+        <img src="images/inova_care_overview.png" alt="Executive overview" style="height:230px;">
+        <div class="gt-info"><span class="gt-label">Final Design</span><h3>Executive Overview</h3><p>The whole portfolio at a glance, with the top opportunities up front.</p></div>
+      </div>
+      <div class="gt" onclick="openModal('images/inova_care_operations.png','Operations view — care steps connected to operational and cost outcomes.')">
+        <img src="images/inova_care_operations.png" alt="Operations view" style="height:230px;">
+        <div class="gt-info"><span class="gt-label">Final Design</span><h3>Operations & Cost</h3><p>Connects the care steps to what they cost and how the day runs.</p></div>
+      </div>
+      <div class="gt" onclick="openModal('images/inova_care_registry.png','Patient registry — click in to patient-level detail for clinical review.')">
+        <img src="images/inova_care_registry.png" alt="Patient registry" style="height:230px;">
+        <div class="gt-info"><span class="gt-label">Final Design</span><h3>Patient Registry</h3><p>Click in, all the way down to a single patient, for clinical review.</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ THE REVIEW PROCESS ══ -->
+<div class="band-l">
+  <div class="W sec-sm">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:end;margin-bottom:36px;padding-bottom:36px;border-bottom:1px solid #e8e8e8;">
+      <div class="rl">
+        <span class="ey">The Review Process</span>
+        <h2 class="h-lg" style="margin-bottom:0;">How every dashboard gets built now.</h2>
+      </div>
+      <div class="rr">
+        <p class="body">A simple, repeatable path means the standards apply to every dashboard the team builds — not just the ones I designed. Same five steps, every time, request to launch.</p>
+      </div>
+    </div>
+    <div class="process-row reveal">
+      <div class="pc"><div class="pn">Step 1</div><h3>Request</h3><p>What's the need, who's it for, what decision does it support?</p></div>
+      <div class="pc"><div class="pn">Step 2</div><h3>Discover</h3><p>Find the metrics and decisions it has to support.</p></div>
+      <div class="pc"><div class="pn">Step 3</div><h3>Wireframe</h3><p>Agree on the layout before any building starts.</p></div>
+      <div class="pc"><div class="pn">Step 4</div><h3>Review</h3><p>Check it against the standards with clinical and BI.</p></div>
+      <div class="pc" style="background:#084FAA;"><div class="pn" style="color:rgba(255,255,255,.55);">Step 5</div><h3 style="color:#fff;">Build</h3><p style="color:rgba(255,255,255,.7);">Build it with the approved parts and patterns.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ OUTCOMES ══ -->
+<div class="band-dark">
+  <div class="W sec-sm">
+    <span class="ey" style="color:#4db8ff;">The Result</span>
+    <h2 class="h-lg" style="color:#fff;max-width:600px;">The system outlasts any one project.</h2>
+    <p style="font-size:16px;color:rgba(255,255,255,.6);max-width:660px;line-height:1.8;margin-bottom:32px;">The win wasn't a single dashboard. It was giving teams a shared way to build, review, and ship — so the quality holds up long after I move on.</p>
+
+    <div class="outcome-2 reveal">
+      <div class="oc">
+        <div class="oc-n">Easier</div>
+        <div class="oc-label">to use, across every dashboard</div>
+        <hr class="oc-divider">
+        <div class="oc-how">For the people reading them</div>
+        <ul class="oc-list">
+          <li><span>→</span>Every dashboard works the same way — learn one, know them all.</li>
+          <li><span>→</span>Notes live inside the dashboard, so there's no separate doc to hunt for.</li>
+          <li><span>→</span>Less time decoding numbers, more time deciding.</li>
+        </ul>
+      </div>
+      <div class="oc">
+        <div class="oc-n">Faster</div>
+        <div class="oc-label">to build, with less rework</div>
+        <hr class="oc-divider">
+        <div class="oc-how">For the people building them</div>
+        <ul class="oc-list">
+          <li><span>→</span>Developers build straight from the Figma kit — no designer needed in the room.</li>
+          <li><span>→</span>Requirements are locked before building, so there's far less rework.</li>
+          <li><span>→</span>A clear request-to-launch path replaces one-off asks.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="cbl reveal" style="background:rgba(77,184,255,.06);border-color:rgba(77,184,255,.2);border-left-color:#4db8ff;">
+      <p style="color:rgba(255,255,255,.85);">This showed how UX can matter beyond a single screen. By combining workshops, a design system, dashboard design, and a simple review process, I helped clinical and BI teams make analytics that's easier to understand, easier to build, and easier to trust. <strong style="color:#fff;">The most lasting work wasn't any one dashboard — it was the shared way of working that lets teams build better ones without me in the room.</strong></p>
+    </div>
+  </div>
+</div>
+
+<!-- ══ REFLECTION ══ -->
+<section class="sec-sm">
+  <div class="W">
+    <div class="closing-2 reveal">
+      <div class="closing-card">
+        <span class="ey">What made it hard</span>
+        <h3>The challenge wasn't the visuals.</h3>
+        <p>The hard part was getting clinical, BI, and leadership to agree on what each number even means — they all defined the same metric differently. The design system forced that conversation early, before anyone wrote a line of Tableau.</p>
+      </div>
+      <div class="closing-card" style="background:#F0F5FF;border-color:#E3ECFF;">
+        <span class="ey">The takeaway</span>
+        <h3>The system is the product.</h3>
+        <p>The most lasting work here wasn't a screen. It was the shared standards and process that let many teams build better dashboards on their own — with less rework and more trust. That keeps paying off in a way a single deliverable can't.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BACK TO TOP -->
+<div style="display:flex;justify-content:center;padding:64px 0;background:#fff;">
+  <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" style="display:inline-flex;align-items:center;gap:8px;background:#1a1a1a;color:#fff;font-size:13px;font-weight:600;padding:13px 28px;border-radius:50px;text-decoration:none;transition:background .2s;" onmouseover="this.style.background='#084FAA'" onmouseout="this.style.background='#1a1a1a'">↑ Back to top</a>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer-s">
+  <div class="footer-in">
+    <div>
+      <h3 style="font-family:'DM Serif Display',serif;font-size:26px;color:#1a1a1a;margin-bottom:8px;">Let's connect</h3>
+      <p style="font-size:15px;color:#555;line-height:1.65;margin-bottom:14px;">Open to Senior UX, Product Design, and AI/Analytics Design opportunities.</p>
+      <a href="mailto:prateekpc.ux@gmail.com" style="font-size:16px;font-weight:600;color:#084FAA;text-decoration:none;">prateekpc.ux@gmail.com</a>
+      <div style="display:flex;gap:10px;margin-top:14px;">
+        <a href="https://www.linkedin.com/in/prateek-chatterjee-25a0a2140/" target="_blank"><img src="images/Linked.png" style="width:28px;height:28px;opacity:.45;" alt="LinkedIn" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.45"></a>
+        <a href="https://dribbble.com/ppchatterjee" target="_blank"><img src="images/dribble.png" style="width:28px;height:28px;opacity:.45;" alt="Dribbble" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.45"></a>
+        <a href="https://medium.com/@prateekrise92" target="_blank"><img src="images/Medium.webp" style="width:28px;height:28px;opacity:.45;" alt="Medium" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.45"></a>
+        <a href="https://github.com/ppchatterjee123" target="_blank"><img src="images/git.png" style="width:28px;height:28px;opacity:.45;" alt="GitHub" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.45"></a>
+      </div>
+    </div>
+    <div style="text-align:right;"><p style="font-size:12px;color:#bbb;line-height:1.7;">Designed & built<br>by Prateek Chatterjee<br><br>© 2026</p></div>
+  </div>
+</footer>
+
+<script>
+function openModal(src,cap){
+  closeLB();
+  var scrollY=window.scrollY||0,vw=window.innerWidth||1200,vh=window.innerHeight||800;
+  var bd=document.createElement('div');bd.id='lb-backdrop';
+  bd.onclick=function(e){if(e.target===bd)closeLB();};
+  Object.assign(bd.style,{position:'absolute',top:scrollY+'px',left:'0',width:vw+'px',height:vh+'px',background:'rgba(0,0,0,.92)',zIndex:'999999',display:'flex',alignItems:'center',justifyContent:'center',padding:'32px',boxSizing:'border-box',cursor:'zoom-out'});
+  var card=document.createElement('div');card.onclick=function(e){e.stopPropagation();};
+  Object.assign(card.style,{position:'relative',background:'#fff',borderRadius:'18px',padding:'12px',maxWidth:Math.min(vw-56,1200)+'px',boxShadow:'0 32px 100px rgba(0,0,0,.5)',cursor:'default'});
+  var btn=document.createElement('button');btn.innerHTML='&times;';btn.onclick=closeLB;
+  Object.assign(btn.style,{position:'absolute',top:'-52px',right:'0',background:'none',border:'none',color:'#fff',fontSize:'48px',lineHeight:'1',cursor:'pointer',padding:'0'});
+  var img=document.createElement('img');img.src=src;img.alt=cap||'';
+  Object.assign(img.style,{display:'block',maxWidth:Math.min(vw-80,1160)+'px',maxHeight:(vh-130)+'px',borderRadius:'10px',objectFit:'contain'});
+  var caption=document.createElement('div');caption.innerText=cap||'';
+  Object.assign(caption.style,{fontSize:'13px',color:'#666',marginTop:'12px',fontFamily:"'DM Sans',sans-serif",lineHeight:'1.5'});
+  card.appendChild(btn);card.appendChild(img);card.appendChild(caption);
+  bd.appendChild(card);document.body.appendChild(bd);
+}
+function closeLB(){var el=document.getElementById('lb-backdrop');if(el)el.parentNode.removeChild(el);}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLB();});
+const io=new IntersectionObserver(function(e){e.forEach(function(el){if(el.isIntersecting){el.target.classList.add('visible');io.unobserve(el.target);}});},{threshold:0.06,rootMargin:'0px 0px -24px 0px'});
+document.querySelectorAll('.reveal,.rl,.rr').forEach(function(el){io.observe(el);});
+</script>
+</body>
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About Me — Prateek Chatterjee</title>
+
+<!-- ============================================================
+     HOW TO ADD YOUR OWN PHOTOS
+     Each card below is marked with a comment. To use a real photo,
+     replace the placeholder <div class="ph ...">...</div> with:
+
+         <img src="images/your-photo.jpg" alt="Short description">
+
+     The card keeps its shape automatically (object-fit: cover).
+     Recommended: portrait shots for the tall/narrow cards,
+     landscape for the wide ones.
+     ============================================================ -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg:        #FCFBF9;   /* near-white page */
+    --ink:       #17191F;   /* heading / button */
+    --body:      #6B7280;   /* subheading gray  */
+    --accent:    #E8923C;   /* warm orange (eyebrow) */
+    --dot:       #E4E2DC;   /* dot-grid color   */
+    --card-line: rgba(23,25,31,.06);
+    --radius:    22px;
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+
+  body{
+    font-family:"Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+    background:
+      radial-gradient(var(--dot) 1.4px, transparent 1.4px) 0 0 / 26px 26px,
+      var(--bg);
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+  }
+
+  .about{
+    width:min(1180px, 92vw);
+    margin-inline:auto;
+    padding:80px 0;
+    display:grid;
+    grid-template-columns:0.92fr 1.08fr;
+    gap:64px;
+    align-items:center;
+  }
+
+  /* ---------- Left column ---------- */
+  .intro{ max-width:520px; }
+
+  .eyebrow{
+    font-family:"Caveat", cursive;
+    color:var(--accent);
+    font-size:30px;
+    line-height:1;
+    margin-bottom:14px;
+  }
+
+  .intro h1{
+    font-size:clamp(34px, 4.4vw, 56px);
+    font-weight:800;
+    line-height:1.06;
+    letter-spacing:-0.02em;
+    margin-bottom:22px;
+  }
+  .wave{ display:inline-block; }
+
+  .intro p{
+    font-size:clamp(17px, 1.5vw, 21px);
+    font-weight:500;
+    line-height:1.55;
+    color:var(--body);
+    margin-bottom:34px;
+  }
+
+  .cta{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    background:var(--ink);
+    color:#fff;
+    text-decoration:none;
+    font-weight:700;
+    font-size:16px;
+    padding:15px 26px;
+    border-radius:999px;
+    transition:transform .25s ease, box-shadow .25s ease;
+    box-shadow:0 8px 24px rgba(23,25,31,.16);
+  }
+  .cta:hover{ transform:translateY(-2px); box-shadow:0 12px 30px rgba(23,25,31,.24); }
+  .cta .arrow{ transition:transform .25s ease; }
+  .cta:hover .arrow{ transform:translateY(3px); }
+
+  /* ---------- Right column: photo mosaic ---------- */
+  .mosaic{
+    display:grid;
+    grid-template-columns:1fr 1.12fr 0.74fr;
+    grid-template-rows:auto auto;
+    gap:16px;
+    align-items:start;
+  }
+
+  .card{
+    position:relative;
+    overflow:hidden;
+    border-radius:var(--radius);
+    box-shadow:0 14px 34px rgba(23,25,31,.10);
+    border:1px solid var(--card-line);
+    background:#fff;
+    opacity:0;
+    transform:translateY(18px);
+    animation:rise .7s cubic-bezier(.22,.61,.36,1) forwards;
+  }
+  .card img{ width:100%; height:100%; object-fit:cover; display:block; }
+
+  /* placeholder styling (swap each .card's inner content for an <img>) */
+  .ph{
+    width:100%; height:100%;
+    display:flex; flex-direction:column;
+    align-items:center; justify-content:center;
+    gap:8px; color:#fff;
+    font-weight:700; font-size:13px; letter-spacing:.04em;
+    text-transform:uppercase;
+  }
+  .ph .emoji{ font-size:30px; }
+  .ph.travel  { background:linear-gradient(150deg,#6EA8C9,#3E6E97); }
+  .ph.couple  { background:linear-gradient(150deg,#E8A07A,#C9694A); }
+  .ph.speak   { background:linear-gradient(150deg,#7D8CC4,#4A578F); }
+  .ph.dojo    { background:linear-gradient(150deg,#5BB59A,#327563); }
+  .ph.glacier { background:linear-gradient(150deg,#8FC3D6,#5689A6); }
+
+  /* placement — staggered, organic cluster */
+  .m1{ grid-column:1; grid-row:1; aspect-ratio:1/1;     transform:translateY(8px); }   /* baby / family */
+  .m2{ grid-column:2; grid-row:1 / span 2; aspect-ratio:3/4.35; }                       /* couple, tall  */
+  .m3{ grid-column:3; grid-row:1; aspect-ratio:3/4;     transform:translateY(44px); }   /* speaking      */
+  .m4{ grid-column:1; grid-row:2; aspect-ratio:4/3.5;   transform:translateY(8px); }    /* travel/temple */
+  .m5{ grid-column:3; grid-row:2; aspect-ratio:4/3;     transform:translateY(44px); }   /* glacier       */
+
+  .m1{ animation-delay:.05s; }
+  .m2{ animation-delay:.15s; }
+  .m3{ animation-delay:.25s; }
+  .m4{ animation-delay:.35s; }
+  .m5{ animation-delay:.45s; }
+
+  .card:hover{ transform:translateY(0) scale(1.02); transition:transform .3s ease; z-index:2; }
+
+  @keyframes rise{ to{ opacity:1; transform:translateY(0); } }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:860px){
+    .about{ grid-template-columns:1fr; gap:44px; padding:56px 0; }
+    .mosaic{ grid-template-columns:1fr 1fr; }
+    .m1,.m3,.m4,.m5{ transform:none; }
+    .m2{ grid-row:1 / span 2; }
+    .card:hover{ transform:scale(1.02); }
+  }
+  @media (max-width:460px){
+    .mosaic{ grid-template-columns:1fr 1fr; grid-auto-rows:1fr; }
+    .m2{ grid-row:auto; aspect-ratio:3/4; }
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    .card{ animation:none; opacity:1; transform:none; }
+    .cta,.card{ transition:none; }
+  }
+</style>
+</head>
+<body>
+
+  <section class="about">
+    <!-- LEFT: intro -->
+    <div class="intro">
+      <p class="eyebrow">About Me</p>
+      <h1>Hey there, my name is Prateek Chatterjee&nbsp;<span class="wave">👋</span></h1>
+      <p>I'm a Design Leader with a background as a developer, designer, and researcher — turning complex healthcare, federal, and AI systems into experiences that feel effortless. This is my story.</p>
+      <a class="cta" href="#story">Let's Dive In <span class="arrow">↓</span></a>
+    </div>
+
+    <!-- RIGHT: photo mosaic -->
+    <div class="mosaic">
+
+      <!-- CARD 1 — family / candid -->
+      <div class="card m1">
+        <!-- Replace with: <img src="images/photo1.jpg" alt="..."> -->
+        <div class="ph couple"><span class="emoji">👨‍👧</span>Life</div>
+      </div>
+
+      <!-- CARD 2 — main portrait (tall) -->
+      <div class="card m2">
+        <!-- Replace with: <img src="images/photo2.jpg" alt="Prateek"> -->
+        <div class="ph travel"><span class="emoji">🧗</span>Adventure</div>
+      </div>
+
+      <!-- CARD 3 — speaking / on stage (narrow) -->
+      <div class="card m3">
+        <!-- Replace with: <img src="images/photo3.jpg" alt="..."> -->
+        <div class="ph speak"><span class="emoji">🎤</span>Speaking</div>
+      </div>
+
+      <!-- CARD 4 — travel / culture (large) -->
+      <div class="card m4">
+        <!-- Replace with: <img src="images/photo4.jpg" alt="..."> -->
+        <div class="ph dojo"><span class="emoji">🥋</span>Martial Arts</div>
+      </div>
+
+      <!-- CARD 5 — outdoors / travel (wide) -->
+      <div class="card m5">
+        <!-- Replace with: <img src="images/photo5.jpg" alt="..."> -->
+        <div class="ph glacier"><span class="emoji">✈️</span>Travel</div>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>
