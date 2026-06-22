@@ -1,0 +1,13 @@
+<svg width="1600" height="330" viewBox="0 0 1600 330" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="1600" height="330" rx="20" fill="#F7FAFF"/>
+<text x="60" y="62" font-family="Inter,Arial" font-size="32" font-weight="700" fill="#333">Project Timeline</text>
+<line x1="120" y1="175" x2="1480" y2="175" stroke="#0E296B" stroke-width="6" stroke-linecap="round"/>
+<g font-family="Inter,Arial">
+<circle cx="140" cy="175" r="18" fill="#0E296B"/><text x="100" y="225" font-size="20" font-weight="700" fill="#0E296B">Aug 2024</text><text x="88" y="252" font-size="17" fill="#333">UX Intake</text>
+<circle cx="340" cy="175" r="18" fill="#3BBBEA"/><text x="300" y="225" font-size="20" font-weight="700" fill="#0E296B">Oct 2024</text><text x="274" y="252" font-size="17" fill="#333">Research & Workshops</text>
+<circle cx="545" cy="175" r="18" fill="#0E296B"/><text x="505" y="225" font-size="20" font-weight="700" fill="#0E296B">Dec 2024</text><text x="502" y="252" font-size="17" fill="#333">IA + Sitemap</text>
+<circle cx="750" cy="175" r="18" fill="#3BBBEA"/><text x="710" y="225" font-size="20" font-weight="700" fill="#0E296B">Feb 2025</text><text x="704" y="252" font-size="17" fill="#333">Lo-Fi Wireframes</text>
+<circle cx="960" cy="175" r="18" fill="#0E296B"/><text x="920" y="225" font-size="20" font-weight="700" fill="#0E296B">May 2025</text><text x="905" y="252" font-size="17" fill="#333">Hi-Fi + Design System</text>
+<circle cx="1170" cy="175" r="18" fill="#3BBBEA"/><text x="1130" y="225" font-size="20" font-weight="700" fill="#0E296B">Aug 2025</text><text x="1120" y="252" font-size="17" fill="#333">Dev Handoff Sprints</text>
+<circle cx="1390" cy="175" r="18" fill="#0E296B"/><text x="1350" y="225" font-size="20" font-weight="700" fill="#0E296B">Now</text><text x="1316" y="252" font-size="17" fill="#333">Validation + Iteration</text>
+</g></svg>
