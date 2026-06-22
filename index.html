@@ -82,7 +82,7 @@ a{ color:inherit; text-decoration:none; }
 
 /* ===================== HERO (one full screen) ===================== */
 .hero{ position:relative; min-height:111svh; display:grid; grid-template-rows:minmax(calc(100svh - 150px), auto) auto 1fr; align-items:center;
-  padding:88px 0 36px; overflow:hidden; --mx:72%; --my:38%;
+  padding:88px 0 36px; overflow:hidden; --mx:40%; --my:38%;
   background:
     radial-gradient(46% 52% at 85% 4%, rgba(45,91,255,.10), transparent 60%),
     radial-gradient(52% 56% at 4% 94%, rgba(15,181,166,.09), transparent 60%),
@@ -95,10 +95,14 @@ a{ color:inherit; text-decoration:none; }
   background-image:linear-gradient(rgba(45,91,255,.55) 1px,transparent 1px),
                    linear-gradient(90deg,rgba(45,91,255,.55) 1px,transparent 1px);
   background-size:56px 56px;
-  -webkit-mask-image:radial-gradient(280px circle at var(--mx) var(--my), #000 0%, transparent 64%);
-          mask-image:radial-gradient(280px circle at var(--mx) var(--my), #000 0%, transparent 64%); }
+  -webkit-mask-image:radial-gradient(280px circle at var(--mx) var(--my), #000 0%, transparent 64%), linear-gradient(to right, #000 44%, transparent 62%);
+  -webkit-mask-composite:source-in;
+          mask-image:radial-gradient(280px circle at var(--mx) var(--my), #000 0%, transparent 64%), linear-gradient(to right, #000 44%, transparent 62%);
+          mask-composite:intersect; }
 .hero-glow{ position:absolute; inset:0; z-index:0; pointer-events:none; transition:background .12s ease;
-  background:radial-gradient(540px circle at var(--mx) var(--my), rgba(45,91,255,.17), transparent 48%); }
+  background:radial-gradient(540px circle at var(--mx) var(--my), rgba(45,91,255,.17), transparent 48%);
+  -webkit-mask-image:linear-gradient(to right, #000 44%, transparent 66%);
+          mask-image:linear-gradient(to right, #000 44%, transparent 66%); }
 .hero-in{ position:relative; z-index:2; transform:translateY(-5%); }
 
 .badge{ position:absolute; top:0; right:0;
@@ -178,8 +182,8 @@ a{ color:inherit; text-decoration:none; }
 @media (prefers-reduced-motion: reduce){ .presence::after{ display:none; } }
 /* separation: a hairline on its own white channel that masks the grid, fading at the ends */
 .hero-divider{ position:relative; align-self:stretch; width:1px; }
-.hero-divider::before{ content:""; position:absolute; top:0; bottom:0; left:50%; width:112px; transform:translateX(-50%); pointer-events:none;
-  background:radial-gradient(ellipse 52% 82% at 50% 50%, var(--bg) 34%, transparent 74%); }
+.hero-divider::before{ content:""; position:absolute; top:0; bottom:0; left:50%; width:200px; transform:translateX(-50%); pointer-events:none;
+  background:radial-gradient(ellipse 52% 82% at 50% 50%, var(--bg) 36%, transparent 76%); }
 .hero-divider::after{ content:""; position:absolute; top:0; bottom:0; left:50%; width:1px; transform:translateX(-50%); pointer-events:none;
   background:linear-gradient(to bottom, transparent 0%, rgba(20,22,28,.06) 12%, rgba(20,22,28,.34) 50%, rgba(20,22,28,.06) 88%, transparent 100%); }
 
@@ -264,6 +268,11 @@ a{ color:inherit; text-decoration:none; }
 .sec-title .em{ font-family:var(--serif); font-style:italic; font-weight:400; }
 .sec-sub{ font-size:clamp(16px,1.8vw,19px); color:var(--body); max-width:none; white-space:nowrap; }
 @media(max-width:700px){ .sec-sub{ white-space:normal; } }
+/* case-study filter bar (mirrors the play page) */
+.filterbar{ display:flex; flex-wrap:wrap; gap:9px; margin:30px 0 30px; }
+.fbtn{ font-size:13px; font-weight:600; color:var(--body); background:var(--card); border:1px solid var(--line); border-radius:999px; padding:8px 16px; cursor:pointer; transition:background .2s, color .2s, border-color .2s; -webkit-tap-highlight-color:transparent; }
+.fbtn:hover{ border-color:var(--accent); color:var(--accent-d); }
+.fbtn.active{ background:var(--ink); color:#fff; border-color:var(--ink); }
 .callout{ margin:30px 0 44px; padding:20px 24px; background:#fff; border:1px solid var(--line); border-left:3px solid var(--accent);
   border-radius:0 var(--radius-s) var(--radius-s) 0; font-size:16px; color:var(--body); max-width:880px; }
 
@@ -504,14 +513,24 @@ a{ color:inherit; text-decoration:none; }
     <div class="reveal">
       <div class="sec-eyebrow">Selected Work</div>
       <h2 class="sec-title">Cases that show the <span class="em">thinking</span></h2>
-      <p class="sec-sub">Enterprise, healthcare, analytics, federal, telecom, VR, and AI products.</p>
     </div>
 
     <div class="callout reveal d1">Most of my recent work transforms complex healthcare and analytics workflows into intuitive experiences that support better decision-making, governance, and adoption across large organizations.</div>
 
+    <div class="filterbar reveal d1" id="case-filter">
+      <button class="fbtn active" data-filter="all">All</button>
+      <button class="fbtn" data-filter="featured">Featured</button>
+      <button class="fbtn" data-filter="analytics">Analytics</button>
+      <button class="fbtn" data-filter="healthcare">Healthcare</button>
+      <button class="fbtn" data-filter="ai">AI</button>
+      <button class="fbtn" data-filter="federal">Federal</button>
+      <button class="fbtn" data-filter="telecom">Telecom</button>
+      <button class="fbtn" data-filter="vr">VR</button>
+    </div>
+
     <div class="cards">
 
-      <a href="passwordperi.html" class="card reveal">
+      <a href="passwordperi.html" class="card reveal" data-cat="featured analytics healthcare ai">
         <div class="media"><div class="m-float"><div class="m-tilt">
           <img class="media-img" src="images/peri.png" alt="Periscope analytics marketplace" onerror="this.style.opacity=0">
         </div></div></div>
@@ -523,7 +542,7 @@ a{ color:inherit; text-decoration:none; }
         </div>
       </a>
 
-      <a href="passwordassist.html" class="card reveal">
+      <a href="passwordassist.html" class="card reveal" data-cat="healthcare ai">
         <div class="media"><div class="m-float"><div class="m-tilt">
           <img class="media-img" src="images/assist.png" alt="Inova Assist AI platform" onerror="this.style.opacity=0">
         </div></div></div>
@@ -535,7 +554,7 @@ a{ color:inherit; text-decoration:none; }
         </div>
       </a>
 
-      <a href="passwordacoms.html" class="card reveal">
+      <a href="passwordacoms.html" class="card reveal" data-cat="featured healthcare federal">
         <div class="media"><div class="m-float"><div class="m-tilt">
           <img class="media-img" src="images/2.png" alt="ACO management system" onerror="this.style.opacity=0">
         </div></div></div>
@@ -547,7 +566,7 @@ a{ color:inherit; text-decoration:none; }
         </div>
       </a>
 
-      <a href="bspd2244180913323234627744434543.html" class="card reveal">
+      <a href="bspd2244180913323234627744434543.html" class="card reveal" data-cat="featured telecom">
         <div class="media"><div class="m-float"><div class="m-tilt">
           <img class="media-img" src="images/bspd.png" alt="Brightspeed business solutions" onerror="this.style.opacity=0">
         </div></div></div>
@@ -559,7 +578,7 @@ a{ color:inherit; text-decoration:none; }
         </div>
       </a>
 
-      <a href="passworddash.html" class="card reveal">
+      <a href="passworddash.html" class="card reveal" data-cat="analytics healthcare">
         <div class="media"><div class="m-float"><div class="m-tilt">
           <img class="media-img" src="images/clinical_analytics_hero.png" alt="Clinical analytics dashboards" onerror="this.style.opacity=0">
         </div></div></div>
@@ -570,7 +589,7 @@ a{ color:inherit; text-decoration:none; }
         </div>
       </a>
 
-      <a href="vr.html" class="card reveal">
+      <a href="vr.html" class="card reveal" data-cat="vr">
         <div class="media"><div class="m-float"><div class="m-tilt">
           <img class="media-img" src="images/4.png" alt="Classic Driver VR simulator" onerror="this.style.opacity=0">
         </div></div></div>
@@ -745,6 +764,23 @@ document.querySelectorAll('.num[data-count]').forEach(el=>{
 })();
 
 
+/* case-study filter */
+(function(){
+  var cards=Array.prototype.slice.call(document.querySelectorAll('.cards .card'));
+  var btns=Array.prototype.slice.call(document.querySelectorAll('#case-filter .fbtn'));
+  if(!cards.length||!btns.length) return;
+  btns.forEach(function(b){
+    b.addEventListener('click',function(){
+      btns.forEach(function(x){ x.classList.remove('active'); }); b.classList.add('active');
+      var f=b.dataset.filter;
+      cards.forEach(function(c){
+        var ok=(f==='all')||((' '+(c.dataset.cat||'')+' ').indexOf(' '+f+' ')>-1);
+        c.style.display=ok?'':'none';
+        if(ok){ c.classList.add('in'); }
+      });
+    });
+  });
+})();
 </script>
 </body>
 </html>
