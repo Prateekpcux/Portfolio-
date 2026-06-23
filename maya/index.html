@@ -189,18 +189,6 @@ a{ color:inherit; text-decoration:none; }
 
 /* recommendations: two quiet quotes, no boxes, no highlight */
 .hero-right{ display:flex; flex-direction:column; width:100%; }
-
-/* ===== hero start entrance: staggered rise-in ===== */
-.hero .hl{ display:block; }
-@keyframes heroIn{ from{ opacity:0; transform:translateY(24px); filter:blur(7px); } to{ opacity:1; transform:translateY(0); filter:blur(0); } }
-.hero .anim{ animation:heroIn .92s cubic-bezier(.2,.72,.2,1) backwards; animation-delay:var(--ad,0s); }
-.hero h1 .em{ position:relative; }
-.hero h1 .em::after{ content:""; position:absolute; left:0; right:-.02em; bottom:.015em; height:2px; border-radius:2px; background:var(--accent); opacity:.5; transform:scaleX(0); transform-origin:left; animation:emLine .6s cubic-bezier(.2,.72,.2,1) forwards; animation-delay:1.15s; }
-@keyframes emLine{ to{ transform:scaleX(1); } }
-@media (prefers-reduced-motion: reduce){
-  .hero .anim{ animation:none !important; }
-  .hero h1 .em::after{ animation:none !important; transform:scaleX(1); }
-}
 .rec-head{ font-size:13.5px; font-weight:600; letter-spacing:.005em; color:var(--muted); margin-bottom:22px; }
 .rec-list{ display:flex; flex-direction:column; }
 .rec-card{ position:relative; background:transparent; border:none; padding:0; }
@@ -419,22 +407,22 @@ a{ color:inherit; text-decoration:none; }
   <div class="wrap hero-in">
     <div class="hero-cols">
       <div class="hero-left">
-        <h1 class="hero-h1"><span class="hl anim" style="--ad:.10s">Hi, I'm Prateek <span class="wave">👋</span></span><span class="hl anim" style="--ad:.26s">I turn complex systems into intuitive experiences <span class="nb">people <span class="em">trust</span>.</span></span></h1>
-        <p class="role-line anim" style="--ad:.44s"><b>Sr. UX/UI Designer</b> · 8+ years in Healthcare, Federal, Analytics &amp; AI</p>
-        <div class="cta-row">
-          <a href="#work" class="btn btn-primary anim" style="--ad:.56s">See selected work ↓</a>
-          <a href="images/res.pdf" target="_blank" class="btn btn-ghost anim" style="--ad:.64s">Download résumé</a>
-          <a href="https://www.linkedin.com/in/prateek-chatterjee-25a0a2140/" target="_blank" class="icon-btn anim" style="--ad:.72s" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.76-2.05C20.6 8.65 22 11 22 14.6V21h-4v-5.6c0-1.34-.02-3.06-1.87-3.06-1.87 0-2.16 1.46-2.16 2.96V21H9z"/></svg></a>
+        <h1 class="reveal d1"><span class="line">Hi, I'm Prateek <span class="wave">👋</span></span>I turn complex systems into experiences <span class="nb">people <span class="em">trust</span>.</span></h1>
+        <p class="role-line reveal d2"><b>Sr. UX/UI Designer</b> · 8+ years in Healthcare, Federal, Analytics &amp; AI</p>
+        <div class="cta-row reveal d3">
+          <a href="#work" class="btn btn-primary">See selected work ↓</a>
+          <a href="images/res.pdf" target="_blank" class="btn btn-ghost">Download résumé</a>
+          <a href="https://www.linkedin.com/in/prateek-chatterjee-25a0a2140/" target="_blank" class="icon-btn" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.76-2.05C20.6 8.65 22 11 22 14.6V21h-4v-5.6c0-1.34-.02-3.06-1.87-3.06-1.87 0-2.16 1.46-2.16 2.96V21H9z"/></svg></a>
         </div>
       </div>
 
 
       <div class="hero-divider" aria-hidden="true"></div>
 
-      <div class="hero-right">
-        <p class="rec-head anim" style="--ad:.50s">Don't take my word for it</p>
+      <div class="hero-right reveal d2">
+        <p class="rec-head">Don't take my word for it</p>
         <div class="rec-list">
-          <figure class="rec-card anim" style="--ad:.62s">
+          <figure class="rec-card">
             <span class="rec-mark" aria-hidden="true">&ldquo;</span>
             <blockquote class="rec-text">He was a driving force of several efforts related to design system creation, brand management, and change management.</blockquote>
             <figcaption class="rec-by">
@@ -445,7 +433,7 @@ a{ color:inherit; text-decoration:none; }
               </span>
             </figcaption>
           </figure>
-          <figure class="rec-card anim" style="--ad:.74s">
+          <figure class="rec-card">
             <span class="rec-mark" aria-hidden="true">&ldquo;</span>
             <blockquote class="rec-text">He has proven to be adept at tackling complex problems using a human-first lens.</blockquote>
             <figcaption class="rec-by">
